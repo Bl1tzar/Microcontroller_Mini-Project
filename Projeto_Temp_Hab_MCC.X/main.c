@@ -12,7 +12,6 @@
 /*
                          Variáveis Globais
  */
-
 /*
          Teclado
  */
