@@ -9659,7 +9659,11 @@ int contador_colunas_LCD = 192;
 unsigned char tecla_premida;
 
 char pin [4];
-char temp_int [2];
+int pin_intr;
+int pin_real = 0000;
+
+char temp_alar_int [2];
+int temp_alar;
 
 int tecla_n;
 int tecla_limpar;
@@ -9743,9 +9747,7 @@ void __attribute__((picinterrupt(("high_priority")))) highISR(void){
 
 }
 
-int atoisad(){
 
-}
 
 
 
@@ -9753,6 +9755,10 @@ int atoisad(){
 
 void main(void)
 {
+
+    int contador_caracteres = 4;
+
+
 
 
 
@@ -9780,7 +9786,7 @@ void main(void)
 
 
  TRISB = 0b00000111;
-# 183 "main_project.c"
+# 189 "main_project.c"
  TRISC = 0b10000000;
 
 
@@ -9836,10 +9842,10 @@ void main(void)
     INTCONbits.TMR0IE = 1;
  INTCONbits.TMR0IF = 0;
  INTCON2bits.TMR0IP = 0;
-# 249 "main_project.c"
+# 255 "main_project.c"
  OpenXLCD(0b00101011);
  while (BusyXLCD());
-# 259 "main_project.c"
+# 265 "main_project.c"
  WriteCmdXLCD(0b00001100);
  while (BusyXLCD());
 
@@ -9900,23 +9906,18 @@ void main(void)
 
 
     INTCONbits.GIE = 1;
-# 331 "main_project.c"
+# 337 "main_project.c"
     while (1){
 
         if (tecla_n){
 
-            WriteCmdXLCD(contador_colunas_LCD);
-            while (BusyXLCD());
-
-            WriteDataXLCD(tecla_premida);
-            while (BusyXLCD());
 
 
-            strncat(pin, &tecla_premida, 4);
+            strncat(pin, &tecla_premida, 1);
 
 
 
-            WriteCmdXLCD(0b10000000);
+            WriteCmdXLCD(0b11000000);
             while (BusyXLCD());
 
 
@@ -9928,7 +9929,7 @@ void main(void)
             while (BusyXLCD());
 
 
-
+            contador_caracteres++;
             contador_colunas_LCD++;
             tecla_n = 0;
         }
@@ -9939,7 +9940,10 @@ void main(void)
             putsXLCD("                    ");
             while (BusyXLCD());
             tecla_limpar = 0;
+
+
         }
+
 
 
 
