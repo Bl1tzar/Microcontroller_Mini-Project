@@ -7,7 +7,7 @@
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main_project.c" 2
-# 19 "main_project.c"
+# 22 "main_project.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -9521,7 +9521,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 19 "main_project.c" 2
+# 22 "main_project.c" 2
 
 
 
@@ -9578,7 +9578,7 @@ void putrsXLCD( const char *);
 extern void DelayFor18TCY(void);
 extern void DelayPORXLCD(void);
 extern void DelayXLCD(void);
-# 25 "main_project.c" 2
+# 28 "main_project.c" 2
 
 
 
@@ -9638,7 +9638,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 29 "main_project.c" 2
+# 32 "main_project.c" 2
 
 
 
@@ -9786,7 +9786,7 @@ void main(void)
 
 
  TRISB = 0b00000111;
-# 189 "main_project.c"
+# 192 "main_project.c"
  TRISC = 0b10000000;
 
 
@@ -9842,10 +9842,10 @@ void main(void)
     INTCONbits.TMR0IE = 1;
  INTCONbits.TMR0IF = 0;
  INTCON2bits.TMR0IP = 0;
-# 255 "main_project.c"
+# 258 "main_project.c"
  OpenXLCD(0b00101011);
  while (BusyXLCD());
-# 265 "main_project.c"
+# 268 "main_project.c"
  WriteCmdXLCD(0b00001100);
  while (BusyXLCD());
 
@@ -9906,7 +9906,7 @@ void main(void)
 
 
     INTCONbits.GIE = 1;
-# 337 "main_project.c"
+# 340 "main_project.c"
     while (1){
 
         if (tecla_n){

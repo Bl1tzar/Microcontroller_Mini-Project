@@ -985,627 +985,626 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17372
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f44k22.h: 17372: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"33 main_project.c
-[; ;main_project.c: 33:         }
+"36 main_project.c
+[; ;main_project.c: 36:         }
 [p x FOSC = ECMP ]
-"35
-[; ;main_project.c: 35:             tecla_premida = '*';
+"38
+[; ;main_project.c: 38:         INTCONbits.INT0IF = 0;
 [p x LVP = ON ]
-"37
-[; ;main_project.c: 37:         tecla_n = 1;
+"40
+[; ;main_project.c: 40: 
 [p x WDTEN = OFF ]
-"45
-[; ;main_project.c: 45:         }
+"48
+[; ;main_project.c: 48:         }
 [v _contador_colunas_LCD `i ~T0 @X0 1 e ]
 [i _contador_colunas_LCD
 -> 192 `i
 ]
-"46
-[; ;main_project.c: 46:         else if (PORTBbits.RB4 == 0){
-[v _tecla_premida `uc ~T0 @X0 1 e ]
-"48
-[; ;main_project.c: 48:         }
-[v _pin `uc ~T0 @X0 -> 4 `i e ]
 "49
 [; ;main_project.c: 49:         else if (PORTBbits.RB5 == 0){
+[v _tecla_premida `uc ~T0 @X0 1 e ]
+"51
+[; ;main_project.c: 51:         }
+[v _pin `uc ~T0 @X0 -> 4 `i e ]
+"52
+[; ;main_project.c: 52:         else if (PORTBbits.RB6 == 0){
 [v _pin_intr `i ~T0 @X0 1 e ]
-"50
-[; ;main_project.c: 50:             tecla_premida = '8';
+"53
+[; ;main_project.c: 53:             tecla_premida = '0';
 [v _pin_real `i ~T0 @X0 1 e ]
 [i _pin_real
 -> 0 `i
 ]
-"52
-[; ;main_project.c: 52:         else if (PORTBbits.RB6 == 0){
-[v _temp_alar_int `uc ~T0 @X0 -> 2 `i e ]
-"53
-[; ;main_project.c: 53:             tecla_premida = '0';
-[v _temp_alar `i ~T0 @X0 1 e ]
 "55
 [; ;main_project.c: 55:         tecla_n = 1;
-[v _tecla_n `i ~T0 @X0 1 e ]
+[v _temp_alar_int `uc ~T0 @X0 -> 2 `i e ]
 "56
 [; ;main_project.c: 56:         INTCON3bits.INT1IF = 0;
-[v _tecla_limpar `i ~T0 @X0 1 e ]
-[v $root$_highISR `(v ~T0 @X0 0 e ]
+[v _temp_alar `i ~T0 @X0 1 e ]
 "58
 [; ;main_project.c: 58: 
+[v _tecla_n `i ~T0 @X0 1 e ]
+"59
+[; ;main_project.c: 59:     if ((INTCON3bits.INT2IE)&&(INTCON3bits.INT2IF)){
+[v _tecla_limpar `i ~T0 @X0 1 e ]
+[v $root$_highISR `(v ~T0 @X0 0 e ]
+"61
+[; ;main_project.c: 61:         if (PORTBbits.RB3 == 0){
 [v _highISR `(v ~T1 @X0 1 ef ]
 {
 [e :U _highISR ]
 [f ]
-"62
-[; ;main_project.c: 62:             tecla_premida = '3';
-[e $ ! && != -> . . _INTCONbits 0 4 `i -> 0 `i != -> . . _INTCONbits 0 1 `i -> 0 `i 853  ]
-{
-"64
-[; ;main_project.c: 64:         else if (PORTBbits.RB4 == 0){
-[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 854  ]
-{
 "65
 [; ;main_project.c: 65:             tecla_premida = '6';
-[e = _tecla_premida -> -> 49 `ui `uc ]
-"66
-[; ;main_project.c: 66:         }
-}
-[e $U 855  ]
+[e $ ! && != -> . . _INTCONbits 0 4 `i -> 0 `i != -> . . _INTCONbits 0 1 `i -> 0 `i 853  ]
+{
 "67
 [; ;main_project.c: 67:         else if (PORTBbits.RB5 == 0){
-[e :U 854 ]
-[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 856  ]
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 854  ]
 {
 "68
 [; ;main_project.c: 68:             tecla_premida = '9';
-[e = _tecla_premida -> -> 52 `ui `uc ]
+[e = _tecla_premida -> -> 49 `ui `uc ]
 "69
 [; ;main_project.c: 69:         }
 }
-[e $U 857  ]
+[e $U 855  ]
 "70
 [; ;main_project.c: 70:         else if (PORTBbits.RB6 == 0){
-[e :U 856 ]
-[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 858  ]
+[e :U 854 ]
+[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 856  ]
 {
 "71
 [; ;main_project.c: 71:             contador_colunas_LCD = 192;
-[e = _tecla_premida -> -> 55 `ui `uc ]
+[e = _tecla_premida -> -> 52 `ui `uc ]
 "72
 [; ;main_project.c: 72:             tecla_n = 0;
 }
-[e $U 859  ]
+[e $U 857  ]
 "73
 [; ;main_project.c: 73:             tecla_limpar = 1;
-[e :U 858 ]
-[e $ ! == -> . . _PORTBbits 0 6 `i -> 0 `i 860  ]
+[e :U 856 ]
+[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 858  ]
 {
 "74
 [; ;main_project.c: 74:         }
-[e = _tecla_premida -> -> 42 `ui `uc ]
+[e = _tecla_premida -> -> 55 `ui `uc ]
 "75
 [; ;main_project.c: 75:         INTCON3bits.INT2IF = 0;
+}
+[e $U 859  ]
+"76
+[; ;main_project.c: 76:     }
+[e :U 858 ]
+[e $ ! == -> . . _PORTBbits 0 6 `i -> 0 `i 860  ]
+{
+"77
+[; ;main_project.c: 77: 
+[e = _tecla_premida -> -> 42 `ui `uc ]
+"78
+[; ;main_project.c: 78: 
 }
 [e :U 860 ]
 [e :U 859 ]
 [e :U 857 ]
 [e :U 855 ]
-"76
-[; ;main_project.c: 76:     }
+"79
+[; ;main_project.c: 79:     if (INTCONbits.TMR0IE && INTCONbits.TMR0IF){
 [e = _tecla_n -> 1 `i ]
-"77
-[; ;main_project.c: 77: 
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"78
-[; ;main_project.c: 78: 
-}
-[e :U 853 ]
 "80
 [; ;main_project.c: 80: 
-[e $ ! && != -> . . _INTCON3bits 0 3 `i -> 0 `i != -> . . _INTCON3bits 0 0 `i -> 0 `i 861  ]
-{
-"82
-[; ;main_project.c: 82:             TMR0H = 0x48;
-[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 862  ]
-{
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+"81
+[; ;main_project.c: 81: 
+}
+[e :U 853 ]
 "83
 [; ;main_project.c: 83:             TMR0L = 0xE5;
-[e = _tecla_premida -> -> 50 `ui `uc ]
-"84
-[; ;main_project.c: 84: 
-}
-[e $U 863  ]
+[e $ ! && != -> . . _INTCON3bits 0 3 `i -> 0 `i != -> . . _INTCON3bits 0 0 `i -> 0 `i 861  ]
+{
 "85
 [; ;main_project.c: 85:         if (LATAbits.LATA1){
-[e :U 862 ]
-[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 864  ]
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 862  ]
 {
 "86
 [; ;main_project.c: 86:             LATAbits.LATA1 = 0;
-[e = _tecla_premida -> -> 53 `ui `uc ]
+[e = _tecla_premida -> -> 50 `ui `uc ]
 "87
 [; ;main_project.c: 87:         }
 }
-[e $U 865  ]
+[e $U 863  ]
 "88
 [; ;main_project.c: 88:         else{
-[e :U 864 ]
-[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 866  ]
+[e :U 862 ]
+[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 864  ]
 {
 "89
 [; ;main_project.c: 89:             LATAbits.LATA1 = 1;
-[e = _tecla_premida -> -> 56 `ui `uc ]
+[e = _tecla_premida -> -> 53 `ui `uc ]
 "90
 [; ;main_project.c: 90:         }
 }
-[e $U 867  ]
+[e $U 865  ]
 "91
 [; ;main_project.c: 91: 
-[e :U 866 ]
-[e $ ! == -> . . _PORTBbits 0 6 `i -> 0 `i 868  ]
+[e :U 864 ]
+[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 866  ]
 {
 "92
 [; ;main_project.c: 92:         INTCONbits.TMR0IF = 0;
-[e = _tecla_premida -> -> 48 `ui `uc ]
+[e = _tecla_premida -> -> 56 `ui `uc ]
 "93
 [; ;main_project.c: 93:     }
+}
+[e $U 867  ]
+"94
+[; ;main_project.c: 94: 
+[e :U 866 ]
+[e $ ! == -> . . _PORTBbits 0 6 `i -> 0 `i 868  ]
+{
+"95
+[; ;main_project.c: 95: 
+[e = _tecla_premida -> -> 48 `ui `uc ]
+"96
+[; ;main_project.c: 96: }
 }
 [e :U 868 ]
 [e :U 867 ]
 [e :U 865 ]
 [e :U 863 ]
-"94
-[; ;main_project.c: 94: 
+"97
+[; ;main_project.c: 97: 
 [e = _tecla_n -> 1 `i ]
-"95
-[; ;main_project.c: 95: 
-[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
-"96
-[; ;main_project.c: 96: }
-}
-[e :U 861 ]
 "98
 [; ;main_project.c: 98: 
-[e $ ! && != -> . . _INTCON3bits 0 4 `i -> 0 `i != -> . . _INTCON3bits 0 1 `i -> 0 `i 869  ]
-{
+[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
 "99
 [; ;main_project.c: 99: 
-[e = _tecla_n -> 1 `i ]
-"100
-[; ;main_project.c: 100: 
-[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 870  ]
-{
+}
+[e :U 861 ]
 "101
 [; ;main_project.c: 101: 
-[e = _tecla_premida -> -> 51 `ui `uc ]
+[e $ ! && != -> . . _INTCON3bits 0 4 `i -> 0 `i != -> . . _INTCON3bits 0 1 `i -> 0 `i 869  ]
+{
 "102
 [; ;main_project.c: 102: 
-}
-[e $U 871  ]
+[e = _tecla_n -> 1 `i ]
 "103
 [; ;main_project.c: 103: 
-[e :U 870 ]
-[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 872  ]
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 870  ]
 {
 "104
 [; ;main_project.c: 104: void main(void)
-[e = _tecla_premida -> -> 54 `ui `uc ]
+[e = _tecla_premida -> -> 51 `ui `uc ]
 "105
 [; ;main_project.c: 105: {
 }
-[e $U 873  ]
+[e $U 871  ]
 "106
 [; ;main_project.c: 106: 
-[e :U 872 ]
-[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 874  ]
+[e :U 870 ]
+[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 872  ]
 {
 "107
 [; ;main_project.c: 107:     int contador_caracteres = 4;
-[e = _tecla_premida -> -> 57 `ui `uc ]
+[e = _tecla_premida -> -> 54 `ui `uc ]
 "108
 [; ;main_project.c: 108: 
 }
-[e $U 875  ]
+[e $U 873  ]
 "109
 [; ;main_project.c: 109: 
-[e :U 874 ]
-[e $ ! == -> . . _PORTBbits 0 6 `i -> 0 `i 876  ]
+[e :U 872 ]
+[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 874  ]
 {
 "110
 [; ;main_project.c: 110: 
-[e = _contador_colunas_LCD -> 192 `i ]
+[e = _tecla_premida -> -> 57 `ui `uc ]
 "111
 [; ;main_project.c: 111: 
-[e = _tecla_n -> 0 `i ]
+}
+[e $U 875  ]
 "112
 [; ;main_project.c: 112: 
-[e = _tecla_limpar -> 1 `i ]
+[e :U 874 ]
+[e $ ! == -> . . _PORTBbits 0 6 `i -> 0 `i 876  ]
+{
 "113
 [; ;main_project.c: 113: 
+[e = _contador_colunas_LCD -> 192 `i ]
+"114
+[; ;main_project.c: 114:     ANSELA=0;
+[e = _tecla_n -> 0 `i ]
+"115
+[; ;main_project.c: 115:  ANSELB=0;
+[e = _tecla_limpar -> 1 `i ]
+"116
+[; ;main_project.c: 116:     ANSELC=0;
 }
 [e :U 876 ]
 [e :U 875 ]
 [e :U 873 ]
 [e :U 871 ]
-"114
-[; ;main_project.c: 114:     ANSELA=0;
+"117
+[; ;main_project.c: 117:     ANSELD=0;
 [e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
-"115
-[; ;main_project.c: 115:  ANSELB=0;
-}
-[e :U 869 ]
 "118
 [; ;main_project.c: 118:     ANSELE=0;
-[e $ ! && != -> . . _INTCONbits 0 5 `i -> 0 `i != -> . . _INTCONbits 0 2 `i -> 0 `i 877  ]
-{
+}
+[e :U 869 ]
 "121
 [; ;main_project.c: 121: 
-[e = _TMR0H -> -> 72 `i `uc ]
-"122
-[; ;main_project.c: 122: 
-[e = _TMR0L -> -> 229 `i `uc ]
+[e $ ! && != -> . . _INTCONbits 0 5 `i -> 0 `i != -> . . _INTCONbits 0 2 `i -> 0 `i 877  ]
+{
 "124
 [; ;main_project.c: 124: 
-[e $ ! != -> . . _LATAbits 0 1 `i -> 0 `i 878  ]
-{
+[e = _TMR0H -> -> 72 `i `uc ]
 "125
 [; ;main_project.c: 125:  TRISD = 0;
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-"126
-[; ;main_project.c: 126: 
-}
-[e $U 879  ]
+[e = _TMR0L -> -> 229 `i `uc ]
 "127
 [; ;main_project.c: 127: 
-[e :U 878 ]
+[e $ ! != -> . . _LATAbits 0 1 `i -> 0 `i 878  ]
 {
 "128
 [; ;main_project.c: 128: 
-[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
 "129
 [; ;main_project.c: 129: 
 }
-[e :U 879 ]
+[e $U 879  ]
+"130
+[; ;main_project.c: 130: 
+[e :U 878 ]
+{
 "131
 [; ;main_project.c: 131:  TRISA = 0b00000001;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 "132
 [; ;main_project.c: 132: 
 }
-[e :U 877 ]
+[e :U 879 ]
+"134
+[; ;main_project.c: 134: 
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "135
 [; ;main_project.c: 135: 
+}
+[e :U 877 ]
+"138
 [e :UE 852 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"143
+"146
 [v _main `(v ~T0 @X0 1 ef ]
-"144
+"147
 {
 [e :U _main ]
 [f ]
-"146
+"149
 [v _contador_caracteres `i ~T0 @X0 1 a ]
 [e = _contador_caracteres -> 4 `i ]
-"153
-[e = _ANSELA -> -> 0 `i `uc ]
-"154
-[e = _ANSELB -> -> 0 `i `uc ]
-"155
-[e = _ANSELC -> -> 0 `i `uc ]
 "156
-[e = _ANSELD -> -> 0 `i `uc ]
+[e = _ANSELA -> -> 0 `i `uc ]
 "157
+[e = _ANSELB -> -> 0 `i `uc ]
+"158
+[e = _ANSELC -> -> 0 `i `uc ]
+"159
+[e = _ANSELD -> -> 0 `i `uc ]
+"160
 [e = _ANSELE -> -> 0 `i `uc ]
-"164
+"167
 [e = _TRISD -> -> 0 `i `uc ]
-"170
+"173
 [e = _TRISA -> -> 1 `i `uc ]
-"175
+"178
 [e = _TRISB -> -> 7 `i `uc ]
-"189
-[; ;main_project.c: 189:  TRISC = 0b10000000;
-[e = _TRISC -> -> 128 `i `uc ]
 "192
-[; ;main_project.c: 192:  TRISE = 0b10000000;
+[; ;main_project.c: 192:  TRISC = 0b10000000;
+[e = _TRISC -> -> 128 `i `uc ]
+"195
+[; ;main_project.c: 195:  TRISE = 0b10000000;
 [e = _TRISE -> -> 128 `i `uc ]
-"197
-[; ;main_project.c: 197:  INTCON = 0;
+"200
+[; ;main_project.c: 200:  INTCON = 0;
 [e = _INTCON -> -> 0 `i `uc ]
-"198
-[; ;main_project.c: 198:  INTCON2 = 0;
+"201
+[; ;main_project.c: 201:  INTCON2 = 0;
 [e = _INTCON2 -> -> 0 `i `uc ]
-"199
-[; ;main_project.c: 199:  INTCON3 = 0;
-[e = _INTCON3 -> -> 0 `i `uc ]
 "202
-[; ;main_project.c: 202:     INTCON2bits.RBPU = 0;
+[; ;main_project.c: 202:  INTCON3 = 0;
+[e = _INTCON3 -> -> 0 `i `uc ]
+"205
+[; ;main_project.c: 205:     INTCON2bits.RBPU = 0;
 [e = . . _INTCON2bits 2 1 -> -> 0 `i `uc ]
-"204
-[; ;main_project.c: 204:     WPUB = 0b00000111;
+"207
+[; ;main_project.c: 207:     WPUB = 0b00000111;
 [e = _WPUB -> -> 7 `i `uc ]
-"209
-[; ;main_project.c: 209:     RCONbits.IPEN = 0;
+"212
+[; ;main_project.c: 212:     RCONbits.IPEN = 0;
 [e = . . _RCONbits 5 7 -> -> 0 `i `uc ]
-"216
-[; ;main_project.c: 216:  INTCON2bits.INTEDG0 = 0;
+"219
+[; ;main_project.c: 219:  INTCON2bits.INTEDG0 = 0;
 [e = . . _INTCON2bits 1 6 -> -> 0 `i `uc ]
-"217
-[; ;main_project.c: 217:  INTCONbits.INT0IE = 1;
+"220
+[; ;main_project.c: 220:  INTCONbits.INT0IE = 1;
 [e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-"223
-[; ;main_project.c: 223:  INTCON2bits.INTEDG1 = 0;
+"226
+[; ;main_project.c: 226:  INTCON2bits.INTEDG1 = 0;
 [e = . . _INTCON2bits 1 5 -> -> 0 `i `uc ]
-"224
-[; ;main_project.c: 224:  INTCON3bits.INT1IE = 1;
+"227
+[; ;main_project.c: 227:  INTCON3bits.INT1IE = 1;
 [e = . . _INTCON3bits 0 3 -> -> 1 `i `uc ]
-"231
-[; ;main_project.c: 231:  INTCON2bits.INTEDG2 = 0;
+"234
+[; ;main_project.c: 234:  INTCON2bits.INTEDG2 = 0;
 [e = . . _INTCON2bits 1 4 -> -> 0 `i `uc ]
-"232
-[; ;main_project.c: 232:  INTCON3bits.INT2IE = 1;
+"235
+[; ;main_project.c: 235:  INTCON3bits.INT2IE = 1;
 [e = . . _INTCON3bits 0 4 -> -> 1 `i `uc ]
-"236
-[; ;main_project.c: 236:     T0CON = 0b10000011;
+"239
+[; ;main_project.c: 239:     T0CON = 0b10000011;
 [e = _T0CON -> -> 131 `i `uc ]
-"241
-[; ;main_project.c: 241:     INTCONbits.TMR0IE = 1;
+"244
+[; ;main_project.c: 244:     INTCONbits.TMR0IE = 1;
 [e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"242
-[; ;main_project.c: 242:  INTCONbits.TMR0IF = 0;
+"245
+[; ;main_project.c: 245:  INTCONbits.TMR0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"243
-[; ;main_project.c: 243:  INTCON2bits.TMR0IP = 0;
+"246
+[; ;main_project.c: 246:  INTCON2bits.TMR0IP = 0;
 [e = . . _INTCON2bits 1 2 -> -> 0 `i `uc ]
-"255
-[; ;main_project.c: 255:  OpenXLCD(0b00101011);
+"258
+[; ;main_project.c: 258:  OpenXLCD(0b00101011);
 [e ( _OpenXLCD (1 -> -> 43 `i `uc ]
-"256
-[; ;main_project.c: 256:  while (BusyXLCD());
+"259
+[; ;main_project.c: 259:  while (BusyXLCD());
 [e $U 881  ]
 [e :U 882 ]
 [e :U 881 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 882  ]
 [e :U 883 ]
-"265
-[; ;main_project.c: 265:  WriteCmdXLCD(0b00001100);
+"268
+[; ;main_project.c: 268:  WriteCmdXLCD(0b00001100);
 [e ( _WriteCmdXLCD (1 -> -> 12 `i `uc ]
-"266
-[; ;main_project.c: 266:  while (BusyXLCD());
+"269
+[; ;main_project.c: 269:  while (BusyXLCD());
 [e $U 884  ]
 [e :U 885 ]
 [e :U 884 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 885  ]
 [e :U 886 ]
-"273
-[; ;main_project.c: 273:  WriteCmdXLCD(0b00010111);
+"276
+[; ;main_project.c: 276:  WriteCmdXLCD(0b00010111);
 [e ( _WriteCmdXLCD (1 -> -> 23 `i `uc ]
-"274
-[; ;main_project.c: 274:  while (BusyXLCD());
+"277
+[; ;main_project.c: 277:  while (BusyXLCD());
 [e $U 887  ]
 [e :U 888 ]
 [e :U 887 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 888  ]
 [e :U 889 ]
-"279
-[; ;main_project.c: 279:  WriteCmdXLCD(0b00000001);
+"282
+[; ;main_project.c: 282:  WriteCmdXLCD(0b00000001);
 [e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
-"280
-[; ;main_project.c: 280:  while (BusyXLCD());
+"283
+[; ;main_project.c: 283:  while (BusyXLCD());
 [e $U 890  ]
 [e :U 891 ]
 [e :U 890 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 891  ]
 [e :U 892 ]
-"286
-[; ;main_project.c: 286:  WriteCmdXLCD(0b10000000);
+"289
+[; ;main_project.c: 289:  WriteCmdXLCD(0b10000000);
 [e ( _WriteCmdXLCD (1 -> -> 128 `i `uc ]
-"287
-[; ;main_project.c: 287:  while (BusyXLCD());
+"290
+[; ;main_project.c: 290:  while (BusyXLCD());
 [e $U 893  ]
 [e :U 894 ]
 [e :U 893 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 894  ]
 [e :U 895 ]
-"293
-[; ;main_project.c: 293:     putsXLCD("Mars ROCK'S!");
+"296
+[; ;main_project.c: 296:     putsXLCD("Mars ROCK'S!");
 [e ( _putsXLCD (1 :s 1C ]
-"294
-[; ;main_project.c: 294:  while (BusyXLCD());
+"297
+[; ;main_project.c: 297:  while (BusyXLCD());
 [e $U 896  ]
 [e :U 897 ]
 [e :U 896 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 897  ]
 [e :U 898 ]
-"296
-[; ;main_project.c: 296:     _delay((unsigned long)((1000)*(6000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
-"298
-[; ;main_project.c: 298:      WriteCmdXLCD(0b00010111);
-[e ( _WriteCmdXLCD (1 -> -> 23 `i `uc ]
 "299
-[; ;main_project.c: 299:  while (BusyXLCD());
+[; ;main_project.c: 299:     _delay((unsigned long)((1000)*(6000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
+"301
+[; ;main_project.c: 301:      WriteCmdXLCD(0b00010111);
+[e ( _WriteCmdXLCD (1 -> -> 23 `i `uc ]
+"302
+[; ;main_project.c: 302:  while (BusyXLCD());
 [e $U 899  ]
 [e :U 900 ]
 [e :U 899 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 900  ]
 [e :U 901 ]
-"304
-[; ;main_project.c: 304:  WriteCmdXLCD(0b00000001);
+"307
+[; ;main_project.c: 307:  WriteCmdXLCD(0b00000001);
 [e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
-"305
-[; ;main_project.c: 305:  while (BusyXLCD());
+"308
+[; ;main_project.c: 308:  while (BusyXLCD());
 [e $U 902  ]
 [e :U 903 ]
 [e :U 902 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 903  ]
 [e :U 904 ]
-"311
-[; ;main_project.c: 311:  WriteCmdXLCD(0b10000000);
+"314
+[; ;main_project.c: 314:  WriteCmdXLCD(0b10000000);
 [e ( _WriteCmdXLCD (1 -> -> 128 `i `uc ]
-"312
-[; ;main_project.c: 312:  while (BusyXLCD());
+"315
+[; ;main_project.c: 315:  while (BusyXLCD());
 [e $U 905  ]
 [e :U 906 ]
 [e :U 905 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 906  ]
 [e :U 907 ]
-"318
-[; ;main_project.c: 318:     putsXLCD("Teste - Teclado");
+"321
+[; ;main_project.c: 321:     putsXLCD("Teste - Teclado");
 [e ( _putsXLCD (1 :s 2C ]
-"319
-[; ;main_project.c: 319:  while (BusyXLCD());
+"322
+[; ;main_project.c: 322:  while (BusyXLCD());
 [e $U 908  ]
 [e :U 909 ]
 [e :U 908 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 909  ]
 [e :U 910 ]
-"324
-[; ;main_project.c: 324:     INTCONbits.GIE = 1;
+"327
+[; ;main_project.c: 327:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"337
-[; ;main_project.c: 337:     while (1){
+"340
+[; ;main_project.c: 340:     while (1){
 [e :U 912 ]
 {
-"339
-[; ;main_project.c: 339:         if (tecla_n){
+"342
+[; ;main_project.c: 342:         if (tecla_n){
 [e $ ! != _tecla_n -> 0 `i 914  ]
 {
-"343
-[; ;main_project.c: 343:             strncat(pin, &tecla_premida, 1);
+"346
+[; ;main_project.c: 346:             strncat(pin, &tecla_premida, 1);
 [e ( _strncat (3 , , &U _pin -> &U _tecla_premida `*Cuc -> -> 1 `i `ui ]
-"347
-[; ;main_project.c: 347:             WriteCmdXLCD(0b11000000);
+"350
+[; ;main_project.c: 350:             WriteCmdXLCD(0b11000000);
 [e ( _WriteCmdXLCD (1 -> -> 192 `i `uc ]
-"348
-[; ;main_project.c: 348:             while (BusyXLCD());
+"351
+[; ;main_project.c: 351:             while (BusyXLCD());
 [e $U 915  ]
 [e :U 916 ]
 [e :U 915 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 916  ]
 [e :U 917 ]
-"355
-[; ;main_project.c: 355:             putsXLCD(pin);
+"358
+[; ;main_project.c: 358:             putsXLCD(pin);
 [e ( _putsXLCD (1 &U _pin ]
-"356
-[; ;main_project.c: 356:             while (BusyXLCD());
+"359
+[; ;main_project.c: 359:             while (BusyXLCD());
 [e $U 918  ]
 [e :U 919 ]
 [e :U 918 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 919  ]
 [e :U 920 ]
-"359
-[; ;main_project.c: 359:             contador_caracteres++;
-[e ++ _contador_caracteres -> 1 `i ]
-"360
-[; ;main_project.c: 360:             contador_colunas_LCD++;
-[e ++ _contador_colunas_LCD -> 1 `i ]
-"361
-[; ;main_project.c: 361:             tecla_n = 0;
-[e = _tecla_n -> 0 `i ]
 "362
-[; ;main_project.c: 362:         }
+[; ;main_project.c: 362:             contador_caracteres++;
+[e ++ _contador_caracteres -> 1 `i ]
+"363
+[; ;main_project.c: 363:             contador_colunas_LCD++;
+[e ++ _contador_colunas_LCD -> 1 `i ]
+"364
+[; ;main_project.c: 364:             tecla_n = 0;
+[e = _tecla_n -> 0 `i ]
+"365
+[; ;main_project.c: 365:         }
 }
 [e $U 921  ]
-"363
-[; ;main_project.c: 363:         else if (tecla_limpar){
+"366
+[; ;main_project.c: 366:         else if (tecla_limpar){
 [e :U 914 ]
 [e $ ! != _tecla_limpar -> 0 `i 922  ]
 {
-"364
-[; ;main_project.c: 364:             WriteCmdXLCD(contador_colunas_LCD);
+"367
+[; ;main_project.c: 367:             WriteCmdXLCD(contador_colunas_LCD);
 [e ( _WriteCmdXLCD (1 -> _contador_colunas_LCD `uc ]
-"365
-[; ;main_project.c: 365:             while (BusyXLCD());
+"368
+[; ;main_project.c: 368:             while (BusyXLCD());
 [e $U 923  ]
 [e :U 924 ]
 [e :U 923 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 924  ]
 [e :U 925 ]
-"367
-[; ;main_project.c: 367:             putsXLCD("                    ");
+"370
+[; ;main_project.c: 370:             putsXLCD("                    ");
 [e ( _putsXLCD (1 :s 3C ]
-"368
-[; ;main_project.c: 368:             while (BusyXLCD());
+"371
+[; ;main_project.c: 371:             while (BusyXLCD());
 [e $U 926  ]
 [e :U 927 ]
 [e :U 926 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 927  ]
 [e :U 928 ]
-"369
-[; ;main_project.c: 369:             tecla_limpar = 0;
-[e = _tecla_limpar -> 0 `i ]
 "372
-[; ;main_project.c: 372:         }
+[; ;main_project.c: 372:             tecla_limpar = 0;
+[e = _tecla_limpar -> 0 `i ]
+"375
+[; ;main_project.c: 375:         }
 }
 [e :U 922 ]
 [e :U 921 ]
-"378
-[; ;main_project.c: 378:         LATBbits.LATB3 = 0;
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-"379
-[; ;main_project.c: 379:         LATBbits.LATB4 = 1;
-[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
-"380
-[; ;main_project.c: 380:         LATBbits.LATB5 = 1;
-[e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
 "381
-[; ;main_project.c: 381:         LATBbits.LATB6 = 1;
-[e = . . _LATBbits 0 6 -> -> 1 `i `uc ]
+[; ;main_project.c: 381:         LATBbits.LATB3 = 0;
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+"382
+[; ;main_project.c: 382:         LATBbits.LATB4 = 1;
+[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
 "383
-[; ;main_project.c: 383:     _delay((unsigned long)((65)*(6000000/4000.0)));
-[e ( __delay (1 -> * -> -> 65 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
+[; ;main_project.c: 383:         LATBbits.LATB5 = 1;
+[e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
+"384
+[; ;main_project.c: 384:         LATBbits.LATB6 = 1;
+[e = . . _LATBbits 0 6 -> -> 1 `i `uc ]
 "386
-[; ;main_project.c: 386:         LATBbits.LATB3 = 1;
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-"387
-[; ;main_project.c: 387:         LATBbits.LATB4 = 0;
-[e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
-"388
-[; ;main_project.c: 388:         LATBbits.LATB5 = 1;
-[e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
+[; ;main_project.c: 386:     _delay((unsigned long)((65)*(6000000/4000.0)));
+[e ( __delay (1 -> * -> -> 65 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
 "389
-[; ;main_project.c: 389:         LATBbits.LATB6 = 1;
-[e = . . _LATBbits 0 6 -> -> 1 `i `uc ]
+[; ;main_project.c: 389:         LATBbits.LATB3 = 1;
+[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+"390
+[; ;main_project.c: 390:         LATBbits.LATB4 = 0;
+[e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
 "391
-[; ;main_project.c: 391:     _delay((unsigned long)((65)*(6000000/4000.0)));
-[e ( __delay (1 -> * -> -> 65 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
-"394
-[; ;main_project.c: 394:         LATBbits.LATB3 = 1;
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-"395
-[; ;main_project.c: 395:         LATBbits.LATB4 = 1;
-[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
-"396
-[; ;main_project.c: 396:         LATBbits.LATB5 = 0;
-[e = . . _LATBbits 0 5 -> -> 0 `i `uc ]
-"397
-[; ;main_project.c: 397:         LATBbits.LATB6 = 1;
-[e = . . _LATBbits 0 6 -> -> 1 `i `uc ]
-"399
-[; ;main_project.c: 399:     _delay((unsigned long)((65)*(6000000/4000.0)));
-[e ( __delay (1 -> * -> -> 65 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
-"402
-[; ;main_project.c: 402:         LATBbits.LATB3 = 1;
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-"403
-[; ;main_project.c: 403:         LATBbits.LATB4 = 1;
-[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
-"404
-[; ;main_project.c: 404:         LATBbits.LATB5 = 1;
+[; ;main_project.c: 391:         LATBbits.LATB5 = 1;
 [e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
-"405
-[; ;main_project.c: 405:         LATBbits.LATB6 = 0;
-[e = . . _LATBbits 0 6 -> -> 0 `i `uc ]
-"407
-[; ;main_project.c: 407:     _delay((unsigned long)((65)*(6000000/4000.0)));
+"392
+[; ;main_project.c: 392:         LATBbits.LATB6 = 1;
+[e = . . _LATBbits 0 6 -> -> 1 `i `uc ]
+"394
+[; ;main_project.c: 394:     _delay((unsigned long)((65)*(6000000/4000.0)));
 [e ( __delay (1 -> * -> -> 65 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
+"397
+[; ;main_project.c: 397:         LATBbits.LATB3 = 1;
+[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+"398
+[; ;main_project.c: 398:         LATBbits.LATB4 = 1;
+[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
+"399
+[; ;main_project.c: 399:         LATBbits.LATB5 = 0;
+[e = . . _LATBbits 0 5 -> -> 0 `i `uc ]
+"400
+[; ;main_project.c: 400:         LATBbits.LATB6 = 1;
+[e = . . _LATBbits 0 6 -> -> 1 `i `uc ]
+"402
+[; ;main_project.c: 402:     _delay((unsigned long)((65)*(6000000/4000.0)));
+[e ( __delay (1 -> * -> -> 65 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
+"405
+[; ;main_project.c: 405:         LATBbits.LATB3 = 1;
+[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+"406
+[; ;main_project.c: 406:         LATBbits.LATB4 = 1;
+[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
+"407
+[; ;main_project.c: 407:         LATBbits.LATB5 = 1;
+[e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
 "408
-[; ;main_project.c: 408:     }
+[; ;main_project.c: 408:         LATBbits.LATB6 = 0;
+[e = . . _LATBbits 0 6 -> -> 0 `i `uc ]
+"410
+[; ;main_project.c: 410:     _delay((unsigned long)((65)*(6000000/4000.0)));
+[e ( __delay (1 -> * -> -> 65 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
+"411
+[; ;main_project.c: 411:     }
 }
 [e :U 911 ]
 [e $U 912  ]
 [e :U 913 ]
-"411
-[; ;main_project.c: 411: }
+"414
+[; ;main_project.c: 414: }
 [e :UE 880 ]
 }
 [a 2C 84 101 115 116 101 32 45 32 84 101 99 108 97 100 111 0 ]

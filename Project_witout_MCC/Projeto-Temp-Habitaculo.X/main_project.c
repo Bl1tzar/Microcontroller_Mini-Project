@@ -14,10 +14,6 @@
  * ________________________________________
  *
  */
-
-
-
-
 /* header file para as bibliotecas de XC8 */
 #include <xc.h>
 

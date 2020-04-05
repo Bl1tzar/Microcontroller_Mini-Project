@@ -31,7 +31,7 @@ intcode CODE 0 8 8 1C8 1
 smallconst SMALLCONST 0 300 300 34 1
 dataCOMRAM COMRAM 1 22 22 2 1
 bssCOMRAM COMRAM 1 1 1 11 1
-$C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.o
+$C:\Users\JOOMED~1\AppData\Local\Temp\s1684.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 1D0 1D0 4 1
 reset_vec CODE 0 0 0 4 1
@@ -73,66 +73,66 @@ MEDIUMCONST 956-3FFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Projeto-Temp-Habitaculo.X.production.o
-8 intcode CODE >3695:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8 intcode CODE >58:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-A intcode CODE >62:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-26 intcode CODE >64:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-34 intcode CODE >65:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-38 intcode CODE >66:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-3C intcode CODE >67:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-4A intcode CODE >68:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-4E intcode CODE >69:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-52 intcode CODE >70:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-60 intcode CODE >71:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-64 intcode CODE >72:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-68 intcode CODE >73:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-76 intcode CODE >74:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-7A intcode CODE >75:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-7A intcode CODE >76:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-82 intcode CODE >77:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-84 intcode CODE >80:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-A0 intcode CODE >82:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-AE intcode CODE >83:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-B2 intcode CODE >84:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-B6 intcode CODE >85:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-C4 intcode CODE >86:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-C8 intcode CODE >87:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-CC intcode CODE >88:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-DA intcode CODE >89:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-DE intcode CODE >90:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-E2 intcode CODE >91:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-F0 intcode CODE >92:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-F4 intcode CODE >93:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-F4 intcode CODE >94:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-FC intcode CODE >95:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-FE intcode CODE >98:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-11A intcode CODE >99:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-122 intcode CODE >100:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-130 intcode CODE >101:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-134 intcode CODE >102:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-138 intcode CODE >103:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-146 intcode CODE >104:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-14A intcode CODE >105:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-14E intcode CODE >106:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-15C intcode CODE >107:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-160 intcode CODE >108:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-164 intcode CODE >109:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-172 intcode CODE >110:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-17A intcode CODE >111:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-182 intcode CODE >112:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-18E intcode CODE >113:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-18E intcode CODE >114:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-190 intcode CODE >118:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-1AC intcode CODE >121:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-1B0 intcode CODE >122:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-1B4 intcode CODE >124:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-1C2 intcode CODE >125:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-1C4 intcode CODE >126:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-1C8 intcode CODE >127:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-1C8 intcode CODE >128:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-1CA intcode CODE >129:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-1CA intcode CODE >131:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-1CC intcode CODE >135:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+8 intcode CODE >3695:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8 intcode CODE >61:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+A intcode CODE >65:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+26 intcode CODE >67:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+34 intcode CODE >68:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+38 intcode CODE >69:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+3C intcode CODE >70:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+4A intcode CODE >71:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+4E intcode CODE >72:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+52 intcode CODE >73:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+60 intcode CODE >74:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+64 intcode CODE >75:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+68 intcode CODE >76:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+76 intcode CODE >77:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+7A intcode CODE >78:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+7A intcode CODE >79:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+82 intcode CODE >80:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+84 intcode CODE >83:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+A0 intcode CODE >85:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+AE intcode CODE >86:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+B2 intcode CODE >87:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+B6 intcode CODE >88:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+C4 intcode CODE >89:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+C8 intcode CODE >90:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+CC intcode CODE >91:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+DA intcode CODE >92:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+DE intcode CODE >93:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+E2 intcode CODE >94:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+F0 intcode CODE >95:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+F4 intcode CODE >96:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+F4 intcode CODE >97:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+FC intcode CODE >98:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+FE intcode CODE >101:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+11A intcode CODE >102:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+122 intcode CODE >103:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+130 intcode CODE >104:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+134 intcode CODE >105:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+138 intcode CODE >106:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+146 intcode CODE >107:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+14A intcode CODE >108:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+14E intcode CODE >109:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+15C intcode CODE >110:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+160 intcode CODE >111:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+164 intcode CODE >112:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+172 intcode CODE >113:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+17A intcode CODE >114:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+182 intcode CODE >115:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+18E intcode CODE >116:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+18E intcode CODE >117:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+190 intcode CODE >121:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+1AC intcode CODE >124:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+1B0 intcode CODE >125:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+1B4 intcode CODE >127:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+1C2 intcode CODE >128:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+1C4 intcode CODE >129:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+1C8 intcode CODE >130:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+1C8 intcode CODE >131:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+1CA intcode CODE >132:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+1CA intcode CODE >134:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+1CC intcode CODE >138:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
 92E text10 CODE >18:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\xlcd.c
 92E text10 CODE >20:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\xlcd.c
 934 text10 CODE >21:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\xlcd.c
@@ -272,118 +272,118 @@ FE intcode CODE >98:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Pr
 70E text1 CODE >7:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strncat.c
 75E text1 CODE >8:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strncat.c
 76E text1 CODE >10:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strncat.c
-334 text0 CODE >143:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
 334 text0 CODE >146:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-33C text0 CODE >153:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-342 text0 CODE >154:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-346 text0 CODE >155:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-34A text0 CODE >156:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-34E text0 CODE >157:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-352 text0 CODE >164:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-356 text0 CODE >170:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-35A text0 CODE >175:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-35E text0 CODE >189:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-362 text0 CODE >192:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-366 text0 CODE >197:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-36A text0 CODE >198:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-36E text0 CODE >199:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-372 text0 CODE >202:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-374 text0 CODE >204:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-378 text0 CODE >209:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-37A text0 CODE >216:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-37C text0 CODE >217:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-37E text0 CODE >223:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-380 text0 CODE >224:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-382 text0 CODE >231:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-384 text0 CODE >232:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-386 text0 CODE >236:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-38A text0 CODE >241:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-38C text0 CODE >242:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-38E text0 CODE >243:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-390 text0 CODE >255:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-396 text0 CODE >256:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-3AA text0 CODE >265:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-3B0 text0 CODE >266:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-3C4 text0 CODE >273:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-3CA text0 CODE >274:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-3DE text0 CODE >279:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-3E4 text0 CODE >280:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-3F8 text0 CODE >286:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-3FE text0 CODE >287:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-412 text0 CODE >293:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-41E text0 CODE >294:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-432 text0 CODE >296:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-448 text0 CODE >298:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-44E text0 CODE >299:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-462 text0 CODE >304:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-468 text0 CODE >305:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-47C text0 CODE >311:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-482 text0 CODE >312:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-496 text0 CODE >318:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-4A2 text0 CODE >319:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-4B6 text0 CODE >324:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-4B8 text0 CODE >339:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-4CA text0 CODE >343:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-4E6 text0 CODE >347:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-4EC text0 CODE >348:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-500 text0 CODE >355:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-50C text0 CODE >356:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-520 text0 CODE >359:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-524 text0 CODE >360:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-528 text0 CODE >361:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-530 text0 CODE >362:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-534 text0 CODE >363:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-546 text0 CODE >364:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-54C text0 CODE >365:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-560 text0 CODE >367:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-56C text0 CODE >368:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-580 text0 CODE >369:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-588 text0 CODE >378:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-58A text0 CODE >379:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-58C text0 CODE >380:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-58E text0 CODE >381:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-590 text0 CODE >383:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-5A0 text0 CODE >386:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-5A2 text0 CODE >387:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-5A4 text0 CODE >388:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-5A6 text0 CODE >389:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-5A8 text0 CODE >391:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-5B8 text0 CODE >394:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-5BA text0 CODE >395:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-5BC text0 CODE >396:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-5BE text0 CODE >397:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-5C0 text0 CODE >399:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-5D0 text0 CODE >402:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-5D2 text0 CODE >403:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-5D4 text0 CODE >404:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-5D6 text0 CODE >405:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-5D8 text0 CODE >407:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
-8DA cinit CODE >1274:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8DA cinit CODE >1276:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8DA cinit CODE >1279:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8DA cinit CODE >1325:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8DC cinit CODE >1326:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8DE cinit CODE >1327:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8E0 cinit CODE >1328:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8E2 cinit CODE >1329:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8E4 cinit CODE >1330:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8E6 cinit CODE >1331:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8E8 cinit CODE >1332:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8EC cinit CODE >1333:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8EE cinit CODE >1334:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8F2 cinit CODE >1338:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8F6 cinit CODE >1339:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8F8 cinit CODE >1340:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8F8 cinit CODE >1341:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8FA cinit CODE >1342:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8FC cinit CODE >1343:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8FE cinit CODE >1349:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-8FE cinit CODE >1351:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-900 cinit CODE >1352:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-902 cinit CODE >1354:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-904 cinit CODE >1355:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-906 cinit CODE >1356:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
-908 cinit CODE >1357:C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.s
+334 text0 CODE >149:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+33C text0 CODE >156:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+342 text0 CODE >157:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+346 text0 CODE >158:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+34A text0 CODE >159:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+34E text0 CODE >160:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+352 text0 CODE >167:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+356 text0 CODE >173:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+35A text0 CODE >178:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+35E text0 CODE >192:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+362 text0 CODE >195:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+366 text0 CODE >200:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+36A text0 CODE >201:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+36E text0 CODE >202:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+372 text0 CODE >205:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+374 text0 CODE >207:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+378 text0 CODE >212:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+37A text0 CODE >219:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+37C text0 CODE >220:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+37E text0 CODE >226:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+380 text0 CODE >227:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+382 text0 CODE >234:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+384 text0 CODE >235:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+386 text0 CODE >239:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+38A text0 CODE >244:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+38C text0 CODE >245:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+38E text0 CODE >246:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+390 text0 CODE >258:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+396 text0 CODE >259:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+3AA text0 CODE >268:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+3B0 text0 CODE >269:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+3C4 text0 CODE >276:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+3CA text0 CODE >277:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+3DE text0 CODE >282:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+3E4 text0 CODE >283:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+3F8 text0 CODE >289:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+3FE text0 CODE >290:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+412 text0 CODE >296:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+41E text0 CODE >297:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+432 text0 CODE >299:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+448 text0 CODE >301:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+44E text0 CODE >302:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+462 text0 CODE >307:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+468 text0 CODE >308:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+47C text0 CODE >314:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+482 text0 CODE >315:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+496 text0 CODE >321:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+4A2 text0 CODE >322:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+4B6 text0 CODE >327:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+4B8 text0 CODE >342:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+4CA text0 CODE >346:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+4E6 text0 CODE >350:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+4EC text0 CODE >351:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+500 text0 CODE >358:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+50C text0 CODE >359:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+520 text0 CODE >362:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+524 text0 CODE >363:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+528 text0 CODE >364:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+530 text0 CODE >365:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+534 text0 CODE >366:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+546 text0 CODE >367:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+54C text0 CODE >368:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+560 text0 CODE >370:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+56C text0 CODE >371:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+580 text0 CODE >372:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+588 text0 CODE >381:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+58A text0 CODE >382:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+58C text0 CODE >383:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+58E text0 CODE >384:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+590 text0 CODE >386:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+5A0 text0 CODE >389:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+5A2 text0 CODE >390:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+5A4 text0 CODE >391:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+5A6 text0 CODE >392:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+5A8 text0 CODE >394:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+5B8 text0 CODE >397:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+5BA text0 CODE >398:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+5BC text0 CODE >399:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+5BE text0 CODE >400:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+5C0 text0 CODE >402:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+5D0 text0 CODE >405:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+5D2 text0 CODE >406:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+5D4 text0 CODE >407:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+5D6 text0 CODE >408:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+5D8 text0 CODE >410:C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
+8DA cinit CODE >1274:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8DA cinit CODE >1276:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8DA cinit CODE >1279:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8DA cinit CODE >1325:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8DC cinit CODE >1326:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8DE cinit CODE >1327:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8E0 cinit CODE >1328:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8E2 cinit CODE >1329:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8E4 cinit CODE >1330:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8E6 cinit CODE >1331:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8E8 cinit CODE >1332:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8EC cinit CODE >1333:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8EE cinit CODE >1334:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8F2 cinit CODE >1338:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8F6 cinit CODE >1339:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8F8 cinit CODE >1340:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8F8 cinit CODE >1341:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8FA cinit CODE >1342:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8FC cinit CODE >1343:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8FE cinit CODE >1349:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+8FE cinit CODE >1351:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+900 cinit CODE >1352:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+902 cinit CODE >1354:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+904 cinit CODE >1355:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+906 cinit CODE >1356:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
+908 cinit CODE >1357:C:\Users\JOOMED~1\AppData\Local\Temp\s1684.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -403,15 +403,15 @@ __Hspace_0 30000E 0 ABS 0 - dist/default/production\Projeto-Temp-Habitaculo.X.pr
 __Hspace_1 25 0 ABS 0 - dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\Projeto-Temp-Habitaculo.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\JOOMED~1\AppData\Local\Temp\s1684.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __end_of_highISR 1D0 0 CODE 0 intcode dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __Lsmallconst 300 0 SMALLCONST 0 smallconst dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 _WPUB F61 0 ABS 0 - dist/default/production\Projeto-Temp-Habitaculo.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.o
+___sp 0 0 STACK 2 stack C:\Users\JOOMED~1\AppData\Local\Temp\s1684.o
 _main 334 0 CODE 0 text0 dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 btemp 24 0 COMRAM 1 temp dist/default/production\Projeto-Temp-Habitaculo.X.production.o
-start 1D0 0 CODE 0 init C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.o
+start 1D0 0 CODE 0 init C:\Users\JOOMED~1\AppData\Local\Temp\s1684.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Projeto-Temp-Habitaculo.X.production.o
@@ -420,11 +420,11 @@ ttemp5 25 0 COMRAM 1 temp dist/default/production\Projeto-Temp-Habitaculo.X.prod
 ttemp6 28 0 COMRAM 1 temp dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 ttemp7 2C 0 COMRAM 1 temp dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\Projeto-Temp-Habitaculo.X.production.o
-__accesstop 60 0 ABS 0 - C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.o
-intlevel0 0 0 CODE 0 text C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.o
-intlevel1 0 0 CODE 0 text C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.o
-intlevel2 0 0 CODE 0 text C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.o
-intlevel3 0 0 CODE 0 text C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.o
+__accesstop 60 0 ABS 0 - C:\Users\JOOMED~1\AppData\Local\Temp\s1684.o
+intlevel0 0 0 CODE 0 text C:\Users\JOOMED~1\AppData\Local\Temp\s1684.o
+intlevel1 0 0 CODE 0 text C:\Users\JOOMED~1\AppData\Local\Temp\s1684.o
+intlevel2 0 0 CODE 0 text C:\Users\JOOMED~1\AppData\Local\Temp\s1684.o
+intlevel3 0 0 CODE 0 text C:\Users\JOOMED~1\AppData\Local\Temp\s1684.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 _pin_intr B 0 COMRAM 1 bssCOMRAM dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 _pin_real 9 0 COMRAM 1 bssCOMRAM dist/default/production\Projeto-Temp-Habitaculo.X.production.o
@@ -442,8 +442,8 @@ _ANSELD F3B 0 ABS 0 - dist/default/production\Projeto-Temp-Habitaculo.X.producti
 _ANSELE F3C 0 ABS 0 - dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 main@contador_caracteres 20 0 COMRAM 1 cstackCOMRAM dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __end_of_DelayXLCD 954 0 CODE 0 text7 dist/default/production\Projeto-Temp-Habitaculo.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\JOOMED~1\AppData\Local\Temp\s1684.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\JOOMED~1\AppData\Local\Temp\s1684.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __size_of_DelayXLCD 0 0 ABS 0 - dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\Projeto-Temp-Habitaculo.X.production.o
@@ -492,7 +492,7 @@ __Htext9 0 0 ABS 0 text9 dist/default/production\Projeto-Temp-Habitaculo.X.produ
 _highISR 8 0 CODE 0 intcode dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\Projeto-Temp-Habitaculo.X.production.o
-__smallconst 300 0 SMALLCONST 0 smallconst C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.o
+__smallconst 300 0 SMALLCONST 0 smallconst C:\Users\JOOMED~1\AppData\Local\Temp\s1684.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\Projeto-Temp-Habitaculo.X.production.o
@@ -577,8 +577,8 @@ _LATDbits F8C 0 ABS 0 - dist/default/production\Projeto-Temp-Habitaculo.X.produc
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 _strlen 8A4 0 CODE 0 text2 dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\Projeto-Temp-Habitaculo.X.production.o
-stackhi 2FF 0 ABS 0 - C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.o
-stacklo 60 0 ABS 0 - C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.o
+stackhi 2FF 0 ABS 0 - C:\Users\JOOMED~1\AppData\Local\Temp\s1684.o
+stacklo 60 0 ABS 0 - C:\Users\JOOMED~1\AppData\Local\Temp\s1684.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __size_of_putsXLCD 0 0 ABS 0 - dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __Lintret 0 0 ABS 0 intret dist/default/production\Projeto-Temp-Habitaculo.X.production.o
@@ -613,7 +613,7 @@ __ptext8 90C 0 CODE 0 text8 dist/default/production\Projeto-Temp-Habitaculo.X.pr
 __ptext9 7E2 0 CODE 0 text9 dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __Ltext10 0 0 ABS 0 text10 dist/default/production\Projeto-Temp-Habitaculo.X.production.o
-__ramtop 300 0 RAM 0 ramtop C:\Users\JOOMED~1\AppData\Local\Temp\s19n0.o
+__ramtop 300 0 RAM 0 ramtop C:\Users\JOOMED~1\AppData\Local\Temp\s1684.o
 __Lpowerup 1D0 0 CODE 0 powerup dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Projeto-Temp-Habitaculo.X.production.o
 _putsXLCD 770 0 CODE 0 text3 dist/default/production\Projeto-Temp-Habitaculo.X.production.o
