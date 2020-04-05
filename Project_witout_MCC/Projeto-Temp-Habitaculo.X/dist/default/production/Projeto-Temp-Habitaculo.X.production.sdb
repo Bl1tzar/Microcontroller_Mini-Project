@@ -31,11 +31,11 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"54 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Implementacão\Projeto-Temp-Habitaculo.X\main_project.c
+"58 C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
 [v _highISR highISR `IIH(v  1 e 1 0 ]
-"141
+"143
 [v _main main `(v  1 e 1 0 ]
-"18 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Implementacão\Projeto-Temp-Habitaculo.X\xlcd.c
+"18 C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\xlcd.c
 [v _DelayFor18TCY DelayFor18TCY `(v  1 e 1 0 ]
 "25
 [v _DelayPORXLCD DelayPORXLCD `(v  1 e 1 0 ]
@@ -144,7 +144,7 @@
 ]
 [u S253 . 1 `S235 1 . 1 0 `S244 1 . 1 0 ]
 [v _LATAbits LATAbits `VES253  1 e 1 @3977 ]
-[s S429 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S424 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -154,7 +154,7 @@
 `uc 1 LATB7 1 0 :1:7 
 ]
 "7699
-[s S438 . 1 `uc 1 LB0 1 0 :1:0 
+[s S433 . 1 `uc 1 LB0 1 0 :1:0 
 `uc 1 LB1 1 0 :1:1 
 `uc 1 LB2 1 0 :1:2 
 `uc 1 LB3 1 0 :1:3 
@@ -163,9 +163,9 @@
 `uc 1 LB6 1 0 :1:6 
 `uc 1 LB7 1 0 :1:7 
 ]
-[u S447 . 1 `S429 1 . 1 0 `S438 1 . 1 0 ]
-[v _LATBbits LATBbits `VES447  1 e 1 @3978 ]
-[s S599 . 1 `uc 1 LATD0 1 0 :1:0 
+[u S442 . 1 `S424 1 . 1 0 `S433 1 . 1 0 ]
+[v _LATBbits LATBbits `VES442  1 e 1 @3978 ]
+[s S597 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -175,7 +175,7 @@
 `uc 1 LATD7 1 0 :1:7 
 ]
 "7923
-[s S608 . 1 `uc 1 LD0 1 0 :1:0 
+[s S606 . 1 `uc 1 LD0 1 0 :1:0 
 `uc 1 LD1 1 0 :1:1 
 `uc 1 LD2 1 0 :1:2 
 `uc 1 LD3 1 0 :1:3 
@@ -184,8 +184,8 @@
 `uc 1 LD6 1 0 :1:6 
 `uc 1 LD7 1 0 :1:7 
 ]
-[u S617 . 1 `S599 1 . 1 0 `S608 1 . 1 0 ]
-[v _LATDbits LATDbits `VES617  1 e 1 @3980 ]
+[u S615 . 1 `S597 1 . 1 0 `S606 1 . 1 0 ]
+[v _LATDbits LATDbits `VES615  1 e 1 @3980 ]
 "8060
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 "8282
@@ -194,7 +194,7 @@
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
 "8726
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S559 . 1 `uc 1 TRISD0 1 0 :1:0 
+[s S557 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -204,7 +204,7 @@
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "8758
-[s S568 . 1 `uc 1 RD0 1 0 :1:0 
+[s S566 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -213,8 +213,8 @@
 `uc 1 RD6 1 0 :1:6 
 `uc 1 RD7 1 0 :1:7 
 ]
-[u S577 . 1 `S559 1 . 1 0 `S568 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES577  1 e 1 @3989 ]
+[u S575 . 1 `S557 1 . 1 0 `S566 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES575  1 e 1 @3989 ]
 "8948
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
 [s S324 . 1 `uc 1 NOT_BOR 1 0 :1:0 
@@ -325,20 +325,22 @@
 ]
 [u S46 . 1 `S24 1 . 1 0 `S33 1 . 1 0 `S42 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES46  1 e 1 @4082 ]
-"45 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Implementacão\Projeto-Temp-Habitaculo.X\main_project.c
+"45 C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
 [v _contador_colunas_LCD contador_colunas_LCD `i  1 e 2 0 ]
 "46
 [v _tecla_premida tecla_premida `uc  1 e 1 0 ]
 "48
 [v _pin pin `[4]uc  1 e 4 0 ]
-"51
+"55
 [v _tecla_n tecla_n `i  1 e 2 0 ]
-"52
+"56
 [v _tecla_limpar tecla_limpar `i  1 e 2 0 ]
-"141
+"143
 [v _main main `(v  1 e 1 0 ]
 {
-"407
+"146
+[v main@contador_caracteres contador_caracteres `i  1 a 2 14 ]
+"411
 } 0
 "3 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strncat.c
 [v _strncat strncat `(*.39uc  1 e 2 0 ]
@@ -357,7 +359,7 @@
 [v strlen@s s `*.39Cuc  1 p 2 0 ]
 "12
 } 0
-"302 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Implementacão\Projeto-Temp-Habitaculo.X\xlcd.c
+"302 C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\xlcd.c
 [v _putsXLCD putsXLCD `(v  1 e 1 0 ]
 {
 [v putsXLCD@buffer buffer `*.35uc  1 p 2 1 ]
@@ -406,8 +408,8 @@
 {
 "23
 } 0
-"54 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Implementacão\Projeto-Temp-Habitaculo.X\main_project.c
+"58 C:\Users\João Medeiros\Desktop\MICRO\Microcontroller_Mini-Project\Project_witout_MCC\Projeto-Temp-Habitaculo.X\main_project.c
 [v _highISR highISR `IIH(v  1 e 1 0 ]
 {
-"131
+"135
 } 0
