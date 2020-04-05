@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Sat Apr 04 17:53:07 2020
+                                                                                               Sun Apr 05 14:11:03 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	18F45K22
@@ -418,46 +418,46 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    404  000634                     _main:
    405                           	opt callstack 23
    406  000634                     
-   407                           ;main.c: 122:     SYSTEM_Initialize();
+   407                           ;main.c: 123:     SYSTEM_Initialize();
    408  000634  EC70  F007         	call	_SYSTEM_Initialize	;wreg free
    409  000638                     
-   410                           ;main.c: 131:     (INTCONbits.GIE = 1);
+   410                           ;main.c: 132:     (INTCONbits.GIE = 1);
    411  000638  8EF2               	bsf	242,7,c	;volatile
    412  00063A                     
-   413                           ;main.c: 135:     (INTCONbits.PEIE = 1);
+   413                           ;main.c: 136:     (INTCONbits.PEIE = 1);
    414  00063A  8CF2               	bsf	242,6,c	;volatile
    415  00063C                     
-   416                           ;main.c: 144:     int contador_caracteres = 4;
+   416                           ;main.c: 145:     int contador_caracteres = 4;
    417  00063C  0E00               	movlw	0
    418  00063E  6E12               	movwf	(main@contador_caracteres+1)^0,c
    419  000640  0E04               	movlw	4
    420  000642  6E11               	movwf	main@contador_caracteres^0,c
    421  000644                     
-   422                           ;main.c: 147:     LCD_inicio_teste();
+   422                           ;main.c: 148:     LCD_inicio_teste();
    423  000644  ECD8  F003         	call	_LCD_inicio_teste	;wreg free
    424  000648                     
-   425                           ;main.c: 150:     TMR0_SetInterruptHandler (acende_LED);
+   425                           ;main.c: 151:     TMR0_SetInterruptHandler (acende_LED);
    426  000648  0E9E               	movlw	low _acende_LED
    427  00064A  6E04               	movwf	TMR0_SetInterruptHandler@InterruptHandler^0,c
    428  00064C  0E0E               	movlw	high _acende_LED
    429  00064E  6E05               	movwf	(TMR0_SetInterruptHandler@InterruptHandler+1)^0,c
    430  000650  EC92  F007         	call	_TMR0_SetInterruptHandler	;wreg free
    431  000654                     
-   432                           ;main.c: 152:     INT0_SetInterruptHandler (teclado_coluna_1);
+   432                           ;main.c: 153:     INT0_SetInterruptHandler (teclado_coluna_1);
    433  000654  0E9E               	movlw	low _teclado_coluna_1
    434  000656  6E04               	movwf	INT0_SetInterruptHandler@InterruptHandler^0,c
    435  000658  0E0B               	movlw	high _teclado_coluna_1
    436  00065A  6E05               	movwf	(INT0_SetInterruptHandler@InterruptHandler+1)^0,c
    437  00065C  ECA1  F007         	call	_INT0_SetInterruptHandler	;wreg free
    438  000660                     
-   439                           ;main.c: 153:     INT1_SetInterruptHandler (teclado_coluna_2);
+   439                           ;main.c: 154:     INT1_SetInterruptHandler (teclado_coluna_2);
    440  000660  0E40               	movlw	low _teclado_coluna_2
    441  000662  6E04               	movwf	INT1_SetInterruptHandler@InterruptHandler^0,c
    442  000664  0E0B               	movlw	high _teclado_coluna_2
    443  000666  6E05               	movwf	(INT1_SetInterruptHandler@InterruptHandler+1)^0,c
    444  000668  EC9C  F007         	call	_INT1_SetInterruptHandler	;wreg free
    445  00066C                     
-   446                           ;main.c: 154:     INT2_SetInterruptHandler (teclado_coluna_3);
+   446                           ;main.c: 155:     INT2_SetInterruptHandler (teclado_coluna_3);
    447  00066C  0E58               	movlw	low _teclado_coluna_3
    448  00066E  6E04               	movwf	INT2_SetInterruptHandler@InterruptHandler^0,c
    449  000670  0E0A               	movlw	high _teclado_coluna_3
@@ -465,7 +465,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    451  000674  EC97  F007         	call	_INT2_SetInterruptHandler	;wreg free
    452  000678                     l1895:
    453                           
-   454                           ;main.c: 157:     {;main.c: 158:         if (tecla_n){
+   454                           ;main.c: 158:     {;main.c: 159:         if (tecla_n){
    455  000678  501D               	movf	_tecla_n^0,w,c
    456  00067A  101E               	iorwf	(_tecla_n+1)^0,w,c
    457  00067C  B4D8               	btfsc	status,2,c
@@ -475,7 +475,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    461  000686  EF7A  F003         	goto	l1911
    462  00068A                     u810:
    463  00068A                     
-   464                           ;main.c: 162:             strncat(pin, &tecla_premida, 1);
+   464                           ;main.c: 163:             strncat(pin, &tecla_premida, 1);
    465  00068A  0E1F               	movlw	low _pin
    466  00068C  6E08               	movwf	strncat@d^0,c
    467  00068E  0E00               	movlw	high _pin
@@ -490,7 +490,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    476  0006A0  6E0C               	movwf	strncat@n^0,c
    477  0006A2  ECF1  F004         	call	_strncat	;wreg free
    478  0006A6                     
-   479                           ;main.c: 166:             WriteCmdXLCD(0b11000000);
+   479                           ;main.c: 167:             WriteCmdXLCD(0b11000000);
    480  0006A6  0EC0               	movlw	192
    481  0006A8  EC64  F006         	call	_WriteCmdXLCD
    482  0006AC                     l1901:
@@ -503,7 +503,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    489  0006BC  EF56  F003         	goto	l1901
    490  0006C0                     u820:
    491  0006C0                     
-   492                           ;main.c: 174:             putsXLCD(pin);
+   492                           ;main.c: 175:             putsXLCD(pin);
    493  0006C0  0E1F               	movlw	low _pin
    494  0006C2  6E05               	movwf	putsXLCD@buffer^0,c
    495  0006C4  0E00               	movlw	high _pin
@@ -519,21 +519,21 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    505  0006DC  EF66  F003         	goto	l1905
    506  0006E0                     u830:
    507  0006E0                     
-   508                           ;main.c: 178:             contador_caracteres++;
+   508                           ;main.c: 179:             contador_caracteres++;
    509  0006E0  4A11               	infsnz	main@contador_caracteres^0,f,c
    510  0006E2  2A12               	incf	(main@contador_caracteres+1)^0,f,c
    511                           
-   512                           ;main.c: 179:             contador_colunas_LCD++;
+   512                           ;main.c: 180:             contador_colunas_LCD++;
    513  0006E4  4A2E               	infsnz	_contador_colunas_LCD^0,f,c
    514  0006E6  2A2F               	incf	(_contador_colunas_LCD+1)^0,f,c
    515  0006E8                     
-   516                           ;main.c: 180:             tecla_n = 0;
+   516                           ;main.c: 181:             tecla_n = 0;
    517  0006E8  0E00               	movlw	0
    518  0006EA  6E1E               	movwf	(_tecla_n+1)^0,c
    519  0006EC  0E00               	movlw	0
    520  0006EE  6E1D               	movwf	_tecla_n^0,c
    521                           
-   522                           ;main.c: 181:         }
+   522                           ;main.c: 182:         }
    523  0006F0  EFA4  F003         	goto	l1923
    524  0006F4                     l1911:
    525  0006F4  501B               	movf	_tecla_limpar^0,w,c
@@ -545,7 +545,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    531  000702  EFA4  F003         	goto	l1923
    532  000706                     u840:
    533  000706                     
-   534                           ;main.c: 183:             WriteCmdXLCD(contador_colunas_LCD);
+   534                           ;main.c: 184:             WriteCmdXLCD(contador_colunas_LCD);
    535  000706  502E               	movf	_contador_colunas_LCD^0,w,c
    536  000708  EC64  F006         	call	_WriteCmdXLCD
    537  00070C                     l1915:
@@ -558,7 +558,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    544  00071C  EF86  F003         	goto	l1915
    545  000720                     u850:
    546  000720                     
-   547                           ;main.c: 186:             putsXLCD("                    ");
+   547                           ;main.c: 187:             putsXLCD("                    ");
    548  000720  0E01               	movlw	low STR_1
    549  000722  6E05               	movwf	putsXLCD@buffer^0,c
    550  000724  0E06               	movlw	high STR_1
@@ -574,26 +574,26 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    560  00073C  EF96  F003         	goto	l1919
    561  000740                     u860:
    562  000740                     
-   563                           ;main.c: 188:             tecla_limpar = 0;
+   563                           ;main.c: 189:             tecla_limpar = 0;
    564  000740  0E00               	movlw	0
    565  000742  6E1C               	movwf	(_tecla_limpar+1)^0,c
    566  000744  0E00               	movlw	0
    567  000746  6E1B               	movwf	_tecla_limpar^0,c
    568  000748                     l1923:
    569                           
-   570                           ;main.c: 197:         LATBbits.LATB3 = 0;
+   570                           ;main.c: 198:         LATBbits.LATB3 = 0;
    571  000748  968A               	bcf	138,3,c	;volatile
    572  00074A                     
-   573                           ;main.c: 198:         LATBbits.LATB4 = 1;
+   573                           ;main.c: 199:         LATBbits.LATB4 = 1;
    574  00074A  888A               	bsf	138,4,c	;volatile
    575  00074C                     
-   576                           ;main.c: 199:         LATBbits.LATB5 = 1;
+   576                           ;main.c: 200:         LATBbits.LATB5 = 1;
    577  00074C  8A8A               	bsf	138,5,c	;volatile
    578  00074E                     
-   579                           ;main.c: 200:         LATBbits.LATB6 = 1;
+   579                           ;main.c: 201:         LATBbits.LATB6 = 1;
    580  00074E  8C8A               	bsf	138,6,c	;volatile
    581  000750                     
-   582                           ;main.c: 202:         _delay((unsigned long)((65)*(6000000/4000.0)));
+   582                           ;main.c: 203:         _delay((unsigned long)((65)*(6000000/4000.0)));
    583  000750  0E7F               	movlw	127
    584  000752  6E10               	movwf	??_main^0,c
    585  000754  0E9E               	movlw	158
@@ -604,19 +604,19 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    590  00075C  D7FC               	bra	u877
    591  00075E  D000               	nop2	
    592  000760                     
-   593                           ;main.c: 205:         LATBbits.LATB3 = 1;
+   593                           ;main.c: 206:         LATBbits.LATB3 = 1;
    594  000760  868A               	bsf	138,3,c	;volatile
    595  000762                     
-   596                           ;main.c: 206:         LATBbits.LATB4 = 0;
+   596                           ;main.c: 207:         LATBbits.LATB4 = 0;
    597  000762  988A               	bcf	138,4,c	;volatile
    598  000764                     
-   599                           ;main.c: 207:         LATBbits.LATB5 = 1;
+   599                           ;main.c: 208:         LATBbits.LATB5 = 1;
    600  000764  8A8A               	bsf	138,5,c	;volatile
    601  000766                     
-   602                           ;main.c: 208:         LATBbits.LATB6 = 1;
+   602                           ;main.c: 209:         LATBbits.LATB6 = 1;
    603  000766  8C8A               	bsf	138,6,c	;volatile
    604  000768                     
-   605                           ;main.c: 210:         _delay((unsigned long)((65)*(6000000/4000.0)));
+   605                           ;main.c: 211:         _delay((unsigned long)((65)*(6000000/4000.0)));
    606  000768  0E7F               	movlw	127
    607  00076A  6E10               	movwf	??_main^0,c
    608  00076C  0E9E               	movlw	158
@@ -627,19 +627,19 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    613  000774  D7FC               	bra	u887
    614  000776  D000               	nop2	
    615  000778                     
-   616                           ;main.c: 213:         LATBbits.LATB3 = 1;
+   616                           ;main.c: 214:         LATBbits.LATB3 = 1;
    617  000778  868A               	bsf	138,3,c	;volatile
    618  00077A                     
-   619                           ;main.c: 214:         LATBbits.LATB4 = 1;
+   619                           ;main.c: 215:         LATBbits.LATB4 = 1;
    620  00077A  888A               	bsf	138,4,c	;volatile
    621  00077C                     
-   622                           ;main.c: 215:         LATBbits.LATB5 = 0;
+   622                           ;main.c: 216:         LATBbits.LATB5 = 0;
    623  00077C  9A8A               	bcf	138,5,c	;volatile
    624  00077E                     
-   625                           ;main.c: 216:         LATBbits.LATB6 = 1;
+   625                           ;main.c: 217:         LATBbits.LATB6 = 1;
    626  00077E  8C8A               	bsf	138,6,c	;volatile
    627  000780                     
-   628                           ;main.c: 218:         _delay((unsigned long)((65)*(6000000/4000.0)));
+   628                           ;main.c: 219:         _delay((unsigned long)((65)*(6000000/4000.0)));
    629  000780  0E7F               	movlw	127
    630  000782  6E10               	movwf	??_main^0,c
    631  000784  0E9E               	movlw	158
@@ -650,19 +650,19 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    636  00078C  D7FC               	bra	u897
    637  00078E  D000               	nop2	
    638  000790                     
-   639                           ;main.c: 221:         LATBbits.LATB3 = 1;
+   639                           ;main.c: 222:         LATBbits.LATB3 = 1;
    640  000790  868A               	bsf	138,3,c	;volatile
    641  000792                     
-   642                           ;main.c: 222:         LATBbits.LATB4 = 1;
+   642                           ;main.c: 223:         LATBbits.LATB4 = 1;
    643  000792  888A               	bsf	138,4,c	;volatile
    644  000794                     
-   645                           ;main.c: 223:         LATBbits.LATB5 = 1;
+   645                           ;main.c: 224:         LATBbits.LATB5 = 1;
    646  000794  8A8A               	bsf	138,5,c	;volatile
    647  000796                     
-   648                           ;main.c: 224:         LATBbits.LATB6 = 0;
+   648                           ;main.c: 225:         LATBbits.LATB6 = 0;
    649  000796  9C8A               	bcf	138,6,c	;volatile
    650  000798                     
-   651                           ;main.c: 226:         _delay((unsigned long)((65)*(6000000/4000.0)));
+   651                           ;main.c: 227:         _delay((unsigned long)((65)*(6000000/4000.0)));
    652  000798  0E7F               	movlw	127
    653  00079A  6E10               	movwf	??_main^0,c
    654  00079C  0E9E               	movlw	158
@@ -4046,7 +4046,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Sat Apr 04 17:53:07 2020
+Symbol Table                                                                                   Sun Apr 05 14:11:03 2020
 
                                       l21 0DE0                                        l43 0F2C  
                                       l74 0F4A                                        l87 0F40  

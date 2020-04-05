@@ -9927,14 +9927,15 @@ void teclado_coluna_3 (void) {
 void main(void)
 {
 
+
     SYSTEM_Initialize();
-# 131 "main.c"
+# 132 "main.c"
     (INTCONbits.GIE = 1);
 
 
 
     (INTCONbits.PEIE = 1);
-# 144 "main.c"
+# 145 "main.c"
     int contador_caracteres = 4;
 
 

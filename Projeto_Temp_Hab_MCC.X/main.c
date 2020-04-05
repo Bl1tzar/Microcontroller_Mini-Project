@@ -1,5 +1,3 @@
-
-
 #include "mcc_generated_files/mcc.h"
 #include "xlcd.h"
 /*header file para a biblioteca de Strings*/
@@ -8,6 +6,8 @@
 #include <stdlib.h>
 
 #include "LCD_inicio.h"
+
+
 /*
                          Variáveis Globais
  */
@@ -104,11 +104,6 @@ void teclado_coluna_3 (void) {
             tecla_limpar = 1;
         }
 }
-
-
-
-
-
 
 
 /*
