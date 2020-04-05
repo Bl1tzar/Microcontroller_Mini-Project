@@ -2,11 +2,15 @@
  Funcão que inicializa o LCD
  */
 
-#include <xc.h>
 #include "xlcd.h"
 #include "mcc_generated_files/mcc.h" //Preciso por causa do delay 
 
-#include "LCD_inicio.h"
+#include "LCD.h"
+
+// 128 = 1a linha 1a coluna (0b10000000) no LCD
+// 192 = 2a linha 1a coluna (0b11000000) no LCD
+int LCD_linha_1 = 128; //1a linha 1a coluna no LCD
+int LCD_linha_2 = 192; //2a linha 1a coluna no LCD
 
 void LCD_inicio_teste (void){ 
 
@@ -62,7 +66,7 @@ void LCD_inicio_teste (void){
 	 * Endereçamento do display:
 	 * 1a linha, 1a coluna
 	 */
-	WriteCmdXLCD(0b10000000);
+	WriteCmdXLCD(LCD_linha_1);
 	while (BusyXLCD());
 
 	/*
@@ -87,7 +91,7 @@ void LCD_inicio_teste (void){
 	 * Endereçamento do display:
 	 * 1a linha, 1a coluna
 	 */
-	WriteCmdXLCD(0b10000000);
+	WriteCmdXLCD(LCD_linha_1);
 	while (BusyXLCD());
 
 	/*

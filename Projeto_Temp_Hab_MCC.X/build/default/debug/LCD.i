@@ -1,4 +1,4 @@
-# 1 "LCD_inicio.c"
+# 1 "LCD.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,11 +6,65 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "LCD_inicio.c" 2
+# 1 "LCD.c" 2
 
 
 
 
+# 1 "./xlcd.h" 1
+# 79 "./xlcd.h"
+void OpenXLCD( unsigned char);
+
+
+
+
+void SetCGRamAddr( unsigned char);
+
+
+
+
+void SetDDRamAddr( unsigned char);
+
+
+
+
+unsigned char BusyXLCD(void);
+
+
+
+
+unsigned char ReadAddrXLCD(void);
+
+
+
+
+char ReadDataXLCD(void);
+
+
+
+
+void WriteCmdXLCD( unsigned char);
+
+
+
+
+void WriteDataXLCD( char);
+# 124 "./xlcd.h"
+void putsXLCD( char *);
+
+
+
+
+void putrsXLCD( const char *);
+
+
+extern void DelayFor18TCY(void);
+extern void DelayPORXLCD(void);
+extern void DelayXLCD(void);
+# 5 "LCD.c" 2
+
+# 1 "./mcc_generated_files/mcc.h" 1
+# 49 "./mcc_generated_files/mcc.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -9524,62 +9578,8 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 5 "LCD_inicio.c" 2
+# 49 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./xlcd.h" 1
-# 79 "./xlcd.h"
-void OpenXLCD( unsigned char);
-
-
-
-
-void SetCGRamAddr( unsigned char);
-
-
-
-
-void SetDDRamAddr( unsigned char);
-
-
-
-
-unsigned char BusyXLCD(void);
-
-
-
-
-unsigned char ReadAddrXLCD(void);
-
-
-
-
-char ReadDataXLCD(void);
-
-
-
-
-void WriteCmdXLCD( unsigned char);
-
-
-
-
-void WriteDataXLCD( char);
-# 124 "./xlcd.h"
-void putsXLCD( char *);
-
-
-
-
-void putrsXLCD( const char *);
-
-
-extern void DelayFor18TCY(void);
-extern void DelayPORXLCD(void);
-extern void DelayXLCD(void);
-# 6 "LCD_inicio.c" 2
-
-# 1 "./mcc_generated_files/mcc.h" 1
-# 50 "./mcc_generated_files/mcc.h"
 # 1 "./mcc_generated_files/device_config.h" 1
 # 50 "./mcc_generated_files/mcc.h" 2
 
@@ -9777,20 +9777,36 @@ void TMR0_DefaultInterruptHandler(void);
 void SYSTEM_Initialize(void);
 # 85 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 7 "LCD_inicio.c" 2
+# 6 "LCD.c" 2
 
 
-# 1 "./LCD_inicio.h" 1
-# 11 "./LCD_inicio.h"
+# 1 "./LCD.h" 1
+
+
+
+
+
+
+
+
+extern int LCD_linha_1;
+extern int LCD_linha_2;
+
+
 void LCD_inicio_teste(void);
-# 9 "LCD_inicio.c" 2
+# 8 "LCD.c" 2
 
+
+
+
+int LCD_linha_1 = 128;
+int LCD_linha_2 = 192;
 
 void LCD_inicio_teste (void){
-# 25 "LCD_inicio.c"
+# 29 "LCD.c"
  OpenXLCD(0b00101011);
  while (BusyXLCD());
-# 35 "LCD_inicio.c"
+# 39 "LCD.c"
  WriteCmdXLCD(0b00001100);
  while (BusyXLCD());
 
@@ -9807,8 +9823,8 @@ void LCD_inicio_teste (void){
 
  WriteCmdXLCD(0b00000001);
  while (BusyXLCD());
-# 65 "LCD_inicio.c"
- WriteCmdXLCD(0b10000000);
+# 69 "LCD.c"
+ WriteCmdXLCD(LCD_linha_1);
  while (BusyXLCD());
 
 
@@ -9833,7 +9849,7 @@ void LCD_inicio_teste (void){
 
 
 
- WriteCmdXLCD(0b10000000);
+ WriteCmdXLCD(LCD_linha_1);
  while (BusyXLCD());
 
 

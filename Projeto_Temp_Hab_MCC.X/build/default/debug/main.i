@@ -7,8 +7,6 @@
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-
-
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
@@ -9723,7 +9721,7 @@ void TMR0_DefaultInterruptHandler(void);
 void SYSTEM_Initialize(void);
 # 85 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 3 "main.c" 2
+# 1 "main.c" 2
 
 # 1 "./xlcd.h" 1
 # 79 "./xlcd.h"
@@ -9775,7 +9773,7 @@ void putrsXLCD( const char *);
 extern void DelayFor18TCY(void);
 extern void DelayPORXLCD(void);
 extern void DelayXLCD(void);
-# 4 "main.c" 2
+# 2 "main.c" 2
 
 
 
@@ -9834,15 +9832,45 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 7 "main.c" 2
+# 5 "main.c" 2
+# 14 "main.c"
+# 1 "./LCD.h" 1
 
 
 
-# 1 "./LCD_inicio.h" 1
-# 11 "./LCD_inicio.h"
+
+
+
+
+
+extern int LCD_linha_1;
+extern int LCD_linha_2;
+
+
 void LCD_inicio_teste(void);
-# 10 "main.c" 2
-# 20 "main.c"
+# 14 "main.c" 2
+
+
+
+
+
+
+
+# 1 "./Teclado.h" 1
+
+
+
+
+extern unsigned char tecla_premida;
+extern int tecla_n;
+extern int tecla_limpar;
+
+
+void teclado_coluna_1 (void);
+void teclado_coluna_2 (void);
+void teclado_coluna_3 (void);
+# 21 "main.c" 2
+# 31 "main.c"
 unsigned char tecla_premida;
 int tecla_n;
 int tecla_limpar;
@@ -9850,10 +9878,9 @@ int tecla_limpar;
 
 
 
-
 int contador_colunas_LCD = 192;
-
-
+int LCD_linha_1;
+int LCD_linha_2;
 
 
 
@@ -9863,79 +9890,41 @@ int pin_real = 0000;
 
 
 
-
-
 char temp_alar_int [2];
 int temp_alar;
-# 54 "main.c"
+
+
+
+
+
+
+
 void acende_LED (void) {
     do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0);
 }
 
-void teclado_coluna_1 (void) {
 
-    if (PORTBbits.RB3 == 0){
-            tecla_premida = '1';
-        }
-        else if (PORTBbits.RB4 == 0){
-            tecla_premida = '4';
-        }
-        else if (PORTBbits.RB5 == 0){
-            tecla_premida = '7';
-        }
-        else if (PORTBbits.RB6 == 0){
-            tecla_premida = '*';
-        }
-        tecla_n = 1;
-}
 
-void teclado_coluna_2 (void) {
 
-    if (PORTBbits.RB3 == 0){
-            tecla_premida = '2';
-        }
-        else if (PORTBbits.RB4 == 0){
-            tecla_premida = '5';
-        }
-        else if (PORTBbits.RB5 == 0){
-            tecla_premida = '8';
-        }
-        else if (PORTBbits.RB6 == 0){
-            tecla_premida = '0';
-        }
-        tecla_n = 1;
-}
 
-void teclado_coluna_3 (void) {
-    tecla_n = 1;
-    if (PORTBbits.RB3 == 0){
-            tecla_premida = '3';
-        }
-        else if (PORTBbits.RB4 == 0){
-            tecla_premida = '6';
-        }
-        else if (PORTBbits.RB5 == 0){
-            tecla_premida = '9';
-        }
-        else if (PORTBbits.RB6 == 0){
-            contador_colunas_LCD = 192;
-            tecla_n = 0;
-            tecla_limpar = 1;
-        }
-}
-# 119 "main.c"
+
 void main(void)
 {
 
-
     SYSTEM_Initialize();
-# 132 "main.c"
+
+
+
+
+
+
+
     (INTCONbits.GIE = 1);
 
 
 
     (INTCONbits.PEIE = 1);
-# 145 "main.c"
+# 92 "main.c"
     int contador_caracteres = 4;
 
 
@@ -9943,6 +9932,7 @@ void main(void)
 
 
     TMR0_SetInterruptHandler (acende_LED);
+
 
     INT0_SetInterruptHandler (teclado_coluna_1);
     INT1_SetInterruptHandler (teclado_coluna_2);
@@ -9958,7 +9948,7 @@ void main(void)
 
 
 
-            WriteCmdXLCD(0b11000000);
+            WriteCmdXLCD(LCD_linha_2);
             while (BusyXLCD());
 
 

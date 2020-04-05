@@ -1,20 +1,43 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"79 ./xlcd.h
-[; ;./xlcd.h: 79: void OpenXLCD( unsigned char);
-[v _OpenXLCD `(v ~T0 @X0 0 ef1`uc ]
-"94
-[; ;./xlcd.h: 94: unsigned char BusyXLCD(void);
-[v _BusyXLCD `(uc ~T0 @X0 0 ef ]
-"109
-[; ;./xlcd.h: 109: void WriteCmdXLCD( unsigned char);
-[v _WriteCmdXLCD `(v ~T0 @X0 0 ef1`uc ]
-"124
-[; ;./xlcd.h: 124: void putsXLCD( char *);
-[v _putsXLCD `(v ~T0 @X0 0 ef1`*uc ]
-[v F5943 `(v ~T0 @X0 1 tf1`ul ]
-"187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
-[v __delay `JF5943 ~T0 @X0 0 e ]
-[p i __delay ]
+"6571 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 6571:     struct {
+[s S346 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S346 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"6581
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 6581:     struct {
+[s S347 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S347 . INT0 INT1 INT2 CCP2 KBI0 KBI1 KBI2 KBI3 ]
+"6591
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 6591:     struct {
+[s S348 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S348 . AN12 AN10 AN8 AN9 AN11 AN13 PGC PGD ]
+"6601
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 6601:     struct {
+[s S349 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S349 . FLT0 C12IN3M . C12IN2M T5G T1G ]
+"6609
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 6609:     struct {
+[s S350 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S350 . SRI C12IN3N . C12IN2N . CCP3 ]
+"6617
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 6617:     struct {
+[s S351 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S351 . . CTED1 CTED2 . T3CKI ]
+"6624
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 6624:     struct {
+[s S352 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S352 . . P2A . P3A ]
+"6630
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 6630:     struct {
+[s S353 :3 `uc 1 :1 `uc 1 ]
+[n S353 . . CCP2_PA2 ]
+"6570
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 6570: typedef union {
+[u S345 `S346 1 `S347 1 `S348 1 `S349 1 `S350 1 `S351 1 `S352 1 `S353 1 ]
+[n S345 . . . . . . . . . ]
+"6635
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 6635: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
+[v _PORTBbits `VS345 ~T0 @X0 0 e@3969 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -771,118 +794,213 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17372
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 17372: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"11 LCD_inicio.c
-[; ;LCD_inicio.c: 11: void LCD_inicio_teste (void){
-[v _LCD_inicio_teste `(v ~T0 @X0 1 ef ]
+"13 Teclado.c
+[; ;Teclado.c: 13: unsigned char tecla_premida;
+[v _tecla_premida `uc ~T0 @X0 1 e ]
+"14
+[; ;Teclado.c: 14: int tecla_n;
+[v _tecla_n `i ~T0 @X0 1 e ]
+"15
+[; ;Teclado.c: 15: int tecla_limpar;
+[v _tecla_limpar `i ~T0 @X0 1 e ]
+"17
+[; ;Teclado.c: 17: int contador_colunas_LCD = 192;
+[v _contador_colunas_LCD `i ~T0 @X0 1 e ]
+[i _contador_colunas_LCD
+-> 192 `i
+]
+"20
+[; ;Teclado.c: 20: void teclado_coluna_1 (void) {
+[v _teclado_coluna_1 `(v ~T0 @X0 1 ef ]
 {
-[e :U _LCD_inicio_teste ]
+[e :U _teclado_coluna_1 ]
 [f ]
+"22
+[; ;Teclado.c: 22:     if (PORTBbits.RB3 == 0){
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 852  ]
+{
+"23
+[; ;Teclado.c: 23:             tecla_premida = '1';
+[e = _tecla_premida -> -> 49 `ui `uc ]
+"24
+[; ;Teclado.c: 24:         }
+}
+[e $U 853  ]
 "25
-[; ;LCD_inicio.c: 25:  OpenXLCD(0b00101011);
-[e ( _OpenXLCD (1 -> -> 43 `i `uc ]
-"26
-[; ;LCD_inicio.c: 26:  while (BusyXLCD());
-[e $U 852  ]
-[e :U 853 ]
+[; ;Teclado.c: 25:         else if (PORTBbits.RB4 == 0){
 [e :U 852 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 853  ]
-[e :U 854 ]
-"35
-[; ;LCD_inicio.c: 35:  WriteCmdXLCD(0b00001100);
-[e ( _WriteCmdXLCD (1 -> -> 12 `i `uc ]
-"36
-[; ;LCD_inicio.c: 36:  while (BusyXLCD());
+[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 854  ]
+{
+"26
+[; ;Teclado.c: 26:             tecla_premida = '4';
+[e = _tecla_premida -> -> 52 `ui `uc ]
+"27
+[; ;Teclado.c: 27:         }
+}
 [e $U 855  ]
+"28
+[; ;Teclado.c: 28:         else if (PORTBbits.RB5 == 0){
+[e :U 854 ]
+[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 856  ]
+{
+"29
+[; ;Teclado.c: 29:             tecla_premida = '7';
+[e = _tecla_premida -> -> 55 `ui `uc ]
+"30
+[; ;Teclado.c: 30:         }
+}
+[e $U 857  ]
+"31
+[; ;Teclado.c: 31:         else if (PORTBbits.RB6 == 0){
 [e :U 856 ]
-[e :U 855 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 856  ]
-[e :U 857 ]
-"43
-[; ;LCD_inicio.c: 43:  WriteCmdXLCD(0b00010111);
-[e ( _WriteCmdXLCD (1 -> -> 23 `i `uc ]
-"44
-[; ;LCD_inicio.c: 44:  while (BusyXLCD());
-[e $U 858  ]
-[e :U 859 ]
+[e $ ! == -> . . _PORTBbits 0 6 `i -> 0 `i 858  ]
+{
+"32
+[; ;Teclado.c: 32:             tecla_premida = '*';
+[e = _tecla_premida -> -> 42 `ui `uc ]
+"33
+[; ;Teclado.c: 33:         }
+}
 [e :U 858 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 859  ]
-[e :U 860 ]
-"49
-[; ;LCD_inicio.c: 49:  WriteCmdXLCD(0b00000001);
-[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
-"50
-[; ;LCD_inicio.c: 50:  while (BusyXLCD());
-[e $U 861  ]
-[e :U 862 ]
-[e :U 861 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 862  ]
-[e :U 863 ]
-"65
-[; ;LCD_inicio.c: 65:  WriteCmdXLCD(0b10000000);
-[e ( _WriteCmdXLCD (1 -> -> 128 `i `uc ]
-"66
-[; ;LCD_inicio.c: 66:  while (BusyXLCD());
-[e $U 864  ]
-[e :U 865 ]
-[e :U 864 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 865  ]
-[e :U 866 ]
-"72
-[; ;LCD_inicio.c: 72:     putsXLCD("Mars ROCK'S!");
-[e ( _putsXLCD (1 :s 1C ]
-"73
-[; ;LCD_inicio.c: 73:  while (BusyXLCD());
-[e $U 867  ]
-[e :U 868 ]
-[e :U 867 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 868  ]
-[e :U 869 ]
-"75
-[; ;LCD_inicio.c: 75:     _delay((unsigned long)((1000)*(6000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
-"77
-[; ;LCD_inicio.c: 77:      WriteCmdXLCD(0b00010111);
-[e ( _WriteCmdXLCD (1 -> -> 23 `i `uc ]
-"78
-[; ;LCD_inicio.c: 78:  while (BusyXLCD());
-[e $U 870  ]
-[e :U 871 ]
-[e :U 870 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 871  ]
-[e :U 872 ]
-"83
-[; ;LCD_inicio.c: 83:  WriteCmdXLCD(0b00000001);
-[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
-"84
-[; ;LCD_inicio.c: 84:  while (BusyXLCD());
-[e $U 873  ]
-[e :U 874 ]
-[e :U 873 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 874  ]
-[e :U 875 ]
-"90
-[; ;LCD_inicio.c: 90:  WriteCmdXLCD(0b10000000);
-[e ( _WriteCmdXLCD (1 -> -> 128 `i `uc ]
-"91
-[; ;LCD_inicio.c: 91:  while (BusyXLCD());
-[e $U 876  ]
-[e :U 877 ]
-[e :U 876 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 877  ]
-[e :U 878 ]
-"97
-[; ;LCD_inicio.c: 97:     putsXLCD("Teste - Teclado");
-[e ( _putsXLCD (1 :s 2C ]
-"98
-[; ;LCD_inicio.c: 98:  while (BusyXLCD());
-[e $U 879  ]
-[e :U 880 ]
-[e :U 879 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 880  ]
-[e :U 881 ]
-"100
-[; ;LCD_inicio.c: 100: }
+[e :U 857 ]
+[e :U 855 ]
+[e :U 853 ]
+"34
+[; ;Teclado.c: 34:         tecla_n = 1;
+[e = _tecla_n -> 1 `i ]
+"35
+[; ;Teclado.c: 35: }
 [e :UE 851 ]
 }
-[a 2C 84 101 115 116 101 32 45 32 84 101 99 108 97 100 111 0 ]
-[a 1C 77 97 114 115 32 82 79 67 75 39 83 33 0 ]
+"37
+[; ;Teclado.c: 37: void teclado_coluna_2 (void) {
+[v _teclado_coluna_2 `(v ~T0 @X0 1 ef ]
+{
+[e :U _teclado_coluna_2 ]
+[f ]
+"39
+[; ;Teclado.c: 39:     if (PORTBbits.RB3 == 0){
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 860  ]
+{
+"40
+[; ;Teclado.c: 40:             tecla_premida = '2';
+[e = _tecla_premida -> -> 50 `ui `uc ]
+"41
+[; ;Teclado.c: 41:         }
+}
+[e $U 861  ]
+"42
+[; ;Teclado.c: 42:         else if (PORTBbits.RB4 == 0){
+[e :U 860 ]
+[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 862  ]
+{
+"43
+[; ;Teclado.c: 43:             tecla_premida = '5';
+[e = _tecla_premida -> -> 53 `ui `uc ]
+"44
+[; ;Teclado.c: 44:         }
+}
+[e $U 863  ]
+"45
+[; ;Teclado.c: 45:         else if (PORTBbits.RB5 == 0){
+[e :U 862 ]
+[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 864  ]
+{
+"46
+[; ;Teclado.c: 46:             tecla_premida = '8';
+[e = _tecla_premida -> -> 56 `ui `uc ]
+"47
+[; ;Teclado.c: 47:         }
+}
+[e $U 865  ]
+"48
+[; ;Teclado.c: 48:         else if (PORTBbits.RB6 == 0){
+[e :U 864 ]
+[e $ ! == -> . . _PORTBbits 0 6 `i -> 0 `i 866  ]
+{
+"49
+[; ;Teclado.c: 49:             tecla_premida = '0';
+[e = _tecla_premida -> -> 48 `ui `uc ]
+"50
+[; ;Teclado.c: 50:         }
+}
+[e :U 866 ]
+[e :U 865 ]
+[e :U 863 ]
+[e :U 861 ]
+"51
+[; ;Teclado.c: 51:         tecla_n = 1;
+[e = _tecla_n -> 1 `i ]
+"52
+[; ;Teclado.c: 52: }
+[e :UE 859 ]
+}
+"54
+[; ;Teclado.c: 54: void teclado_coluna_3 (void) {
+[v _teclado_coluna_3 `(v ~T0 @X0 1 ef ]
+{
+[e :U _teclado_coluna_3 ]
+[f ]
+"55
+[; ;Teclado.c: 55:     tecla_n = 1;
+[e = _tecla_n -> 1 `i ]
+"56
+[; ;Teclado.c: 56:     if (PORTBbits.RB3 == 0){
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 868  ]
+{
+"57
+[; ;Teclado.c: 57:             tecla_premida = '3';
+[e = _tecla_premida -> -> 51 `ui `uc ]
+"58
+[; ;Teclado.c: 58:         }
+}
+[e $U 869  ]
+"59
+[; ;Teclado.c: 59:         else if (PORTBbits.RB4 == 0){
+[e :U 868 ]
+[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 870  ]
+{
+"60
+[; ;Teclado.c: 60:             tecla_premida = '6';
+[e = _tecla_premida -> -> 54 `ui `uc ]
+"61
+[; ;Teclado.c: 61:         }
+}
+[e $U 871  ]
+"62
+[; ;Teclado.c: 62:         else if (PORTBbits.RB5 == 0){
+[e :U 870 ]
+[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 872  ]
+{
+"63
+[; ;Teclado.c: 63:             tecla_premida = '9';
+[e = _tecla_premida -> -> 57 `ui `uc ]
+"64
+[; ;Teclado.c: 64:         }
+}
+[e $U 873  ]
+"65
+[; ;Teclado.c: 65:         else if (PORTBbits.RB6 == 0){
+[e :U 872 ]
+[e $ ! == -> . . _PORTBbits 0 6 `i -> 0 `i 874  ]
+{
+"66
+[; ;Teclado.c: 66:             contador_colunas_LCD = 192;
+[e = _contador_colunas_LCD -> 192 `i ]
+"67
+[; ;Teclado.c: 67:             tecla_n = 0;
+[e = _tecla_n -> 0 `i ]
+"68
+[; ;Teclado.c: 68:             tecla_limpar = 1;
+[e = _tecla_limpar -> 1 `i ]
+"69
+[; ;Teclado.c: 69:         }
+}
+[e :U 874 ]
+[e :U 873 ]
+[e :U 871 ]
+[e :U 869 ]
+"70
+[; ;Teclado.c: 70: }
+[e :UE 867 ]
+}

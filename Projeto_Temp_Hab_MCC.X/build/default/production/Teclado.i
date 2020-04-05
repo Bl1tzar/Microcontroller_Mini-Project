@@ -1,4 +1,4 @@
-# 1 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
+# 1 "Teclado.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,13 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c" 2
+# 1 "Teclado.c" 2
 
+
+
+
+# 1 "./mcc_generated_files/mcc.h" 1
+# 49 "./mcc_generated_files/mcc.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -9521,407 +9526,283 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 2 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c" 2
+# 49 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/device_config.h" 1
+# 50 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/pin_manager.h" 1
+# 376 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 388 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_IOC(void);
+# 51 "./mcc_generated_files/mcc.h" 2
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 142 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 158 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+# 173 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int32_t;
 
 
 
 
 
-# 1 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.h" 1
-# 79 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.h"
-void OpenXLCD( unsigned char);
+typedef long long int64_t;
+# 188 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
 
 
 
 
-void SetCGRamAddr( unsigned char);
+
+typedef unsigned char uint8_t;
 
 
 
 
-void SetDDRamAddr( unsigned char);
+typedef unsigned short uint16_t;
+# 209 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uint32_t;
 
 
 
 
-unsigned char BusyXLCD(void);
+
+typedef unsigned long long uint64_t;
+# 229 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int32_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint32_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
+# 52 "./mcc_generated_files/mcc.h" 2
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
+# 53 "./mcc_generated_files/mcc.h" 2
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\conio.h" 1 3
 
 
 
 
-unsigned char ReadAddrXLCD(void);
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\errno.h" 1 3
+# 10 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\errno.h" 3
+extern int errno;
+# 8 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\conio.h" 2 3
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\__null.h" 1 3
+# 9 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\conio.h" 2 3
+
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
+# 54 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/interrupt_manager.h" 1
+# 110 "./mcc_generated_files/interrupt_manager.h"
+void INTERRUPT_Initialize (void);
+# 55 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/ext_int.h" 1
+# 562 "./mcc_generated_files/ext_int.h"
+void EXT_INT_Initialize(void);
+# 584 "./mcc_generated_files/ext_int.h"
+void INT0_ISR(void);
+# 608 "./mcc_generated_files/ext_int.h"
+void INT0_CallBack(void);
+# 631 "./mcc_generated_files/ext_int.h"
+void INT0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 655 "./mcc_generated_files/ext_int.h"
+extern void (*INT0_InterruptHandler)(void);
+# 679 "./mcc_generated_files/ext_int.h"
+void INT0_DefaultInterruptHandler(void);
+# 697 "./mcc_generated_files/ext_int.h"
+void INT1_ISR(void);
+# 721 "./mcc_generated_files/ext_int.h"
+void INT1_CallBack(void);
+# 744 "./mcc_generated_files/ext_int.h"
+void INT1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 768 "./mcc_generated_files/ext_int.h"
+extern void (*INT1_InterruptHandler)(void);
+# 792 "./mcc_generated_files/ext_int.h"
+void INT1_DefaultInterruptHandler(void);
+# 810 "./mcc_generated_files/ext_int.h"
+void INT2_ISR(void);
+# 834 "./mcc_generated_files/ext_int.h"
+void INT2_CallBack(void);
+# 857 "./mcc_generated_files/ext_int.h"
+void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 881 "./mcc_generated_files/ext_int.h"
+extern void (*INT2_InterruptHandler)(void);
+# 905 "./mcc_generated_files/ext_int.h"
+void INT2_DefaultInterruptHandler(void);
+# 56 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr0.h" 1
+# 100 "./mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "./mcc_generated_files/tmr0.h"
+void TMR0_StartTimer(void);
+# 161 "./mcc_generated_files/tmr0.h"
+void TMR0_StopTimer(void);
+# 197 "./mcc_generated_files/tmr0.h"
+uint16_t TMR0_ReadTimer(void);
+# 236 "./mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint16_t timerVal);
+# 272 "./mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 290 "./mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 309 "./mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 327 "./mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 345 "./mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
+# 57 "./mcc_generated_files/mcc.h" 2
+# 72 "./mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+# 85 "./mcc_generated_files/mcc.h"
+void OSCILLATOR_Initialize(void);
+# 5 "Teclado.c" 2
+
+
+# 1 "./Teclado.h" 1
 
 
 
 
-char ReadDataXLCD(void);
+extern unsigned char tecla_premida;
+extern int tecla_n;
+extern int tecla_limpar;
+
+
+void teclado_coluna_1 (void);
+void teclado_coluna_2 (void);
+void teclado_coluna_3 (void);
+# 7 "Teclado.c" 2
 
 
 
 
-void WriteCmdXLCD( unsigned char);
 
 
+unsigned char tecla_premida;
+int tecla_n;
+int tecla_limpar;
+
+int contador_colunas_LCD = 192;
 
 
-void WriteDataXLCD( char);
-# 124 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.h"
-void putsXLCD( char *);
+void teclado_coluna_1 (void) {
 
-
-
-
-void putrsXLCD( const char *);
-
-
-extern void DelayFor18TCY(void);
-extern void DelayPORXLCD(void);
-extern void DelayXLCD(void);
-# 7 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c" 2
-# 18 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-void DelayFor18TCY(void) {
-
-    _delay((unsigned long)((18)*(6000000/4000000.0)));
-    _delay((unsigned long)((1)*(6000000/4000.0)));
-    return;
+    if (PORTBbits.RB3 == 0){
+            tecla_premida = '1';
+        }
+        else if (PORTBbits.RB4 == 0){
+            tecla_premida = '4';
+        }
+        else if (PORTBbits.RB5 == 0){
+            tecla_premida = '7';
+        }
+        else if (PORTBbits.RB6 == 0){
+            tecla_premida = '*';
+        }
+        tecla_n = 1;
 }
 
-void DelayPORXLCD(void)
-{
+void teclado_coluna_2 (void) {
 
-    _delay((unsigned long)((15)*(6000000/4000.0)));
-    _delay((unsigned long)((15)*(6000000/4000.0)));
-    return;
+    if (PORTBbits.RB3 == 0){
+            tecla_premida = '2';
+        }
+        else if (PORTBbits.RB4 == 0){
+            tecla_premida = '5';
+        }
+        else if (PORTBbits.RB5 == 0){
+            tecla_premida = '8';
+        }
+        else if (PORTBbits.RB6 == 0){
+            tecla_premida = '0';
+        }
+        tecla_n = 1;
 }
 
-void DelayXLCD(void)
-{
-
-    _delay((unsigned long)((15)*(6000000/4000.0)));
-    return;
-}
-# 56 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-void OpenXLCD(unsigned char lcdtype) {
-
-
-
-    DelayPORXLCD();
-# 72 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-    PORTD &= 0xf0;
-    TRISD |= 0x0f;
-
-
-    TRISDbits.TRISD5 = 0;
-    TRISDbits.TRISD4 = 0;
-    TRISDbits.TRISD6 = 0;
-    LATDbits.LATD5 = 0;
-    LATDbits.LATD4 = 0;
-    LATDbits.LATD6 = 0;
-
-
-    DelayPORXLCD();
-# 97 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-    TRISD &= 0xf0;
-    PORTD &= 0xf0;
-    PORTD |= 0b00000011;
-
-
-    LATDbits.LATD6 = 1;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 0;
-
-
-    DelayXLCD();
-# 118 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-    TRISD &= 0xf0;
-    PORTD &= 0xf0;
-    PORTD |= 0b00000011;
-
-
-    LATDbits.LATD6 = 1;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 0;
-
-
-    DelayXLCD();
-# 138 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-    PORTD &= 0xf0;
-    PORTD |= 0b00000011;
-
-
-    LATDbits.LATD6 = 1;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 0;
-
-
-    DelayXLCD();
-# 159 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-    PORTD &= 0xf0;
-    PORTD |= 0b00000010;
-
-
-    LATDbits.LATD6 = 1;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 0;
-# 174 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-    TRISD |= 0x0f;
-
-
-
-
-
-    while (BusyXLCD());
-
-    WriteCmdXLCD(0x28);
-
-
-
-    while (BusyXLCD());
-
-    WriteCmdXLCD(0x0D);
-
-
-    while (BusyXLCD());
-
-
-
-    while (BusyXLCD());
-    WriteCmdXLCD(0x01);
-
-
-    while (BusyXLCD());
-
-    WriteCmdXLCD(0x06);
-
-
-
-    while (BusyXLCD());
-
-    WriteCmdXLCD(0x80);
-    return;
-}
-# 218 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-unsigned char BusyXLCD(void) {
-    LATDbits.LATD5 = 1;
-    LATDbits.LATD4 = 0;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 1;
-    DelayFor18TCY();
-# 240 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-    if (PORTD & 0x08)
-
-    {
-        LATDbits.LATD6 = 0;
-        DelayFor18TCY();
-        LATDbits.LATD6 = 1;
-        DelayFor18TCY();
-        LATDbits.LATD6 = 0;
-        LATDbits.LATD5 = 0;
-        return 1;
-    } else
-    {
-        LATDbits.LATD6 = 0;
-        DelayFor18TCY();
-        LATDbits.LATD6 = 1;
-        DelayFor18TCY();
-        LATDbits.LATD6 = 0;
-        LATDbits.LATD5 = 0;
-        return 0;
-    }
-
-}
-# 302 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-void putsXLCD(char *buffer) {
-    while (*buffer)
-    {
-        while (BusyXLCD());
-        WriteDataXLCD(*buffer);
-        buffer++;
-    }
-    return;
-}
-# 324 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-unsigned char ReadAddrXLCD(void) {
-    char data;
-# 337 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-    LATDbits.LATD5 = 1;
-    LATDbits.LATD4 = 0;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 1;
-    DelayFor18TCY();
-
-
-
-    data = (PORTD << 4)&0xf0;
-
-    LATDbits.LATD6 = 0;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 1;
-    DelayFor18TCY();
-
-
-
-    data |= PORTD & 0x0f;
-
-    LATDbits.LATD6 = 0;
-    LATDbits.LATD5 = 0;
-
-    return (data & 0x7f);
-}
-# 374 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-char ReadDataXLCD(void) {
-    char data;
-# 388 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-    LATDbits.LATD5 = 1;
-    LATDbits.LATD4 = 1;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 1;
-    DelayFor18TCY();
-
-
-
-    data = (PORTD << 4)&0xf0;
-
-    LATDbits.LATD6 = 0;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 1;
-    DelayFor18TCY();
-
-
-
-    data |= PORTD & 0x0f;
-
-    LATDbits.LATD6 = 0;
-    LATDbits.LATD4 = 0;
-    LATDbits.LATD5 = 0;
-
-    return (data);
-}
-# 424 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-void SetCGRamAddr(unsigned char CGaddr) {
-# 442 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-    TRISD &= 0xf0;
-    PORTD &= 0xf0;
-    PORTD |= (((CGaddr | 0b01000000) >> 4) & 0x0f);
-
-    LATDbits.LATD5 = 0;
-    LATDbits.LATD4 = 0;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 1;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 0;
-
-
-
-
-    PORTD &= 0xf0;
-    PORTD |= (CGaddr & 0x0f);
-
-    DelayFor18TCY();
-    LATDbits.LATD6 = 1;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 0;
-
-
-
-    TRISD |= 0x0f;
-
-
-    return;
-}
-# 481 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-void SetDDRamAddr(unsigned char DDaddr) {
-# 499 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-    TRISD &= 0xf0;
-    PORTD &= 0xf0;
-    PORTD |= (((DDaddr | 0b10000000) >> 4) & 0x0f);
-
-    LATDbits.LATD5 = 0;
-    LATDbits.LATD4 = 0;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 1;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 0;
-
-
-
-
-    PORTD &= 0xf0;
-    PORTD |= (DDaddr & 0x0f);
-
-    DelayFor18TCY();
-    LATDbits.LATD6 = 1;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 0;
-
-
-
-    TRISD |= 0x0f;
-
-
-    return;
-}
-# 538 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-void WriteCmdXLCD(unsigned char cmd) {
-# 556 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-    TRISD &= 0xf0;
-    PORTD &= 0xf0;
-    PORTD |= (cmd >> 4)&0x0f;
-
-    LATDbits.LATD5 = 0;
-    LATDbits.LATD4 = 0;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 1;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 0;
-
-
-
-
-    PORTD &= 0xf0;
-    PORTD |= cmd & 0x0f;
-
-    DelayFor18TCY();
-    LATDbits.LATD6 = 1;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 0;
-
-
-
-    TRISD |= 0x0f;
-
-
-    return;
-}
-# 598 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-void WriteDataXLCD(char data) {
-# 616 "../../../2. Lab/Ficheiros - Aulas_Lab/PL1 - LCD/Codigo-Exemplos/Exemplos_Tutorial_LCD/Exemplo_1/microprocessadores.X/xlcd.c"
-    TRISD &= 0xf0;
-    PORTD &= 0xf0;
-    PORTD |= ((data >> 4)&0x0f);
-
-    LATDbits.LATD4 = 1;
-    LATDbits.LATD5 = 0;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 1;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 0;
-
-
-
-
-    PORTD &= 0xf0;
-    PORTD |= (data & 0x0f);
-
-    DelayFor18TCY();
-    LATDbits.LATD6 = 1;
-    DelayFor18TCY();
-    LATDbits.LATD6 = 0;
-
-
-
-    TRISD |= 0x0f;
-
-
-    return;
+void teclado_coluna_3 (void) {
+    tecla_n = 1;
+    if (PORTBbits.RB3 == 0){
+            tecla_premida = '3';
+        }
+        else if (PORTBbits.RB4 == 0){
+            tecla_premida = '6';
+        }
+        else if (PORTBbits.RB5 == 0){
+            tecla_premida = '9';
+        }
+        else if (PORTBbits.RB6 == 0){
+            contador_colunas_LCD = 192;
+            tecla_n = 0;
+            tecla_limpar = 1;
+        }
 }

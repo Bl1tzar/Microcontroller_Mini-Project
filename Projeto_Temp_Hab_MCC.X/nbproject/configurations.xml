@@ -14,8 +14,9 @@
         <itemPath>mcc_generated_files/device_config.h</itemPath>
         <itemPath>mcc_generated_files/mcc.h</itemPath>
       </logicalFolder>
-      <itemPath>LCD_inicio.h</itemPath>
       <itemPath>xlcd.h</itemPath>
+      <itemPath>Teclado.h</itemPath>
+      <itemPath>LCD.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -35,8 +36,9 @@
         <itemPath>mcc_generated_files/pin_manager.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
-      <itemPath>LCD_inicio.c</itemPath>
       <itemPath>xlcd.c</itemPath>
+      <itemPath>Teclado.c</itemPath>
+      <itemPath>LCD.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -170,6 +172,9 @@
         <property key="program-the-device-with-default-config-words" value="true"/>
         <property key="remove-unused-sections" value="true"/>
       </HI-TECH-LINK>
+      <VSMViewerPlatformTool>
+        <property key="design.file" value="Schematics-IO.pdsprj"/>
+      </VSMViewerPlatformTool>
       <XC8-CO>
         <property key="coverage-enable" value=""/>
       </XC8-CO>

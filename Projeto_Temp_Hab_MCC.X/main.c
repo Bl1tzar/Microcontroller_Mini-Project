@@ -5,42 +5,51 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include "LCD_inicio.h"
+/*
+                         Funcões
+ */
+
+//Inclui funcão LCD_inicio_teste 
+//Inclui variáveis globais LCD_linha_1 & LCD_linha_2
+#include "LCD.h"
+
+
+/* Inclui funcoes:
+ * teclado_coluna_1 
+ * teclado_coluna_2 
+ * teclado_coluna_3
+*/
+#include "Teclado.h"
 
 
 /*
                          Variáveis Globais
  */
+
 /*
          Teclado
  */
-
 unsigned char tecla_premida; // Guarda a tecla que foi premida
 int tecla_n; //Indica se alguma tecla foi premida
 int tecla_limpar; // Indica que é para limpar o LCD
-
 /*
          LCD
  */
-
-int contador_colunas_LCD = 192; // 192 = 2a linha 1a coluna (0b10000000) no LCD
-
+// 192 = 2a linha 1a coluna (0b11000000) no LCD
+int contador_colunas_LCD = 192; //contador 
+int LCD_linha_1; //variavel externa - LCD.c
+int LCD_linha_2; //variavel externa - LCD.c
 /*
          PIN
  */
-
 char pin [4]; // Guarda o valor do PIN introduzido para ter acesso
 int pin_intr; // Valor do PIN introduzido
 int pin_real = 0000; // Valor do PIN - o introduzido terá que ser igual a este
-
 /*
          Temperatura
  */
-
 char temp_alar_int [2]; // Guarda o valor de temperatura de alarme introduzido 
 int temp_alar; // Valor da temperatura de alarme 
-
-
 
 
 /*
@@ -48,75 +57,21 @@ int temp_alar; // Valor da temperatura de alarme
  */
 
 //Testar LED com interrupcão do Timer 0 & interrupcões do telcado 
-
 void acende_LED (void) {
     led_Toggle();
-}
-
-void teclado_coluna_1 (void) {
-
-    if (PORTBbits.RB3 == 0){
-            tecla_premida = '1';
-        }
-        else if (PORTBbits.RB4 == 0){
-            tecla_premida = '4';
-        }
-        else if (PORTBbits.RB5 == 0){
-            tecla_premida = '7';
-        }
-        else if (PORTBbits.RB6 == 0){
-            tecla_premida = '*';
-        }
-        tecla_n = 1;   
-}
-
-void teclado_coluna_2 (void) {
-
-    if (PORTBbits.RB3 == 0){
-            tecla_premida = '2';
-        }
-        else if (PORTBbits.RB4 == 0){
-            tecla_premida = '5';
-        }
-        else if (PORTBbits.RB5 == 0){
-            tecla_premida = '8';
-        }
-        else if (PORTBbits.RB6 == 0){
-            tecla_premida = '0';
-        }
-        tecla_n = 1;   
-}
-
-void teclado_coluna_3 (void) {
-    tecla_n = 1;
-    if (PORTBbits.RB3 == 0){
-            tecla_premida = '3';
-        }
-        else if (PORTBbits.RB4 == 0){
-            tecla_premida = '6';
-        }
-        else if (PORTBbits.RB5 == 0){
-            tecla_premida = '9';
-        }
-        else if (PORTBbits.RB6 == 0){
-            contador_colunas_LCD = 192;
-            tecla_n = 0;
-            tecla_limpar = 1;
-        }
 }
 
 
 /*
                          Main application
  */
+
 void main(void)
 {
-    
     // Initialize the device
     SYSTEM_Initialize();
 
-    
-    
+
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global and Peripheral Interrupts
     // Use the following macros to:
@@ -140,9 +95,10 @@ void main(void)
     //Escrever o inicio do LCD - "Mars Rocks_Teste Teclado" - LCD_inicio.h
     LCD_inicio_teste();
     
-    
+    //Interrupcão do Timer para acender LED
     TMR0_SetInterruptHandler (acende_LED);
     
+    //Interrupcões dos botões das colunas do teclado para detetar uma tecla pressionada
     INT0_SetInterruptHandler (teclado_coluna_1);
     INT1_SetInterruptHandler (teclado_coluna_2);
     INT2_SetInterruptHandler (teclado_coluna_3);
@@ -157,7 +113,7 @@ void main(void)
             
             /*TESTAR A FUNCAO strncat*/
             
-            WriteCmdXLCD(0b11000000);
+            WriteCmdXLCD(LCD_linha_2);
             while (BusyXLCD());
 
             /*
