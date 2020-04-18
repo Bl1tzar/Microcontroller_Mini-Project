@@ -37,7 +37,7 @@ int tecla_limpar; // Indica que é para limpar o LCD
  */
 // 192 = 2a linha 1a coluna (0b11000000) no LCD
 int contador_colunas_LCD = 192; //contador 
-int LCD_linha_1; //variavel externa - LCD.c
+int LCD_linha_1; //variavel externa - LCD.c - isto porque necessitei delas no LCD.c
 int LCD_linha_2; //variavel externa - LCD.c
 /*
          PIN
@@ -113,16 +113,18 @@ void main(void)
             
             /*TESTAR A FUNCAO strncat*/
             
-            WriteCmdXLCD(LCD_linha_2);
-            while (BusyXLCD());
-
-            /*
-             * Escreve conteúdo da string 'pin' para o LCD,
-             * na posição anteriormente endereçada
-             */
-            /*PIN*/
-            putsXLCD(pin);
-            while (BusyXLCD());
+//            WriteCmdXLCD(LCD_linha_2);
+//            while (BusyXLCD());
+//
+//            /*
+//             * Escreve conteúdo da string 'pin' para o LCD,
+//             * na posição anteriormente endereçada
+//             */
+//            /*PIN*/
+//            putsXLCD(pin);
+//            while (BusyXLCD());
+            
+            escrever_texto_LCD (LCD_linha_2,pin);
             
             /************************************************************/
             contador_caracteres++;

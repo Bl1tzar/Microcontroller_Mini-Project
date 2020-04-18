@@ -31,11 +31,11 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"15 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\LCD.c
+"29 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\LCD.c
 [v _LCD_inicio_teste LCD_inicio_teste `(v  1 e 1 0 ]
-"59 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+"60 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 [v _acende_LED acende_LED `(v  1 e 1 0 ]
-"68
+"69
 [v _main main `(v  1 e 1 0 ]
 "34 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\mcc_generated_files/ext_int.c
 [v _INT0_ISR INT0_ISR `(v  1 e 1 0 ]
@@ -403,7 +403,7 @@
 ]
 [u S75 . 1 `S53 1 . 1 0 `S62 1 . 1 0 `S71 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES75  1 e 1 @4082 ]
-"44 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+"45 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 [v _pin pin `[4]uc  1 e 4 0 ]
 "30 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\mcc_generated_files/ext_int.c
 [v _INT0_InterruptHandler INT0_InterruptHandler `*.37(v  1 e 2 0 ]
@@ -423,12 +423,12 @@
 [v _tecla_limpar tecla_limpar `i  1 e 2 0 ]
 "17
 [v _contador_colunas_LCD contador_colunas_LCD `i  1 e 2 0 ]
-"68 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+"69 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"92
+"93
 [v main@contador_caracteres contador_caracteres `i  1 a 2 16 ]
-"178
+"179
 } 0
 "3 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strncat.c
 [v _strncat strncat `(*.39uc  1 e 2 0 ]
@@ -501,10 +501,10 @@
 [v INT0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 3 ]
 "54
 } 0
-"15 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\LCD.c
+"29 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\LCD.c
 [v _LCD_inicio_teste LCD_inicio_teste `(v  1 e 1 0 ]
 {
-"104
+"116
 } 0
 "302 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\xlcd.c
 [v _putsXLCD putsXLCD `(v  1 e 1 0 ]
@@ -570,10 +570,10 @@
 {
 "163
 } 0
-"59 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+"60 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 [v _acende_LED acende_LED `(v  1 e 1 0 ]
 {
-"61
+"62
 } 0
 "101 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]

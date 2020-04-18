@@ -9847,8 +9847,24 @@ extern int LCD_linha_1;
 extern int LCD_linha_2;
 
 
+
+
 void LCD_inicio_teste(void);
+
+void escrever_texto_LCD (linha_LCD, texto){
+
+    WriteCmdXLCD(linha_LCD);
+    while (BusyXLCD());
+
+
+
+
+    putsXLCD(texto);
+     while (BusyXLCD());
+
+}
 # 14 "main.c" 2
+
 
 
 
@@ -9869,8 +9885,8 @@ extern int tecla_limpar;
 void teclado_coluna_1 (void);
 void teclado_coluna_2 (void);
 void teclado_coluna_3 (void);
-# 21 "main.c" 2
-# 31 "main.c"
+# 22 "main.c" 2
+# 32 "main.c"
 unsigned char tecla_premida;
 int tecla_n;
 int tecla_limpar;
@@ -9924,7 +9940,7 @@ void main(void)
 
 
     (INTCONbits.PEIE = 1);
-# 92 "main.c"
+# 93 "main.c"
     int contador_caracteres = 4;
 
 
@@ -9945,19 +9961,8 @@ void main(void)
 
 
             strncat(pin, &tecla_premida, 1);
-
-
-
-            WriteCmdXLCD(LCD_linha_2);
-            while (BusyXLCD());
-
-
-
-
-
-
-            putsXLCD(pin);
-            while (BusyXLCD());
+# 127 "main.c"
+            escrever_texto_LCD (LCD_linha_2,pin);
 
 
             contador_caracteres++;

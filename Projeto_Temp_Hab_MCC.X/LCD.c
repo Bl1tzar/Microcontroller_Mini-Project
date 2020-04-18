@@ -7,11 +7,19 @@
 
 #include "LCD.h"
 
+/*
+                         Variaveis
+ */
+
 // 128 = 1a linha 1a coluna (0b10000000) no LCD
 // 192 = 2a linha 1a coluna (0b11000000) no LCD
 int LCD_linha_1 = 128; //1a linha 1a coluna no LCD
 int LCD_linha_2 = 192; //2a linha 1a coluna no LCD
 
+
+/*
+                         Funcoes
+ */
 void LCD_inicio_teste (void){ 
 
     /*
@@ -78,8 +86,6 @@ void LCD_inicio_teste (void){
     
     __delay_ms(1000);
     
-    	WriteCmdXLCD(0b00010111);
-	while (BusyXLCD());
 	/*
 	 * Comando interno para o LCD:
 	 * CLEAR_LCD: Limpa conteúdo do display
@@ -102,4 +108,21 @@ void LCD_inicio_teste (void){
 	while (BusyXLCD());
     
 }    
+
+void escrever_texto_LCD (int linha_LCD, char texto[21]){
+
+    WriteCmdXLCD(linha_LCD);
+    while (BusyXLCD());
+    /*
+    * Escreve conteúdo da string 'texto' para o LCD,
+    * na posição anteriormente endereçada
+    */
+    putsXLCD(texto);
+     while (BusyXLCD());
+    
+}
+
+//void escrever_variaveis_LCD (coluna,variavel){
+
+//}
 

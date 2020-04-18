@@ -9856,6 +9856,7 @@ void LCD_inicio_teste(void);
 
 
 
+
 # 1 "./Teclado.h" 1
 
 
@@ -9869,8 +9870,8 @@ extern int tecla_limpar;
 void teclado_coluna_1 (void);
 void teclado_coluna_2 (void);
 void teclado_coluna_3 (void);
-# 21 "main.c" 2
-# 31 "main.c"
+# 22 "main.c" 2
+# 32 "main.c"
 unsigned char tecla_premida;
 int tecla_n;
 int tecla_limpar;
@@ -9924,7 +9925,7 @@ void main(void)
 
 
     (INTCONbits.PEIE = 1);
-# 92 "main.c"
+# 93 "main.c"
     int contador_caracteres = 4;
 
 

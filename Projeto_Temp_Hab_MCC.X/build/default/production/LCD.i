@@ -9793,8 +9793,27 @@ extern int LCD_linha_1;
 extern int LCD_linha_2;
 
 
+
+
 void LCD_inicio_teste(void);
+
+void escrever_texto_LCD (linha_LCD, texto){
+
+    WriteCmdXLCD(linha_LCD);
+    while (BusyXLCD());
+
+
+
+
+    putsXLCD(texto);
+     while (BusyXLCD());
+
+}
 # 8 "LCD.c" 2
+
+
+
+
 
 
 
@@ -9802,11 +9821,15 @@ void LCD_inicio_teste(void);
 int LCD_linha_1 = 128;
 int LCD_linha_2 = 192;
 
+
+
+
+
 void LCD_inicio_teste (void){
-# 29 "LCD.c"
+# 37 "LCD.c"
  OpenXLCD(0b00101011);
  while (BusyXLCD());
-# 39 "LCD.c"
+# 47 "LCD.c"
  WriteCmdXLCD(0b00001100);
  while (BusyXLCD());
 
@@ -9823,7 +9846,7 @@ void LCD_inicio_teste (void){
 
  WriteCmdXLCD(0b00000001);
  while (BusyXLCD());
-# 69 "LCD.c"
+# 77 "LCD.c"
  WriteCmdXLCD(LCD_linha_1);
  while (BusyXLCD());
 
@@ -9836,8 +9859,6 @@ void LCD_inicio_teste (void){
 
     _delay((unsigned long)((1000)*(6000000/4000.0)));
 
-     WriteCmdXLCD(0b00010111);
- while (BusyXLCD());
 
 
 
@@ -9858,5 +9879,18 @@ void LCD_inicio_teste (void){
 
     putsXLCD("Teste - Teclado");
  while (BusyXLCD());
+
+}
+
+void escrever_texto_LCD (int linha_LCD, char texto[21]){
+
+    WriteCmdXLCD(linha_LCD);
+    while (BusyXLCD());
+
+
+
+
+    putsXLCD(texto);
+     while (BusyXLCD());
 
 }

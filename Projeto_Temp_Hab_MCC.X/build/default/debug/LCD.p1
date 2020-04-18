@@ -771,130 +771,153 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17372
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 17372: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"12 LCD.c
-[; ;LCD.c: 12: int LCD_linha_1 = 128;
+"16 LCD.c
+[; ;LCD.c: 16: int LCD_linha_1 = 128;
 [v _LCD_linha_1 `i ~T0 @X0 1 e ]
 [i _LCD_linha_1
 -> 128 `i
 ]
-"13
-[; ;LCD.c: 13: int LCD_linha_2 = 192;
+"17
+[; ;LCD.c: 17: int LCD_linha_2 = 192;
 [v _LCD_linha_2 `i ~T0 @X0 1 e ]
 [i _LCD_linha_2
 -> 192 `i
 ]
-"15
-[; ;LCD.c: 15: void LCD_inicio_teste (void){
+"23
+[; ;LCD.c: 23: char texto [21];
+[v _texto `uc ~T0 @X0 -> 21 `i e ]
+"24
+[; ;LCD.c: 24: int coluna;
+[v _coluna `i ~T0 @X0 1 e ]
+"25
+[; ;LCD.c: 25: char variavel [21];
+[v _variavel `uc ~T0 @X0 -> 21 `i e ]
+"29
+[; ;LCD.c: 29: void LCD_inicio_teste (void){
 [v _LCD_inicio_teste `(v ~T0 @X0 1 ef ]
 {
 [e :U _LCD_inicio_teste ]
 [f ]
-"29
-[; ;LCD.c: 29:  OpenXLCD(0b00101011);
+"43
+[; ;LCD.c: 43:  OpenXLCD(0b00101011);
 [e ( _OpenXLCD (1 -> -> 43 `i `uc ]
-"30
-[; ;LCD.c: 30:  while (BusyXLCD());
+"44
+[; ;LCD.c: 44:  while (BusyXLCD());
 [e $U 852  ]
 [e :U 853 ]
 [e :U 852 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 853  ]
 [e :U 854 ]
-"39
-[; ;LCD.c: 39:  WriteCmdXLCD(0b00001100);
+"53
+[; ;LCD.c: 53:  WriteCmdXLCD(0b00001100);
 [e ( _WriteCmdXLCD (1 -> -> 12 `i `uc ]
-"40
-[; ;LCD.c: 40:  while (BusyXLCD());
+"54
+[; ;LCD.c: 54:  while (BusyXLCD());
 [e $U 855  ]
 [e :U 856 ]
 [e :U 855 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 856  ]
 [e :U 857 ]
-"47
-[; ;LCD.c: 47:  WriteCmdXLCD(0b00010111);
+"61
+[; ;LCD.c: 61:  WriteCmdXLCD(0b00010111);
 [e ( _WriteCmdXLCD (1 -> -> 23 `i `uc ]
-"48
-[; ;LCD.c: 48:  while (BusyXLCD());
+"62
+[; ;LCD.c: 62:  while (BusyXLCD());
 [e $U 858  ]
 [e :U 859 ]
 [e :U 858 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 859  ]
 [e :U 860 ]
-"53
-[; ;LCD.c: 53:  WriteCmdXLCD(0b00000001);
+"67
+[; ;LCD.c: 67:  WriteCmdXLCD(0b00000001);
 [e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
-"54
-[; ;LCD.c: 54:  while (BusyXLCD());
+"68
+[; ;LCD.c: 68:  while (BusyXLCD());
 [e $U 861  ]
 [e :U 862 ]
 [e :U 861 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 862  ]
 [e :U 863 ]
-"69
-[; ;LCD.c: 69:  WriteCmdXLCD(LCD_linha_1);
+"83
+[; ;LCD.c: 83:  WriteCmdXLCD(LCD_linha_1);
 [e ( _WriteCmdXLCD (1 -> _LCD_linha_1 `uc ]
-"70
-[; ;LCD.c: 70:  while (BusyXLCD());
+"84
+[; ;LCD.c: 84:  while (BusyXLCD());
 [e $U 864  ]
 [e :U 865 ]
 [e :U 864 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 865  ]
 [e :U 866 ]
-"76
-[; ;LCD.c: 76:     putsXLCD("Mars ROCK'S!");
+"90
+[; ;LCD.c: 90:     putsXLCD("Mars ROCK'S!");
 [e ( _putsXLCD (1 :s 1C ]
-"77
-[; ;LCD.c: 77:  while (BusyXLCD());
+"91
+[; ;LCD.c: 91:  while (BusyXLCD());
 [e $U 867  ]
 [e :U 868 ]
 [e :U 867 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 868  ]
 [e :U 869 ]
-"79
-[; ;LCD.c: 79:     _delay((unsigned long)((1000)*(6000000/4000.0)));
+"93
+[; ;LCD.c: 93:     _delay((unsigned long)((1000)*(6000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
-"81
-[; ;LCD.c: 81:      WriteCmdXLCD(0b00010111);
-[e ( _WriteCmdXLCD (1 -> -> 23 `i `uc ]
-"82
-[; ;LCD.c: 82:  while (BusyXLCD());
+"99
+[; ;LCD.c: 99:  WriteCmdXLCD(0b00000001);
+[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
+"100
+[; ;LCD.c: 100:  while (BusyXLCD());
 [e $U 870  ]
 [e :U 871 ]
 [e :U 870 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 871  ]
 [e :U 872 ]
-"87
-[; ;LCD.c: 87:  WriteCmdXLCD(0b00000001);
-[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
-"88
-[; ;LCD.c: 88:  while (BusyXLCD());
+"106
+[; ;LCD.c: 106:  WriteCmdXLCD(LCD_linha_1);
+[e ( _WriteCmdXLCD (1 -> _LCD_linha_1 `uc ]
+"107
+[; ;LCD.c: 107:  while (BusyXLCD());
 [e $U 873  ]
 [e :U 874 ]
 [e :U 873 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 874  ]
 [e :U 875 ]
-"94
-[; ;LCD.c: 94:  WriteCmdXLCD(LCD_linha_1);
-[e ( _WriteCmdXLCD (1 -> _LCD_linha_1 `uc ]
-"95
-[; ;LCD.c: 95:  while (BusyXLCD());
+"113
+[; ;LCD.c: 113:     putsXLCD("Teste - Teclado");
+[e ( _putsXLCD (1 :s 2C ]
+"114
+[; ;LCD.c: 114:  while (BusyXLCD());
 [e $U 876  ]
 [e :U 877 ]
 [e :U 876 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 877  ]
 [e :U 878 ]
-"101
-[; ;LCD.c: 101:     putsXLCD("Teste - Teclado");
-[e ( _putsXLCD (1 :s 2C ]
-"102
-[; ;LCD.c: 102:  while (BusyXLCD());
-[e $U 879  ]
-[e :U 880 ]
-[e :U 879 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 880  ]
-[e :U 881 ]
-"104
-[; ;LCD.c: 104: }
+"116
+[; ;LCD.c: 116: }
 [e :UE 851 ]
+}
+"118
+[; ;LCD.c: 118: void escrever_texto_LCD (coluna,texto){
+[v _escrever_texto_LCD `(v ~T0 @X0 1 ef2`i`i ]
+{
+[e :U _escrever_texto_LCD ]
+[v _coluna `i ~T0 @X0 1 r2 ]
+[v _texto `i ~T0 @X0 1 r1 ]
+[f ]
+"120
+[; ;LCD.c: 120: }
+[e :UE 879 ]
+}
+"122
+[; ;LCD.c: 122: void escrever_variaveis_LCD (coluna,variavel){
+[v _escrever_variaveis_LCD `(v ~T0 @X0 1 ef2`i`i ]
+{
+[e :U _escrever_variaveis_LCD ]
+[v _coluna `i ~T0 @X0 1 r2 ]
+[v _variavel `i ~T0 @X0 1 r1 ]
+[f ]
+"124
+[; ;LCD.c: 124: }
+[e :UE 880 ]
 }
 [a 2C 84 101 115 116 101 32 45 32 84 101 99 108 97 100 111 0 ]
 [a 1C 77 97 114 115 32 82 79 67 75 39 83 33 0 ]
