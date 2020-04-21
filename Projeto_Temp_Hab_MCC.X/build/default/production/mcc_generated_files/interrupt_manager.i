@@ -9,7 +9,7 @@
 # 1 "mcc_generated_files/interrupt_manager.c" 2
 # 49 "mcc_generated_files/interrupt_manager.c"
 # 1 "mcc_generated_files/interrupt_manager.h" 1
-# 110 "mcc_generated_files/interrupt_manager.h"
+# 132 "mcc_generated_files/interrupt_manager.h"
 void INTERRUPT_Initialize (void);
 # 49 "mcc_generated_files/interrupt_manager.c" 2
 
@@ -9662,6 +9662,13 @@ extern void cputs(const char *);
 # 54 "mcc_generated_files/mcc.h" 2
 
 
+# 1 "mcc_generated_files/epwm1.h" 1
+# 96 "mcc_generated_files/epwm1.h"
+void EPWM1_Initialize(void);
+# 122 "mcc_generated_files/epwm1.h"
+void EPWM1_LoadDutyValue(uint16_t dutyValue);
+# 56 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/ext_int.h" 1
 # 562 "mcc_generated_files/ext_int.h"
 void EXT_INT_Initialize(void);
@@ -9695,7 +9702,24 @@ void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT2_InterruptHandler)(void);
 # 905 "mcc_generated_files/ext_int.h"
 void INT2_DefaultInterruptHandler(void);
-# 56 "mcc_generated_files/mcc.h" 2
+# 57 "mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/tmr2.h" 1
+# 103 "mcc_generated_files/tmr2.h"
+void TMR2_Initialize(void);
+# 132 "mcc_generated_files/tmr2.h"
+void TMR2_StartTimer(void);
+# 164 "mcc_generated_files/tmr2.h"
+void TMR2_StopTimer(void);
+# 199 "mcc_generated_files/tmr2.h"
+uint8_t TMR2_ReadTimer(void);
+# 238 "mcc_generated_files/tmr2.h"
+void TMR2_WriteTimer(uint8_t timerVal);
+# 290 "mcc_generated_files/tmr2.h"
+void TMR2_LoadPeriodRegister(uint8_t periodVal);
+# 325 "mcc_generated_files/tmr2.h"
+_Bool TMR2_HasOverflowOccured(void);
+# 58 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/tmr0.h" 1
 # 100 "mcc_generated_files/tmr0.h"
@@ -9718,10 +9742,10 @@ void TMR0_ISR(void);
 extern void (*TMR0_InterruptHandler)(void);
 # 345 "mcc_generated_files/tmr0.h"
 void TMR0_DefaultInterruptHandler(void);
-# 57 "mcc_generated_files/mcc.h" 2
-# 72 "mcc_generated_files/mcc.h"
+# 59 "mcc_generated_files/mcc.h" 2
+# 74 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 85 "mcc_generated_files/mcc.h"
+# 87 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 50 "mcc_generated_files/interrupt_manager.c" 2
 
@@ -9729,10 +9753,25 @@ void OSCILLATOR_Initialize(void);
 void INTERRUPT_Initialize (void)
 {
 
-    RCONbits.IPEN = 0;
+    RCONbits.IPEN = 1;
+
+
+
+
+    INTCON2bits.TMR0IP = 1;
+
+
+
+
+    INTCON3bits.INT1IP = 1;
+
+
+    INTCON3bits.INT2IP = 1;
+
+
 }
 
-void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
+void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManagerHigh (void)
 {
 
     if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
@@ -9750,10 +9789,6 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
     else if(INTCON3bits.INT2IE == 1 && INTCON3bits.INT2IF == 1)
     {
         INT2_ISR();
-    }
-    else if(INTCONbits.RBIE == 1 && INTCONbits.RBIF == 1)
-    {
-        PIN_MANAGER_IOC();
     }
     else
     {

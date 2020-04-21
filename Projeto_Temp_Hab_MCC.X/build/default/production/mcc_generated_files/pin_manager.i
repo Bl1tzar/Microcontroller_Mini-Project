@@ -9570,8 +9570,6 @@ void PIN_MANAGER_Initialize(void)
     WPUB = 0x07;
     INTCON2bits.nRBPU = 0;
 # 97 "mcc_generated_files/pin_manager.c"
-    INTCONbits.RBIE = 1;
-
 }
 
 void PIN_MANAGER_IOC(void)

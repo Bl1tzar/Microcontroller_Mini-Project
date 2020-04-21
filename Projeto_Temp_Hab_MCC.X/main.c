@@ -68,21 +68,43 @@ void acende_LED (void) {
 
 void main(void)
 {
-    // Initialize the device
+        // Initialize the device
     SYSTEM_Initialize();
 
+ 
 
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global and Peripheral Interrupts
     // Use the following macros to:
 
+ 
 
-    INTERRUPT_GlobalInterruptEnable();
+    // Enable high priority global interrupts
+    INTERRUPT_GlobalInterruptHighEnable();
 
-    //INTERRUPT_GlobalInterruptDisable();
+ 
 
-    INTERRUPT_PeripheralInterruptEnable();
+    // Enable low priority global interrupts.
+    //INTERRUPT_GlobalInterruptLowEnable();
 
+ 
+
+    // Disable high priority global interrupts
+    //INTERRUPT_GlobalInterruptHighDisable();
+
+ 
+
+    // Disable low priority global interrupts.
+    //INTERRUPT_GlobalInterruptLowDisable();
+
+ 
+
+    // Enable the Peripheral Interrupts
+    //INTERRUPT_PeripheralInterruptEnable();
+
+ 
+
+    // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
 
     
@@ -103,8 +125,22 @@ void main(void)
     INT1_SetInterruptHandler (teclado_coluna_2);
     INT2_SetInterruptHandler (teclado_coluna_3);
     
+    CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder
+    
     while (1)
     { 
+        
+        if (tecla_premida == '2'){
+        
+            CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder
+        
+        }
+        if (tecla_premida == '1'){
+        
+            CCP1CONbits.CCP1M = 1100; //ativa o PWM - liga o sounder
+            
+        }
+        
         if (tecla_n){
             
             /*PIN*/
@@ -113,18 +149,18 @@ void main(void)
             
             /*TESTAR A FUNCAO strncat*/
             
-//            WriteCmdXLCD(LCD_linha_2);
-//            while (BusyXLCD());
-//
-//            /*
-//             * Escreve conteúdo da string 'pin' para o LCD,
-//             * na posição anteriormente endereçada
-//             */
-//            /*PIN*/
-//            putsXLCD(pin);
-//            while (BusyXLCD());
+            WriteCmdXLCD(LCD_linha_2);
+            while (BusyXLCD());
+
+            /*
+             * Escreve conteúdo da string 'pin' para o LCD,
+             * na posição anteriormente endereçada
+             */
+            /*PIN*/
+            putsXLCD(pin);
+            while (BusyXLCD());
             
-            escrever_texto_LCD (LCD_linha_2,pin);
+            //escrever_texto_LCD (LCD_linha_2,pin);
             
             /************************************************************/
             contador_caracteres++;
@@ -141,7 +177,6 @@ void main(void)
             
             
         }
-    
         
         /*Loop para atribuir valores a todos os outputs para as linha do teclado*/
         //LATB = 0b11110111;

@@ -53,6 +53,8 @@ void SYSTEM_Initialize(void)
     INTERRUPT_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
+    EPWM1_Initialize();
+    TMR2_Initialize();
     EXT_INT_Initialize();
     TMR0_Initialize();
 }

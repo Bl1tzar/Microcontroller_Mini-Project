@@ -901,24 +901,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 88:     INTCON2bits.nRBPU = 0;
 [e = . . _INTCON2bits 1 7 -> -> 0 `i `uc ]
 "97
-[; ;mcc_generated_files/pin_manager.c: 97:     INTCONbits.RBIE = 1;
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"99
-[; ;mcc_generated_files/pin_manager.c: 99: }
+[; ;mcc_generated_files/pin_manager.c: 97: }
 [e :UE 851 ]
 }
-"101
-[; ;mcc_generated_files/pin_manager.c: 101: void PIN_MANAGER_IOC(void)
+"99
+[; ;mcc_generated_files/pin_manager.c: 99: void PIN_MANAGER_IOC(void)
 [v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
-"102
-[; ;mcc_generated_files/pin_manager.c: 102: {
+"100
+[; ;mcc_generated_files/pin_manager.c: 100: {
 {
 [e :U _PIN_MANAGER_IOC ]
 [f ]
-"104
-[; ;mcc_generated_files/pin_manager.c: 104:     INTCONbits.RBIF = 0;
+"102
+[; ;mcc_generated_files/pin_manager.c: 102:     INTCONbits.RBIF = 0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"105
-[; ;mcc_generated_files/pin_manager.c: 105: }
+"103
+[; ;mcc_generated_files/pin_manager.c: 103: }
 [e :UE 852 ]
 }

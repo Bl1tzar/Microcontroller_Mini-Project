@@ -1,11 +1,11 @@
 /**
-  Generated Interrupt Manager Source File
+  Generated Interrupt Manager Header File
 
   @Company:
     Microchip Technology Inc.
 
   @File Name:
-    interrupt_manager.c
+    interrupt_manager.h
 
   @Summary:
     This is the Interrupt Manager file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
@@ -17,7 +17,7 @@
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.80.0
         Device            :  PIC18F45K22
-        Driver Version    :  2.03
+        Driver Version    :  2.12
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.10 and above or later
         MPLAB 	          :  MPLAB X 5.30
@@ -51,13 +51,28 @@
 
 void  INTERRUPT_Initialize (void)
 {
-    // Disable Interrupt Priority Vectors (16CXXX Compatibility Mode)
-    RCONbits.IPEN = 0;
+    // Enable Interrupt Priority Vectors
+    RCONbits.IPEN = 1;
+
+    // Assign peripheral interrupt priority vectors
+
+    // TMRI - high priority
+    INTCON2bits.TMR0IP = 1;
+
+    // Interrupt INT0I has no priority bit. It will always be called from the High Interrupt Vector
+
+    // INT1I - high priority
+    INTCON3bits.INT1IP = 1;
+
+    // INT2I - high priority
+    INTCON3bits.INT2IP = 1;
+
+
 }
 
-void __interrupt() INTERRUPT_InterruptManager (void)
+void __interrupt() INTERRUPT_InterruptManagerHigh (void)
 {
-    // interrupt handler
+   // interrupt handler
     if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
     {
         TMR0_ISR();
@@ -74,15 +89,12 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     {
         INT2_ISR();
     }
-    else if(INTCONbits.RBIE == 1 && INTCONbits.RBIF == 1)
-    {
-        PIN_MANAGER_IOC();
-    }
     else
     {
         //Unhandled Interrupt
     }
 }
+
 /**
  End of File
 */

@@ -1,20 +1,37 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"79 ./xlcd.h
-[; ;./xlcd.h: 79: void OpenXLCD( unsigned char);
-[v _OpenXLCD `(v ~T0 @X0 0 ef1`uc ]
-"94
-[; ;./xlcd.h: 94: unsigned char BusyXLCD(void);
-[v _BusyXLCD `(uc ~T0 @X0 0 ef ]
-"109
-[; ;./xlcd.h: 109: void WriteCmdXLCD( unsigned char);
-[v _WriteCmdXLCD `(v ~T0 @X0 0 ef1`uc ]
-"124
-[; ;./xlcd.h: 124: void putsXLCD( char *);
-[v _putsXLCD `(v ~T0 @X0 0 ef1`*uc ]
-[v F5963 `(v ~T0 @X0 1 tf1`ul ]
-"187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
-[v __delay `JF5963 ~T0 @X0 0 e ]
-[p i __delay ]
+"13309 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 13309: extern volatile unsigned char CCP1CON __attribute__((address(0xFBD)));
+[v _CCP1CON `Vuc ~T0 @X0 0 e@4029 ]
+"11738
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 11738: extern volatile unsigned char ECCP1AS __attribute__((address(0xFB6)));
+[v _ECCP1AS `Vuc ~T0 @X0 0 e@4022 ]
+"12120
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 12120: extern volatile unsigned char PWM1CON __attribute__((address(0xFB7)));
+[v _PWM1CON `Vuc ~T0 @X0 0 e@4023 ]
+"13048
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 13048: extern volatile unsigned char PSTR1CON __attribute__((address(0xFB9)));
+[v _PSTR1CON `Vuc ~T0 @X0 0 e@4025 ]
+"13418
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 13418: extern volatile unsigned char CCPR1H __attribute__((address(0xFBF)));
+[v _CCPR1H `Vuc ~T0 @X0 0 e@4031 ]
+"13398
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 13398: extern volatile unsigned char CCPR1L __attribute__((address(0xFBE)));
+[v _CCPR1L `Vuc ~T0 @X0 0 e@4030 ]
+"1395
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 1395:     struct {
+[s S67 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :2 `uc 1 ]
+[n S67 . C1TSEL . C2TSEL . C3TSEL ]
+"1402
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 1402:     struct {
+[s S68 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S68 . C1TSEL0 C1TSEL1 . C2TSEL0 C2TSEL1 . C3TSEL0 C3TSEL1 ]
+"1394
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 1394: typedef union {
+[u S66 `S67 1 `S68 1 ]
+[n S66 . . . ]
+"1413
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 1413: extern volatile CCPTMRS0bits_t CCPTMRS0bits __attribute__((address(0xF49)));
+[v _CCPTMRS0bits `VS66 ~T0 @X0 0 e@3913 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -771,130 +788,59 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17372
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 17372: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"16 LCD.c
-[; ;LCD.c: 16: int LCD_linha_1 = 128;
-[v _LCD_linha_1 `i ~T0 @X0 1 e ]
-[i _LCD_linha_1
--> 128 `i
-]
-"17
-[; ;LCD.c: 17: int LCD_linha_2 = 192;
-[v _LCD_linha_2 `i ~T0 @X0 1 e ]
-[i _LCD_linha_2
--> 192 `i
-]
-"23
-[; ;LCD.c: 23: void LCD_inicio_teste (void){
-[v _LCD_inicio_teste `(v ~T0 @X0 1 ef ]
+"64 mcc_generated_files/epwm1.c
+[; ;mcc_generated_files/epwm1.c: 64: void EPWM1_Initialize(void)
+[v _EPWM1_Initialize `(v ~T0 @X0 1 ef ]
+"65
+[; ;mcc_generated_files/epwm1.c: 65: {
 {
-[e :U _LCD_inicio_teste ]
+[e :U _EPWM1_Initialize ]
 [f ]
-"36
-[; ;LCD.c: 36:  OpenXLCD(0b00101011);
-[e ( _OpenXLCD (1 -> -> 43 `i `uc ]
-"37
-[; ;LCD.c: 37:  while (BusyXLCD());
-[e $U 852  ]
-[e :U 853 ]
-[e :U 852 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 853  ]
-[e :U 854 ]
-"46
-[; ;LCD.c: 46:  WriteCmdXLCD(0b00001100);
-[e ( _WriteCmdXLCD (1 -> -> 12 `i `uc ]
-"47
-[; ;LCD.c: 47:  while (BusyXLCD());
-[e $U 855  ]
-[e :U 856 ]
-[e :U 855 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 856  ]
-[e :U 857 ]
-"54
-[; ;LCD.c: 54:  WriteCmdXLCD(0b00010111);
-[e ( _WriteCmdXLCD (1 -> -> 23 `i `uc ]
-"55
-[; ;LCD.c: 55:  while (BusyXLCD());
-[e $U 858  ]
-[e :U 859 ]
-[e :U 858 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 859  ]
-[e :U 860 ]
-"60
-[; ;LCD.c: 60:  WriteCmdXLCD(0b00000001);
-[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
-"61
-[; ;LCD.c: 61:  while (BusyXLCD());
-[e $U 861  ]
-[e :U 862 ]
-[e :U 861 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 862  ]
-[e :U 863 ]
-"76
-[; ;LCD.c: 76:  WriteCmdXLCD(0b10000000);
-[e ( _WriteCmdXLCD (1 -> -> 128 `i `uc ]
-"77
-[; ;LCD.c: 77:  while (BusyXLCD());
-[e $U 864  ]
-[e :U 865 ]
-[e :U 864 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 865  ]
-[e :U 866 ]
-"83
-[; ;LCD.c: 83:     putsXLCD("Mars ROCK'S!");
-[e ( _putsXLCD (1 :s 1C ]
+"69
+[; ;mcc_generated_files/epwm1.c: 69:  CCP1CON = 0x0C;
+[e = _CCP1CON -> -> 12 `i `uc ]
+"72
+[; ;mcc_generated_files/epwm1.c: 72:  ECCP1AS = 0x00;
+[e = _ECCP1AS -> -> 0 `i `uc ]
+"75
+[; ;mcc_generated_files/epwm1.c: 75:  PWM1CON = 0x80;
+[e = _PWM1CON -> -> 128 `i `uc ]
+"78
+[; ;mcc_generated_files/epwm1.c: 78:  PSTR1CON = 0x01;
+[e = _PSTR1CON -> -> 1 `i `uc ]
+"81
+[; ;mcc_generated_files/epwm1.c: 81:  CCPR1H = 0x00;
+[e = _CCPR1H -> -> 0 `i `uc ]
 "84
-[; ;LCD.c: 84:  while (BusyXLCD());
-[e $U 867  ]
-[e :U 868 ]
-[e :U 867 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 868  ]
-[e :U 869 ]
-"86
-[; ;LCD.c: 86:     _delay((unsigned long)((1000)*(6000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
+[; ;mcc_generated_files/epwm1.c: 84:  CCPR1L = 0x02;
+[e = _CCPR1L -> -> 2 `i `uc ]
+"87
+[; ;mcc_generated_files/epwm1.c: 87:  CCPTMRS0bits.C1TSEL = 0x0;
+[e = . . _CCPTMRS0bits 0 0 -> -> 0 `i `uc ]
 "88
-[; ;LCD.c: 88:      WriteCmdXLCD(0b00010111);
-[e ( _WriteCmdXLCD (1 -> -> 23 `i `uc ]
-"89
-[; ;LCD.c: 89:  while (BusyXLCD());
-[e $U 870  ]
-[e :U 871 ]
-[e :U 870 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 871  ]
-[e :U 872 ]
-"94
-[; ;LCD.c: 94:  WriteCmdXLCD(0b00000001);
-[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
-"95
-[; ;LCD.c: 95:  while (BusyXLCD());
-[e $U 873  ]
-[e :U 874 ]
-[e :U 873 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 874  ]
-[e :U 875 ]
-"101
-[; ;LCD.c: 101:  WriteCmdXLCD(0b10000000);
-[e ( _WriteCmdXLCD (1 -> -> 128 `i `uc ]
-"102
-[; ;LCD.c: 102:  while (BusyXLCD());
-[e $U 876  ]
-[e :U 877 ]
-[e :U 876 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 877  ]
-[e :U 878 ]
-"108
-[; ;LCD.c: 108:     putsXLCD("Teste - Teclado");
-[e ( _putsXLCD (1 :s 2C ]
-"109
-[; ;LCD.c: 109:  while (BusyXLCD());
-[e $U 879  ]
-[e :U 880 ]
-[e :U 879 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 880  ]
-[e :U 881 ]
-"111
-[; ;LCD.c: 111: }
+[; ;mcc_generated_files/epwm1.c: 88: }
 [e :UE 851 ]
 }
-[a 2C 84 101 115 116 101 32 45 32 84 101 99 108 97 100 111 0 ]
-[a 1C 77 97 114 115 32 82 79 67 75 39 83 33 0 ]
+"90
+[; ;mcc_generated_files/epwm1.c: 90: void EPWM1_LoadDutyValue(uint16_t dutyValue)
+[v _EPWM1_LoadDutyValue `(v ~T0 @X0 1 ef1`us ]
+"91
+[; ;mcc_generated_files/epwm1.c: 91: {
+{
+[e :U _EPWM1_LoadDutyValue ]
+"90
+[; ;mcc_generated_files/epwm1.c: 90: void EPWM1_LoadDutyValue(uint16_t dutyValue)
+[v _dutyValue `us ~T0 @X0 1 r1 ]
+"91
+[; ;mcc_generated_files/epwm1.c: 91: {
+[f ]
+"93
+[; ;mcc_generated_files/epwm1.c: 93:     CCPR1L = ((dutyValue & 0x03FC)>>2);
+[e = _CCPR1L -> >> & -> _dutyValue `ui -> -> 1020 `i `ui -> 2 `i `uc ]
+"96
+[; ;mcc_generated_files/epwm1.c: 96:     CCP1CON = ((uint8_t)(CCP1CON & 0xCF) | ((dutyValue & 0x0003)<<4));
+[e = _CCP1CON -> | -> -> & -> _CCP1CON `i -> 207 `i `uc `ui << & -> _dutyValue `ui -> -> 3 `i `ui -> 4 `i `uc ]
+"97
+[; ;mcc_generated_files/epwm1.c: 97: }
+[e :UE 852 ]
+}

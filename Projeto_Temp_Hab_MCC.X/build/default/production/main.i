@@ -9656,9 +9656,16 @@ extern void cputs(const char *);
 # 54 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/interrupt_manager.h" 1
-# 110 "./mcc_generated_files/interrupt_manager.h"
+# 132 "./mcc_generated_files/interrupt_manager.h"
 void INTERRUPT_Initialize (void);
 # 55 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/epwm1.h" 1
+# 96 "./mcc_generated_files/epwm1.h"
+void EPWM1_Initialize(void);
+# 122 "./mcc_generated_files/epwm1.h"
+void EPWM1_LoadDutyValue(uint16_t dutyValue);
+# 56 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/ext_int.h" 1
 # 562 "./mcc_generated_files/ext_int.h"
@@ -9693,7 +9700,24 @@ void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT2_InterruptHandler)(void);
 # 905 "./mcc_generated_files/ext_int.h"
 void INT2_DefaultInterruptHandler(void);
-# 56 "./mcc_generated_files/mcc.h" 2
+# 57 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr2.h" 1
+# 103 "./mcc_generated_files/tmr2.h"
+void TMR2_Initialize(void);
+# 132 "./mcc_generated_files/tmr2.h"
+void TMR2_StartTimer(void);
+# 164 "./mcc_generated_files/tmr2.h"
+void TMR2_StopTimer(void);
+# 199 "./mcc_generated_files/tmr2.h"
+uint8_t TMR2_ReadTimer(void);
+# 238 "./mcc_generated_files/tmr2.h"
+void TMR2_WriteTimer(uint8_t timerVal);
+# 290 "./mcc_generated_files/tmr2.h"
+void TMR2_LoadPeriodRegister(uint8_t periodVal);
+# 325 "./mcc_generated_files/tmr2.h"
+_Bool TMR2_HasOverflowOccured(void);
+# 58 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/tmr0.h" 1
 # 100 "./mcc_generated_files/tmr0.h"
@@ -9716,10 +9740,10 @@ void TMR0_ISR(void);
 extern void (*TMR0_InterruptHandler)(void);
 # 345 "./mcc_generated_files/tmr0.h"
 void TMR0_DefaultInterruptHandler(void);
-# 57 "./mcc_generated_files/mcc.h" 2
-# 72 "./mcc_generated_files/mcc.h"
+# 59 "./mcc_generated_files/mcc.h" 2
+# 74 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 85 "./mcc_generated_files/mcc.h"
+# 87 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 1 "main.c" 2
 
@@ -9847,22 +9871,7 @@ extern int LCD_linha_1;
 extern int LCD_linha_2;
 
 
-
-
 void LCD_inicio_teste(void);
-
-void escrever_texto_LCD (linha_LCD, texto){
-
-    WriteCmdXLCD(linha_LCD);
-    while (BusyXLCD());
-
-
-
-
-    putsXLCD(texto);
-     while (BusyXLCD());
-
-}
 # 14 "main.c" 2
 
 
@@ -9928,19 +9937,9 @@ void main(void)
 {
 
     SYSTEM_Initialize();
-
-
-
-
-
-
-
-    (INTCONbits.GIE = 1);
-
-
-
-    (INTCONbits.PEIE = 1);
-# 93 "main.c"
+# 83 "main.c"
+    (INTCONbits.GIEH = 1);
+# 115 "main.c"
     int contador_caracteres = 4;
 
 
@@ -9961,10 +9960,7 @@ void main(void)
 
 
             strncat(pin, &tecla_premida, 1);
-# 127 "main.c"
-            escrever_texto_LCD (LCD_linha_2,pin);
-
-
+# 152 "main.c"
             contador_caracteres++;
             contador_colunas_LCD++;
             tecla_n = 0;
