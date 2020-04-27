@@ -65,19 +65,19 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
-// get/set sensor_temp aliases
-#define sensor_temp_TRIS                 TRISAbits.TRISA0
-#define sensor_temp_LAT                  LATAbits.LATA0
-#define sensor_temp_PORT                 PORTAbits.RA0
-#define sensor_temp_ANS                  ANSELAbits.ANSA0
-#define sensor_temp_SetHigh()            do { LATAbits.LATA0 = 1; } while(0)
-#define sensor_temp_SetLow()             do { LATAbits.LATA0 = 0; } while(0)
-#define sensor_temp_Toggle()             do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0)
-#define sensor_temp_GetValue()           PORTAbits.RA0
-#define sensor_temp_SetDigitalInput()    do { TRISAbits.TRISA0 = 1; } while(0)
-#define sensor_temp_SetDigitalOutput()   do { TRISAbits.TRISA0 = 0; } while(0)
-#define sensor_temp_SetAnalogMode()      do { ANSELAbits.ANSA0 = 1; } while(0)
-#define sensor_temp_SetDigitalMode()     do { ANSELAbits.ANSA0 = 0; } while(0)
+// get/set channel_AN0 aliases
+#define channel_AN0_TRIS                 TRISAbits.TRISA0
+#define channel_AN0_LAT                  LATAbits.LATA0
+#define channel_AN0_PORT                 PORTAbits.RA0
+#define channel_AN0_ANS                  ANSELAbits.ANSA0
+#define channel_AN0_SetHigh()            do { LATAbits.LATA0 = 1; } while(0)
+#define channel_AN0_SetLow()             do { LATAbits.LATA0 = 0; } while(0)
+#define channel_AN0_Toggle()             do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0)
+#define channel_AN0_GetValue()           PORTAbits.RA0
+#define channel_AN0_SetDigitalInput()    do { TRISAbits.TRISA0 = 1; } while(0)
+#define channel_AN0_SetDigitalOutput()   do { TRISAbits.TRISA0 = 0; } while(0)
+#define channel_AN0_SetAnalogMode()      do { ANSELAbits.ANSA0 = 1; } while(0)
+#define channel_AN0_SetDigitalMode()     do { ANSELAbits.ANSA0 = 0; } while(0)
 
 // get/set led aliases
 #define led_TRIS                 TRISAbits.TRISA1
@@ -92,6 +92,26 @@
 #define led_SetDigitalOutput()   do { TRISAbits.TRISA1 = 0; } while(0)
 #define led_SetAnalogMode()      do { ANSELAbits.ANSA1 = 1; } while(0)
 #define led_SetDigitalMode()     do { ANSELAbits.ANSA1 = 0; } while(0)
+
+// get/set RA2 procedures
+#define RA2_SetHigh()            do { LATAbits.LATA2 = 1; } while(0)
+#define RA2_SetLow()             do { LATAbits.LATA2 = 0; } while(0)
+#define RA2_Toggle()             do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0)
+#define RA2_GetValue()              PORTAbits.RA2
+#define RA2_SetDigitalInput()    do { TRISAbits.TRISA2 = 1; } while(0)
+#define RA2_SetDigitalOutput()   do { TRISAbits.TRISA2 = 0; } while(0)
+#define RA2_SetAnalogMode()         do { ANSELAbits.ANSA2 = 1; } while(0)
+#define RA2_SetDigitalMode()        do { ANSELAbits.ANSA2 = 0; } while(0)
+
+// get/set RA3 procedures
+#define RA3_SetHigh()            do { LATAbits.LATA3 = 1; } while(0)
+#define RA3_SetLow()             do { LATAbits.LATA3 = 0; } while(0)
+#define RA3_Toggle()             do { LATAbits.LATA3 = ~LATAbits.LATA3; } while(0)
+#define RA3_GetValue()              PORTAbits.RA3
+#define RA3_SetDigitalInput()    do { TRISAbits.TRISA3 = 1; } while(0)
+#define RA3_SetDigitalOutput()   do { TRISAbits.TRISA3 = 0; } while(0)
+#define RA3_SetAnalogMode()         do { ANSELAbits.ANSA3 = 1; } while(0)
+#define RA3_SetDigitalMode()        do { ANSELAbits.ANSA3 = 0; } while(0)
 
 // get/set tec_1 aliases
 #define tec_1_TRIS                 TRISBbits.TRISB0
