@@ -61,15 +61,15 @@ void  INTERRUPT_Initialize (void)
 
     // Interrupt INT0I has no priority bit. It will always be called from the High Interrupt Vector
 
+    // TMRI - high priority
+    INTCON2bits.TMR0IP = 1;
 
-    // TMRI - low priority
-    INTCON2bits.TMR0IP = 0;    
+    // INT1I - high priority
+    INTCON3bits.INT1IP = 1;
 
-    // INT1I - low priority
-    INTCON3bits.INT1IP = 0;    
+    // INT2I - high priority
+    INTCON3bits.INT2IP = 1;
 
-    // INT2I - low priority
-    INTCON3bits.INT2IP = 0;    
 
 }
 
@@ -84,16 +84,7 @@ void __interrupt() INTERRUPT_InterruptManagerHigh (void)
     {
         INT0_ISR();
     }
-    else
-    {
-        //Unhandled Interrupt
-    }
-}
-
-void __interrupt(low_priority) INTERRUPT_InterruptManagerLow (void)
-{
-    // interrupt handler
-    if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
+    else if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
     {
         TMR0_ISR();
     }
@@ -110,6 +101,7 @@ void __interrupt(low_priority) INTERRUPT_InterruptManagerLow (void)
         //Unhandled Interrupt
     }
 }
+
 /**
  End of File
 */

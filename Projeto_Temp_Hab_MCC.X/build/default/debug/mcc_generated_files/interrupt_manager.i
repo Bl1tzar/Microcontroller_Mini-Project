@@ -9809,14 +9809,14 @@ void INTERRUPT_Initialize (void)
 
 
 
-
-    INTCON2bits.TMR0IP = 0;
-
-
-    INTCON3bits.INT1IP = 0;
+    INTCON2bits.TMR0IP = 1;
 
 
-    INTCON3bits.INT2IP = 0;
+    INTCON3bits.INT1IP = 1;
+
+
+    INTCON3bits.INT2IP = 1;
+
 
 }
 
@@ -9831,16 +9831,7 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManagerHigh (void)
     {
         INT0_ISR();
     }
-    else
-    {
-
-    }
-}
-
-void __attribute__((picinterrupt(("low_priority")))) INTERRUPT_InterruptManagerLow (void)
-{
-
-    if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
+    else if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
     {
         TMR0_ISR();
     }
