@@ -59,9 +59,9 @@
 
 void (*ADC_InterruptHandler)(void);
 
-void ADC_SetInterruptHandler(void (* InterruptHandler)(void)){
-    ADC_InterruptHandler = InterruptHandler;
-}
+//void ADC_SetInterruptHandler(void (* InterruptHandler)(void)){
+//    ADC_InterruptHandler = InterruptHandler;
+//}
 
 void ADC_Initialize(void)
 {

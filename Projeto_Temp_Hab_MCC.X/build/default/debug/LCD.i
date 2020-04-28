@@ -9584,9 +9584,9 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 376 "./mcc_generated_files/pin_manager.h"
+# 396 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 388 "./mcc_generated_files/pin_manager.h"
+# 408 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -9797,9 +9797,55 @@ extern void (*TMR0_InterruptHandler)(void);
 # 345 "./mcc_generated_files/tmr0.h"
 void TMR0_DefaultInterruptHandler(void);
 # 59 "./mcc_generated_files/mcc.h" 2
-# 74 "./mcc_generated_files/mcc.h"
+
+# 1 "./mcc_generated_files/adc.h" 1
+# 58 "./mcc_generated_files/adc.h"
+void ADC_SetInterruptHandler(void (* InterruptHandler)(void));
+# 74 "./mcc_generated_files/adc.h"
+typedef uint16_t adc_result_t;
+
+
+
+
+typedef struct
+{
+    adc_result_t adcResult1;
+    adc_result_t adcResult2;
+} adc_sync_double_result_t;
+# 97 "./mcc_generated_files/adc.h"
+typedef enum
+{
+    channel_AN0 = 0x0,
+    channel_CTMU = 0x1D,
+    channel_DAC = 0x1E,
+    channel_FVRBuf2 = 0x1F
+} adc_channel_t;
+# 138 "./mcc_generated_files/adc.h"
+void ADC_Initialize(void);
+# 168 "./mcc_generated_files/adc.h"
+void ADC_SelectChannel(adc_channel_t channel);
+# 195 "./mcc_generated_files/adc.h"
+void ADC_StartConversion();
+# 227 "./mcc_generated_files/adc.h"
+_Bool ADC_IsConversionDone();
+# 260 "./mcc_generated_files/adc.h"
+adc_result_t ADC_GetConversionResult(void);
+# 290 "./mcc_generated_files/adc.h"
+adc_result_t ADC_GetConversion(adc_channel_t channel);
+# 318 "./mcc_generated_files/adc.h"
+void ADC_TemperatureAcquisitionDelay(void);
+# 334 "./mcc_generated_files/adc.h"
+void ADC_ISR(void);
+# 352 "./mcc_generated_files/adc.h"
+ void ADC_SetInterruptHandler(void (* InterruptHandler)(void));
+# 370 "./mcc_generated_files/adc.h"
+extern void (*ADC_InterruptHandler)(void);
+# 388 "./mcc_generated_files/adc.h"
+void ADC_DefaultInterruptHandler(void);
+# 60 "./mcc_generated_files/mcc.h" 2
+# 75 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 87 "./mcc_generated_files/mcc.h"
+# 88 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 6 "LCD.c" 2
 

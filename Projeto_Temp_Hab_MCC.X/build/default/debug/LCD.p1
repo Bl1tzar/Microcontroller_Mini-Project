@@ -794,61 +794,61 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _OpenXLCD (1 -> -> 43 `i `uc ]
 "37
 [; ;LCD.c: 37:  while (BusyXLCD());
-[e $U 852  ]
-[e :U 853 ]
-[e :U 852 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 853  ]
+[e $U 853  ]
 [e :U 854 ]
+[e :U 853 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 854  ]
+[e :U 855 ]
 "46
 [; ;LCD.c: 46:  WriteCmdXLCD(0b00001100);
 [e ( _WriteCmdXLCD (1 -> -> 12 `i `uc ]
 "47
 [; ;LCD.c: 47:  while (BusyXLCD());
-[e $U 855  ]
-[e :U 856 ]
-[e :U 855 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 856  ]
+[e $U 856  ]
 [e :U 857 ]
+[e :U 856 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 857  ]
+[e :U 858 ]
 "54
 [; ;LCD.c: 54:  WriteCmdXLCD(0b00010111);
 [e ( _WriteCmdXLCD (1 -> -> 23 `i `uc ]
 "55
 [; ;LCD.c: 55:  while (BusyXLCD());
-[e $U 858  ]
-[e :U 859 ]
-[e :U 858 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 859  ]
+[e $U 859  ]
 [e :U 860 ]
+[e :U 859 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 860  ]
+[e :U 861 ]
 "60
 [; ;LCD.c: 60:  WriteCmdXLCD(0b00000001);
 [e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
 "61
 [; ;LCD.c: 61:  while (BusyXLCD());
-[e $U 861  ]
-[e :U 862 ]
-[e :U 861 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 862  ]
+[e $U 862  ]
 [e :U 863 ]
+[e :U 862 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 863  ]
+[e :U 864 ]
 "76
 [; ;LCD.c: 76:  WriteCmdXLCD(0b10000000);
 [e ( _WriteCmdXLCD (1 -> -> 128 `i `uc ]
 "77
 [; ;LCD.c: 77:  while (BusyXLCD());
-[e $U 864  ]
-[e :U 865 ]
-[e :U 864 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 865  ]
+[e $U 865  ]
 [e :U 866 ]
+[e :U 865 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 866  ]
+[e :U 867 ]
 "83
 [; ;LCD.c: 83:     putsXLCD("Mars ROCK'S!");
 [e ( _putsXLCD (1 :s 1C ]
 "84
 [; ;LCD.c: 84:  while (BusyXLCD());
-[e $U 867  ]
-[e :U 868 ]
-[e :U 867 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 868  ]
+[e $U 868  ]
 [e :U 869 ]
+[e :U 868 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 869  ]
+[e :U 870 ]
 "86
 [; ;LCD.c: 86:     _delay((unsigned long)((1000)*(6000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
@@ -857,44 +857,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _WriteCmdXLCD (1 -> -> 23 `i `uc ]
 "89
 [; ;LCD.c: 89:  while (BusyXLCD());
-[e $U 870  ]
-[e :U 871 ]
-[e :U 870 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 871  ]
+[e $U 871  ]
 [e :U 872 ]
+[e :U 871 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 872  ]
+[e :U 873 ]
 "94
 [; ;LCD.c: 94:  WriteCmdXLCD(0b00000001);
 [e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
 "95
 [; ;LCD.c: 95:  while (BusyXLCD());
-[e $U 873  ]
-[e :U 874 ]
-[e :U 873 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 874  ]
+[e $U 874  ]
 [e :U 875 ]
+[e :U 874 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 875  ]
+[e :U 876 ]
 "101
 [; ;LCD.c: 101:  WriteCmdXLCD(0b10000000);
 [e ( _WriteCmdXLCD (1 -> -> 128 `i `uc ]
 "102
 [; ;LCD.c: 102:  while (BusyXLCD());
-[e $U 876  ]
-[e :U 877 ]
-[e :U 876 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 877  ]
+[e $U 877  ]
 [e :U 878 ]
+[e :U 877 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 878  ]
+[e :U 879 ]
 "108
 [; ;LCD.c: 108:     putsXLCD("Teste - Teclado");
 [e ( _putsXLCD (1 :s 2C ]
 "109
 [; ;LCD.c: 109:  while (BusyXLCD());
-[e $U 879  ]
-[e :U 880 ]
-[e :U 879 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 880  ]
+[e $U 880  ]
 [e :U 881 ]
+[e :U 880 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 881  ]
+[e :U 882 ]
 "111
 [; ;LCD.c: 111: }
-[e :UE 851 ]
+[e :UE 852 ]
 }
 [a 2C 84 101 115 116 101 32 45 32 84 101 99 108 97 100 111 0 ]
 [a 1C 77 97 114 115 32 82 79 67 75 39 83 33 0 ]

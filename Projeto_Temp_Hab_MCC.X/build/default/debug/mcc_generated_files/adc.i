@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/mcc.c"
+# 1 "mcc_generated_files/adc.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/mcc.c" 2
-# 47 "mcc_generated_files/mcc.c"
-# 1 "mcc_generated_files/mcc.h" 1
-# 49 "mcc_generated_files/mcc.h"
+# 1 "mcc_generated_files/adc.c" 2
+# 51 "mcc_generated_files/adc.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -9523,18 +9521,10 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 49 "mcc_generated_files/mcc.h" 2
+# 51 "mcc_generated_files/adc.c" 2
 
-# 1 "mcc_generated_files/device_config.h" 1
-# 50 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/pin_manager.h" 1
-# 396 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 408 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 51 "mcc_generated_files/mcc.h" 2
-
+# 1 "mcc_generated_files/adc.h" 1
+# 55 "mcc_generated_files/adc.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -9618,133 +9608,12 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-# 52 "mcc_generated_files/mcc.h" 2
+# 55 "mcc_generated_files/adc.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "mcc_generated_files/mcc.h" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\conio.h" 1 3
+# 56 "mcc_generated_files/adc.h" 2
 
 
-
-
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\errno.h" 1 3
-# 10 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\errno.h" 3
-extern int errno;
-# 8 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\conio.h" 2 3
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\__null.h" 1 3
-# 9 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\conio.h" 2 3
-
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-
-
-extern char * cgets(char *);
-extern void cputs(const char *);
-# 54 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/interrupt_manager.h" 1
-# 132 "mcc_generated_files/interrupt_manager.h"
-void INTERRUPT_Initialize (void);
-# 55 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/epwm1.h" 1
-# 96 "mcc_generated_files/epwm1.h"
-void EPWM1_Initialize(void);
-# 122 "mcc_generated_files/epwm1.h"
-void EPWM1_LoadDutyValue(uint16_t dutyValue);
-# 56 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/ext_int.h" 1
-# 562 "mcc_generated_files/ext_int.h"
-void EXT_INT_Initialize(void);
-# 584 "mcc_generated_files/ext_int.h"
-void INT0_ISR(void);
-# 608 "mcc_generated_files/ext_int.h"
-void INT0_CallBack(void);
-# 631 "mcc_generated_files/ext_int.h"
-void INT0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 655 "mcc_generated_files/ext_int.h"
-extern void (*INT0_InterruptHandler)(void);
-# 679 "mcc_generated_files/ext_int.h"
-void INT0_DefaultInterruptHandler(void);
-# 697 "mcc_generated_files/ext_int.h"
-void INT1_ISR(void);
-# 721 "mcc_generated_files/ext_int.h"
-void INT1_CallBack(void);
-# 744 "mcc_generated_files/ext_int.h"
-void INT1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 768 "mcc_generated_files/ext_int.h"
-extern void (*INT1_InterruptHandler)(void);
-# 792 "mcc_generated_files/ext_int.h"
-void INT1_DefaultInterruptHandler(void);
-# 810 "mcc_generated_files/ext_int.h"
-void INT2_ISR(void);
-# 834 "mcc_generated_files/ext_int.h"
-void INT2_CallBack(void);
-# 857 "mcc_generated_files/ext_int.h"
-void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 881 "mcc_generated_files/ext_int.h"
-extern void (*INT2_InterruptHandler)(void);
-# 905 "mcc_generated_files/ext_int.h"
-void INT2_DefaultInterruptHandler(void);
-# 57 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/tmr2.h" 1
-# 103 "mcc_generated_files/tmr2.h"
-void TMR2_Initialize(void);
-# 132 "mcc_generated_files/tmr2.h"
-void TMR2_StartTimer(void);
-# 164 "mcc_generated_files/tmr2.h"
-void TMR2_StopTimer(void);
-# 199 "mcc_generated_files/tmr2.h"
-uint8_t TMR2_ReadTimer(void);
-# 238 "mcc_generated_files/tmr2.h"
-void TMR2_WriteTimer(uint8_t timerVal);
-# 290 "mcc_generated_files/tmr2.h"
-void TMR2_LoadPeriodRegister(uint8_t periodVal);
-# 325 "mcc_generated_files/tmr2.h"
-_Bool TMR2_HasOverflowOccured(void);
-# 58 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/tmr0.h" 1
-# 100 "mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 129 "mcc_generated_files/tmr0.h"
-void TMR0_StartTimer(void);
-# 161 "mcc_generated_files/tmr0.h"
-void TMR0_StopTimer(void);
-# 197 "mcc_generated_files/tmr0.h"
-uint16_t TMR0_ReadTimer(void);
-# 236 "mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint16_t timerVal);
-# 272 "mcc_generated_files/tmr0.h"
-void TMR0_Reload(void);
-# 290 "mcc_generated_files/tmr0.h"
-void TMR0_ISR(void);
-# 309 "mcc_generated_files/tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 327 "mcc_generated_files/tmr0.h"
-extern void (*TMR0_InterruptHandler)(void);
-# 345 "mcc_generated_files/tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
-# 59 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/adc.h" 1
-# 58 "mcc_generated_files/adc.h"
 void ADC_SetInterruptHandler(void (* InterruptHandler)(void));
 # 74 "mcc_generated_files/adc.h"
 typedef uint16_t adc_result_t;
@@ -9787,34 +9656,115 @@ void ADC_ISR(void);
 extern void (*ADC_InterruptHandler)(void);
 # 388 "mcc_generated_files/adc.h"
 void ADC_DefaultInterruptHandler(void);
-# 60 "mcc_generated_files/mcc.h" 2
-# 75 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 88 "mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 47 "mcc_generated_files/mcc.c" 2
+# 52 "mcc_generated_files/adc.c" 2
+
+# 1 "mcc_generated_files/device_config.h" 1
+# 53 "mcc_generated_files/adc.c" 2
 
 
 
-void SYSTEM_Initialize(void)
+
+
+
+
+void (*ADC_InterruptHandler)(void);
+
+
+
+
+
+void ADC_Initialize(void)
 {
 
-    INTERRUPT_Initialize();
-    PIN_MANAGER_Initialize();
-    OSCILLATOR_Initialize();
-    ADC_Initialize();
-    EPWM1_Initialize();
-    TMR2_Initialize();
-    EXT_INT_Initialize();
-    TMR0_Initialize();
+
+
+    ADCON0 = 0x03;
+
+
+    ADCON1 = 0x05;
+
+
+    ADCON2 = 0x89;
+
+
+    ADRESL = 0x00;
+
+
+    ADRESH = 0x00;
+
+
+    PIE1bits.ADIE = 1;
+
+
+    ADC_SetInterruptHandler(ADC_DefaultInterruptHandler);
 }
 
-void OSCILLATOR_Initialize(void)
+void ADC_SelectChannel(adc_channel_t channel)
 {
 
-    OSCCON = 0x30;
+    ADCON0bits.CHS = channel;
 
-    OSCCON2 = 0x04;
+    ADCON0bits.ADON = 1;
+}
 
-    OSCTUNE = 0x00;
+void ADC_StartConversion()
+{
+
+    ADCON0bits.GO_nDONE = 1;
+}
+
+
+_Bool ADC_IsConversionDone()
+{
+
+    return ((_Bool)(!ADCON0bits.GO_nDONE));
+}
+
+adc_result_t ADC_GetConversionResult(void)
+{
+
+     return ((adc_result_t)((ADRESH << 8) + ADRESL));
+}
+
+adc_result_t ADC_GetConversion(adc_channel_t channel)
+{
+
+    ADCON0bits.CHS = channel;
+
+
+    ADCON0bits.ADON = 1;
+
+
+    ADCON0bits.GO_nDONE = 1;
+
+
+    while (ADCON0bits.GO_nDONE)
+    {
+    }
+
+
+    return ((adc_result_t)((ADRESH << 8) + ADRESL));
+}
+
+void ADC_TemperatureAcquisitionDelay(void)
+{
+    _delay((unsigned long)((200)*(6000000/4000000.0)));
+}
+
+void ADC_ISR(void){
+    if(ADC_InterruptHandler)
+    {
+        ADC_InterruptHandler();
+    }
+    PIR1bits.ADIF=0;
+
+}
+
+void ADC_SetInterruptHandler(void (* InterruptHandler)(void)){
+    ADC_InterruptHandler = InterruptHandler;
+}
+
+void ADC_DefaultInterruptHandler(void){
+
+
 }
