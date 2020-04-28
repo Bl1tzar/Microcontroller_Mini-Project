@@ -9528,9 +9528,9 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 376 "./mcc_generated_files/pin_manager.h"
+# 396 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 388 "./mcc_generated_files/pin_manager.h"
+# 408 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -9741,9 +9741,55 @@ extern void (*TMR0_InterruptHandler)(void);
 # 345 "./mcc_generated_files/tmr0.h"
 void TMR0_DefaultInterruptHandler(void);
 # 59 "./mcc_generated_files/mcc.h" 2
-# 74 "./mcc_generated_files/mcc.h"
+
+# 1 "./mcc_generated_files/adc.h" 1
+# 58 "./mcc_generated_files/adc.h"
+void ADC_SetInterruptHandler(void (* InterruptHandler)(void));
+# 74 "./mcc_generated_files/adc.h"
+typedef uint16_t adc_result_t;
+
+
+
+
+typedef struct
+{
+    adc_result_t adcResult1;
+    adc_result_t adcResult2;
+} adc_sync_double_result_t;
+# 97 "./mcc_generated_files/adc.h"
+typedef enum
+{
+    channel_AN0 = 0x0,
+    channel_CTMU = 0x1D,
+    channel_DAC = 0x1E,
+    channel_FVRBuf2 = 0x1F
+} adc_channel_t;
+# 138 "./mcc_generated_files/adc.h"
+void ADC_Initialize(void);
+# 168 "./mcc_generated_files/adc.h"
+void ADC_SelectChannel(adc_channel_t channel);
+# 195 "./mcc_generated_files/adc.h"
+void ADC_StartConversion();
+# 227 "./mcc_generated_files/adc.h"
+_Bool ADC_IsConversionDone();
+# 260 "./mcc_generated_files/adc.h"
+adc_result_t ADC_GetConversionResult(void);
+# 290 "./mcc_generated_files/adc.h"
+adc_result_t ADC_GetConversion(adc_channel_t channel);
+# 318 "./mcc_generated_files/adc.h"
+void ADC_TemperatureAcquisitionDelay(void);
+# 334 "./mcc_generated_files/adc.h"
+void ADC_ISR(void);
+# 352 "./mcc_generated_files/adc.h"
+ void ADC_SetInterruptHandler(void (* InterruptHandler)(void));
+# 370 "./mcc_generated_files/adc.h"
+extern void (*ADC_InterruptHandler)(void);
+# 388 "./mcc_generated_files/adc.h"
+void ADC_DefaultInterruptHandler(void);
+# 60 "./mcc_generated_files/mcc.h" 2
+# 75 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 87 "./mcc_generated_files/mcc.h"
+# 88 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 1 "main.c" 2
 
@@ -9857,7 +9903,155 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 5 "main.c" 2
-# 14 "main.c"
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
+
+
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 137 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+#pragma printf_check(printf) const
+#pragma printf_check(vprintf) const
+#pragma printf_check(sprintf) const
+#pragma printf_check(snprintf) const
+#pragma printf_check(vsprintf) const
+#pragma printf_check(vsnprintf) const
+
+int printf(const char *restrict, ...);
+int fprintf(FILE *restrict, const char *restrict, ...);
+int sprintf(char *restrict, const char *restrict, ...);
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+int scanf(const char *restrict, ...);
+int fscanf(FILE *restrict, const char *restrict, ...);
+int sscanf(const char *restrict, const char *restrict, ...);
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 7 "main.c" 2
+
+
+
+
+
+
+
+
 # 1 "./LCD.h" 1
 
 
@@ -9872,7 +10066,7 @@ extern int LCD_linha_2;
 
 
 void LCD_inicio_teste(void);
-# 14 "main.c" 2
+# 15 "main.c" 2
 
 
 
@@ -9894,8 +10088,8 @@ extern int tecla_limpar;
 void teclado_coluna_1 (void);
 void teclado_coluna_2 (void);
 void teclado_coluna_3 (void);
-# 22 "main.c" 2
-# 32 "main.c"
+# 23 "main.c" 2
+# 33 "main.c"
 unsigned char tecla_premida;
 int tecla_n;
 int tecla_limpar;
@@ -9922,12 +10116,30 @@ int temp_alar;
 
 
 
+int codigo_digital;
+
+int temp_ambiente;
+
+char temp_ambiente_LCD [4];
 
 
-void acende_LED (void) {
+
+
+
+
+void Timer_0 (void) {
     do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0);
+    ADC_StartConversion();
 }
 
+void ADC_temperatura (void){
+
+    codigo_digital = ADC_GetConversionResult();
+
+
+    temp_ambiente = (int)(((((float) codigo_digital * (3.4/1024.0))-0.3)-0.400) / (0.0195));
+
+}
 
 
 
@@ -9937,30 +10149,80 @@ void main(void)
 {
 
     SYSTEM_Initialize();
-# 83 "main.c"
+# 103 "main.c"
     (INTCONbits.GIEH = 1);
-# 115 "main.c"
+# 135 "main.c"
     int contador_caracteres = 4;
 
 
     LCD_inicio_teste();
 
 
-    TMR0_SetInterruptHandler (acende_LED);
+    TMR0_SetInterruptHandler (Timer_0);
 
 
     INT0_SetInterruptHandler (teclado_coluna_1);
     INT1_SetInterruptHandler (teclado_coluna_2);
     INT2_SetInterruptHandler (teclado_coluna_3);
 
+
+    ADC_SetInterruptHandler(ADC_temperatura);
+
+    CCP1CONbits.CCP1M = 0000;
+
     while (1)
     {
+
+        sprintf(temp_ambiente_LCD, "temp = %d", temp_ambiente);
+
+        if (temp_ambiente<100){
+            memmove (&temp_ambiente_LCD[2], &temp_ambiente_LCD[3], strlen(temp_ambiente_LCD) - 2);
+        }
+
+        WriteCmdXLCD(LCD_linha_2);
+        while (BusyXLCD());
+
+
+
+
+
+        putsXLCD(temp_ambiente_LCD);
+        while (BusyXLCD());
+
+
+        if (tecla_premida == '2'){
+
+            CCP1CONbits.CCP1M = 0000;
+
+        }
+        if (tecla_premida == '1'){
+
+            CCP1CONbits.CCP1M = 1100;
+
+        }
+
         if (tecla_n){
 
 
 
             strncat(pin, &tecla_premida, 1);
-# 152 "main.c"
+
+
+
+            WriteCmdXLCD(LCD_linha_2);
+            while (BusyXLCD());
+
+
+
+
+
+
+            putsXLCD(pin);
+            while (BusyXLCD());
+
+
+
+
             contador_caracteres++;
             contador_colunas_LCD++;
             tecla_n = 0;
@@ -9975,7 +10237,6 @@ void main(void)
 
 
         }
-
 
 
 

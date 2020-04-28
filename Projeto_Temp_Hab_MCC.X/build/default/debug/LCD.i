@@ -9914,7 +9914,7 @@ void LCD_inicio_teste (void){
 
     _delay((unsigned long)((1000)*(6000000/4000.0)));
 
-     WriteCmdXLCD(0b00010111);
+    WriteCmdXLCD(0b00010111);
  while (BusyXLCD());
 
 

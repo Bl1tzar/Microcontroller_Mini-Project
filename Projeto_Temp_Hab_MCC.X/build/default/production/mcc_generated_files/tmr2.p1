@@ -803,8 +803,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _TMR2_Initialize ]
 [f ]
 "67
-[; ;mcc_generated_files/tmr2.c: 67:     PR2 = 0xE0;
-[e = _PR2 -> -> 224 `i `uc ]
+[; ;mcc_generated_files/tmr2.c: 67:     PR2 = 0x4A;
+[e = _PR2 -> -> 74 `i `uc ]
 "70
 [; ;mcc_generated_files/tmr2.c: 70:     TMR2 = 0x00;
 [e = _TMR2 -> -> 0 `i `uc ]

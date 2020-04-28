@@ -85,7 +85,7 @@ void LCD_inicio_teste (void){
     
     __delay_ms(1000);
     
-    	WriteCmdXLCD(0b00010111);
+    WriteCmdXLCD(0b00010111);
 	while (BusyXLCD());
 	/*
 	 * Comando interno para o LCD:

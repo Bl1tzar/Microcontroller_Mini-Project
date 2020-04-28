@@ -4,6 +4,7 @@
 //usado para o Teclado
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /*
                          Funcões
@@ -51,16 +52,34 @@ int pin_real = 0000; // Valor do PIN - o introduzido terá que ser igual a este
 char temp_alar_int [2]; // Guarda o valor de temperatura de alarme introduzido 
 int temp_alar; // Valor da temperatura de alarme 
 
+/*
+         ADC
+ */
+
+int codigo_digital; // 2 bits mais significativos do codigo digital de 10 bits
+//char low [8] = ADRESL; // 8 bits menos significativos do codigo digital de 10 bits
+int temp_ambiente;
+
+char temp_ambiente_LCD [4];
 
 /*
                          Funcões Temporarias
  */
 
 //Testar LED com interrupcão do Timer 0 & interrupcões do telcado 
-void acende_LED (void) {
+void Timer_0 (void) { //LED + ADC
     led_Toggle();
+    ADC_StartConversion();
 }
 
+void ADC_temperatura (void){
+    
+    codigo_digital = ADC_GetConversionResult(); //Obter codigo digital do conversor ADC
+    
+    //Calculo da Temperatura ambiente
+    temp_ambiente = (int)(((((float) codigo_digital * (3.4/1024.0))-0.3)-0.400) / (0.0195));
+    
+}
 
 /*
                          Main application
@@ -70,6 +89,7 @@ void main(void)
 {
         // Initialize the device
     SYSTEM_Initialize();
+    
 
  
 
@@ -118,17 +138,33 @@ void main(void)
     LCD_inicio_teste();
     
     //Interrupcão do Timer para acender LED
-    TMR0_SetInterruptHandler (acende_LED);
+    TMR0_SetInterruptHandler (Timer_0);
     
     //Interrupcões dos botões das colunas do teclado para detetar uma tecla pressionada
     INT0_SetInterruptHandler (teclado_coluna_1);
     INT1_SetInterruptHandler (teclado_coluna_2);
     INT2_SetInterruptHandler (teclado_coluna_3);
     
-    CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder
+    //Interrupcão do ADC - Quando ocorre, executa a funcao ADC_temperatura
+    ADC_SetInterruptHandler(ADC_temperatura);
     
+    CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder
+        
     while (1)
-    { 
+    {    
+        //Escrever no LCD a temperatura
+        sprintf(temp_ambiente_LCD, "temp = %d", temp_ambiente);
+        
+        WriteCmdXLCD(LCD_linha_2);
+        while (BusyXLCD());
+            /*
+             * Escreve conteúdo da string 'pin' para o LCD,
+             * na posição anteriormente endereçada
+             */
+            /*PIN*/
+        putsXLCD(temp_ambiente_LCD);
+        while (BusyXLCD());
+        
         
         if (tecla_premida == '2'){
         

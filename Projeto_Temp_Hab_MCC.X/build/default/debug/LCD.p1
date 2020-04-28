@@ -853,7 +853,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD.c: 86:     _delay((unsigned long)((1000)*(6000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
 "88
-[; ;LCD.c: 88:      WriteCmdXLCD(0b00010111);
+[; ;LCD.c: 88:     WriteCmdXLCD(0b00010111);
 [e ( _WriteCmdXLCD (1 -> -> 23 `i `uc ]
 "89
 [; ;LCD.c: 89:  while (BusyXLCD());

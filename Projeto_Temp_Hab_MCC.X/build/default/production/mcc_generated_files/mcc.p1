@@ -2,12 +2,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "132 mcc_generated_files/interrupt_manager.h
 [; ;mcc_generated_files/interrupt_manager.h: 132: void INTERRUPT_Initialize (void);
 [v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
-"376 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 376: void PIN_MANAGER_Initialize (void);
+"396 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 396: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"87 mcc_generated_files/mcc.h
-[; ;mcc_generated_files/mcc.h: 87: void OSCILLATOR_Initialize(void);
+"88 mcc_generated_files/mcc.h
+[; ;mcc_generated_files/mcc.h: 88: void OSCILLATOR_Initialize(void);
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
+"138 mcc_generated_files/adc.h
+[; ;mcc_generated_files/adc.h: 138: void ADC_Initialize(void);
+[v _ADC_Initialize `(v ~T0 @X0 0 ef ]
 "96 mcc_generated_files/epwm1.h
 [; ;mcc_generated_files/epwm1.h: 96: void EPWM1_Initialize(void);
 [v _EPWM1_Initialize `(v ~T0 @X0 0 ef ]
@@ -803,39 +806,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/mcc.c: 55:     OSCILLATOR_Initialize();
 [e ( _OSCILLATOR_Initialize ..  ]
 "56
-[; ;mcc_generated_files/mcc.c: 56:     EPWM1_Initialize();
-[e ( _EPWM1_Initialize ..  ]
+[; ;mcc_generated_files/mcc.c: 56:     ADC_Initialize();
+[e ( _ADC_Initialize ..  ]
 "57
-[; ;mcc_generated_files/mcc.c: 57:     TMR2_Initialize();
-[e ( _TMR2_Initialize ..  ]
+[; ;mcc_generated_files/mcc.c: 57:     EPWM1_Initialize();
+[e ( _EPWM1_Initialize ..  ]
 "58
-[; ;mcc_generated_files/mcc.c: 58:     EXT_INT_Initialize();
-[e ( _EXT_INT_Initialize ..  ]
+[; ;mcc_generated_files/mcc.c: 58:     TMR2_Initialize();
+[e ( _TMR2_Initialize ..  ]
 "59
-[; ;mcc_generated_files/mcc.c: 59:     TMR0_Initialize();
-[e ( _TMR0_Initialize ..  ]
+[; ;mcc_generated_files/mcc.c: 59:     EXT_INT_Initialize();
+[e ( _EXT_INT_Initialize ..  ]
 "60
-[; ;mcc_generated_files/mcc.c: 60: }
-[e :UE 851 ]
+[; ;mcc_generated_files/mcc.c: 60:     TMR0_Initialize();
+[e ( _TMR0_Initialize ..  ]
+"61
+[; ;mcc_generated_files/mcc.c: 61: }
+[e :UE 852 ]
 }
-"62
-[; ;mcc_generated_files/mcc.c: 62: void OSCILLATOR_Initialize(void)
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
 "63
-[; ;mcc_generated_files/mcc.c: 63: {
+[; ;mcc_generated_files/mcc.c: 63: void OSCILLATOR_Initialize(void)
+[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
+"64
+[; ;mcc_generated_files/mcc.c: 64: {
 {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-"65
-[; ;mcc_generated_files/mcc.c: 65:     OSCCON = 0x30;
+"66
+[; ;mcc_generated_files/mcc.c: 66:     OSCCON = 0x30;
 [e = _OSCCON -> -> 48 `i `uc ]
-"67
-[; ;mcc_generated_files/mcc.c: 67:     OSCCON2 = 0x04;
+"68
+[; ;mcc_generated_files/mcc.c: 68:     OSCCON2 = 0x04;
 [e = _OSCCON2 -> -> 4 `i `uc ]
-"69
-[; ;mcc_generated_files/mcc.c: 69:     OSCTUNE = 0x00;
-[e = _OSCTUNE -> -> 0 `i `uc ]
 "70
-[; ;mcc_generated_files/mcc.c: 70: }
-[e :UE 852 ]
+[; ;mcc_generated_files/mcc.c: 70:     OSCTUNE = 0x00;
+[e = _OSCTUNE -> -> 0 `i `uc ]
+"71
+[; ;mcc_generated_files/mcc.c: 71: }
+[e :UE 853 ]
 }
