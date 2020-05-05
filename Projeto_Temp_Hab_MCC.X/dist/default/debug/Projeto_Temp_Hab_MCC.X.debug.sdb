@@ -76,9 +76,9 @@ channel_FVRBuf2 31
 [v _LCD_inicio_teste LCD_inicio_teste `(v  1 e 1 0 ]
 "76 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 [v _Timer_0 Timer_0 `(v  1 e 1 0 ]
-"81
+"83
 [v _ADC_temperatura ADC_temperatura `(v  1 e 1 0 ]
-"100
+"102
 [v _main main `(v  1 e 1 0 ]
 "66 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -793,14 +793,14 @@ channel_FVRBuf2 31
 [v _tecla_limpar tecla_limpar `i  1 e 2 0 ]
 "17
 [v _contador_colunas_LCD contador_colunas_LCD `i  1 e 2 0 ]
-"100 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+"102 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"147
+"149
 [v main@contador_caracteres contador_caracteres `i  1 a 2 104 ]
-"105
+"107
 [v main@rxData rxData `uc  1 a 1 106 ]
-"304
+"307
 } 0
 "3 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strncat.c
 [v _strncat strncat `(*.39uc  1 e 2 0 ]
@@ -1182,7 +1182,7 @@ channel_FVRBuf2 31
 "76 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 [v _Timer_0 Timer_0 `(v  1 e 1 0 ]
 {
-"79
+"81
 } 0
 "100 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\mcc_generated_files/adc.c
 [v _ADC_StartConversion ADC_StartConversion `(v  1 e 1 0 ]
@@ -1283,10 +1283,10 @@ channel_FVRBuf2 31
 {
 "160
 } 0
-"81 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+"83 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 [v _ADC_temperatura ADC_temperatura `(v  1 e 1 0 ]
 {
-"94
+"96
 } 0
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]

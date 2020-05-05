@@ -74,7 +74,9 @@ int alarme_ativo;
 
 //Testar LED com interrupcão do Timer 0 & interrupcões do telcado 
 void Timer_0 (void) { //LED + ADC
-    led_Toggle();
+    if (alarme_ativo == 1){
+        led_Toggle();
+    }
     ADC_StartConversion();
 }
 
@@ -219,6 +221,7 @@ void main(void)
         if (temp_ambiente >= temp_alarme){
         
             CCP1CONbits.CCP1M = 1100; //ativa o PWM - liga o sounder
+            
             alarme_ativo = 1;
             
         }

@@ -10176,7 +10176,9 @@ int alarme_ativo;
 
 
 void Timer_0 (void) {
-    do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0);
+    if (alarme_ativo == 1){
+        do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0);
+    }
     ADC_StartConversion();
 }
 
@@ -10205,9 +10207,9 @@ void main(void)
     SYSTEM_Initialize();
 
     uint8_t rxData;
-# 115 "main.c"
+# 117 "main.c"
     (INTCONbits.GIEH = 1);
-# 147 "main.c"
+# 149 "main.c"
     int contador_caracteres = 4;
 
 
@@ -10283,6 +10285,7 @@ void main(void)
         if (temp_ambiente >= temp_alarme){
 
             CCP1CONbits.CCP1M = 1100;
+
             alarme_ativo = 1;
 
         }
