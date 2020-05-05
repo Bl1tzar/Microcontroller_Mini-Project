@@ -10151,9 +10151,10 @@ int pin_real = 0000;
 
 
 
-char temp_alar_int [2];
-int temp_alar;
-
+unsigned char temp_alarme_intro;
+char temp_alarme_string [4];
+int temp_alarme;
+int temp_mudou;
 
 
 
@@ -10161,8 +10162,13 @@ int temp_alar;
 int codigo_digital;
 
 int temp_ambiente;
+int temp_ambiente_anterior;
+char temp_ambiente_LCD [10];
 
-char temp_ambiente_LCD [4];
+
+
+
+int alarme_ativo;
 
 
 
@@ -10181,6 +10187,12 @@ void ADC_temperatura (void){
 
     temp_ambiente = (int)(((((float) codigo_digital * (3.4/1024.0))-0.3)-0.400) / (0.0195));
 
+    if (temp_ambiente != temp_ambiente_anterior){
+
+        temp_mudou = 1;
+        temp_ambiente_anterior = temp_ambiente;
+    }
+
 }
 
 
@@ -10193,9 +10205,9 @@ void main(void)
     SYSTEM_Initialize();
 
     uint8_t rxData;
-# 103 "main.c"
+# 115 "main.c"
     (INTCONbits.GIEH = 1);
-# 135 "main.c"
+# 147 "main.c"
     int contador_caracteres = 4;
 
 
@@ -10214,25 +10226,50 @@ void main(void)
 
     CCP1CONbits.CCP1M = 0000;
 
+    temp_alarme = 25;
+
     while (1)
     {
 
-        if (tecla_premida == '3' && tecla_n == 1 ){
-            printf("\r Introduza a temperatura de alarme: ");
-            tecla_n = 0;
+        if (temp_mudou == 1){
+
+            printf("\r\n Temperatura atual = %dC", temp_ambiente);
+            if (alarme_ativo == 1){
+                printf("\r\n Estado do alarme: Ativo");
+            }
+            if (alarme_ativo == 0){
+                printf("\r\n Estado do alarme: Desativo");
+            }
+            printf("\r\n\nTemperatura de alarme: %d", temp_alarme);
+            printf("\r\n Introduza a temperatura de alarme: ");
+
+            temp_mudou = 0;
+
         }
 
 
         if (EUSART1_is_rx_ready()){
 
-            rxData = EUSART1_Read();
+            rxData = temp_alarme_intro = EUSART1_Read();
             EUSART1_Write(rxData);
 
-        }
-# 184 "main.c"
-        sprintf(temp_ambiente_LCD, "temp = %d", temp_ambiente);
 
-        WriteCmdXLCD(LCD_linha_2);
+                strncat(temp_alarme_string, &temp_alarme_intro, 1);
+
+                temp_alarme = atoi (temp_alarme_string);
+
+
+                printf("\r\n temp_alarme_string: %s", temp_alarme_string);
+                printf("\r\n temp_alarme: %d", temp_alarme);
+
+        }
+
+
+
+
+        sprintf(temp_ambiente_LCD, "temp = %dC", temp_ambiente);
+
+        WriteCmdXLCD(LCD_linha_1);
         while (BusyXLCD());
 
 
@@ -10243,14 +10280,16 @@ void main(void)
         while (BusyXLCD());
 
 
-        if (tecla_premida == '2'){
-
-            CCP1CONbits.CCP1M = 0000;
-
-        }
-        if (tecla_premida == '1'){
+        if (temp_ambiente >= temp_alarme){
 
             CCP1CONbits.CCP1M = 1100;
+            alarme_ativo = 1;
+
+        }
+        else if (temp_ambiente < temp_alarme){
+
+            CCP1CONbits.CCP1M = 0000;
+            alarme_ativo = 0;
 
         }
 

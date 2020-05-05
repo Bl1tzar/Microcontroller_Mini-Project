@@ -64,49 +64,7 @@ void LCD_inicio_teste (void){
     
     
     
-    /*
-                        Escrever no LCD
-     */
-    
-  
-    /*
-	 * Endereçamento do display:
-	 * 1a linha, 1a coluna
-	 */
-	WriteCmdXLCD(0b10000000);
-	while (BusyXLCD());
 
-	/*
-	 * Escreve conteúdo da string 'mybuff1' para o LCD,
-	 * na posição anteriormente endereçada
-	 */
-    putsXLCD("Mars ROCK'S!");
-	while (BusyXLCD());
-    
-    __delay_ms(1000);
-    
-    WriteCmdXLCD(0b00010111);
-	while (BusyXLCD());
-	/*
-	 * Comando interno para o LCD:
-	 * CLEAR_LCD: Limpa conteúdo do display
-	 */
-	WriteCmdXLCD(0b00000001);
-	while (BusyXLCD());
-            /********************Programacão do LCD*********************/	
-	/*
-	 * Endereçamento do display:
-	 * 1a linha, 1a coluna
-	 */
-	WriteCmdXLCD(0b10000000);
-	while (BusyXLCD());
-
-	/*
-	 * Escreve conteúdo da string 'mybuff1' para o LCD,
-	 * na posição anteriormente endereçada
-	 */
-    putsXLCD("Teste - Teclado");
-	while (BusyXLCD());
     
 }    
 

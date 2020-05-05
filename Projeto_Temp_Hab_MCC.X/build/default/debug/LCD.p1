@@ -8,13 +8,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "109
 [; ;./xlcd.h: 109: void WriteCmdXLCD( unsigned char);
 [v _WriteCmdXLCD `(v ~T0 @X0 0 ef1`uc ]
-"124
-[; ;./xlcd.h: 124: void putsXLCD( char *);
-[v _putsXLCD `(v ~T0 @X0 0 ef1`*uc ]
-[v F5963 `(v ~T0 @X0 1 tf1`ul ]
-"187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
-[v __delay `JF5963 ~T0 @X0 0 e ]
-[p i __delay ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -829,72 +822,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 866 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 867  ]
 [e :U 868 ]
-"76
-[; ;LCD.c: 76:  WriteCmdXLCD(0b10000000);
-[e ( _WriteCmdXLCD (1 -> -> 128 `i `uc ]
-"77
-[; ;LCD.c: 77:  while (BusyXLCD());
-[e $U 869  ]
-[e :U 870 ]
-[e :U 869 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 870  ]
-[e :U 871 ]
-"83
-[; ;LCD.c: 83:     putsXLCD("Mars ROCK'S!");
-[e ( _putsXLCD (1 :s 1C ]
-"84
-[; ;LCD.c: 84:  while (BusyXLCD());
-[e $U 872  ]
-[e :U 873 ]
-[e :U 872 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 873  ]
-[e :U 874 ]
-"86
-[; ;LCD.c: 86:     _delay((unsigned long)((1000)*(6000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
-"88
-[; ;LCD.c: 88:     WriteCmdXLCD(0b00010111);
-[e ( _WriteCmdXLCD (1 -> -> 23 `i `uc ]
-"89
-[; ;LCD.c: 89:  while (BusyXLCD());
-[e $U 875  ]
-[e :U 876 ]
-[e :U 875 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 876  ]
-[e :U 877 ]
-"94
-[; ;LCD.c: 94:  WriteCmdXLCD(0b00000001);
-[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
-"95
-[; ;LCD.c: 95:  while (BusyXLCD());
-[e $U 878  ]
-[e :U 879 ]
-[e :U 878 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 879  ]
-[e :U 880 ]
-"101
-[; ;LCD.c: 101:  WriteCmdXLCD(0b10000000);
-[e ( _WriteCmdXLCD (1 -> -> 128 `i `uc ]
-"102
-[; ;LCD.c: 102:  while (BusyXLCD());
-[e $U 881  ]
-[e :U 882 ]
-[e :U 881 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 882  ]
-[e :U 883 ]
-"108
-[; ;LCD.c: 108:     putsXLCD("Teste - Teclado");
-[e ( _putsXLCD (1 :s 2C ]
-"109
-[; ;LCD.c: 109:  while (BusyXLCD());
-[e $U 884  ]
-[e :U 885 ]
-[e :U 884 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 885  ]
-[e :U 886 ]
-"111
-[; ;LCD.c: 111: }
+"69
+[; ;LCD.c: 69: }
 [e :UE 856 ]
 }
-[a 2C 84 101 115 116 101 32 45 32 84 101 99 108 97 100 111 0 ]
-[a 1C 77 97 114 115 32 82 79 67 75 39 83 33 0 ]

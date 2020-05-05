@@ -10091,40 +10091,11 @@ void LCD_inicio_teste (void){
 
  WriteCmdXLCD(0b00000001);
  while (BusyXLCD());
-# 76 "LCD.c"
- WriteCmdXLCD(0b10000000);
- while (BusyXLCD());
 
 
 
 
 
-    putsXLCD("Mars ROCK'S!");
- while (BusyXLCD());
 
-    _delay((unsigned long)((1000)*(6000000/4000.0)));
-
-    WriteCmdXLCD(0b00010111);
- while (BusyXLCD());
-
-
-
-
- WriteCmdXLCD(0b00000001);
- while (BusyXLCD());
-
-
-
-
-
- WriteCmdXLCD(0b10000000);
- while (BusyXLCD());
-
-
-
-
-
-    putsXLCD("Teste - Teclado");
- while (BusyXLCD());
 
 }
