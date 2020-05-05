@@ -61,7 +61,7 @@ int codigo_digital; // 2 bits mais significativos do codigo digital de 10 bits
 //char low [8] = ADRESL; // 8 bits menos significativos do codigo digital de 10 bits
 int temp_ambiente;
 int temp_ambiente_anterior;
-char temp_ambiente_LCD [10];
+char temp_ambiente_LCD [20];
 
 /*
         Alarme
@@ -194,9 +194,9 @@ void main(void)
                 //transforma o a temp_alarme_string de string para temp_alarme int
                 temp_alarme = atoi (temp_alarme_string);
                 
-                //Printfs para teste
-                printf("\r\n temp_alarme_string: %s", temp_alarme_string);
-                printf("\r\n temp_alarme: %d", temp_alarme);
+//                Printfs para teste
+//                printf("\r\n temp_alarme_string: %s", temp_alarme_string);
+//                printf("\r\n temp_alarme: %d", temp_alarme);
             
         }
         

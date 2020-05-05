@@ -948,8 +948,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 63: int temp_ambiente_anterior;
 [v _temp_ambiente_anterior `i ~T0 @X0 1 e ]
 "64
-[; ;main.c: 64: char temp_ambiente_LCD [10];
-[v _temp_ambiente_LCD `uc ~T0 @X0 -> 10 `i e ]
+[; ;main.c: 64: char temp_ambiente_LCD [20];
+[v _temp_ambiente_LCD `uc ~T0 @X0 -> 20 `i e ]
 "69
 [; ;main.c: 69: int alarme_ativo;
 [v _alarme_ativo `i ~T0 @X0 1 e ]
@@ -1113,19 +1113,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "195
 [; ;main.c: 195:                 temp_alarme = atoi (temp_alarme_string);
 [e = _temp_alarme ( _atoi (1 -> &U _temp_alarme_string `*Cuc ]
-"198
-[; ;main.c: 198:                 printf("\r\n temp_alarme_string: %s", temp_alarme_string);
-[e ( _printf , (. :s 6C &U _temp_alarme_string ]
-"199
-[; ;main.c: 199:                 printf("\r\n temp_alarme: %d", temp_alarme);
-[e ( _printf , (. :s 7C _temp_alarme ]
 "201
 [; ;main.c: 201:         }
 }
 [e :U 870 ]
 "206
 [; ;main.c: 206:         sprintf(temp_ambiente_LCD, "temp = %dC", temp_ambiente);
-[e ( _sprintf (1 , (. , &U _temp_ambiente_LCD :s 8C _temp_ambiente ]
+[e ( _sprintf (1 , (. , &U _temp_ambiente_LCD :s 6C _temp_ambiente ]
 "208
 [; ;main.c: 208:         WriteCmdXLCD(LCD_linha_1);
 [e ( _WriteCmdXLCD (1 -> _LCD_linha_1 `uc ]
@@ -1233,7 +1227,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 891 ]
 "262
 [; ;main.c: 262:             putsXLCD("                    ");
-[e ( _putsXLCD (1 :s 9C ]
+[e ( _putsXLCD (1 :s 7C ]
 "263
 [; ;main.c: 263:             while (BusyXLCD());
 [e $U 892  ]
@@ -1320,13 +1314,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 863 ]
 }
 [p f _sprintf 8388736 ]
-[p f _printf 8650880 ]
-[a 6C 13 10 32 116 101 109 112 95 97 108 97 114 109 101 95 115 116 114 105 110 103 58 32 37 115 0 ]
+[p f _printf 8388736 ]
 [a 3C 13 10 32 69 115 116 97 100 111 32 100 111 32 97 108 97 114 109 101 58 32 68 101 115 97 116 105 118 111 0 ]
 [a 2C 13 10 32 69 115 116 97 100 111 32 100 111 32 97 108 97 114 109 101 58 32 65 116 105 118 111 0 ]
-[a 7C 13 10 32 116 101 109 112 95 97 108 97 114 109 101 58 32 37 100 0 ]
 [a 4C 13 10 10 84 101 109 112 101 114 97 116 117 114 97 32 100 101 32 97 108 97 114 109 101 58 32 37 100 0 ]
-[a 8C 116 101 109 112 32 61 32 37 100 67 0 ]
+[a 6C 116 101 109 112 32 61 32 37 100 67 0 ]
 [a 1C 13 10 32 84 101 109 112 101 114 97 116 117 114 97 32 97 116 117 97 108 32 61 32 37 100 67 0 ]
 [a 5C 13 10 32 73 110 116 114 111 100 117 122 97 32 97 32 116 101 109 112 101 114 97 116 117 114 97 32 100 101 32 97 108 97 114 109 101 58 32 0 ]
-[a 9C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 7C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]

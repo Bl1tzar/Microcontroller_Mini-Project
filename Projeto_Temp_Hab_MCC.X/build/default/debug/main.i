@@ -10163,7 +10163,7 @@ int codigo_digital;
 
 int temp_ambiente;
 int temp_ambiente_anterior;
-char temp_ambiente_LCD [10];
+char temp_ambiente_LCD [20];
 
 
 
@@ -10259,8 +10259,8 @@ void main(void)
                 temp_alarme = atoi (temp_alarme_string);
 
 
-                printf("\r\n temp_alarme_string: %s", temp_alarme_string);
-                printf("\r\n temp_alarme: %d", temp_alarme);
+
+
 
         }
 
