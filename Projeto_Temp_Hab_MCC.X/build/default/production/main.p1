@@ -21,8 +21,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./mcc_generated_files/adc.h: 260: adc_result_t ADC_GetConversionResult(void);
 [v _ADC_GetConversionResult `(us ~T0 @X0 0 ef ]
 [p mainexit ]
-"75 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 75: void SYSTEM_Initialize(void);
+"76 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 76: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "16898 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 16898:     struct {
@@ -90,14 +90,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13331
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 13331: extern volatile CCP1CONbits_t CCP1CONbits __attribute__((address(0xFBD)));
 [v _CCP1CONbits `VS630 ~T0 @X0 0 e@4029 ]
+"111 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"213 ./mcc_generated_files/eusart1.h
+[; ;./mcc_generated_files/eusart1.h: 213: _Bool EUSART1_is_rx_ready(void);
+[v _EUSART1_is_rx_ready `(a ~T0 @X0 0 ef ]
+"328
+[; ;./mcc_generated_files/eusart1.h: 328: uint8_t EUSART1_Read(void);
+[v _EUSART1_Read `(uc ~T0 @X0 0 ef ]
+"348
+[; ;./mcc_generated_files/eusart1.h: 348: void EUSART1_Write(uint8_t txData);
+[v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
 "113 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"28 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\string.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\string.h: 28: void *memmove (void *, const void *, size_t);
-[v _memmove `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
-"54
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\string.h: 54: size_t strlen (const char *);
-[v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
 "109 ./xlcd.h
 [; ;./xlcd.h: 109: void WriteCmdXLCD( unsigned char);
 [v _WriteCmdXLCD `(v ~T0 @X0 0 ef1`uc ]
@@ -941,17 +946,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "71
 [; ;main.c: 71:     do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0);
-[e :U 858 ]
+[e :U 860 ]
 {
 [e = . . _LATAbits 0 1 -> ~ -> . . _LATAbits 0 1 `i `uc ]
 }
-[e :U 857 ]
+[e :U 859 ]
 "72
 [; ;main.c: 72:     ADC_StartConversion();
 [e ( _ADC_StartConversion ..  ]
 "73
 [; ;main.c: 73: }
-[e :UE 855 ]
+[e :UE 857 ]
 }
 "75
 [; ;main.c: 75: void ADC_temperatura (void){
@@ -967,7 +972,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _temp_ambiente -> / - - * -> -> _codigo_digital `f `d / .3.4 .1024.0 .0.3 .0.400 .0.0195 `i ]
 "82
 [; ;main.c: 82: }
-[e :UE 859 ]
+[e :UE 861 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
 "88
@@ -981,6 +986,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "91
 [; ;main.c: 91:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
+"93
+[; ;main.c: 93:     uint8_t rxData;
+[v _rxData `uc ~T0 @X0 1 a ]
 "103
 [; ;main.c: 103:     (INTCONbits.GIEH = 1);
 [e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
@@ -1011,187 +1019,159 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _CCP1CONbits 0 0 -> -> 0 `i `uc ]
 "153
 [; ;main.c: 153:     while (1)
-[e :U 862 ]
+[e :U 864 ]
 "154
 [; ;main.c: 154:     {
 {
 "156
-[; ;main.c: 156:         sprintf(temp_ambiente_LCD, "temp = %d", temp_ambiente);
-[e ( _sprintf (1 , (. , &U _temp_ambiente_LCD :s 1C _temp_ambiente ]
-"158
-[; ;main.c: 158:         if (temp_ambiente<100){
-[e $ ! < _temp_ambiente -> 100 `i 864  ]
+[; ;main.c: 156:         if (tecla_premida == '3' && tecla_n == 1 ){
+[e $ ! && == -> _tecla_premida `ui -> 51 `ui == _tecla_n -> 1 `i 866  ]
 {
+"157
+[; ;main.c: 157:             printf("\r Introduza a temperatura de alarme: ");
+[e ( _printf :s 1C ]
+"158
+[; ;main.c: 158:             tecla_n = 0;
+[e = _tecla_n -> 0 `i ]
 "159
-[; ;main.c: 159:             memmove (&temp_ambiente_LCD[2], &temp_ambiente_LCD[3], strlen(temp_ambiente_LCD) - 2);
-[e ( _memmove (3 , , -> &U *U + &U _temp_ambiente_LCD * -> -> -> 2 `i `ui `ux -> -> # *U &U _temp_ambiente_LCD `ui `ux `*v -> &U *U + &U _temp_ambiente_LCD * -> -> -> 3 `i `ui `ux -> -> # *U &U _temp_ambiente_LCD `ui `ux `*Cv - ( _strlen (1 -> &U _temp_ambiente_LCD `*Cuc -> -> 2 `i `ui ]
-"160
-[; ;main.c: 160:         }
+[; ;main.c: 159:         }
 }
-[e :U 864 ]
-"162
-[; ;main.c: 162:         WriteCmdXLCD(LCD_linha_2);
-[e ( _WriteCmdXLCD (1 -> _LCD_linha_2 `uc ]
-"163
-[; ;main.c: 163:         while (BusyXLCD());
-[e $U 865  ]
 [e :U 866 ]
-[e :U 865 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 866  ]
+"162
+[; ;main.c: 162:         if (EUSART1_is_rx_ready()){
+[e $ ! != -> ( _EUSART1_is_rx_ready ..  `i -> 0 `i 867  ]
+{
+"164
+[; ;main.c: 164:             rxData = EUSART1_Read();
+[e = _rxData ( _EUSART1_Read ..  ]
+"165
+[; ;main.c: 165:             EUSART1_Write(rxData);
+[e ( _EUSART1_Write (1 _rxData ]
+"167
+[; ;main.c: 167:         }
+}
 [e :U 867 ]
-"169
-[; ;main.c: 169:         putsXLCD(temp_ambiente_LCD);
-[e ( _putsXLCD (1 &U _temp_ambiente_LCD ]
-"170
-[; ;main.c: 170:         while (BusyXLCD());
+"184
+[; ;main.c: 184:         sprintf(temp_ambiente_LCD, "temp = %d", temp_ambiente);
+[e ( _sprintf (1 , (. , &U _temp_ambiente_LCD :s 2C _temp_ambiente ]
+"186
+[; ;main.c: 186:         WriteCmdXLCD(LCD_linha_2);
+[e ( _WriteCmdXLCD (1 -> _LCD_linha_2 `uc ]
+"187
+[; ;main.c: 187:         while (BusyXLCD());
 [e $U 868  ]
 [e :U 869 ]
 [e :U 868 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 869  ]
 [e :U 870 ]
-"173
-[; ;main.c: 173:         if (tecla_premida == '2'){
-[e $ ! == -> _tecla_premida `ui -> 50 `ui 871  ]
-{
-"175
-[; ;main.c: 175:             CCP1CONbits.CCP1M = 0000;
-[e = . . _CCP1CONbits 0 0 -> -> 0 `i `uc ]
-"177
-[; ;main.c: 177:         }
-}
-[e :U 871 ]
-"178
-[; ;main.c: 178:         if (tecla_premida == '1'){
-[e $ ! == -> _tecla_premida `ui -> 49 `ui 872  ]
-{
-"180
-[; ;main.c: 180:             CCP1CONbits.CCP1M = 1100;
-[e = . . _CCP1CONbits 0 0 -> -> 1100 `i `uc ]
-"182
-[; ;main.c: 182:         }
-}
-[e :U 872 ]
-"184
-[; ;main.c: 184:         if (tecla_n){
-[e $ ! != _tecla_n -> 0 `i 873  ]
-{
-"188
-[; ;main.c: 188:             strncat(pin, &tecla_premida, 1);
-[e ( _strncat (3 , , &U _pin -> &U _tecla_premida `*Cuc -> -> 1 `i `ui ]
-"192
-[; ;main.c: 192:             WriteCmdXLCD(LCD_linha_2);
-[e ( _WriteCmdXLCD (1 -> _LCD_linha_2 `uc ]
 "193
-[; ;main.c: 193:             while (BusyXLCD());
-[e $U 874  ]
-[e :U 875 ]
-[e :U 874 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 875  ]
-[e :U 876 ]
-"200
-[; ;main.c: 200:             putsXLCD(pin);
-[e ( _putsXLCD (1 &U _pin ]
+[; ;main.c: 193:         putsXLCD(temp_ambiente_LCD);
+[e ( _putsXLCD (1 &U _temp_ambiente_LCD ]
+"194
+[; ;main.c: 194:         while (BusyXLCD());
+[e $U 871  ]
+[e :U 872 ]
+[e :U 871 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 872  ]
+[e :U 873 ]
+"197
+[; ;main.c: 197:         if (tecla_premida == '2'){
+[e $ ! == -> _tecla_premida `ui -> 50 `ui 874  ]
+{
+"199
+[; ;main.c: 199:             CCP1CONbits.CCP1M = 0000;
+[e = . . _CCP1CONbits 0 0 -> -> 0 `i `uc ]
 "201
-[; ;main.c: 201:             while (BusyXLCD());
+[; ;main.c: 201:         }
+}
+[e :U 874 ]
+"202
+[; ;main.c: 202:         if (tecla_premida == '1'){
+[e $ ! == -> _tecla_premida `ui -> 49 `ui 875  ]
+{
+"204
+[; ;main.c: 204:             CCP1CONbits.CCP1M = 1100;
+[e = . . _CCP1CONbits 0 0 -> -> 1100 `i `uc ]
+"206
+[; ;main.c: 206:         }
+}
+[e :U 875 ]
+"208
+[; ;main.c: 208:         if (tecla_n){
+[e $ ! != _tecla_n -> 0 `i 876  ]
+{
+"212
+[; ;main.c: 212:             strncat(pin, &tecla_premida, 1);
+[e ( _strncat (3 , , &U _pin -> &U _tecla_premida `*Cuc -> -> 1 `i `ui ]
+"216
+[; ;main.c: 216:             WriteCmdXLCD(LCD_linha_2);
+[e ( _WriteCmdXLCD (1 -> _LCD_linha_2 `uc ]
+"217
+[; ;main.c: 217:             while (BusyXLCD());
 [e $U 877  ]
 [e :U 878 ]
 [e :U 877 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 878  ]
 [e :U 879 ]
-"206
-[; ;main.c: 206:             contador_caracteres++;
-[e ++ _contador_caracteres -> 1 `i ]
-"207
-[; ;main.c: 207:             contador_colunas_LCD++;
-[e ++ _contador_colunas_LCD -> 1 `i ]
-"208
-[; ;main.c: 208:             tecla_n = 0;
-[e = _tecla_n -> 0 `i ]
-"209
-[; ;main.c: 209:         }
-}
+"224
+[; ;main.c: 224:             putsXLCD(pin);
+[e ( _putsXLCD (1 &U _pin ]
+"225
+[; ;main.c: 225:             while (BusyXLCD());
 [e $U 880  ]
-"210
-[; ;main.c: 210:         else if (tecla_limpar){
-[e :U 873 ]
-[e $ ! != _tecla_limpar -> 0 `i 881  ]
-{
-"211
-[; ;main.c: 211:             WriteCmdXLCD(contador_colunas_LCD);
-[e ( _WriteCmdXLCD (1 -> _contador_colunas_LCD `uc ]
-"212
-[; ;main.c: 212:             while (BusyXLCD());
-[e $U 882  ]
-[e :U 883 ]
+[e :U 881 ]
+[e :U 880 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 881  ]
 [e :U 882 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 883  ]
-[e :U 884 ]
-"214
-[; ;main.c: 214:             putsXLCD("                    ");
-[e ( _putsXLCD (1 :s 2C ]
-"215
-[; ;main.c: 215:             while (BusyXLCD());
+"230
+[; ;main.c: 230:             contador_caracteres++;
+[e ++ _contador_caracteres -> 1 `i ]
+"231
+[; ;main.c: 231:             contador_colunas_LCD++;
+[e ++ _contador_colunas_LCD -> 1 `i ]
+"232
+[; ;main.c: 232:             tecla_n = 0;
+[e = _tecla_n -> 0 `i ]
+"233
+[; ;main.c: 233:         }
+}
+[e $U 883  ]
+"234
+[; ;main.c: 234:         else if (tecla_limpar){
+[e :U 876 ]
+[e $ ! != _tecla_limpar -> 0 `i 884  ]
+{
+"235
+[; ;main.c: 235:             WriteCmdXLCD(contador_colunas_LCD);
+[e ( _WriteCmdXLCD (1 -> _contador_colunas_LCD `uc ]
+"236
+[; ;main.c: 236:             while (BusyXLCD());
 [e $U 885  ]
 [e :U 886 ]
 [e :U 885 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 886  ]
 [e :U 887 ]
-"216
-[; ;main.c: 216:             tecla_limpar = 0;
-[e = _tecla_limpar -> 0 `i ]
-"219
-[; ;main.c: 219:         }
-}
-[e :U 881 ]
-[e :U 880 ]
-"224
-[; ;main.c: 224:         LATBbits.LATB3 = 0;
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-"225
-[; ;main.c: 225:         LATBbits.LATB4 = 1;
-[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
-"226
-[; ;main.c: 226:         LATBbits.LATB5 = 1;
-[e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
-"227
-[; ;main.c: 227:         LATBbits.LATB6 = 1;
-[e = . . _LATBbits 0 6 -> -> 1 `i `uc ]
-"229
-[; ;main.c: 229:         _delay((unsigned long)((65)*(6000000/4000.0)));
-[e ( __delay (1 -> * -> -> 65 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
-"232
-[; ;main.c: 232:         LATBbits.LATB3 = 1;
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-"233
-[; ;main.c: 233:         LATBbits.LATB4 = 0;
-[e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
-"234
-[; ;main.c: 234:         LATBbits.LATB5 = 1;
-[e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
-"235
-[; ;main.c: 235:         LATBbits.LATB6 = 1;
-[e = . . _LATBbits 0 6 -> -> 1 `i `uc ]
-"237
-[; ;main.c: 237:         _delay((unsigned long)((65)*(6000000/4000.0)));
-[e ( __delay (1 -> * -> -> 65 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
+"238
+[; ;main.c: 238:             putsXLCD("                    ");
+[e ( _putsXLCD (1 :s 3C ]
+"239
+[; ;main.c: 239:             while (BusyXLCD());
+[e $U 888  ]
+[e :U 889 ]
+[e :U 888 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 889  ]
+[e :U 890 ]
 "240
-[; ;main.c: 240:         LATBbits.LATB3 = 1;
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-"241
-[; ;main.c: 241:         LATBbits.LATB4 = 1;
-[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
-"242
-[; ;main.c: 242:         LATBbits.LATB5 = 0;
-[e = . . _LATBbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 240:             tecla_limpar = 0;
+[e = _tecla_limpar -> 0 `i ]
 "243
-[; ;main.c: 243:         LATBbits.LATB6 = 1;
-[e = . . _LATBbits 0 6 -> -> 1 `i `uc ]
-"245
-[; ;main.c: 245:         _delay((unsigned long)((65)*(6000000/4000.0)));
-[e ( __delay (1 -> * -> -> 65 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
+[; ;main.c: 243:         }
+}
+[e :U 884 ]
+[e :U 883 ]
 "248
-[; ;main.c: 248:         LATBbits.LATB3 = 1;
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+[; ;main.c: 248:         LATBbits.LATB3 = 0;
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
 "249
 [; ;main.c: 249:         LATBbits.LATB4 = 1;
 [e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
@@ -1199,21 +1179,68 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 250:         LATBbits.LATB5 = 1;
 [e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
 "251
-[; ;main.c: 251:         LATBbits.LATB6 = 0;
-[e = . . _LATBbits 0 6 -> -> 0 `i `uc ]
+[; ;main.c: 251:         LATBbits.LATB6 = 1;
+[e = . . _LATBbits 0 6 -> -> 1 `i `uc ]
 "253
 [; ;main.c: 253:         _delay((unsigned long)((65)*(6000000/4000.0)));
 [e ( __delay (1 -> * -> -> 65 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
-"255
-[; ;main.c: 255:     }
-}
-[e :U 861 ]
-[e $U 862  ]
-[e :U 863 ]
 "256
-[; ;main.c: 256: }
-[e :UE 860 ]
+[; ;main.c: 256:         LATBbits.LATB3 = 1;
+[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+"257
+[; ;main.c: 257:         LATBbits.LATB4 = 0;
+[e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
+"258
+[; ;main.c: 258:         LATBbits.LATB5 = 1;
+[e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
+"259
+[; ;main.c: 259:         LATBbits.LATB6 = 1;
+[e = . . _LATBbits 0 6 -> -> 1 `i `uc ]
+"261
+[; ;main.c: 261:         _delay((unsigned long)((65)*(6000000/4000.0)));
+[e ( __delay (1 -> * -> -> 65 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
+"264
+[; ;main.c: 264:         LATBbits.LATB3 = 1;
+[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+"265
+[; ;main.c: 265:         LATBbits.LATB4 = 1;
+[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
+"266
+[; ;main.c: 266:         LATBbits.LATB5 = 0;
+[e = . . _LATBbits 0 5 -> -> 0 `i `uc ]
+"267
+[; ;main.c: 267:         LATBbits.LATB6 = 1;
+[e = . . _LATBbits 0 6 -> -> 1 `i `uc ]
+"269
+[; ;main.c: 269:         _delay((unsigned long)((65)*(6000000/4000.0)));
+[e ( __delay (1 -> * -> -> 65 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
+"272
+[; ;main.c: 272:         LATBbits.LATB3 = 1;
+[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+"273
+[; ;main.c: 273:         LATBbits.LATB4 = 1;
+[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
+"274
+[; ;main.c: 274:         LATBbits.LATB5 = 1;
+[e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
+"275
+[; ;main.c: 275:         LATBbits.LATB6 = 0;
+[e = . . _LATBbits 0 6 -> -> 0 `i `uc ]
+"277
+[; ;main.c: 277:         _delay((unsigned long)((65)*(6000000/4000.0)));
+[e ( __delay (1 -> * -> -> 65 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
+"279
+[; ;main.c: 279:     }
 }
+[e :U 863 ]
+[e $U 864  ]
+[e :U 865 ]
+"280
+[; ;main.c: 280: }
+[e :UE 862 ]
+}
+[p f _printf 8388608 ]
 [p f _sprintf 8388736 ]
-[a 1C 116 101 109 112 32 61 32 37 100 0 ]
-[a 2C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 2C 116 101 109 112 32 61 32 37 100 0 ]
+[a 1C 13 32 73 110 116 114 111 100 117 122 97 32 97 32 116 101 109 112 101 114 97 116 117 114 97 32 100 101 32 97 108 97 114 109 101 58 32 0 ]
+[a 3C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]

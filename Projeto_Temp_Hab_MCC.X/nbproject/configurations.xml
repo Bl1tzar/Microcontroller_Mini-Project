@@ -16,6 +16,7 @@
         <itemPath>mcc_generated_files/epwm1.h</itemPath>
         <itemPath>mcc_generated_files/tmr2.h</itemPath>
         <itemPath>mcc_generated_files/adc.h</itemPath>
+        <itemPath>mcc_generated_files/eusart1.h</itemPath>
       </logicalFolder>
       <itemPath>xlcd.h</itemPath>
       <itemPath>Teclado.h</itemPath>
@@ -40,6 +41,7 @@
         <itemPath>mcc_generated_files/tmr2.c</itemPath>
         <itemPath>mcc_generated_files/epwm1.c</itemPath>
         <itemPath>mcc_generated_files/adc.c</itemPath>
+        <itemPath>mcc_generated_files/eusart1.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>xlcd.c</itemPath>

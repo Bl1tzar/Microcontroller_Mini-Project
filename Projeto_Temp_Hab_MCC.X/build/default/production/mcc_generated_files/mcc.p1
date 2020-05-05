@@ -5,8 +5,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "396 mcc_generated_files/pin_manager.h
 [; ;mcc_generated_files/pin_manager.h: 396: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"88 mcc_generated_files/mcc.h
-[; ;mcc_generated_files/mcc.h: 88: void OSCILLATOR_Initialize(void);
+"89 mcc_generated_files/mcc.h
+[; ;mcc_generated_files/mcc.h: 89: void OSCILLATOR_Initialize(void);
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
 "138 mcc_generated_files/adc.h
 [; ;mcc_generated_files/adc.h: 138: void ADC_Initialize(void);
@@ -23,6 +23,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "100 mcc_generated_files/tmr0.h
 [; ;mcc_generated_files/tmr0.h: 100: void TMR0_Initialize(void);
 [v _TMR0_Initialize `(v ~T0 @X0 0 ef ]
+"117 mcc_generated_files/eusart1.h
+[; ;mcc_generated_files/eusart1.h: 117: void EUSART1_Initialize(void);
+[v _EUSART1_Initialize `(v ~T0 @X0 0 ef ]
 "16012 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 16012: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
 [v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
@@ -821,27 +824,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/mcc.c: 60:     TMR0_Initialize();
 [e ( _TMR0_Initialize ..  ]
 "61
-[; ;mcc_generated_files/mcc.c: 61: }
-[e :UE 852 ]
+[; ;mcc_generated_files/mcc.c: 61:     EUSART1_Initialize();
+[e ( _EUSART1_Initialize ..  ]
+"62
+[; ;mcc_generated_files/mcc.c: 62: }
+[e :UE 856 ]
 }
-"63
-[; ;mcc_generated_files/mcc.c: 63: void OSCILLATOR_Initialize(void)
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
 "64
-[; ;mcc_generated_files/mcc.c: 64: {
+[; ;mcc_generated_files/mcc.c: 64: void OSCILLATOR_Initialize(void)
+[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
+"65
+[; ;mcc_generated_files/mcc.c: 65: {
 {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-"66
-[; ;mcc_generated_files/mcc.c: 66:     OSCCON = 0x30;
+"67
+[; ;mcc_generated_files/mcc.c: 67:     OSCCON = 0x30;
 [e = _OSCCON -> -> 48 `i `uc ]
-"68
-[; ;mcc_generated_files/mcc.c: 68:     OSCCON2 = 0x04;
+"69
+[; ;mcc_generated_files/mcc.c: 69:     OSCCON2 = 0x04;
 [e = _OSCCON2 -> -> 4 `i `uc ]
-"70
-[; ;mcc_generated_files/mcc.c: 70:     OSCTUNE = 0x00;
-[e = _OSCTUNE -> -> 0 `i `uc ]
 "71
-[; ;mcc_generated_files/mcc.c: 71: }
-[e :UE 853 ]
+[; ;mcc_generated_files/mcc.c: 71:     OSCTUNE = 0x00;
+[e = _OSCTUNE -> -> 0 `i `uc ]
+"72
+[; ;mcc_generated_files/mcc.c: 72: }
+[e :UE 857 ]
 }

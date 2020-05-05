@@ -90,7 +90,7 @@ void main(void)
         // Initialize the device
     SYSTEM_Initialize();
     
-
+    uint8_t rxData; 
  
 
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
@@ -151,7 +151,35 @@ void main(void)
     CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder
         
     while (1)
-    {    
+    {   
+               /*Ao primir no 3, escreve o menu no terminal*/
+        if (tecla_premida == '3' && tecla_n == 1 ){
+            printf("\r Introduza a temperatura de alarme: ");
+            tecla_n = 0;
+        }
+       
+        /*Recebe caracter através do modulo EUSART1*/
+        if (EUSART1_is_rx_ready()){
+           
+            rxData = EUSART1_Read(); //Atribui o que foi escrito no terminal e que está guardado no EUSART a variavel rxData
+            EUSART1_Write(rxData); //Devolve para o terminal o que foi introduzido pelo utilizador para ele ver o que esta a escrever
+           
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         //Escrever no LCD a temperatura
         sprintf(temp_ambiente_LCD, "temp = %d", temp_ambiente);
         

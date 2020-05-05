@@ -817,7 +817,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "22
 [; ;Teclado.c: 22:     if (PORTBbits.RB3 == 0){
-[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 853  ]
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 857  ]
 {
 "23
 [; ;Teclado.c: 23:             tecla_premida = '1';
@@ -825,11 +825,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;Teclado.c: 24:         }
 }
-[e $U 854  ]
+[e $U 858  ]
 "25
 [; ;Teclado.c: 25:         else if (PORTBbits.RB4 == 0){
-[e :U 853 ]
-[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 855  ]
+[e :U 857 ]
+[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 859  ]
 {
 "26
 [; ;Teclado.c: 26:             tecla_premida = '4';
@@ -837,11 +837,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27
 [; ;Teclado.c: 27:         }
 }
-[e $U 856  ]
+[e $U 860  ]
 "28
 [; ;Teclado.c: 28:         else if (PORTBbits.RB5 == 0){
-[e :U 855 ]
-[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 857  ]
+[e :U 859 ]
+[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 861  ]
 {
 "29
 [; ;Teclado.c: 29:             tecla_premida = '7';
@@ -849,11 +849,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "30
 [; ;Teclado.c: 30:         }
 }
-[e $U 858  ]
+[e $U 862  ]
 "31
 [; ;Teclado.c: 31:         else if (PORTBbits.RB6 == 0){
-[e :U 857 ]
-[e $ ! == -> . . _PORTBbits 0 6 `i -> 0 `i 859  ]
+[e :U 861 ]
+[e $ ! == -> . . _PORTBbits 0 6 `i -> 0 `i 863  ]
 {
 "32
 [; ;Teclado.c: 32:             tecla_premida = '*';
@@ -861,16 +861,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "33
 [; ;Teclado.c: 33:         }
 }
-[e :U 859 ]
+[e :U 863 ]
+[e :U 862 ]
+[e :U 860 ]
 [e :U 858 ]
-[e :U 856 ]
-[e :U 854 ]
 "34
 [; ;Teclado.c: 34:         tecla_n = 1;
 [e = _tecla_n -> 1 `i ]
 "35
 [; ;Teclado.c: 35: }
-[e :UE 852 ]
+[e :UE 856 ]
 }
 "37
 [; ;Teclado.c: 37: void teclado_coluna_2 (void) {
@@ -880,7 +880,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "39
 [; ;Teclado.c: 39:     if (PORTBbits.RB3 == 0){
-[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 861  ]
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 865  ]
 {
 "40
 [; ;Teclado.c: 40:             tecla_premida = '2';
@@ -888,11 +888,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "41
 [; ;Teclado.c: 41:         }
 }
-[e $U 862  ]
+[e $U 866  ]
 "42
 [; ;Teclado.c: 42:         else if (PORTBbits.RB4 == 0){
-[e :U 861 ]
-[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 863  ]
+[e :U 865 ]
+[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 867  ]
 {
 "43
 [; ;Teclado.c: 43:             tecla_premida = '5';
@@ -900,11 +900,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "44
 [; ;Teclado.c: 44:         }
 }
-[e $U 864  ]
+[e $U 868  ]
 "45
 [; ;Teclado.c: 45:         else if (PORTBbits.RB5 == 0){
-[e :U 863 ]
-[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 865  ]
+[e :U 867 ]
+[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 869  ]
 {
 "46
 [; ;Teclado.c: 46:             tecla_premida = '8';
@@ -912,11 +912,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47
 [; ;Teclado.c: 47:         }
 }
-[e $U 866  ]
+[e $U 870  ]
 "48
 [; ;Teclado.c: 48:         else if (PORTBbits.RB6 == 0){
-[e :U 865 ]
-[e $ ! == -> . . _PORTBbits 0 6 `i -> 0 `i 867  ]
+[e :U 869 ]
+[e $ ! == -> . . _PORTBbits 0 6 `i -> 0 `i 871  ]
 {
 "49
 [; ;Teclado.c: 49:             tecla_premida = '0';
@@ -924,16 +924,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "50
 [; ;Teclado.c: 50:         }
 }
-[e :U 867 ]
+[e :U 871 ]
+[e :U 870 ]
+[e :U 868 ]
 [e :U 866 ]
-[e :U 864 ]
-[e :U 862 ]
 "51
 [; ;Teclado.c: 51:         tecla_n = 1;
 [e = _tecla_n -> 1 `i ]
 "52
 [; ;Teclado.c: 52: }
-[e :UE 860 ]
+[e :UE 864 ]
 }
 "54
 [; ;Teclado.c: 54: void teclado_coluna_3 (void) {
@@ -946,7 +946,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _tecla_n -> 1 `i ]
 "56
 [; ;Teclado.c: 56:     if (PORTBbits.RB3 == 0){
-[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 869  ]
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 0 `i 873  ]
 {
 "57
 [; ;Teclado.c: 57:             tecla_premida = '3';
@@ -954,11 +954,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "58
 [; ;Teclado.c: 58:         }
 }
-[e $U 870  ]
+[e $U 874  ]
 "59
 [; ;Teclado.c: 59:         else if (PORTBbits.RB4 == 0){
-[e :U 869 ]
-[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 871  ]
+[e :U 873 ]
+[e $ ! == -> . . _PORTBbits 0 4 `i -> 0 `i 875  ]
 {
 "60
 [; ;Teclado.c: 60:             tecla_premida = '6';
@@ -966,11 +966,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "61
 [; ;Teclado.c: 61:         }
 }
-[e $U 872  ]
+[e $U 876  ]
 "62
 [; ;Teclado.c: 62:         else if (PORTBbits.RB5 == 0){
-[e :U 871 ]
-[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 873  ]
+[e :U 875 ]
+[e $ ! == -> . . _PORTBbits 0 5 `i -> 0 `i 877  ]
 {
 "63
 [; ;Teclado.c: 63:             tecla_premida = '9';
@@ -978,11 +978,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "64
 [; ;Teclado.c: 64:         }
 }
-[e $U 874  ]
+[e $U 878  ]
 "65
 [; ;Teclado.c: 65:         else if (PORTBbits.RB6 == 0){
-[e :U 873 ]
-[e $ ! == -> . . _PORTBbits 0 6 `i -> 0 `i 875  ]
+[e :U 877 ]
+[e $ ! == -> . . _PORTBbits 0 6 `i -> 0 `i 879  ]
 {
 "66
 [; ;Teclado.c: 66:             contador_colunas_LCD = 192;
@@ -996,11 +996,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "69
 [; ;Teclado.c: 69:         }
 }
-[e :U 875 ]
+[e :U 879 ]
+[e :U 878 ]
+[e :U 876 ]
 [e :U 874 ]
-[e :U 872 ]
-[e :U 870 ]
 "70
 [; ;Teclado.c: 70: }
-[e :UE 868 ]
+[e :UE 872 ]
 }
