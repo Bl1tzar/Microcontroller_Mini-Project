@@ -10176,6 +10176,7 @@ int alarme_ativo;
 int menu_estado;
 
 int menu_entrada;
+int limpar_terminal;
 
 
 
@@ -10213,9 +10214,9 @@ void main(void)
     SYSTEM_Initialize();
 
     uint8_t rxData;
-# 123 "main.c"
+# 124 "main.c"
     (INTCONbits.GIEH = 1);
-# 155 "main.c"
+# 156 "main.c"
     int contador_caracteres = 4;
 
 
@@ -10234,13 +10235,27 @@ void main(void)
 
     CCP1CONbits.CCP1M = 0000;
 
-    temp_alarme = 20;
+    temp_alarme = 1;
 
     menu_estado = 1;
 
     menu_entrada = 1;
     while (1)
     {
+
+        if (temp_ambiente >= temp_alarme){
+
+            CCP1CONbits.CCP1M = 1100;
+
+            alarme_ativo = 1;
+
+        }
+        else if (temp_ambiente < temp_alarme){
+
+            CCP1CONbits.CCP1M = 0000;
+            alarme_ativo = 0;
+
+        }
 
         if (menu_estado == 1 && menu_entrada == 1){
             printf("\r\n---------------Menu principal---------------");
@@ -10265,14 +10280,11 @@ void main(void)
             printf("\r\n\nTemperatura de alarme: %d", temp_alarme);
             printf("\r\nIntroduza a nova temperatura de alarme: ");
 
-            printf ("\n");printf ("\n");printf ("\n");printf ("\n");printf ("\n");printf ("\n");printf ("\n");printf ("\n");printf ("\n");printf ("\n");printf ("\n");printf ("\n");
+
 
             menu_entrada = 0;
         }
-
-
-
-
+# 231 "main.c"
         if (EUSART1_is_rx_ready()){
 
             rxData = EUSART1_Read();
@@ -10282,6 +10294,10 @@ void main(void)
                     menu_estado = 1;
                     menu_entrada = 1;
                 }
+                limpar_terminal = 1;
+
+                memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
+
             }
             if (rxData == 'Y' || rxData == 'y'){
 
@@ -10289,6 +10305,7 @@ void main(void)
                     menu_estado = 0;
                     menu_entrada = 1;
                 }
+                limpar_terminal = 1;
             }
 
             if (rxData == '0' || rxData == '1' || rxData == '2' || rxData == '3' || rxData == '4' || rxData == '5' || rxData == '6' || rxData == '7' || rxData == '8' || rxData == '9'){
@@ -10321,19 +10338,7 @@ void main(void)
         while (BusyXLCD());
 
 
-        if (temp_ambiente >= temp_alarme){
 
-            CCP1CONbits.CCP1M = 1100;
-
-            alarme_ativo = 1;
-
-        }
-        else if (temp_ambiente < temp_alarme){
-
-            CCP1CONbits.CCP1M = 0000;
-            alarme_ativo = 0;
-
-        }
 
         if (tecla_n){
 

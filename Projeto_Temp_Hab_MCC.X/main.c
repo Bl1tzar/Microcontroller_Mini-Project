@@ -60,7 +60,7 @@ int temp_mudou;
 int codigo_digital; // 2 bits mais significativos do codigo digital de 10 bits
 //char low [8] = ADRESL; // 8 bits menos significativos do codigo digital de 10 bits
 int temp_ambiente;
-int temp_ambiente_anterior;
+int temp_ambiente_anterior; //Verificar se a temperatura varia - usada no ADC
 char temp_ambiente_LCD [20];
 
 /*
@@ -171,13 +171,27 @@ void main(void)
     
     CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder no inicio
     
-    temp_alarme = 20; //Por default a temperatura de alarme esta a 20 C
+    temp_alarme = 1; //Por default a temperatura de alarme esta a 20 C
     
     menu_estado = 1; //Por default o menu que aparece no terminal e o principal 
     
     menu_entrada = 1; //Por default tem autorizacao para entrar nos menus 
     while (1)
     {   
+        
+        if (temp_ambiente >= temp_alarme){
+        
+            CCP1CONbits.CCP1M = 1100; //ativa o PWM - liga o sounder
+            
+            alarme_ativo = 1;
+            
+        }
+        else if (temp_ambiente < temp_alarme){
+        
+            CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder
+            alarme_ativo = 0;
+            
+        }
         
         if (menu_estado == 1 && menu_entrada == 1){ //Menu principal 
             printf("\r\n---------------Menu principal---------------");
@@ -207,10 +221,11 @@ void main(void)
             menu_entrada = 0;
         }
         
-        if (limpar_terminal){ //Dar scroll na pagina do terminal
-        
-            limpar_terminal = 0;
-        }
+//        if (limpar_terminal){ //Dar scroll na pagina do terminal
+//            
+//            
+//            limpar_terminal = 0;
+//        }
        
         /*Recebe caracter através do modulo EUSART1*/
         if (EUSART1_is_rx_ready()){
@@ -223,6 +238,9 @@ void main(void)
                     menu_entrada = 1; //Autorizacao para entrar no if dos menus
                 }
                 limpar_terminal = 1; //Quando se muda de menu, dá scroll na pagina do terminal
+                
+                memset(temp_alarme_string, '\0', sizeof temp_alarme_string); //Limpar a string temp_alarme_string para não 
+                                                                             //haver sobreposicão de caracteres quando se quer introduzir mais do que 1 vez
             }
             if (rxData == 'Y' || rxData == 'y'){
                 
@@ -263,19 +281,7 @@ void main(void)
         while (BusyXLCD());
         
         
-        if (temp_ambiente >= temp_alarme){
         
-            CCP1CONbits.CCP1M = 1100; //ativa o PWM - liga o sounder
-            
-            alarme_ativo = 1;
-            
-        }
-        else if (temp_ambiente < temp_alarme){
-        
-            CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder
-            alarme_ativo = 0;
-            
-        }
         
         if (tecla_n){
             
