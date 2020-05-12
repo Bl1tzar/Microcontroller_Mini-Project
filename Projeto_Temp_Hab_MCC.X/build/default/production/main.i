@@ -10151,8 +10151,8 @@ int pin_real = 0000;
 
 
 
-char temp_alarme_intro;
-char temp_alarme_string [3];
+unsigned char temp_alarme_intro;
+char temp_alarme_string [4];
 int temp_alarme;
 int temp_mudou;
 
@@ -10163,15 +10163,28 @@ int codigo_digital;
 
 int temp_ambiente;
 int temp_ambiente_anterior;
-char temp_ambiente_LCD [10];
+char temp_ambiente_LCD [20];
 
+
+
+
+int alarme_ativo;
+
+
+
+
+int menu_estado;
+
+int menu_entrada;
 
 
 
 
 
 void Timer_0 (void) {
-    do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0);
+    if (alarme_ativo == 1){
+        do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0);
+    }
     ADC_StartConversion();
 }
 
@@ -10200,9 +10213,9 @@ void main(void)
     SYSTEM_Initialize();
 
     uint8_t rxData;
-# 110 "main.c"
+# 123 "main.c"
     (INTCONbits.GIEH = 1);
-# 142 "main.c"
+# 155 "main.c"
     int contador_caracteres = 4;
 
 
@@ -10221,35 +10234,78 @@ void main(void)
 
     CCP1CONbits.CCP1M = 0000;
 
+    temp_alarme = 20;
 
+    menu_estado = 1;
+
+    menu_entrada = 1;
     while (1)
     {
 
-        if (temp_mudou == 1){
+        if (menu_estado == 1 && menu_entrada == 1){
+            printf("\r\n---------------Menu principal---------------");
+            printf("\r\n\nTemperatura atual = %dC", temp_ambiente);
 
+            if (alarme_ativo == 1){
+                printf("\r\nEstado do alarme: Ativo");
+            }
+            if (alarme_ativo == 0){
+                printf("\r\nEstado do alarme: Desativo");
+            }
 
-            printf("\r\n Temperatura atual = %dC", temp_ambiente);
-            printf("\r\n Estado do alarme: ");
-            printf("\r\n Introduza a temperatura de alarme: ");
+            printf("\r\n\nTemperatura de alarme: %d", temp_alarme);
 
-            temp_mudou = 0;
+            printf ("\r\nAlterar temperatura de alarme? [Y]: ");
+
+            menu_entrada = 0;
         }
+
+        if (menu_estado == 0 && menu_entrada == 1){
+            printf("\r\n-----------------Sub-menu-------------------");
+            printf("\r\n\nTemperatura de alarme: %d", temp_alarme);
+            printf("\r\nIntroduza a nova temperatura de alarme: ");
+
+            printf (12);
+
+            menu_entrada = 0;
+        }
+
+
 
 
         if (EUSART1_is_rx_ready()){
 
             rxData = EUSART1_Read();
-            EUSART1_Write(rxData);
 
-            temp_alarme_intro = EUSART1_Read();
+            if (rxData == 13){
+                if (menu_estado == 0){
+                    menu_estado = 1;
+                    menu_entrada = 1;
+                }
+            }
+            if (rxData == 'Y' || rxData == 'y'){
+
+                if (menu_estado == 1){
+                    menu_estado = 0;
+                    menu_entrada = 1;
+                }
+            }
+
+            if (rxData == '0' || rxData == '1' || rxData == '2' || rxData == '3' || rxData == '4' || rxData == '5' || rxData == '6' || rxData == '7' || rxData == '8' || rxData == '9'){
+                temp_alarme_intro = rxData;
+                 EUSART1_Write(rxData);
+
+                 strncat(temp_alarme_string, &temp_alarme_intro, 1);
+
+                 temp_alarme = atoi (temp_alarme_string);
+            }
 
 
-            strncat(temp_alarme_string, &temp_alarme_intro, 1);
-            temp_alarme = atoi (temp_alarme_string);
+
+
+
 
         }
-
-
 
 
         sprintf(temp_ambiente_LCD, "temp = %dC", temp_ambiente);
@@ -10269,10 +10325,14 @@ void main(void)
 
             CCP1CONbits.CCP1M = 1100;
 
+            alarme_ativo = 1;
+
         }
         else if (temp_ambiente < temp_alarme){
 
             CCP1CONbits.CCP1M = 0000;
+            alarme_ativo = 0;
+
         }
 
         if (tecla_n){

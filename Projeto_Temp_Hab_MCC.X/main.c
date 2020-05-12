@@ -69,6 +69,13 @@ char temp_ambiente_LCD [20];
 int alarme_ativo;
 
 /*
+        Terminal
+ */
+int menu_estado; //Se menu_estado = 1, aparecera no terminal o menu principal.
+                 //Se menu_estado = 0, aparecera no terminal o menu para mudar a temperatura.
+int menu_entrada;
+int limpar_terminal; //Dá scroll na página
+/*
                          Funcões Temporarias
  */
 
@@ -164,45 +171,83 @@ void main(void)
     
     CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder no inicio
     
-    temp_alarme = 25;
+    temp_alarme = 20; //Por default a temperatura de alarme esta a 20 C
     
+    menu_estado = 1; //Por default o menu que aparece no terminal e o principal 
+    
+    menu_entrada = 1; //Por default tem autorizacao para entrar nos menus 
     while (1)
     {   
-               /*Ao primir no 3, escreve o menu no terminal*/
-        if (temp_mudou == 1){
+        
+        if (menu_estado == 1 && menu_entrada == 1){ //Menu principal 
+            printf("\r\n---------------Menu principal---------------");
+            printf("\r\n\nTemperatura atual = %dC", temp_ambiente);
             
-            printf("\r\n Temperatura atual = %dC", temp_ambiente);
             if (alarme_ativo == 1){
-                printf("\r\n Estado do alarme: Ativo");
+                printf("\r\nEstado do alarme: Ativo");
             }
             if (alarme_ativo == 0){
-                printf("\r\n Estado do alarme: Desativo");
+                printf("\r\nEstado do alarme: Desativo");
             }
+            
             printf("\r\n\nTemperatura de alarme: %d", temp_alarme);
-            printf("\r\n Introduza a temperatura de alarme: ");
             
-            temp_mudou = 0;
+            printf ("\r\nAlterar temperatura de alarme? [Y]: ");
             
+            menu_entrada = 0;
+        }
+        
+        if (menu_estado == 0 && menu_entrada == 1){ //Sub-menu
+            printf("\r\n-----------------Sub-menu-------------------");
+            printf("\r\n\nTemperatura de alarme: %d", temp_alarme);
+            printf("\r\nIntroduza a nova temperatura de alarme: ");
+            
+            
+            
+            menu_entrada = 0;
+        }
+        
+        if (limpar_terminal){ //Dar scroll na pagina do terminal
+        
+            limpar_terminal = 0;
         }
        
         /*Recebe caracter através do modulo EUSART1*/
         if (EUSART1_is_rx_ready()){
-
-            rxData = temp_alarme_intro = EUSART1_Read(); //Atribui o que foi escrito no terminal e que está guardado no EUSART a variavel rxData
-            EUSART1_Write(rxData); //Devolve para o terminal o que foi introduzido pelo utilizador para ele ver o que esta a escrever
+                
+            rxData = EUSART1_Read(); //Atribui o que foi escrito no terminal e que está guardado no EUSART a variavel rxData
             
-                //Adicionar o caracter introduzido no terminal à string temp_alarme_intro com a funcao strncat
-                strncat(temp_alarme_string, &temp_alarme_intro, 1);
-                //transforma o a temp_alarme_string de string para temp_alarme int
-                temp_alarme = atoi (temp_alarme_string);
+            if (rxData == 13){ //Se carregar enter passa para o Menu principal 
+                if (menu_estado == 0){ //Vai do menu secundário para o principal 
+                    menu_estado = 1;
+                    menu_entrada = 1; //Autorizacao para entrar no if dos menus
+                }
+                limpar_terminal = 1; //Quando se muda de menu, dá scroll na pagina do terminal
+            }
+            if (rxData == 'Y' || rxData == 'y'){
+                
+                if (menu_estado == 1){ //Vai do menu principal para o secundário
+                    menu_estado = 0;
+                    menu_entrada = 1; //Autorizacao para entrar no if dos menus
+                }
+                limpar_terminal = 1; //Quando se muda de menu, dá scroll na pagina do terminal
+            }
+            
+            if (rxData == '0' || rxData == '1' || rxData == '2' || rxData == '3' || rxData == '4' || rxData == '5' || rxData == '6' || rxData == '7' || rxData == '8' || rxData == '9'){
+                temp_alarme_intro = rxData;
+                 EUSART1_Write(rxData); //Devolve para o terminal o que foi introduzido pelo utilizador para ele ver o que esta a escrever
+                 //Adicionar o caracter introduzido no terminal à string temp_alarme_intro com a funcao strncat
+                 strncat(temp_alarme_string, &temp_alarme_intro, 1);
+                 //transforma o a temp_alarme_string de string para temp_alarme int
+                 temp_alarme = atoi (temp_alarme_string);
+            }
+            
+
                 
 //                Printfs para teste
 //                printf("\r\n temp_alarme_string: %s", temp_alarme_string);
 //                printf("\r\n temp_alarme: %d", temp_alarme);
-            
         }
-        
-        
         
         //Escrever no LCD a temperatura
         sprintf(temp_ambiente_LCD, "temp = %dC", temp_ambiente);
