@@ -10244,7 +10244,7 @@ void main(void)
 
     menu_estado = 1;
 
-    menu_entrada = 0;
+    menu_entrada = 1;
 
     enter = 1;
 
@@ -10265,11 +10265,7 @@ void main(void)
 
         }
 
-        if ((menu_estado == 1 && menu_entrada == 1) || (menu_estado == 1 && temp_mudou == 1)){
-            if (temp_mudou == 1){
-                printf ("%c",12);
-            }
-
+        if ((menu_estado == 1 && menu_entrada == 1) || (menu_estado == 1 && temp_mudou == 1 && temp_ambiente != 0)){
             printf("\r\n---------------Menu principal---------------");
             printf("\r\n\nTemperatura atual = %dºC", temp_ambiente);
 
@@ -10296,7 +10292,7 @@ void main(void)
 
             menu_entrada = 0;
         }
-# 243 "main.c"
+# 239 "main.c"
         if (EUSART1_is_rx_ready()){
 
             enter = 0;
