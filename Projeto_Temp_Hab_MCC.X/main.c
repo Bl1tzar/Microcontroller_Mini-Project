@@ -75,6 +75,7 @@ int menu_estado; //Se menu_estado = 1, aparecera no terminal o menu principal.
                  //Se menu_estado = 0, aparecera no terminal o menu para mudar a temperatura.
 int menu_entrada;
 int limpar_terminal; //Dá scroll na página
+int enter; //Deteta quando o enter é pressionado 
 /*
                          Funcões Temporarias
  */
@@ -176,24 +177,26 @@ void main(void)
     menu_estado = 1; //Por default o menu que aparece no terminal e o principal 
     
     menu_entrada = 1; //Por default tem autorizacao para entrar nos menus 
+    
+    enter = 1; //Por default o enter está = 1 porque o alarme só tem premissão quando ele está ativado
     while (1)
     {   
         
-        if (temp_ambiente >= temp_alarme){
+        if (temp_ambiente >= temp_alarme && enter == 1){
         
             CCP1CONbits.CCP1M = 1100; //ativa o PWM - liga o sounder
             
             alarme_ativo = 1;
             
         }
-        else if (temp_ambiente < temp_alarme){
+        else if (temp_ambiente < temp_alarme && enter == 1){
         
             CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder
             alarme_ativo = 0;
             
         }
         
-        if (menu_estado == 1 && menu_entrada == 1){ //Menu principal 
+        if (menu_estado == 1 && menu_entrada == 1 && temp_mudou == 1){ //Menu principal 
             printf("\r\n---------------Menu principal---------------");
             printf("\r\n\nTemperatura atual = %dC", temp_ambiente);
             
@@ -229,7 +232,9 @@ void main(void)
        
         /*Recebe caracter através do modulo EUSART1*/
         if (EUSART1_is_rx_ready()){
-                
+            
+            enter = 0; 
+            
             rxData = EUSART1_Read(); //Atribui o que foi escrito no terminal e que está guardado no EUSART a variavel rxData
             
             if (rxData == 13){ //Se carregar enter passa para o Menu principal 
@@ -238,6 +243,8 @@ void main(void)
                     menu_entrada = 1; //Autorizacao para entrar no if dos menus
                 }
                 limpar_terminal = 1; //Quando se muda de menu, dá scroll na pagina do terminal
+                
+                enter = 1; //Deteta quando a temperatura introduzida de alarme é confirmada com o enter
                 
                 memset(temp_alarme_string, '\0', sizeof temp_alarme_string); //Limpar a string temp_alarme_string para não 
                                                                              //haver sobreposicão de caracteres quando se quer introduzir mais do que 1 vez
