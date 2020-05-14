@@ -10178,6 +10178,7 @@ int menu_estado;
 int menu_entrada;
 int limpar_terminal;
 int enter;
+int temp_valida;
 
 
 
@@ -10215,9 +10216,9 @@ void main(void)
     SYSTEM_Initialize();
 
     uint8_t rxData;
-# 125 "main.c"
+# 126 "main.c"
     (INTCONbits.GIEH = 1);
-# 157 "main.c"
+# 158 "main.c"
     int contador_caracteres = 4;
 
 
@@ -10236,7 +10237,7 @@ void main(void)
 
     CCP1CONbits.CCP1M = 0000;
 
-    temp_alarme = 1;
+    temp_alarme = 25;
 
     menu_estado = 1;
 
@@ -10249,7 +10250,6 @@ void main(void)
         if (temp_ambiente >= temp_alarme && enter == 1){
 
             CCP1CONbits.CCP1M = 1100;
-
             alarme_ativo = 1;
 
         }
@@ -10257,6 +10257,7 @@ void main(void)
 
             CCP1CONbits.CCP1M = 0000;
             alarme_ativo = 0;
+            LATAbits.LATA1 = 0;
 
         }
 
@@ -10287,7 +10288,7 @@ void main(void)
 
             menu_entrada = 0;
         }
-# 234 "main.c"
+# 235 "main.c"
         if (EUSART1_is_rx_ready()){
 
             enter = 0;
@@ -10295,16 +10296,27 @@ void main(void)
             rxData = EUSART1_Read();
 
             if (rxData == 13){
-                if (menu_estado == 0){
-                    menu_estado = 1;
-                    menu_entrada = 1;
+
+                if (temp_alarme >=10 && temp_alarme <=50){
+
+
+                    if (menu_estado == 0){
+                        menu_estado = 1;
+                        menu_entrada = 1;
+                    }
+                    limpar_terminal = 1;
+
+                    enter = 1;
+
+                    memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
+
                 }
-                limpar_terminal = 1;
-
-                enter = 1;
-
-                memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
-
+                else{
+                    printf("\r\n\n------------TEMPERATURA INVÁLIDA------------");
+                    printf("\r\n\nTemperatura de alarme: %d", temp_alarme);
+                    printf("\r\nIntroduza a nova temperatura de alarme: ");
+                    memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
+                }
             }
             if (rxData == 'Y' || rxData == 'y'){
 
@@ -10315,7 +10327,8 @@ void main(void)
                 limpar_terminal = 1;
             }
 
-            if (rxData == '0' || rxData == '1' || rxData == '2' || rxData == '3' || rxData == '4' || rxData == '5' || rxData == '6' || rxData == '7' || rxData == '8' || rxData == '9'){
+            if ((rxData == '0' || rxData == '1' || rxData == '2' || rxData == '3' || rxData == '4' || rxData == '5' || rxData == '6' || rxData == '7' || rxData == '8' || rxData == '9') && menu_estado == 0){
+
                 temp_alarme_intro = rxData;
                  EUSART1_Write(rxData);
 

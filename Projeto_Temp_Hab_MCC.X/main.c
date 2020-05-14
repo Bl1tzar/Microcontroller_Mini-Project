@@ -75,7 +75,8 @@ int menu_estado; //Se menu_estado = 1, aparecera no terminal o menu principal.
                  //Se menu_estado = 0, aparecera no terminal o menu para mudar a temperatura.
 int menu_entrada;
 int limpar_terminal; //Dá scroll na página
-int enter; //Deteta quando o enter é pressionado 
+int enter; //Verifica quando o enter é pressionado 
+int temp_valida; //Verifica a temperatura de alarme introduzida
 /*
                          Funcões Temporarias
  */
@@ -172,7 +173,7 @@ void main(void)
     
     CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder no inicio
     
-    temp_alarme = 1; //Por default a temperatura de alarme esta a 20 C
+    temp_alarme = 25; //Por default a temperatura de alarme esta a 20 C
     
     menu_estado = 1; //Por default o menu que aparece no terminal e o principal 
     
@@ -185,14 +186,14 @@ void main(void)
         if (temp_ambiente >= temp_alarme && enter == 1){
         
             CCP1CONbits.CCP1M = 1100; //ativa o PWM - liga o sounder
-            
-            alarme_ativo = 1;
+            alarme_ativo = 1; 
             
         }
         else if (temp_ambiente < temp_alarme && enter == 1){
         
             CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder
             alarme_ativo = 0;
+            LATAbits.LATA1 = 0; //desliga o LED quando o alarme é desativado
             
         }
         
@@ -238,16 +239,27 @@ void main(void)
             rxData = EUSART1_Read(); //Atribui o que foi escrito no terminal e que está guardado no EUSART a variavel rxData
             
             if (rxData == 13){ //Se carregar enter passa para o Menu principal 
-                if (menu_estado == 0){ //Vai do menu secundário para o principal 
-                    menu_estado = 1;
-                    menu_entrada = 1; //Autorizacao para entrar no if dos menus
+                
+                if (temp_alarme >=10 && temp_alarme <=50){
+                
+                
+                    if (menu_estado == 0){ //Vai do menu secundário para o principal 
+                        menu_estado = 1;
+                        menu_entrada = 1; //Autorizacao para entrar no if dos menus
+                    }
+                    limpar_terminal = 1; //Quando se muda de menu, dá scroll na pagina do terminal
+
+                    enter = 1; //Deteta quando a temperatura introduzida de alarme é confirmada com o enter
+
+                    memset(temp_alarme_string, '\0', sizeof temp_alarme_string); //Limpar a string temp_alarme_string para não 
+                                                                                 //haver sobreposicão de caracteres quando se quer introduzir mais do que 1 vez
                 }
-                limpar_terminal = 1; //Quando se muda de menu, dá scroll na pagina do terminal
-                
-                enter = 1; //Deteta quando a temperatura introduzida de alarme é confirmada com o enter
-                
-                memset(temp_alarme_string, '\0', sizeof temp_alarme_string); //Limpar a string temp_alarme_string para não 
-                                                                             //haver sobreposicão de caracteres quando se quer introduzir mais do que 1 vez
+                else{ //Pede novamente a temperatura caso a anterior seja inválida
+                    printf("\r\n\n------------TEMPERATURA INVÁLIDA------------");
+                    printf("\r\n\nTemperatura de alarme: %d", temp_alarme);
+                    printf("\r\nIntroduza a nova temperatura de alarme: ");
+                    memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
+                }
             }
             if (rxData == 'Y' || rxData == 'y'){
                 
@@ -258,7 +270,8 @@ void main(void)
                 limpar_terminal = 1; //Quando se muda de menu, dá scroll na pagina do terminal
             }
             
-            if (rxData == '0' || rxData == '1' || rxData == '2' || rxData == '3' || rxData == '4' || rxData == '5' || rxData == '6' || rxData == '7' || rxData == '8' || rxData == '9'){
+            if ((rxData == '0' || rxData == '1' || rxData == '2' || rxData == '3' || rxData == '4' || rxData == '5' || rxData == '6' || rxData == '7' || rxData == '8' || rxData == '9') && menu_estado == 0){
+                
                 temp_alarme_intro = rxData;
                  EUSART1_Write(rxData); //Devolve para o terminal o que foi introduzido pelo utilizador para ele ver o que esta a escrever
                  //Adicionar o caracter introduzido no terminal à string temp_alarme_intro com a funcao strncat

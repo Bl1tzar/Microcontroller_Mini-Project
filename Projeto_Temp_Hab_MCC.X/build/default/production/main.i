@@ -10177,6 +10177,7 @@ int menu_estado;
 
 int menu_entrada;
 int limpar_terminal;
+int enter;
 
 
 
@@ -10214,9 +10215,9 @@ void main(void)
     SYSTEM_Initialize();
 
     uint8_t rxData;
-# 124 "main.c"
+# 125 "main.c"
     (INTCONbits.GIEH = 1);
-# 156 "main.c"
+# 157 "main.c"
     int contador_caracteres = 4;
 
 
@@ -10235,29 +10236,31 @@ void main(void)
 
     CCP1CONbits.CCP1M = 0000;
 
-    temp_alarme = -1;
+    temp_alarme = 1;
 
     menu_estado = 1;
 
     menu_entrada = 1;
+
+    enter = 1;
     while (1)
     {
 
-        if (temp_ambiente >= temp_alarme){
+        if (temp_ambiente >= temp_alarme && enter == 1){
 
             CCP1CONbits.CCP1M = 1100;
 
             alarme_ativo = 1;
 
         }
-        else if (temp_ambiente < temp_alarme){
+        else if (temp_ambiente < temp_alarme && enter == 1){
 
             CCP1CONbits.CCP1M = 0000;
             alarme_ativo = 0;
 
         }
 
-        if (menu_estado == 1 && menu_entrada == 1){
+        if (menu_estado == 1 && menu_entrada == 1 && temp_mudou == 1){
             printf("\r\n---------------Menu principal---------------");
             printf("\r\n\nTemperatura atual = %dC", temp_ambiente);
 
@@ -10284,8 +10287,10 @@ void main(void)
 
             menu_entrada = 0;
         }
-# 231 "main.c"
+# 234 "main.c"
         if (EUSART1_is_rx_ready()){
+
+            enter = 0;
 
             rxData = EUSART1_Read();
 
@@ -10295,6 +10300,11 @@ void main(void)
                     menu_entrada = 1;
                 }
                 limpar_terminal = 1;
+
+                enter = 1;
+
+                memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
+
             }
             if (rxData == 'Y' || rxData == 'y'){
 
