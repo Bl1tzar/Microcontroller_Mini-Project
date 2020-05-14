@@ -961,7 +961,7 @@ bssBANK1 100 16F BANK1 100 1
 %locals
 dist/default/production\Projeto_Temp_Hab_MCC.X.production.o
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h
-C:\Users\JOOMED~1\AppData\Local\Temp\seps.s
+C:\Users\JOOMED~1\AppData\Local\Temp\sijo.s
 7471 2B5C 0 CODE 0
 7473 2B5C 0 CODE 0
 7476 2B5C 0 CODE 0
@@ -1658,7 +1658,7 @@ mcc_generated_files/eusart1.c
 157 2B0E 0 CODE 0
 159 2B10 0 CODE 0
 160 2B12 0 CODE 0
-C:\Users\JOOMED~1\AppData\Local\Temp\seps.s
+C:\Users\JOOMED~1\AppData\Local\Temp\sijo.s
 17259 8 0 CODE 0
 mcc_generated_files/interrupt_manager.c
 79 8 0 CODE 0

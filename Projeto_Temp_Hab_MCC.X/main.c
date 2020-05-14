@@ -180,7 +180,7 @@ void main(void)
     
     menu_estado = 1; //Por default o menu que aparece no terminal e o principal 
     
-    menu_entrada = 1; //Por default tem autorizacao para entrar nos menus 
+    menu_entrada = 0; //Por default tem autorizacao para entrar nos menus 
     
     enter = 1; //Por default o enter está = 1 porque o alarme só tem premissão quando ele está ativado
     
@@ -201,7 +201,8 @@ void main(void)
             
         }
         
-        if ((menu_estado == 1 && menu_entrada == 1) || (menu_estado == 1 && temp_mudou == 1 && temp_ambiente != 0)){ //Menu principal 
+        if ((menu_estado == 1 && menu_entrada == 1) || (menu_estado == 1 && temp_mudou == 1)){ //Menu principal 
+            printf("%c" , 12); //Limpa o terminal
             printf("\r\n---------------Menu principal---------------");
             printf("\r\n\nTemperatura atual = %dºC", temp_ambiente);
             

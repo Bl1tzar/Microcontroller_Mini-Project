@@ -10265,7 +10265,7 @@ void main(void)
 
         }
 
-        if ((menu_estado == 1 && menu_entrada == 1) || (menu_estado == 1 && temp_mudou == 1)){
+        if ((menu_estado == 1 && menu_entrada ==1) || (menu_estado == 1 && temp_mudou == 1)){
             printf("\r\n---------------Menu principal---------------");
             printf("\r\n\nTemperatura atual = %dºC", temp_ambiente);
 
