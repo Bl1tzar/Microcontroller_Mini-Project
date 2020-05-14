@@ -10289,11 +10289,10 @@ void main(void)
             printf("\r\n\nTemperatura de alarme: %dºC", temp_alarme);
             printf("\r\nIntroduza a nova temperatura de alarme: ");
 
-
-
             menu_entrada = 0;
         }
-# 240 "main.c"
+
+
         if (EUSART1_is_rx_ready()){
 
             enter = 0;
@@ -10319,7 +10318,7 @@ void main(void)
                 }
                 else{
                     printf("\r\n\n------------TEMPERATURA INVÁLIDA------------");
-                    printf("\r\n\nTemperatura de alarme: %dºC", temp_alarme);
+                    printf("\r\n\nTemperatura de alarme inválida: %dºC", temp_alarme);
                     printf("\r\nIntroduza a nova temperatura de alarme: ");
                     memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
                 }
@@ -10344,11 +10343,6 @@ void main(void)
                  temp_alarme = atoi (temp_alarme_string);
             }
 
-
-
-
-
-
         }
 
 
@@ -10363,9 +10357,6 @@ void main(void)
 
         putsXLCD(temp_ambiente_LCD);
         while (BusyXLCD());
-
-
-
 
         if (tecla_n){
 
