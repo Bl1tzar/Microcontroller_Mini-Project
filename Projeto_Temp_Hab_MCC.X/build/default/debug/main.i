@@ -10203,6 +10203,9 @@ void ADC_temperatura (void){
         temp_mudou = 1;
         temp_ambiente_anterior = temp_ambiente;
     }
+    else{
+        temp_mudou = 0;
+    }
 
 }
 
@@ -10216,9 +10219,9 @@ void main(void)
     SYSTEM_Initialize();
 
     uint8_t rxData;
-# 126 "main.c"
+# 129 "main.c"
     (INTCONbits.GIEH = 1);
-# 158 "main.c"
+# 161 "main.c"
     int contador_caracteres = 4;
 
 
@@ -10244,6 +10247,7 @@ void main(void)
     menu_entrada = 1;
 
     enter = 1;
+
     while (1)
     {
 
@@ -10261,9 +10265,9 @@ void main(void)
 
         }
 
-        if (menu_estado == 1 && menu_entrada == 1 && temp_mudou == 1){
+        if (menu_estado == 1 && temp_mudou == 1){
             printf("\r\n---------------Menu principal---------------");
-            printf("\r\n\nTemperatura atual = %dC", temp_ambiente);
+            printf("\r\n\nTemperatura atual = %dºC", temp_ambiente);
 
             if (alarme_ativo == 1){
                 printf("\r\nEstado do alarme: Ativo");
@@ -10272,7 +10276,7 @@ void main(void)
                 printf("\r\nEstado do alarme: Desativo");
             }
 
-            printf("\r\n\nTemperatura de alarme: %d", temp_alarme);
+            printf("\r\n\nTemperatura de alarme: %dºC", temp_alarme);
 
             printf ("\r\nAlterar temperatura de alarme? [Y]: ");
 
@@ -10281,14 +10285,14 @@ void main(void)
 
         if (menu_estado == 0 && menu_entrada == 1){
             printf("\r\n-----------------Sub-menu-------------------");
-            printf("\r\n\nTemperatura de alarme: %d", temp_alarme);
+            printf("\r\n\nTemperatura de alarme: %dºC", temp_alarme);
             printf("\r\nIntroduza a nova temperatura de alarme: ");
 
 
 
             menu_entrada = 0;
         }
-# 235 "main.c"
+# 239 "main.c"
         if (EUSART1_is_rx_ready()){
 
             enter = 0;
@@ -10297,8 +10301,9 @@ void main(void)
 
             if (rxData == 13){
 
-                if (temp_alarme >=10 && temp_alarme <=50){
+                printf("%c", 12);
 
+                if (temp_alarme >=10 && temp_alarme <=50){
 
                     if (menu_estado == 0){
                         menu_estado = 1;
@@ -10313,7 +10318,7 @@ void main(void)
                 }
                 else{
                     printf("\r\n\n------------TEMPERATURA INVÁLIDA------------");
-                    printf("\r\n\nTemperatura de alarme: %d", temp_alarme);
+                    printf("\r\n\nTemperatura de alarme: %dºC", temp_alarme);
                     printf("\r\nIntroduza a nova temperatura de alarme: ");
                     memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
                 }
@@ -10321,6 +10326,7 @@ void main(void)
             if (rxData == 'Y' || rxData == 'y'){
 
                 if (menu_estado == 1){
+                    printf("%c", 12);
                     menu_estado = 0;
                     menu_entrada = 1;
                 }
