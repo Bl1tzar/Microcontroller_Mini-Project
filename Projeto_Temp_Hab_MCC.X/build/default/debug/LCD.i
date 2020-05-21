@@ -10041,61 +10041,41 @@ void OSCILLATOR_Initialize(void);
 
 
 # 1 "./LCD.h" 1
-
-
-
-
-
-
-
-
-extern int LCD_linha_1;
-extern int LCD_linha_2;
-
-
+# 13 "./LCD.h"
 void LCD_inicio_teste(void);
 # 8 "LCD.c" 2
-
-
-
-
-
-
-
-
-int LCD_linha_1 = 128;
-int LCD_linha_2 = 192;
-
-
-
-
-
+# 23 "LCD.c"
 void LCD_inicio_teste (void){
-# 36 "LCD.c"
- OpenXLCD(0b00101011);
- while (BusyXLCD());
-# 46 "LCD.c"
- WriteCmdXLCD(0b00001100);
- while (BusyXLCD());
+
+    OpenXLCD(0b00101111 & 0b00111011);
+    while (BusyXLCD());
+    WriteCmdXLCD(0b00001111 & 0b00001101 & 0b00001110);
+    while (BusyXLCD());
+    WriteCmdXLCD(0b00010111);
+    while (BusyXLCD());
+    WriteCmdXLCD(0b00000001);
+    while (BusyXLCD());
 
 
 
 
 
-
- WriteCmdXLCD(0b00010111);
- while (BusyXLCD());
-
-
-
-
- WriteCmdXLCD(0b00000001);
+ WriteCmdXLCD(0b10001111);
  while (BusyXLCD());
 
+    putsXLCD ("MICROPROCESSADORES");
 
 
 
 
 
+ WriteCmdXLCD(0b11000011);
+ while (BusyXLCD());
 
+    putsXLCD ("EAU - ESTG");
+
+    _delay((unsigned long)((1000)*(6000000/4000.0)));
+
+    WriteCmdXLCD(0b00000001);
+    while (BusyXLCD());
 }

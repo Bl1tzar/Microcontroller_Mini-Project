@@ -911,12 +911,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _contador_colunas_LCD
 -> 192 `i
 ]
-"41
-[; ;main.c: 41: int LCD_linha_1;
-[v _LCD_linha_1 `i ~T0 @X0 1 e ]
-"42
-[; ;main.c: 42: int LCD_linha_2;
-[v _LCD_linha_2 `i ~T0 @X0 1 e ]
 "46
 [; ;main.c: 46: char pin [4];
 [v _pin `uc ~T0 @X0 -> 4 `i e ]
@@ -1330,8 +1324,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 285:         sprintf(temp_ambiente_LCD, "temp = %dC", temp_ambiente);
 [e ( _sprintf (1 , (. , &U _temp_ambiente_LCD :s 16C _temp_ambiente ]
 "287
-[; ;main.c: 287:         WriteCmdXLCD(LCD_linha_1);
-[e ( _WriteCmdXLCD (1 -> _LCD_linha_1 `uc ]
+[; ;main.c: 287:         WriteCmdXLCD(128);
+[e ( _WriteCmdXLCD (1 -> -> 128 `i `uc ]
 "288
 [; ;main.c: 288:         while (BusyXLCD());
 [e $U 884  ]
@@ -1357,8 +1351,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 301:             strncat(pin, &tecla_premida, 1);
 [e ( _strncat (3 , , &U _pin -> &U _tecla_premida `*Cuc -> -> 1 `i `ui ]
 "305
-[; ;main.c: 305:             WriteCmdXLCD(LCD_linha_2);
-[e ( _WriteCmdXLCD (1 -> _LCD_linha_2 `uc ]
+[; ;main.c: 305:             WriteCmdXLCD(192);
+[e ( _WriteCmdXLCD (1 -> -> 192 `i `uc ]
 "306
 [; ;main.c: 306:             while (BusyXLCD());
 [e $U 891  ]
@@ -1492,8 +1486,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 369: }
 [e :UE 865 ]
 }
-[p f _printf 8913024 ]
 [p f _sprintf 8388736 ]
+[p f _printf 8913024 ]
 [a 5C 13 10 69 115 116 97 100 111 32 100 111 32 97 108 97 114 109 101 58 32 68 101 115 97 116 105 118 111 0 ]
 [a 4C 13 10 69 115 116 97 100 111 32 100 111 32 97 108 97 114 109 101 58 32 65 116 105 118 111 0 ]
 [a 1C 37 99 0 ]

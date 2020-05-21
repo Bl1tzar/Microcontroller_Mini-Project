@@ -13,8 +13,8 @@
 
 // 128 = 1a linha 1a coluna (0b10000000) no LCD
 // 192 = 2a linha 1a coluna (0b11000000) no LCD
-int LCD_linha_1 = 128; //1a linha 1a coluna no LCD
-int LCD_linha_2 = 192; //2a linha 1a coluna no LCD
+//int LCD_linha_1 = 128; //1a linha 1a coluna no LCD
+//int LCD_linha_2 = 192; //2a linha 1a coluna no LCD
 
 
 /*
@@ -22,51 +22,38 @@ int LCD_linha_2 = 192; //2a linha 1a coluna no LCD
  */
 void LCD_inicio_teste (void){ 
 
+    OpenXLCD(FOUR_BIT & LINES_5X7);     //Modo de ligação do display a 4 bits e  caracteres no display com tamanho 5 colunas por 7 linhas
+    while (BusyXLCD());
+    WriteCmdXLCD(DON & CURSOR_OFF & BLINK_OFF);     //Liga display, desliga cursor e desliga modo blink (piscar)
+    while (BusyXLCD());
+    WriteCmdXLCD(SHIFT_CUR_RIGHT);      //Deslocamento do cursor para a direita
+    while (BusyXLCD());
+    WriteCmdXLCD(LCD_clear);        //Dá clear no LCD
+    while (BusyXLCD());
+    
     /*
-                    Inicializacão do LCD
-     */
-    
-    /* Inicialização do LCD:
-	 * FOUR_BIT: Modo de ligação do display a 4 bits
-	 * LINES_5X7: Caracteres no display com tamanho 5 colunas por
-	 * 7 linhas
-	 *
-	 * OpenXLCD(FOUR_BIT & LINES_5X7);
-	 */
-	OpenXLCD(0b00101011);
-	while (BusyXLCD());
-	/*
-	 * Comando interno para o LCD:
-	 * D_ON: Liga display
-	 * CURSOR_OFF: Desliga cursor
-	 * BLINK_OFF: Desliga modo blink (piscar)
-	 *
-	 * WriteCmdXLCD(DON & CURSOR_OFF & BLINK_OFF);
-	 */
-	WriteCmdXLCD(0b00001100);
-	while (BusyXLCD()); 
-	/*
-	 * Comando interno para o LCD:
-	 * SHIFT_CUR_RIGHT: Deslocamento do cursor para a direita
-	 *
-	 * WriteCmdXLCD(SHIFT_CUR_RIGHT);
-	 */
-	WriteCmdXLCD(0b00010111);
-	while (BusyXLCD());
-	/*
-	 * Comando interno para o LCD:
-	 * CLEAR_LCD: Limpa conteúdo do display
-	 */
-	WriteCmdXLCD(0b00000001);
+	 * Endereçamento do display:
+	 * 1a linha, 16a coluna
+	*/
+	WriteCmdXLCD(0b10001111);
 	while (BusyXLCD());
     
+    putsXLCD ("MICROPROCESSADORES");
     
+    /*
+	 * Endereçamento do display:
+	 * 1a linha, 16a coluna
+	*/
+	WriteCmdXLCD(0b11000011);
+	while (BusyXLCD());
     
+    putsXLCD ("EAU - ESTG");
     
+    __delay_ms (1000);
     
-
-    
-}    
+    WriteCmdXLCD(LCD_clear);        
+    while (BusyXLCD());
+}        
 
 //void escrever_texto_LCD (int linha_LCD, char texto[21]){
 //

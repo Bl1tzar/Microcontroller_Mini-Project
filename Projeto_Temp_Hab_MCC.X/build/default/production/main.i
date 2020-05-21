@@ -10095,18 +10095,7 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 5 "main.c" 2
 # 15 "main.c"
 # 1 "./LCD.h" 1
-
-
-
-
-
-
-
-
-extern int LCD_linha_1;
-extern int LCD_linha_2;
-
-
+# 13 "./LCD.h"
 void LCD_inicio_teste(void);
 # 15 "main.c" 2
 
@@ -10140,8 +10129,8 @@ int tecla_limpar;
 
 
 int contador_colunas_LCD = 192;
-int LCD_linha_1;
-int LCD_linha_2;
+
+
 
 
 
@@ -10244,7 +10233,7 @@ void main(void)
 
     menu_estado = 1;
 
-    menu_entrada = 1;
+    menu_entrada = 0;
 
     enter = 1;
 
@@ -10265,7 +10254,8 @@ void main(void)
 
         }
 
-        if ((menu_estado == 1 && menu_entrada ==1) || (menu_estado == 1 && temp_mudou == 1)){
+        if ((menu_estado == 1 && menu_entrada == 1) || (menu_estado == 1 && temp_mudou == 1)){
+            printf("%c" , 12);
             printf("\r\n---------------Menu principal---------------");
             printf("\r\n\nTemperatura atual = %dºC", temp_ambiente);
 
@@ -10288,18 +10278,17 @@ void main(void)
             printf("\r\n\nTemperatura de alarme: %dºC", temp_alarme);
             printf("\r\nIntroduza a nova temperatura de alarme: ");
 
-
-
             menu_entrada = 0;
         }
-# 239 "main.c"
+
+
         if (EUSART1_is_rx_ready()){
 
             enter = 0;
 
             rxData = EUSART1_Read();
 
-            if (rxData == 13){
+            if (rxData == 13 && menu_estado == 0){
 
                 printf("%c", 12);
 
@@ -10318,7 +10307,7 @@ void main(void)
                 }
                 else{
                     printf("\r\n\n------------TEMPERATURA INVÁLIDA------------");
-                    printf("\r\n\nTemperatura de alarme: %dºC", temp_alarme);
+                    printf("\r\n\nTemperatura de alarme inválida: %dºC", temp_alarme);
                     printf("\r\nIntroduza a nova temperatura de alarme: ");
                     memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
                 }
@@ -10343,17 +10332,12 @@ void main(void)
                  temp_alarme = atoi (temp_alarme_string);
             }
 
-
-
-
-
-
         }
 
 
         sprintf(temp_ambiente_LCD, "temp = %dC", temp_ambiente);
 
-        WriteCmdXLCD(LCD_linha_1);
+        WriteCmdXLCD(128);
         while (BusyXLCD());
 
 
@@ -10363,9 +10347,6 @@ void main(void)
         putsXLCD(temp_ambiente_LCD);
         while (BusyXLCD());
 
-
-
-
         if (tecla_n){
 
 
@@ -10374,7 +10355,7 @@ void main(void)
 
 
 
-            WriteCmdXLCD(LCD_linha_2);
+            WriteCmdXLCD(192);
             while (BusyXLCD());
 
 

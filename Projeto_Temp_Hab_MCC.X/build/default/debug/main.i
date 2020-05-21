@@ -10095,18 +10095,7 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 5 "main.c" 2
 # 15 "main.c"
 # 1 "./LCD.h" 1
-
-
-
-
-
-
-
-
-extern int LCD_linha_1;
-extern int LCD_linha_2;
-
-
+# 13 "./LCD.h"
 void LCD_inicio_teste(void);
 # 15 "main.c" 2
 
@@ -10140,8 +10129,8 @@ int tecla_limpar;
 
 
 int contador_colunas_LCD = 192;
-int LCD_linha_1;
-int LCD_linha_2;
+
+
 
 
 
@@ -10348,7 +10337,7 @@ void main(void)
 
         sprintf(temp_ambiente_LCD, "temp = %dC", temp_ambiente);
 
-        WriteCmdXLCD(LCD_linha_1);
+        WriteCmdXLCD(128);
         while (BusyXLCD());
 
 
@@ -10366,7 +10355,7 @@ void main(void)
 
 
 
-            WriteCmdXLCD(LCD_linha_2);
+            WriteCmdXLCD(192);
             while (BusyXLCD());
 
 

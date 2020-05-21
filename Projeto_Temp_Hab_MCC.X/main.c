@@ -38,8 +38,8 @@ int tecla_limpar; // Indica que é para limpar o LCD
  */
 // 192 = 2a linha 1a coluna (0b11000000) no LCD
 int contador_colunas_LCD = 192; //contador 
-int LCD_linha_1; //variavel externa - LCD.c - isto porque necessitei delas no LCD.c
-int LCD_linha_2; //variavel externa - LCD.c
+//int LCD_linha_1; //variavel externa - LCD.c - isto porque necessitei delas no LCD.c
+//int LCD_linha_2; //variavel externa - LCD.c
 /*
          PIN
  */
