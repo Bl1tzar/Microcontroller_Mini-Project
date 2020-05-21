@@ -189,7 +189,7 @@ void main(void)
         
         if (temp_ambiente >= temp_alarme && enter == 1){
         
-            CCP1CONbits.CCP1M = 1100; //ativa o PWM - liga o sounder 
+            CCP1CONbits.CCP1M = 1100; //ativa o PWM - liga o sounder
             alarme_ativo = 1; 
             
         }
@@ -216,7 +216,7 @@ void main(void)
             printf("\r\n\nTemperatura de alarme: %dºC", temp_alarme);
             
             printf ("\r\nAlterar temperatura de alarme? [Y]: ");
-
+            
             menu_entrada = 0;
         }
         
@@ -224,10 +224,18 @@ void main(void)
             printf("\r\n-----------------Sub-menu-------------------");
             printf("\r\n\nTemperatura de alarme: %dºC", temp_alarme);
             printf("\r\nIntroduza a nova temperatura de alarme: ");
-
+            
+            
+            
             menu_entrada = 0;
         }
-
+        
+//        if (limpar_terminal){ //Dar scroll na pagina do terminal
+//            
+//            
+//            limpar_terminal = 0;
+//        }
+       
         /*Recebe caracter através do modulo EUSART1*/
         if (EUSART1_is_rx_ready()){
             
@@ -235,7 +243,7 @@ void main(void)
             
             rxData = EUSART1_Read(); //Atribui o que foi escrito no terminal e que está guardado no EUSART a variavel rxData
             
-            if (rxData == 13 && menu_estado == 0){ //Se carregar enter passa para o Menu principal e apenas deixa o fazer no menu secundario
+            if (rxData == 13){ //Se carregar enter passa para o Menu principal 
                 
                 printf("%c", 12); //Limpa o terminal
                 
@@ -254,7 +262,7 @@ void main(void)
                 }
                 else{ //Pede novamente a temperatura caso a anterior seja inválida
                     printf("\r\n\n------------TEMPERATURA INVÁLIDA------------");
-                    printf("\r\n\nTemperatura de alarme inválida: %dºC", temp_alarme);
+                    printf("\r\n\nTemperatura de alarme: %dºC", temp_alarme);
                     printf("\r\nIntroduza a nova temperatura de alarme: ");
                     memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
                 }
@@ -279,6 +287,11 @@ void main(void)
                  temp_alarme = atoi (temp_alarme_string);
             }
             
+
+                
+//                Printfs para teste
+//                printf("\r\n temp_alarme_string: %s", temp_alarme_string);
+//                printf("\r\n temp_alarme: %d", temp_alarme);
         }
         
         //Escrever no LCD a temperatura
@@ -293,7 +306,10 @@ void main(void)
             /*temp_ambiente_LCD*/
         putsXLCD(temp_ambiente_LCD);
         while (BusyXLCD());
-
+        
+        
+        
+        
         if (tecla_n){
             
             /*PIN*/
