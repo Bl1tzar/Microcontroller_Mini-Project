@@ -78,11 +78,11 @@ channel_FVRBuf2 31
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "23 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\LCD.c
 [v _LCD_inicio_teste LCD_inicio_teste `(v  1 e 1 0 ]
-"85 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+"88 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 [v _Timer_0 Timer_0 `(v  1 e 1 0 ]
-"92
+"95
 [v _ADC_temperatura ADC_temperatura `(v  1 e 1 0 ]
-"121
+"124
 [v _main main `(v  1 e 1 0 ]
 "66 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -731,37 +731,37 @@ channel_FVRBuf2 31
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"41 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+"36 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+[v _mudar_temp_alarme mudar_temp_alarme `i  1 e 2 0 ]
+"43
 [v _temp_alarme_LCD temp_alarme_LCD `[40]uc  1 e 40 0 ]
-"42
+"44
 [v _temp_ambiente_LCD temp_ambiente_LCD `[40]uc  1 e 40 0 ]
-"47
-[v _pin pin `[4]uc  1 e 4 0 ]
-"53
-[v _temp_alarme_intro temp_alarme_intro `uc  1 e 1 0 ]
-"54
-[v _temp_alarme_string temp_alarme_string `[4]uc  1 e 4 0 ]
-"55
-[v _temp_alarme temp_alarme `i  1 e 2 0 ]
 "56
+[v _temp_alarme_intro temp_alarme_intro `uc  1 e 1 0 ]
+"57
+[v _temp_alarme_string temp_alarme_string `[4]uc  1 e 4 0 ]
+"58
+[v _temp_alarme temp_alarme `i  1 e 2 0 ]
+"59
 [v _temp_mudou temp_mudou `i  1 e 2 0 ]
-"60
-[v _tensao tensao `f  1 e 4 0 ]
-"61
-[v _codigo_digital codigo_digital `i  1 e 2 0 ]
 "63
-[v _temp_ambiente temp_ambiente `i  1 e 2 0 ]
+[v _tensao tensao `f  1 e 4 0 ]
 "64
+[v _codigo_digital codigo_digital `i  1 e 2 0 ]
+"66
+[v _temp_ambiente temp_ambiente `i  1 e 2 0 ]
+"67
 [v _temp_ambiente_anterior temp_ambiente_anterior `i  1 e 2 0 ]
-"69
+"72
 [v _alarme_ativo alarme_ativo `i  1 e 2 0 ]
-"74
-[v _menu_estado menu_estado `i  1 e 2 0 ]
-"76
-[v _menu_entrada menu_entrada `i  1 e 2 0 ]
 "77
+[v _menu_estado menu_estado `i  1 e 2 0 ]
+"79
+[v _menu_entrada menu_entrada `i  1 e 2 0 ]
+"80
 [v _limpar_terminal limpar_terminal `i  1 e 2 0 ]
-"78
+"81
 [v _enter enter `i  1 e 2 0 ]
 "60 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\mcc_generated_files/adc.c
 [v _ADC_InterruptHandler ADC_InterruptHandler `*.37(v  1 e 2 0 ]
@@ -809,18 +809,12 @@ channel_FVRBuf2 31
 [v _tecla_limpar tecla_limpar `i  1 e 2 0 ]
 "17
 [v _contador_colunas_LCD contador_colunas_LCD `i  1 e 2 0 ]
-"121 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+"124 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"199
-[v main@i i `i  1 a 2 4 ]
-"200
-[v main@j j `i  1 a 2 0 ]
-"168
-[v main@contador_caracteres contador_caracteres `i  1 a 2 2 ]
-"126
-[v main@rxData rxData `uc  1 a 1 6 ]
-"412
+"129
+[v main@rxData rxData `uc  1 a 1 111 ]
+"443
 } 0
 "3 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strncat.c
 [v _strncat strncat `(*.39uc  1 e 2 0 ]
@@ -835,9 +829,9 @@ channel_FVRBuf2 31
 {
 [s S2379 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
 "13
-[v sprintf@f f `S2379  1 a 6 110 ]
+[v sprintf@f f `S2379  1 a 6 4 ]
 "12
-[v sprintf@ap ap `[1]*.39v  1 a 2 108 ]
+[v sprintf@ap ap `[1]*.39v  1 a 2 2 ]
 "9
 [v sprintf@s s `*.39uc  1 p 2 100 ]
 [v sprintf@fmt fmt `*.25Cuc  1 p 2 102 ]
@@ -1229,10 +1223,10 @@ channel_FVRBuf2 31
 {
 "163
 } 0
-"85 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+"88 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 [v _Timer_0 Timer_0 `(v  1 e 1 0 ]
 {
-"90
+"93
 } 0
 "100 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\mcc_generated_files/adc.c
 [v _ADC_StartConversion ADC_StartConversion `(v  1 e 1 0 ]
@@ -1333,10 +1327,10 @@ channel_FVRBuf2 31
 {
 "160
 } 0
-"92 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+"95 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 [v _ADC_temperatura ADC_temperatura `(v  1 e 1 0 ]
 {
-"115
+"118
 } 0
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]

@@ -852,8 +852,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD.c: 53:     putsXLCD ("EAU - ESTG");
 [e ( _putsXLCD (1 :s 2C ]
 "55
-[; ;LCD.c: 55:     _delay((unsigned long)((2000)*(6000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
+[; ;LCD.c: 55:     _delay((unsigned long)((1000)*(6000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
 "57
 [; ;LCD.c: 57:     WriteCmdXLCD(0b00000001);
 [e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
@@ -894,10 +894,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD.c: 79:     _delay((unsigned long)((1000)*(6000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
 "81
-[; ;LCD.c: 81:     for (i = 0; i < 22 ; i++ ) {
+[; ;LCD.c: 81:     for (i = 0; i < 2 ; i++ ) {
 {
 [e = _i -> 0 `i ]
-[e $ < _i -> 22 `i 884  ]
+[e $ < _i -> 2 `i 884  ]
 [e $U 885  ]
 [e :U 884 ]
 {
@@ -929,9 +929,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD.c: 91:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 22 `i 884  ]
+[e $ < _i -> 2 `i 884  ]
 [e :U 885 ]
 }
+"94
+[; ;LCD.c: 94:     _delay((unsigned long)((1000)*(6000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
 "96
 [; ;LCD.c: 96:     WriteCmdXLCD(0b00000001);
 [e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]

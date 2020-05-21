@@ -10124,6 +10124,8 @@ void teclado_coluna_3 (void);
 unsigned char tecla_premida;
 int tecla_n;
 int tecla_limpar;
+int mudar_temp_alarme;
+
 
 
 
@@ -10131,6 +10133,7 @@ int tecla_limpar;
 int contador_colunas_LCD = 192;
 char temp_alarme_LCD [40];
 char temp_ambiente_LCD [40];
+
 
 
 
@@ -10215,9 +10218,9 @@ void main(void)
     SYSTEM_Initialize();
 
     uint8_t rxData;
-# 136 "main.c"
+# 139 "main.c"
     (INTCONbits.GIEH = 1);
-# 168 "main.c"
+# 171 "main.c"
     int contador_caracteres = 4;
 
     CCP1CONbits.CCP1M = 0000;
@@ -10246,14 +10249,10 @@ void main(void)
 
     enter = 1;
 
+    mudar_temp_alarme = 0;
+
     while (1)
     {
-
-        int i = 0;
-        int j = 0;
-
-
-
 
         if (temp_ambiente >= temp_alarme && enter == 1){
 
@@ -10268,6 +10267,8 @@ void main(void)
             LATAbits.LATA1 = 0;
 
         }
+
+
 
         if ((menu_estado == 1 && menu_entrada == 1) || (menu_estado == 1 && temp_mudou == 1)){
             printf("%c" , 12);
@@ -10351,50 +10352,52 @@ void main(void)
 
 
 
-        sprintf(temp_ambiente_LCD, "Temperatura atual = %.0d C            ", temp_ambiente);
-        WriteCmdXLCD(128);
-        while (BusyXLCD());
 
-
-
-
-
-        putsXLCD(temp_ambiente_LCD);
-        while (BusyXLCD());
-
-
-        sprintf(temp_alarme_LCD, "Temperatura de alarme = %.0d C            ", temp_alarme);
-        WriteCmdXLCD(192);
-        while (BusyXLCD());
-
-
-
-
-
-        putsXLCD(temp_alarme_LCD);
-        while (BusyXLCD());
-
-        for (i = 0; i < 2 ; i++) {
-
-
-
-
-
-            WriteCmdXLCD(0b00011011);
+        if (tecla_n && tecla_premida == '*' && mudar_temp_alarme == 0){
+            mudar_temp_alarme = 1;
+            WriteCmdXLCD(0b00000001);
             while (BusyXLCD());
-
         }
 
 
+        if (mudar_temp_alarme == 0){
+
+            sprintf(temp_ambiente_LCD, "Temp. atual = %.0d C            ", temp_ambiente);
+            WriteCmdXLCD(128);
+            while (BusyXLCD());
 
 
-        if (tecla_n){
 
 
 
-            strncat(pin, &tecla_premida, 1);
+            putsXLCD(temp_ambiente_LCD);
+            while (BusyXLCD());
 
 
+            sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C            ", temp_alarme);
+            WriteCmdXLCD(192);
+            while (BusyXLCD());
+
+
+
+
+
+            putsXLCD(temp_alarme_LCD);
+            while (BusyXLCD());
+        }
+        else if (mudar_temp_alarme == 1){
+
+
+            sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C            ", temp_alarme);
+            WriteCmdXLCD(128);
+            while (BusyXLCD());
+
+
+
+
+
+            putsXLCD(temp_alarme_LCD);
+            while (BusyXLCD());
 
             WriteCmdXLCD(192);
             while (BusyXLCD());
@@ -10403,33 +10406,18 @@ void main(void)
 
 
 
-
-            putsXLCD(pin);
+            putsXLCD("Nova temp.: ");
             while (BusyXLCD());
-
-
-
-
-            contador_caracteres++;
-            contador_colunas_LCD++;
-            tecla_n = 0;
-        }
-        else if (tecla_limpar){
-            WriteCmdXLCD(contador_colunas_LCD);
-            while (BusyXLCD());
-
-            putsXLCD("                    ");
-            while (BusyXLCD());
-            tecla_limpar = 0;
 
 
         }
 
 
+        if (mudar_temp_alarme == 1 && tecla_n){
 
 
-
-
+        }
+# 411 "main.c"
         LATBbits.LATB3 = 0;
         LATBbits.LATB4 = 1;
         LATBbits.LATB5 = 1;

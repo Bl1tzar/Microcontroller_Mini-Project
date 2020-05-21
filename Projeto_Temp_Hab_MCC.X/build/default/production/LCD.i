@@ -10077,7 +10077,7 @@ void LCD_inicio_teste (void){
 
     putsXLCD ("EAU - ESTG");
 
-    _delay((unsigned long)((2000)*(6000000/4000.0)));
+    _delay((unsigned long)((1000)*(6000000/4000.0)));
 
     WriteCmdXLCD(0b00000001);
     while (BusyXLCD());
@@ -10103,7 +10103,7 @@ void LCD_inicio_teste (void){
 
     _delay((unsigned long)((1000)*(6000000/4000.0)));
 
-    for (i = 0; i < 22 ; i++ ) {
+    for (i = 0; i < 2 ; i++ ) {
 
 
 
@@ -10116,7 +10116,7 @@ void LCD_inicio_teste (void){
     }
 
 
-
+    _delay((unsigned long)((1000)*(6000000/4000.0)));
 
     WriteCmdXLCD(0b00000001);
     while (BusyXLCD());
