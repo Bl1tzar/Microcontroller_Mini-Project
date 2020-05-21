@@ -21,7 +21,10 @@
                          Funcoes
  */
 void LCD_inicio_teste (void){ 
-
+    
+    int i =0;
+    int j = 0;
+    
     OpenXLCD(FOUR_BIT & LINES_5X7);     //Modo de ligação do display a 4 bits e  caracteres no display com tamanho 5 colunas por 7 linhas
     while (BusyXLCD());
     WriteCmdXLCD(DON & CURSOR_OFF & BLINK_OFF);     //Liga display, desliga cursor e desliga modo blink (piscar)
@@ -35,7 +38,7 @@ void LCD_inicio_teste (void){
 	 * Endereçamento do display:
 	 * 1a linha, 16a coluna
 	*/
-	WriteCmdXLCD(0b10001111);
+	WriteCmdXLCD(0b10000001);
 	while (BusyXLCD());
     
     putsXLCD ("MICROPROCESSADORES");
@@ -50,6 +53,45 @@ void LCD_inicio_teste (void){
     putsXLCD ("EAU - ESTG");
     
     __delay_ms (1000);
+    
+    WriteCmdXLCD(LCD_clear);        
+    while (BusyXLCD());
+    
+    
+       /*
+	 * Endereçamento do display:
+	 * 1a linha, 16a coluna
+	*/
+	WriteCmdXLCD(0b10000000);
+	while (BusyXLCD());
+    
+    putsXLCD ("MIGUEL RIBEIRO 2191578");
+    
+    /*
+	 * Endereçamento do display:
+	 * 1a linha, 16a coluna
+	*/
+	WriteCmdXLCD(0b11000000);
+	while (BusyXLCD());
+    
+    putsXLCD ("JOAO MEDEIROS 2172157");
+    
+    __delay_ms(1000);
+    
+    for (i = 0; i < 2 ; i++ ) { //Quantos espacos anda para o lado
+    /*
+    * Comando interno para o LCD:
+    * SHIFT_DISP_LEFT: Deslocamento do display do LCD para a
+    * direita
+    */
+    WriteCmdXLCD(SHIFT_DISP_LEFT);
+    while (BusyXLCD());
+    for (j = 0; j < 100 ; j++ ) //Rapidez com que anda para o lado 
+            __delay_ms(3); 
+    }
+    
+    
+    __delay_ms(1000);
     
     WriteCmdXLCD(LCD_clear);        
     while (BusyXLCD());

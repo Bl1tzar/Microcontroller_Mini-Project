@@ -10129,6 +10129,8 @@ int tecla_limpar;
 
 
 int contador_colunas_LCD = 192;
+char temp_alarme_LCD [40];
+char temp_ambiente_LCD [40];
 
 
 
@@ -10151,7 +10153,7 @@ int codigo_digital;
 
 int temp_ambiente;
 int temp_ambiente_anterior;
-char temp_ambiente_LCD [40];
+
 
 
 
@@ -10213,10 +10215,12 @@ void main(void)
     SYSTEM_Initialize();
 
     uint8_t rxData;
-# 134 "main.c"
+# 136 "main.c"
     (INTCONbits.GIEH = 1);
-# 166 "main.c"
+# 168 "main.c"
     int contador_caracteres = 4;
+
+    CCP1CONbits.CCP1M = 0000;
 
 
     LCD_inicio_teste();
@@ -10232,7 +10236,7 @@ void main(void)
 
     ADC_SetInterruptHandler(ADC_temperatura);
 
-    CCP1CONbits.CCP1M = 0000;
+
 
     temp_alarme = 25;
 
@@ -10246,19 +10250,6 @@ void main(void)
     {
 
 
-        if (temp_ambiente >= temp_alarme && enter == 1){
-
-            CCP1CONbits.CCP1M = 1100;
-            alarme_ativo = 1;
-
-        }
-        else if (temp_ambiente < temp_alarme && enter == 1){
-
-            CCP1CONbits.CCP1M = 0000;
-            alarme_ativo = 0;
-            LATAbits.LATA1 = 0;
-
-        }
 
         if ((menu_estado == 1 && menu_entrada == 1) || (menu_estado == 1 && temp_mudou == 1)){
             printf("%c" , 12);
@@ -10284,6 +10275,20 @@ void main(void)
             printf("\r\nIntroduza a nova temperatura de alarme: ");
 
             menu_entrada = 0;
+        }
+
+        if (temp_ambiente >= temp_alarme && enter == 1){
+
+            CCP1CONbits.CCP1M = 1100;
+            alarme_ativo = 1;
+
+        }
+        else if (temp_ambiente < temp_alarme && enter == 1){
+
+            CCP1CONbits.CCP1M = 0000;
+            alarme_ativo = 0;
+            LATAbits.LATA1 = 0;
+
         }
 
 
@@ -10342,7 +10347,7 @@ void main(void)
 
 
 
-        sprintf(temp_ambiente_LCD, "temp = %.0d C            ", temp_ambiente);
+        sprintf(temp_ambiente_LCD, "Temp. atual = %.0d C            ", temp_ambiente);
         WriteCmdXLCD(128);
         while (BusyXLCD());
 
@@ -10352,6 +10357,21 @@ void main(void)
 
         putsXLCD(temp_ambiente_LCD);
         while (BusyXLCD());
+
+
+        sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C            ", temp_alarme);
+        WriteCmdXLCD(192);
+        while (BusyXLCD());
+
+
+
+
+
+        putsXLCD(temp_alarme_LCD);
+        while (BusyXLCD());
+
+
+
 
 
         if (tecla_n){

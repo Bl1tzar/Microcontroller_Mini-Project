@@ -38,6 +38,8 @@ int tecla_limpar; // Indica que é para limpar o LCD
  */
 // 192 = 2a linha 1a coluna (0b11000000) no LCD
 int contador_colunas_LCD = 192; //contador 
+char temp_alarme_LCD [40];
+char temp_ambiente_LCD [40];
 
 /*
          PIN
@@ -60,7 +62,7 @@ int codigo_digital; // 2 bits mais significativos do codigo digital de 10 bits
 //char low [8] = ADRESL; // 8 bits menos significativos do codigo digital de 10 bits
 int temp_ambiente;
 int temp_ambiente_anterior; //Verificar se a temperatura varia - usada no ADC
-char temp_ambiente_LCD [40];
+
 /*
         Alarme
  */
@@ -165,6 +167,8 @@ void main(void)
     
     int contador_caracteres = 4;
     
+    CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder no inicio
+    
     //Escrever o inicio do LCD - "Mars Rocks_Teste Teclado" - LCD_inicio.h
     LCD_inicio_teste();
     
@@ -179,7 +183,7 @@ void main(void)
     //Interrupcão do ADC - Quando ocorre, executa a funcao ADC_temperatura
     ADC_SetInterruptHandler(ADC_temperatura);
     
-    CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder no inicio
+
     
     temp_alarme = 25; //Por default a temperatura de alarme esta a 20 C 
     
@@ -191,8 +195,7 @@ void main(void)
    
     while (1)
     {   
-        /*Terminal*/
-        
+
         if (temp_ambiente >= temp_alarme && enter == 1){
         
             CCP1CONbits.CCP1M = 1100; //ativa o PWM - liga o sounder 
@@ -207,6 +210,8 @@ void main(void)
             
         }
         
+                /*Terminal*/
+
         if ((menu_estado == 1 && menu_entrada == 1) || (menu_estado == 1 && temp_mudou == 1)){ //Menu principal 
             printf("%c" , 12); //Limpa o terminal
             printf("\r\n---------------Menu principal---------------");
@@ -288,10 +293,10 @@ void main(void)
         
         /*LCD*/
  
-        //Escrever no LCD a temperatura
-        sprintf(temp_ambiente_LCD, "temp = %.0d C            ", temp_ambiente);
+        //Escrever no LCD a temperatura atual
+        sprintf(temp_ambiente_LCD, "Temp. atual = %.0d C            ", temp_ambiente);
         WriteCmdXLCD(LCD_linha_1);
-        while (BusyXLCD());
+        while (BusyXLCD()); 
             /*
              * Escreve conteúdo da string 'temp_ambiente_LCD' para o LCD,
              * na posição anteriormente endereçada
@@ -299,6 +304,21 @@ void main(void)
             /*temp_ambiente_LCD*/
         putsXLCD(temp_ambiente_LCD);
         while (BusyXLCD());
+        
+        //Escrever no LCD a temperatura de alarme
+        sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C            ", temp_alarme);
+        WriteCmdXLCD(LCD_linha_2);
+        while (BusyXLCD());
+            /*
+             * Escreve conteúdo da string 'temp_ambiente_LCD' para o LCD,
+             * na posição anteriormente endereçada
+             */
+            /*temp_ambiente_LCD*/
+        putsXLCD(temp_alarme_LCD);
+        while (BusyXLCD());
+       
+        
+        
         
         //Escrever o PIN no LCD
         if (tecla_n){

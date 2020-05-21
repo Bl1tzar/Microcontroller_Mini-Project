@@ -10129,7 +10129,8 @@ int tecla_limpar;
 
 
 int contador_colunas_LCD = 192;
-int variacao_temp_digitos;
+char temp_alarme_LCD [40];
+char temp_ambiente_LCD [40];
 
 
 
@@ -10147,12 +10148,12 @@ int temp_mudou;
 
 
 
-
+float tensao;
 int codigo_digital;
 
 int temp_ambiente;
 int temp_ambiente_anterior;
-char temp_ambiente_LCD [20];
+
 
 
 
@@ -10184,7 +10185,14 @@ void ADC_temperatura (void){
     codigo_digital = ADC_GetConversionResult();
 
 
-    temp_ambiente = (int)(((((float) codigo_digital * (3.4/1024.0))-0.3)-0.400) / (0.0195));
+
+
+
+    tensao = ((3.4)*(float)(codigo_digital/1024.0)) - 0.3;
+    tensao = (int) ((tensao * 100) + 0.5);
+    tensao = (float) tensao/100;
+
+    temp_ambiente = (int) ((tensao - 0.400)/0.0195);
 
     if (temp_ambiente != temp_ambiente_anterior){
 
@@ -10207,10 +10215,12 @@ void main(void)
     SYSTEM_Initialize();
 
     uint8_t rxData;
-# 128 "main.c"
+# 136 "main.c"
     (INTCONbits.GIEH = 1);
-# 160 "main.c"
+# 168 "main.c"
     int contador_caracteres = 4;
+
+    CCP1CONbits.CCP1M = 0000;
 
 
     LCD_inicio_teste();
@@ -10226,7 +10236,7 @@ void main(void)
 
     ADC_SetInterruptHandler(ADC_temperatura);
 
-    CCP1CONbits.CCP1M = 0000;
+
 
     temp_alarme = 25;
 
@@ -10236,10 +10246,13 @@ void main(void)
 
     enter = 1;
 
-    variacao_temp_digitos = 0;
-
     while (1)
     {
+
+        int i = 0;
+        int j = 0;
+
+
 
 
         if (temp_ambiente >= temp_alarme && enter == 1){
@@ -10338,7 +10351,7 @@ void main(void)
 
 
 
-        sprintf(temp_ambiente_LCD, "temp = %.0d C            ", temp_ambiente);
+        sprintf(temp_ambiente_LCD, "Temperatura atual = %.0d C            ", temp_ambiente);
         WriteCmdXLCD(128);
         while (BusyXLCD());
 
@@ -10348,6 +10361,31 @@ void main(void)
 
         putsXLCD(temp_ambiente_LCD);
         while (BusyXLCD());
+
+
+        sprintf(temp_alarme_LCD, "Temperatura de alarme = %.0d C            ", temp_alarme);
+        WriteCmdXLCD(192);
+        while (BusyXLCD());
+
+
+
+
+
+        putsXLCD(temp_alarme_LCD);
+        while (BusyXLCD());
+
+        for (i = 0; i < 2 ; i++) {
+
+
+
+
+
+            WriteCmdXLCD(0b00011011);
+            while (BusyXLCD());
+
+        }
+
+
 
 
         if (tecla_n){

@@ -10047,6 +10047,9 @@ void LCD_inicio_teste(void);
 # 23 "LCD.c"
 void LCD_inicio_teste (void){
 
+    int i =0;
+    int j = 0;
+
     OpenXLCD(0b00101111 & 0b00111011);
     while (BusyXLCD());
     WriteCmdXLCD(0b00001111 & 0b00001101 & 0b00001110);
@@ -10056,4 +10059,65 @@ void LCD_inicio_teste (void){
     WriteCmdXLCD(0b00000001);
     while (BusyXLCD());
 
+
+
+
+
+ WriteCmdXLCD(0b10000001);
+ while (BusyXLCD());
+
+    putsXLCD ("MICROPROCESSADORES");
+
+
+
+
+
+ WriteCmdXLCD(0b11000011);
+ while (BusyXLCD());
+
+    putsXLCD ("EAU - ESTG");
+
+    _delay((unsigned long)((2000)*(6000000/4000.0)));
+
+    WriteCmdXLCD(0b00000001);
+    while (BusyXLCD());
+
+
+
+
+
+
+ WriteCmdXLCD(0b10000000);
+ while (BusyXLCD());
+
+    putsXLCD ("MIGUEL RIBEIRO 2191578");
+
+
+
+
+
+ WriteCmdXLCD(0b11000000);
+ while (BusyXLCD());
+
+    putsXLCD ("JOAO MEDEIROS 2172157");
+
+    _delay((unsigned long)((1000)*(6000000/4000.0)));
+
+    for (i = 0; i < 22 ; i++ ) {
+
+
+
+
+
+    WriteCmdXLCD(0b00011011);
+    while (BusyXLCD());
+    for (j = 0; j < 100 ; j++ )
+            _delay((unsigned long)((3)*(6000000/4000.0)));
+    }
+
+
+
+
+    WriteCmdXLCD(0b00000001);
+    while (BusyXLCD());
 }
