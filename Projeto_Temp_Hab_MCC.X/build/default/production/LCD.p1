@@ -8,13 +8,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "109
 [; ;./xlcd.h: 109: void WriteCmdXLCD( unsigned char);
 [v _WriteCmdXLCD `(v ~T0 @X0 0 ef1`uc ]
-"124
-[; ;./xlcd.h: 124: void putsXLCD( char *);
-[v _putsXLCD `(v ~T0 @X0 0 ef1`*uc ]
-[v F5963 `(v ~T0 @X0 1 tf1`ul ]
-"187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
-[v __delay `JF5963 ~T0 @X0 0 e ]
-[p i __delay ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -817,48 +810,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 866 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 867  ]
 [e :U 868 ]
-"38
-[; ;LCD.c: 38:  WriteCmdXLCD(0b10001111);
-[e ( _WriteCmdXLCD (1 -> -> 143 `i `uc ]
-"39
-[; ;LCD.c: 39:  while (BusyXLCD());
-[e $U 869  ]
-[e :U 870 ]
-[e :U 869 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 870  ]
-[e :U 871 ]
-"41
-[; ;LCD.c: 41:     putsXLCD ("MICROPROCESSADORES");
-[e ( _putsXLCD (1 :s 1C ]
-"47
-[; ;LCD.c: 47:  WriteCmdXLCD(0b11000011);
-[e ( _WriteCmdXLCD (1 -> -> 195 `i `uc ]
-"48
-[; ;LCD.c: 48:  while (BusyXLCD());
-[e $U 872  ]
-[e :U 873 ]
-[e :U 872 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 873  ]
-[e :U 874 ]
-"50
-[; ;LCD.c: 50:     putsXLCD ("EAU - ESTG");
-[e ( _putsXLCD (1 :s 2C ]
-"52
-[; ;LCD.c: 52:     _delay((unsigned long)((1000)*(6000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
-"54
-[; ;LCD.c: 54:     WriteCmdXLCD(0b00000001);
-[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
-"55
-[; ;LCD.c: 55:     while (BusyXLCD());
-[e $U 875  ]
-[e :U 876 ]
-[e :U 875 ]
-[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 876  ]
-[e :U 877 ]
-"56
-[; ;LCD.c: 56: }
+"34
+[; ;LCD.c: 34: }
 [e :UE 856 ]
 }
-[a 1C 77 73 67 82 79 80 82 79 67 69 83 83 65 68 79 82 69 83 0 ]
-[a 2C 69 65 85 32 45 32 69 83 84 71 0 ]

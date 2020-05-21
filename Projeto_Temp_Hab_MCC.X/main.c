@@ -38,8 +38,7 @@ int tecla_limpar; // Indica que é para limpar o LCD
  */
 // 192 = 2a linha 1a coluna (0b11000000) no LCD
 int contador_colunas_LCD = 192; //contador 
-//int LCD_linha_1; //variavel externa - LCD.c - isto porque necessitei delas no LCD.c
-//int LCD_linha_2; //variavel externa - LCD.c
+
 /*
          PIN
  */
@@ -56,13 +55,12 @@ int temp_mudou;
 /*
          ADC
  */
-
+float tensao;
 int codigo_digital; // 2 bits mais significativos do codigo digital de 10 bits
 //char low [8] = ADRESL; // 8 bits menos significativos do codigo digital de 10 bits
 int temp_ambiente;
 int temp_ambiente_anterior; //Verificar se a temperatura varia - usada no ADC
-char temp_ambiente_LCD [20];
-
+char temp_ambiente_LCD [40];
 /*
         Alarme
  */
@@ -94,7 +92,14 @@ void ADC_temperatura (void){
     codigo_digital = ADC_GetConversionResult(); //Obter codigo digital do conversor ADC
     
     //Calculo da Temperatura ambiente
-    temp_ambiente = (int)(((((float) codigo_digital * (3.4/1024.0))-0.3)-0.400) / (0.0195));
+    //temp_ambiente = (int)(((((float) codigo_digital * (3.4/1024.0))-0.3)-0.400) / (0.0195));
+    
+    //Na formula anterior nao tinha arredondamentos e trabalhava com varios digitos, por exemplo, o codigo_digital quando lia 15,555555 lia o valor errado
+    tensao = ((3.4)*(float)(codigo_digital/1024.0)) - 0.3; 
+    tensao = (int) ((tensao * 100) + 0.5);
+    tensao = (float) tensao/100;
+    
+    temp_ambiente = (int) ((tensao - 0.400)/0.0195);
     
     if (temp_ambiente != temp_ambiente_anterior){ //Verifica se a temperatura variou
     
@@ -176,16 +181,17 @@ void main(void)
     
     CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder no inicio
     
-    temp_alarme = 25; //Por default a temperatura de alarme esta a 20 C
+    temp_alarme = 25; //Por default a temperatura de alarme esta a 20 C 
     
     menu_estado = 1; //Por default o menu que aparece no terminal e o principal 
     
     menu_entrada = 0; //Por default tem autorizacao para entrar nos menus 
     
-    enter = 1; //Por default o enter está = 1 porque o alarme só tem premissão quando ele está ativado
-    
+    enter = 1; //Por default o enter está = 1 porque o alarme só tem premissão quando ele está ativado  
+   
     while (1)
     {   
+        /*Terminal*/
         
         if (temp_ambiente >= temp_alarme && enter == 1){
         
@@ -205,7 +211,6 @@ void main(void)
             printf("%c" , 12); //Limpa o terminal
             printf("\r\n---------------Menu principal---------------");
             printf("\r\n\nTemperatura atual = %dºC", temp_ambiente);
-            
             if (alarme_ativo == 1){
                 printf("\r\nEstado do alarme: Ativo");
             }
@@ -227,7 +232,7 @@ void main(void)
 
             menu_entrada = 0;
         }
-
+        
         /*Recebe caracter através do modulo EUSART1*/
         if (EUSART1_is_rx_ready()){
             
@@ -281,9 +286,10 @@ void main(void)
             
         }
         
+        /*LCD*/
+ 
         //Escrever no LCD a temperatura
-        sprintf(temp_ambiente_LCD, "temp = %dC", temp_ambiente);
-        
+        sprintf(temp_ambiente_LCD, "temp = %.0d C            ", temp_ambiente);
         WriteCmdXLCD(LCD_linha_1);
         while (BusyXLCD());
             /*
@@ -293,7 +299,8 @@ void main(void)
             /*temp_ambiente_LCD*/
         putsXLCD(temp_ambiente_LCD);
         while (BusyXLCD());
-
+        
+        //Escrever o PIN no LCD
         if (tecla_n){
             
             /*PIN*/
@@ -331,7 +338,9 @@ void main(void)
             
         }
         
+        
         /*Loop para atribuir valores a todos os outputs para as linha do teclado*/
+        
         //LATB = 0b11110111;
         /**/
         LATBbits.LATB3 = 0;

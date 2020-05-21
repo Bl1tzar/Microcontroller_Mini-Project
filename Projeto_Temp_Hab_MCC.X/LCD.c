@@ -13,8 +13,8 @@
 
 // 128 = 1a linha 1a coluna (0b10000000) no LCD
 // 192 = 2a linha 1a coluna (0b11000000) no LCD
-//int LCD_linha_1 = 128; //1a linha 1a coluna no LCD
-//int LCD_linha_2 = 192; //2a linha 1a coluna no LCD
+
+
 
 
 /*
@@ -53,7 +53,7 @@ void LCD_inicio_teste (void){
     
     WriteCmdXLCD(LCD_clear);        
     while (BusyXLCD());
-}        
+}    
 
 //void escrever_texto_LCD (int linha_LCD, char texto[21]){
 //

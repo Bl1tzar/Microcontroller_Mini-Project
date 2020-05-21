@@ -10095,7 +10095,7 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 5 "main.c" 2
 # 15 "main.c"
 # 1 "./LCD.h" 1
-# 13 "./LCD.h"
+# 14 "./LCD.h"
 void LCD_inicio_teste(void);
 # 15 "main.c" 2
 
@@ -10129,7 +10129,7 @@ int tecla_limpar;
 
 
 int contador_colunas_LCD = 192;
-
+int variacao_temp_digitos;
 
 
 
@@ -10153,7 +10153,6 @@ int codigo_digital;
 int temp_ambiente;
 int temp_ambiente_anterior;
 char temp_ambiente_LCD [20];
-
 
 
 
@@ -10208,9 +10207,9 @@ void main(void)
     SYSTEM_Initialize();
 
     uint8_t rxData;
-# 129 "main.c"
+# 128 "main.c"
     (INTCONbits.GIEH = 1);
-# 161 "main.c"
+# 160 "main.c"
     int contador_caracteres = 4;
 
 
@@ -10237,8 +10236,11 @@ void main(void)
 
     enter = 1;
 
+    variacao_temp_digitos = 0;
+
     while (1)
     {
+
 
         if (temp_ambiente >= temp_alarme && enter == 1){
 
@@ -10258,7 +10260,6 @@ void main(void)
             printf("%c" , 12);
             printf("\r\n---------------Menu principal---------------");
             printf("\r\n\nTemperatura atual = %dºC", temp_ambiente);
-
             if (alarme_ativo == 1){
                 printf("\r\nEstado do alarme: Ativo");
             }
@@ -10335,8 +10336,9 @@ void main(void)
         }
 
 
-        sprintf(temp_ambiente_LCD, "temp = %dC", temp_ambiente);
 
+
+        sprintf(temp_ambiente_LCD, "temp = %.0d C            ", temp_ambiente);
         WriteCmdXLCD(128);
         while (BusyXLCD());
 
@@ -10346,6 +10348,7 @@ void main(void)
 
         putsXLCD(temp_ambiente_LCD);
         while (BusyXLCD());
+
 
         if (tecla_n){
 
@@ -10383,6 +10386,8 @@ void main(void)
 
 
         }
+
+
 
 
 

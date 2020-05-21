@@ -10095,7 +10095,7 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 5 "main.c" 2
 # 15 "main.c"
 # 1 "./LCD.h" 1
-# 13 "./LCD.h"
+# 14 "./LCD.h"
 void LCD_inicio_teste(void);
 # 15 "main.c" 2
 
@@ -10133,7 +10133,6 @@ int contador_colunas_LCD = 192;
 
 
 
-
 char pin [4];
 int pin_intr;
 int pin_real = 0000;
@@ -10147,13 +10146,12 @@ int temp_mudou;
 
 
 
-
+float tensao;
 int codigo_digital;
 
 int temp_ambiente;
 int temp_ambiente_anterior;
-char temp_ambiente_LCD [20];
-
+char temp_ambiente_LCD [40];
 
 
 
@@ -10185,7 +10183,14 @@ void ADC_temperatura (void){
     codigo_digital = ADC_GetConversionResult();
 
 
-    temp_ambiente = (int)(((((float) codigo_digital * (3.4/1024.0))-0.3)-0.400) / (0.0195));
+
+
+
+    tensao = ((3.4)*(float)(codigo_digital/1024.0)) - 0.3;
+    tensao = (int) ((tensao * 100) + 0.5);
+    tensao = (float) tensao/100;
+
+    temp_ambiente = (int) ((tensao - 0.400)/0.0195);
 
     if (temp_ambiente != temp_ambiente_anterior){
 
@@ -10208,9 +10213,9 @@ void main(void)
     SYSTEM_Initialize();
 
     uint8_t rxData;
-# 129 "main.c"
+# 134 "main.c"
     (INTCONbits.GIEH = 1);
-# 161 "main.c"
+# 166 "main.c"
     int contador_caracteres = 4;
 
 
@@ -10240,6 +10245,7 @@ void main(void)
     while (1)
     {
 
+
         if (temp_ambiente >= temp_alarme && enter == 1){
 
             CCP1CONbits.CCP1M = 1100;
@@ -10258,7 +10264,6 @@ void main(void)
             printf("%c" , 12);
             printf("\r\n---------------Menu principal---------------");
             printf("\r\n\nTemperatura atual = %dºC", temp_ambiente);
-
             if (alarme_ativo == 1){
                 printf("\r\nEstado do alarme: Ativo");
             }
@@ -10335,8 +10340,9 @@ void main(void)
         }
 
 
-        sprintf(temp_ambiente_LCD, "temp = %dC", temp_ambiente);
 
+
+        sprintf(temp_ambiente_LCD, "temp = %.0d C            ", temp_ambiente);
         WriteCmdXLCD(128);
         while (BusyXLCD());
 
@@ -10346,6 +10352,7 @@ void main(void)
 
         putsXLCD(temp_ambiente_LCD);
         while (BusyXLCD());
+
 
         if (tecla_n){
 
@@ -10383,6 +10390,8 @@ void main(void)
 
 
         }
+
+
 
 
 

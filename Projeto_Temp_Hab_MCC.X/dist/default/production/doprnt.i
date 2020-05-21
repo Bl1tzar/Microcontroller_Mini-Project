@@ -919,6 +919,20 @@ static int vfpfcnvrt(FILE *fp, char *fmt[], va_list ap)
 
         flags = width = 0;
         prec = -1;
+# 740 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\sources\\c99\\common\\doprnt.c"
+        if ((*fmt)[0] == '.') {
+            prec = 0;
+            ++*fmt;
+            if ((*fmt)[0] == '*') {
+                ++*fmt;
+                prec = (*(int *)__va_arg(*(int **)ap, (int)0));
+            } else {
+                prec = atoi(*fmt);
+                while ((0 ? isdigit((*fmt)[0]) : ((unsigned)((*fmt)[0])-'0') < 10)) {
+                    ++*fmt;
+                }
+            }
+        }
 # 792 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\sources\\c99\\common\\doprnt.c"
         if (*fmt[0] == 'c') {
             ++*fmt;
