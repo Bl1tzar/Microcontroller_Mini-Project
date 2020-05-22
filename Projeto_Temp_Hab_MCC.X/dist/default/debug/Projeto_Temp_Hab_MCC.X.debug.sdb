@@ -78,11 +78,11 @@ channel_FVRBuf2 31
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "23 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\LCD.c
 [v _LCD_inicio_teste LCD_inicio_teste `(v  1 e 1 0 ]
-"91 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+"92 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 [v _Timer_0 Timer_0 `(v  1 e 1 0 ]
-"98
+"99
 [v _ADC_temperatura ADC_temperatura `(v  1 e 1 0 ]
-"127
+"128
 [v _main main `(v  1 e 1 0 ]
 "66 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -224,7 +224,7 @@ channel_FVRBuf2 31
 [v _CCPTMRS0bits CCPTMRS0bits `VES777  1 e 1 @3913 ]
 "2719
 [v _WPUB WPUB `VEuc  1 e 1 @3937 ]
-[s S1676 . 1 `uc 1 RB0 1 0 :1:0 
+[s S1677 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -234,7 +234,7 @@ channel_FVRBuf2 31
 `uc 1 RB7 1 0 :1:7 
 ]
 "6635
-[s S1685 . 1 `uc 1 INT0 1 0 :1:0 
+[s S1686 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 CCP2 1 0 :1:3 
@@ -243,7 +243,7 @@ channel_FVRBuf2 31
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S1694 . 1 `uc 1 AN12 1 0 :1:0 
+[s S1695 . 1 `uc 1 AN12 1 0 :1:0 
 `uc 1 AN10 1 0 :1:1 
 `uc 1 AN8 1 0 :1:2 
 `uc 1 AN9 1 0 :1:3 
@@ -252,36 +252,36 @@ channel_FVRBuf2 31
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S1703 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S1704 . 1 `uc 1 FLT0 1 0 :1:0 
 `uc 1 C12IN3M 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 C12IN2M 1 0 :1:3 
 `uc 1 T5G 1 0 :1:4 
 `uc 1 T1G 1 0 :1:5 
 ]
-[s S1710 . 1 `uc 1 SRI 1 0 :1:0 
+[s S1711 . 1 `uc 1 SRI 1 0 :1:0 
 `uc 1 C12IN3N 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 C12IN2N 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 CCP3 1 0 :1:5 
 ]
-[s S1717 . 1 `uc 1 . 1 0 :2:0 
+[s S1718 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 CTED1 1 0 :1:2 
 `uc 1 CTED2 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 T3CKI 1 0 :1:5 
 ]
-[s S1723 . 1 `uc 1 . 1 0 :3:0 
+[s S1724 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 P2A 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 P3A 1 0 :1:5 
 ]
-[s S1728 . 1 `uc 1 . 1 0 :3:0 
+[s S1729 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S1731 . 1 `S1676 1 . 1 0 `S1685 1 . 1 0 `S1694 1 . 1 0 `S1703 1 . 1 0 `S1710 1 . 1 0 `S1717 1 . 1 0 `S1723 1 . 1 0 `S1728 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES1731  1 e 1 @3969 ]
+[u S1732 . 1 `S1677 1 . 1 0 `S1686 1 . 1 0 `S1695 1 . 1 0 `S1704 1 . 1 0 `S1711 1 . 1 0 `S1718 1 . 1 0 `S1724 1 . 1 0 `S1729 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES1732  1 e 1 @3969 ]
 "7142
 [v _PORTD PORTD `VEuc  1 e 1 @3971 ]
 "7560
@@ -334,7 +334,7 @@ channel_FVRBuf2 31
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
 "7896
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
-[s S1590 . 1 `uc 1 LATD0 1 0 :1:0 
+[s S1591 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -344,7 +344,7 @@ channel_FVRBuf2 31
 `uc 1 LATD7 1 0 :1:7 
 ]
 "7923
-[s S1599 . 1 `uc 1 LD0 1 0 :1:0 
+[s S1600 . 1 `uc 1 LD0 1 0 :1:0 
 `uc 1 LD1 1 0 :1:1 
 `uc 1 LD2 1 0 :1:2 
 `uc 1 LD3 1 0 :1:3 
@@ -353,8 +353,8 @@ channel_FVRBuf2 31
 `uc 1 LD6 1 0 :1:6 
 `uc 1 LD7 1 0 :1:7 
 ]
-[u S1608 . 1 `S1590 1 . 1 0 `S1599 1 . 1 0 ]
-[v _LATDbits LATDbits `VES1608  1 e 1 @3980 ]
+[u S1609 . 1 `S1591 1 . 1 0 `S1600 1 . 1 0 ]
+[v _LATDbits LATDbits `VES1609  1 e 1 @3980 ]
 "8008
 [v _LATE LATE `VEuc  1 e 1 @3981 ]
 "8060
@@ -365,7 +365,7 @@ channel_FVRBuf2 31
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
 "8726
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S1550 . 1 `uc 1 TRISD0 1 0 :1:0 
+[s S1551 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -375,7 +375,7 @@ channel_FVRBuf2 31
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "8758
-[s S1559 . 1 `uc 1 RD0 1 0 :1:0 
+[s S1560 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -384,8 +384,8 @@ channel_FVRBuf2 31
 `uc 1 RD6 1 0 :1:6 
 `uc 1 RD7 1 0 :1:7 
 ]
-[u S1568 . 1 `S1550 1 . 1 0 `S1559 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES1568  1 e 1 @3989 ]
+[u S1569 . 1 `S1551 1 . 1 0 `S1560 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES1569  1 e 1 @3989 ]
 "8948
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
 "9064
@@ -752,24 +752,26 @@ channel_FVRBuf2 31
 "60
 [v _temp_mudou temp_mudou `i  1 e 2 0 ]
 "61
+[v _temp_alarme_mudou temp_alarme_mudou `i  1 e 2 0 ]
+"62
 [v _update_temp_alarme update_temp_alarme `i  1 e 2 0 ]
-"66
-[v _tensao tensao `f  1 e 4 0 ]
 "67
+[v _tensao tensao `f  1 e 4 0 ]
+"68
 [v _codigo_digital codigo_digital `i  1 e 2 0 ]
-"69
-[v _temp_ambiente temp_ambiente `i  1 e 2 0 ]
 "70
+[v _temp_ambiente temp_ambiente `i  1 e 2 0 ]
+"71
 [v _temp_ambiente_anterior temp_ambiente_anterior `i  1 e 2 0 ]
-"75
+"76
 [v _alarme_ativo alarme_ativo `i  1 e 2 0 ]
-"80
+"81
 [v _menu_estado menu_estado `i  1 e 2 0 ]
-"82
-[v _menu_entrada menu_entrada `i  1 e 2 0 ]
 "83
-[v _limpar_terminal limpar_terminal `i  1 e 2 0 ]
+[v _menu_entrada menu_entrada `i  1 e 2 0 ]
 "84
+[v _limpar_terminal limpar_terminal `i  1 e 2 0 ]
+"85
 [v _enter enter `i  1 e 2 0 ]
 "60 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\mcc_generated_files/adc.c
 [v _ADC_InterruptHandler ADC_InterruptHandler `*.37(v  1 e 2 0 ]
@@ -817,12 +819,12 @@ channel_FVRBuf2 31
 [v _tecla_limpar tecla_limpar `i  1 e 2 0 ]
 "17
 [v _contador_colunas_LCD contador_colunas_LCD `i  1 e 2 0 ]
-"127 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+"128 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"132
+"133
 [v main@rxData rxData `uc  1 a 1 4 ]
-"534
+"542
 } 0
 "3 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strncat.c
 [v _strncat strncat `(*.39uc  1 e 2 0 ]
@@ -835,9 +837,9 @@ channel_FVRBuf2 31
 "9 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[s S2385 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[s S2386 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
 "13
-[v sprintf@f f `S2385  1 a 6 110 ]
+[v sprintf@f f `S2386  1 a 6 110 ]
 "12
 [v sprintf@ap ap `[1]*.39v  1 a 2 108 ]
 "9
@@ -859,9 +861,9 @@ channel_FVRBuf2 31
 {
 "1371
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 98 ]
-[s S1825 _IO_FILE 0 ]
+[s S1826 _IO_FILE 0 ]
 "1368
-[v vfprintf@fp fp `*.39S1825  1 p 2 92 ]
+[v vfprintf@fp fp `*.39S1826  1 p 2 92 ]
 [v vfprintf@fmt fmt `*.25Cuc  1 p 2 94 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 96 ]
 "1382
@@ -873,9 +875,9 @@ channel_FVRBuf2 31
 [v vfpfcnvrt@ll ll `o  1 a 8 81 ]
 "672
 [v vfpfcnvrt@c c `uc  1 a 1 89 ]
-[s S1825 _IO_FILE 0 ]
+[s S1826 _IO_FILE 0 ]
 "670
-[v vfpfcnvrt@fp fp `*.39S1825  1 p 2 71 ]
+[v vfpfcnvrt@fp fp `*.39S1826  1 p 2 71 ]
 [v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 73 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 75 ]
 "1365
@@ -890,9 +892,9 @@ channel_FVRBuf2 31
 [v dtoa@s s `i  1 a 2 59 ]
 [v dtoa@w w `i  1 a 2 57 ]
 [v dtoa@p p `i  1 a 2 55 ]
-[s S1825 _IO_FILE 0 ]
+[s S1826 _IO_FILE 0 ]
 "274
-[v dtoa@fp fp `*.39S1825  1 p 2 35 ]
+[v dtoa@fp fp `*.39S1826  1 p 2 35 ]
 [v dtoa@d d `o  1 p 8 37 ]
 "315
 } 0
@@ -931,9 +933,9 @@ channel_FVRBuf2 31
 {
 "261
 [v ctoa@w w `i  1 a 2 38 ]
-[s S1825 _IO_FILE 0 ]
+[s S1826 _IO_FILE 0 ]
 "259
-[v ctoa@fp fp `*.39S1825  1 p 2 35 ]
+[v ctoa@fp fp `*.39S1826  1 p 2 35 ]
 [v ctoa@c c `uc  1 p 1 37 ]
 "270
 } 0
@@ -943,9 +945,9 @@ channel_FVRBuf2 31
 "74
 [v pad@w w `i  1 a 2 33 ]
 [v pad@i i `i  1 a 2 31 ]
-[s S1825 _IO_FILE 0 ]
+[s S1826 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.39S1825  1 p 2 24 ]
+[v pad@fp fp `*.39S1826  1 p 2 24 ]
 [v pad@buf buf `*.39uc  1 p 2 26 ]
 [v pad@p p `i  1 p 2 28 ]
 "95
@@ -968,16 +970,16 @@ channel_FVRBuf2 31
 [v fputs@c c `uc  1 a 1 21 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 17 ]
-[s S2385 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.39S2385  1 p 2 19 ]
+[s S2386 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.39S2386  1 p 2 19 ]
 "19
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 8 ]
-[s S2385 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.39S2385  1 p 2 10 ]
+[s S2386 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.39S2386  1 p 2 10 ]
 "21
 } 0
 "176 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\mcc_generated_files/eusart1.c
@@ -1231,10 +1233,10 @@ channel_FVRBuf2 31
 {
 "163
 } 0
-"91 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+"92 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 [v _Timer_0 Timer_0 `(v  1 e 1 0 ]
 {
-"96
+"97
 } 0
 "100 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\mcc_generated_files/adc.c
 [v _ADC_StartConversion ADC_StartConversion `(v  1 e 1 0 ]
@@ -1335,10 +1337,10 @@ channel_FVRBuf2 31
 {
 "160
 } 0
-"98 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+"99 J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 [v _ADC_temperatura ADC_temperatura `(v  1 e 1 0 ]
 {
-"121
+"122
 } 0
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -1368,17 +1370,17 @@ channel_FVRBuf2 31
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S2209 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S2210 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S2214 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S2217 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2209 1 fAsBytes 4 0 `S2214 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S2217  1 a 4 58 ]
+[s S2215 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S2218 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2210 1 fAsBytes 4 0 `S2215 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S2218  1 a 4 58 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 52 ]
-[s S2285 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S2286 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S2288 . 2 `s 1 i 2 0 `us 1 n 2 0 `S2285 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S2288  1 a 2 62 ]
+[u S2289 . 2 `s 1 i 2 0 `us 1 n 2 0 `S2286 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S2289  1 a 2 62 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 57 ]
 "11

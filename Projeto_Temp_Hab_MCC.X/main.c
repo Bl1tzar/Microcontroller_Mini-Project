@@ -58,6 +58,7 @@ char temp_alarme_string [4]; // Valor da temperatura de alarme
 int temp_alarme_provisoria;
 int temp_alarme;
 int temp_mudou;
+int temp_alarme_mudou;
 int update_temp_alarme; //quando a temperatura de alarme e atualizada no LCD, atualizar tambem no terminal
 
 /*
@@ -207,6 +208,7 @@ void main(void)
     
     update_temp_alarme = 0; //Por default, o alarme nao foi atualizado
     
+    temp_alarme_mudou = 0; //Por default, a temperatura de alarme nao mudou
     
     while (1)
     {   
@@ -218,7 +220,7 @@ void main(void)
             
         }
         else if ((temp_ambiente < temp_alarme && enter == 1) || (update_temp_alarme == 1 && temp_ambiente < temp_alarme)){
-        
+            
             CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder
             alarme_ativo = 0;
             LATAbits.LATA1 = 0; //desliga o LED quando o alarme é desativado
@@ -313,7 +315,7 @@ void main(void)
         }
         
         /*LCD*/
-        
+        //MENUS
         //Carregar na tecla '*' para mudar a temperatura de alarme e trocar entre menus
         
         if (tecla_n == 1 && tecla_premida == '*' && mudar_temp_alarme == 0){
@@ -330,7 +332,10 @@ void main(void)
         }
         
         
-        if (mudar_temp_alarme == 0 && temp_mudou == 1){
+        if ((mudar_temp_alarme == 0 && temp_mudou == 1) || (mudar_temp_alarme == 0 && temp_alarme_mudou == 1)){
+            
+            temp_alarme_mudou = 0;
+            
             //Escrever no LCD a temperatura atual
             sprintf(temp_ambiente_LCD, "Temp. atual = %.0d C            ", temp_ambiente);
             WriteCmdXLCD(LCD_linha_1);
@@ -381,6 +386,7 @@ void main(void)
             
         }
         
+        //CONDICOES
         
         if ((mudar_temp_alarme == 1 && tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){ //Mudar temperatura de alarme no LCD
                 //Adicionar o caracter introduzido no teclado por tecla_premida à string temp_alarme_string com a funcao strncat
@@ -414,7 +420,9 @@ void main(void)
                     temp_alarme = temp_alarme_provisoria;
                     
                     mudar_temp_alarme = 0;
-
+                    
+                    temp_alarme_mudou = 1;
+                    
                     menu_entrada = 1; //Autorizacao para entrar no if dos menus
                     
                     update_temp_alarme = 1;

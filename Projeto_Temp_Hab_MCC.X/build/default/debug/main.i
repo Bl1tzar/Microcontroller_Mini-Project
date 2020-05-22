@@ -10149,6 +10149,7 @@ char temp_alarme_string [4];
 int temp_alarme_provisoria;
 int temp_alarme;
 int temp_mudou;
+int temp_alarme_mudou;
 int update_temp_alarme;
 
 
@@ -10221,9 +10222,9 @@ void main(void)
     SYSTEM_Initialize();
 
     uint8_t rxData;
-# 142 "main.c"
+# 143 "main.c"
     (INTCONbits.GIEH = 1);
-# 174 "main.c"
+# 175 "main.c"
     int contador_caracteres = 4;
 
     CCP1CONbits.CCP1M = 0000;
@@ -10260,6 +10261,7 @@ void main(void)
 
     update_temp_alarme = 0;
 
+    temp_alarme_mudou = 0;
 
     while (1)
     {
@@ -10383,7 +10385,10 @@ void main(void)
         }
 
 
-        if (mudar_temp_alarme == 0 && temp_mudou == 1){
+        if ((mudar_temp_alarme == 0 && temp_mudou == 1) || (mudar_temp_alarme == 0 && temp_alarme_mudou == 1)){
+
+            temp_alarme_mudou = 0;
+
 
             sprintf(temp_ambiente_LCD, "Temp. atual = %.0d C            ", temp_ambiente);
             WriteCmdXLCD(128);
@@ -10435,6 +10440,7 @@ void main(void)
         }
 
 
+
         if ((mudar_temp_alarme == 1 && tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
 
                 strncat(temp_alarme_string, &tecla_premida, 1);
@@ -10467,6 +10473,8 @@ void main(void)
                     temp_alarme = temp_alarme_provisoria;
 
                     mudar_temp_alarme = 0;
+
+                    temp_alarme_mudou = 1;
 
                     menu_entrada = 1;
 
@@ -10508,7 +10516,7 @@ void main(void)
             }
             tecla_n = 0;
         }
-# 502 "main.c"
+# 510 "main.c"
         LATBbits.LATB3 = 0;
         LATBbits.LATB4 = 1;
         LATBbits.LATB5 = 1;
