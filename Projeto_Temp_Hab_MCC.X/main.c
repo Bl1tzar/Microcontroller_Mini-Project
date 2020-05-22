@@ -33,7 +33,7 @@
 unsigned char tecla_premida; // Guarda a tecla que foi premida
 int tecla_n; //Indica se alguma tecla foi premida
 int tecla_limpar; // Indica que é para limpar o LCD
-int mudar_temp_alarme;
+
 
 /*
          LCD
@@ -44,6 +44,11 @@ char temp_alarme_LCD [40];
 char temp_ambiente_LCD [40];
 int digitos_introduzidos; //Conta os caracteres introduzidos no teclado
 int menu_estado_LCD; //Troca entre menus
+
+                //Se menu_estado_LCD = 1, aparecera no LCD o menu para mudar a temperatura.
+                 //Se menu_estado_LCD = 0, aparecera no LCD o menu principal.
+
+
 /*
          PIN
  */
@@ -60,7 +65,8 @@ int temp_alarme;
 int temp_mudou;
 int temp_alarme_mudou;
 int update_temp_alarme; //quando a temperatura de alarme e atualizada no LCD, atualizar tambem no terminal
-
+int EUSART_mudar_temp_alarme; //Para nao ser possivel mudar a temperatura ao mesmo tempo no terminal e no LCD
+int LCD_mudar_temp_alarme; //Para nao ser possivel mudar a temperatura ao mesmo tempo no terminal e no LCD
 /*
          ADC
  */
@@ -196,19 +202,23 @@ void main(void)
     
     menu_estado = 1; //Por default o menu que aparece no terminal e o principal 
     
-    menu_estado_LCD = 1; //Por default o menu que aparece no LCD e o principal 
-    
     menu_entrada = 0; //Por default tem autorizacao para entrar nos menus 
     
     enter = 1; //Por default o enter está = 1 porque o alarme só tem premissão quando ele está ativado  
     
-    mudar_temp_alarme = 0; //Por default no LCD não pede para mudar a temperatura de alarme
+    menu_estado_LCD = 0; //Por default no LCD não pede para mudar a temperatura de alarme
     
     digitos_introduzidos = 0; //Por default, estao nao ha digitos introduzidos
     
     update_temp_alarme = 0; //Por default, o alarme nao foi atualizado
     
     temp_alarme_mudou = 0; //Por default, a temperatura de alarme nao mudou
+    
+    EUSART_mudar_temp_alarme = 0; //Desativa a variavel de que se esta a mudar a temp. de alarme
+    
+    LCD_mudar_temp_alarme = 0;
+    
+    //mudar_temp_alarme = 1;
     
     while (1)
     {   
@@ -230,6 +240,9 @@ void main(void)
                 /*Terminal*/
 
         if ((menu_estado == 1 && menu_entrada == 1 && update_temp_alarme == 1) || (menu_estado == 1 && temp_mudou == 1)){ //Menu principal 
+            
+            
+            
             printf("%c" , 12); //Limpa o terminal
             printf("\r\n---------------Menu principal---------------");
             printf("\r\n\nTemperatura atual = %dºC", temp_ambiente);
@@ -243,34 +256,35 @@ void main(void)
             printf("\r\n\nTemperatura de alarme: %dºC", temp_alarme);
             
             printf ("\r\nAlterar temperatura de alarme? [Y]: ");
-
+            
             menu_entrada = 0;
             
             update_temp_alarme = 0;
         }
         
-        if (menu_estado == 0 && menu_entrada == 1){ //Sub-menu
+        if (menu_estado == 0 && menu_entrada == 1 && EUSART_mudar_temp_alarme == 1 && LCD_mudar_temp_alarme == 0){ //Sub-menu
             printf("\r\n-----------------Sub-menu-------------------");
             printf("\r\n\nTemperatura de alarme: %dºC", temp_alarme);
             printf("\r\nIntroduza a nova temperatura de alarme: ");
-
             menu_entrada = 0;
         }
         
         /*Recebe caracter através do modulo EUSART1*/
-        if (EUSART1_is_rx_ready()){
+        if (EUSART1_is_rx_ready()){ //Apenas le alguma coisa do eusart quando e possivel mudar de temperatura
             
             enter = 0; 
             
             rxData = EUSART1_Read(); //Atribui o que foi escrito no terminal e que está guardado no EUSART a variavel rxData
             
-            if (rxData == 13 && menu_estado == 0){ //Se carregar enter passa para o Menu principal e apenas deixa aceitar o enter no menu secundario
+            if (rxData == 13 && EUSART_mudar_temp_alarme == 1){ //Se carregar enter passa para o Menu principal e apenas deixa aceitar o enter no menu secundario
                 
                 printf("%c", 12); //Limpa o terminal
                 
                 if (temp_alarme_provisoria >=10 && temp_alarme_provisoria <=50){
                     
                     temp_alarme = temp_alarme_provisoria;
+                    
+                    EUSART_mudar_temp_alarme = 0;
                     
                     if (menu_estado == 0){ //Vai do menu secundário para o principal 
                         menu_estado = 1;
@@ -292,7 +306,9 @@ void main(void)
                     memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
                 }
             }
-            if (rxData == 'Y' || rxData == 'y'){
+            if ((rxData == 'Y' || rxData == 'y') && (LCD_mudar_temp_alarme == 0)){
+                
+                EUSART_mudar_temp_alarme = 1;
                 
                 if (menu_estado == 1){ //Vai do menu principal para o secundário
                     printf("%c", 12); //Limpa o terminal
@@ -302,7 +318,7 @@ void main(void)
                 limpar_terminal = 1; //Quando se muda de menu, dá scroll na pagina do terminal
             }
             
-            if ((rxData == '0' || rxData == '1' || rxData == '2' || rxData == '3' || rxData == '4' || rxData == '5' || rxData == '6' || rxData == '7' || rxData == '8' || rxData == '9') && menu_estado == 0){
+            if ((EUSART_mudar_temp_alarme == 1) && (rxData == '0' || rxData == '1' || rxData == '2' || rxData == '3' || rxData == '4' || rxData == '5' || rxData == '6' || rxData == '7' || rxData == '8' || rxData == '9') && menu_estado == 0){
                 
                 temp_alarme_intro = rxData;
                  EUSART1_Write(rxData); //Devolve para o terminal o que foi introduzido pelo utilizador para ele ver o que esta a escrever
@@ -318,23 +334,34 @@ void main(void)
         //MENUS
         //Carregar na tecla '*' para mudar a temperatura de alarme e trocar entre menus
         
-        if (tecla_n == 1 && tecla_premida == '*' && mudar_temp_alarme == 0){
-            mudar_temp_alarme = 1;
+        
+        
+        if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0){
+            menu_estado_LCD = 1;
             WriteCmdXLCD(LCD_clear);        
             while (BusyXLCD());
             tecla_n =0;
+            LCD_mudar_temp_alarme = 1;
         }
-        else if (tecla_n == 1 && tecla_premida == '*' && mudar_temp_alarme == 1){
-            mudar_temp_alarme = 0;
+        else if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 1){
+           
+            digitos_introduzidos = 0;
+            menu_estado_LCD = 0;
+            temp_alarme_mudou = 1;
             WriteCmdXLCD(LCD_clear);        
             while (BusyXLCD());
             tecla_n =0;
+            
         }
         
         
-        if ((mudar_temp_alarme == 0 && temp_mudou == 1) || (mudar_temp_alarme == 0 && temp_alarme_mudou == 1)){
+        if ((menu_estado_LCD == 0 && temp_mudou == 1) || (menu_estado_LCD == 0 && temp_alarme_mudou == 1)){
+            
+            memset(temp_alarme_string, '\0', sizeof temp_alarme_string); //Limpar a string temp_alarme_string para não 
+                                                                                 //haver sobreposicão de caracteres quando se quer introduzir mais do que 1 vez
             
             temp_alarme_mudou = 0;
+            
             
             //Escrever no LCD a temperatura atual
             sprintf(temp_ambiente_LCD, "Temp. atual = %.0d C            ", temp_ambiente);
@@ -360,8 +387,9 @@ void main(void)
             putsXLCD(temp_alarme_LCD);
             while (BusyXLCD());
         }        
-        if (mudar_temp_alarme == 1){
-
+        if (menu_estado_LCD == 1){
+            
+            
             //Escrever no LCD a temperatura de alarme
             sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C            ", temp_alarme);
             WriteCmdXLCD(LCD_linha_1);
@@ -388,7 +416,7 @@ void main(void)
         
         //CONDICOES
         
-        if ((mudar_temp_alarme == 1 && tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){ //Mudar temperatura de alarme no LCD
+        if ((menu_estado_LCD == 1 && tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){ //Mudar temperatura de alarme no LCD
                 //Adicionar o caracter introduzido no teclado por tecla_premida à string temp_alarme_string com a funcao strncat
                 strncat(temp_alarme_string, &tecla_premida, 1);
                 WriteCmdXLCD(203);
@@ -419,7 +447,7 @@ void main(void)
                     
                     temp_alarme = temp_alarme_provisoria;
                     
-                    mudar_temp_alarme = 0;
+                    menu_estado_LCD = 0;
                     
                     temp_alarme_mudou = 1;
                     

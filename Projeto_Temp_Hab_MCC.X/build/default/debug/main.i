@@ -10124,7 +10124,7 @@ void teclado_coluna_3 (void);
 unsigned char tecla_premida;
 int tecla_n;
 int tecla_limpar;
-int mudar_temp_alarme;
+
 
 
 
@@ -10135,9 +10135,7 @@ char temp_alarme_LCD [40];
 char temp_ambiente_LCD [40];
 int digitos_introduzidos;
 int menu_estado_LCD;
-
-
-
+# 55 "main.c"
 char pin [4];
 int pin_intr;
 int pin_real = 0000;
@@ -10151,7 +10149,8 @@ int temp_alarme;
 int temp_mudou;
 int temp_alarme_mudou;
 int update_temp_alarme;
-
+int EUSART_mudar_temp_alarme;
+int LCD_mudar_temp_alarme;
 
 
 
@@ -10222,9 +10221,9 @@ void main(void)
     SYSTEM_Initialize();
 
     uint8_t rxData;
-# 143 "main.c"
+# 149 "main.c"
     (INTCONbits.GIEH = 1);
-# 175 "main.c"
+# 181 "main.c"
     int contador_caracteres = 4;
 
     CCP1CONbits.CCP1M = 0000;
@@ -10249,19 +10248,23 @@ void main(void)
 
     menu_estado = 1;
 
-    menu_estado_LCD = 1;
-
     menu_entrada = 0;
 
     enter = 1;
 
-    mudar_temp_alarme = 0;
+    menu_estado_LCD = 0;
 
     digitos_introduzidos = 0;
 
     update_temp_alarme = 0;
 
     temp_alarme_mudou = 0;
+
+    EUSART_mudar_temp_alarme = 0;
+
+    LCD_mudar_temp_alarme = 0;
+
+
 
     while (1)
     {
@@ -10283,6 +10286,9 @@ void main(void)
 
 
         if ((menu_estado == 1 && menu_entrada == 1 && update_temp_alarme == 1) || (menu_estado == 1 && temp_mudou == 1)){
+
+
+
             printf("%c" , 12);
             printf("\r\n---------------Menu principal---------------");
             printf("\r\n\nTemperatura atual = %dºC", temp_ambiente);
@@ -10302,11 +10308,10 @@ void main(void)
             update_temp_alarme = 0;
         }
 
-        if (menu_estado == 0 && menu_entrada == 1){
+        if (menu_estado == 0 && menu_entrada == 1 && EUSART_mudar_temp_alarme == 1 && LCD_mudar_temp_alarme == 0){
             printf("\r\n-----------------Sub-menu-------------------");
             printf("\r\n\nTemperatura de alarme: %dºC", temp_alarme);
             printf("\r\nIntroduza a nova temperatura de alarme: ");
-
             menu_entrada = 0;
         }
 
@@ -10317,13 +10322,15 @@ void main(void)
 
             rxData = EUSART1_Read();
 
-            if (rxData == 13 && menu_estado == 0){
+            if (rxData == 13 && EUSART_mudar_temp_alarme == 1){
 
                 printf("%c", 12);
 
                 if (temp_alarme_provisoria >=10 && temp_alarme_provisoria <=50){
 
                     temp_alarme = temp_alarme_provisoria;
+
+                    EUSART_mudar_temp_alarme = 0;
 
                     if (menu_estado == 0){
                         menu_estado = 1;
@@ -10345,7 +10352,9 @@ void main(void)
                     memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
                 }
             }
-            if (rxData == 'Y' || rxData == 'y'){
+            if ((rxData == 'Y' || rxData == 'y') && (LCD_mudar_temp_alarme == 0)){
+
+                EUSART_mudar_temp_alarme = 1;
 
                 if (menu_estado == 1){
                     printf("%c", 12);
@@ -10355,7 +10364,7 @@ void main(void)
                 limpar_terminal = 1;
             }
 
-            if ((rxData == '0' || rxData == '1' || rxData == '2' || rxData == '3' || rxData == '4' || rxData == '5' || rxData == '6' || rxData == '7' || rxData == '8' || rxData == '9') && menu_estado == 0){
+            if ((EUSART_mudar_temp_alarme == 1) && (rxData == '0' || rxData == '1' || rxData == '2' || rxData == '3' || rxData == '4' || rxData == '5' || rxData == '6' || rxData == '7' || rxData == '8' || rxData == '9') && menu_estado == 0){
 
                 temp_alarme_intro = rxData;
                  EUSART1_Write(rxData);
@@ -10371,23 +10380,34 @@ void main(void)
 
 
 
-        if (tecla_n == 1 && tecla_premida == '*' && mudar_temp_alarme == 0){
-            mudar_temp_alarme = 1;
+
+
+        if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0){
+            menu_estado_LCD = 1;
             WriteCmdXLCD(0b00000001);
             while (BusyXLCD());
             tecla_n =0;
+            LCD_mudar_temp_alarme = 1;
         }
-        else if (tecla_n == 1 && tecla_premida == '*' && mudar_temp_alarme == 1){
-            mudar_temp_alarme = 0;
+        else if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 1){
+
+            digitos_introduzidos = 0;
+            menu_estado_LCD = 0;
+            temp_alarme_mudou = 1;
             WriteCmdXLCD(0b00000001);
             while (BusyXLCD());
             tecla_n =0;
+
         }
 
 
-        if ((mudar_temp_alarme == 0 && temp_mudou == 1) || (mudar_temp_alarme == 0 && temp_alarme_mudou == 1)){
+        if ((menu_estado_LCD == 0 && temp_mudou == 1) || (menu_estado_LCD == 0 && temp_alarme_mudou == 1)){
+
+            memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
+
 
             temp_alarme_mudou = 0;
+
 
 
             sprintf(temp_ambiente_LCD, "Temp. atual = %.0d C            ", temp_ambiente);
@@ -10413,7 +10433,8 @@ void main(void)
             putsXLCD(temp_alarme_LCD);
             while (BusyXLCD());
         }
-        if (mudar_temp_alarme == 1){
+        if (menu_estado_LCD == 1){
+
 
 
             sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C            ", temp_alarme);
@@ -10441,7 +10462,7 @@ void main(void)
 
 
 
-        if ((mudar_temp_alarme == 1 && tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
+        if ((menu_estado_LCD == 1 && tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
 
                 strncat(temp_alarme_string, &tecla_premida, 1);
                 WriteCmdXLCD(203);
@@ -10472,7 +10493,7 @@ void main(void)
 
                     temp_alarme = temp_alarme_provisoria;
 
-                    mudar_temp_alarme = 0;
+                    menu_estado_LCD = 0;
 
                     temp_alarme_mudou = 1;
 
@@ -10516,7 +10537,7 @@ void main(void)
             }
             tecla_n = 0;
         }
-# 510 "main.c"
+# 538 "main.c"
         LATBbits.LATB3 = 0;
         LATBbits.LATB4 = 1;
         LATBbits.LATB5 = 1;
