@@ -105,6 +105,16 @@ void Timer_0 (void) { //LED + ADC
     ADC_StartConversion();
 }
 
+void enable_pin(void){
+
+    if (introduzir_pin == 0 && menu_pin == 0 ){
+    
+        introduzir_pin = 1;
+    
+    }
+
+}
+
 void ADC_temperatura (void){
     
     codigo_digital = ADC_GetConversionResult(); //Obter codigo digital do conversor ADC
@@ -196,10 +206,14 @@ void main(void)
     INT1_SetInterruptHandler (teclado_coluna_2);
     INT2_SetInterruptHandler (teclado_coluna_3);
     
+    TMR1_SetInterruptHandler (enable_pin); //De 1 em 1 minuto, da enable para introduzir pin cada vez que se quer introduzir nova temp alarme
     //Interrupcão do ADC - Quando ocorre, executa a funcao ADC_temperatura
     ADC_SetInterruptHandler(ADC_temperatura);
     
-
+    
+    T1CONbits.TMR1ON = 0;
+    
+    
     
     temp_alarme = 25; //Por default a temperatura de alarme esta a 20 C 
     
@@ -221,7 +235,7 @@ void main(void)
     
     EUSART_mudar_temp_alarme = 0; //Desativa a variavel de que se esta a mudar a temp. de alarme
     
-    LCD_mudar_temp_alarme = 0;
+    LCD_mudar_temp_alarme = 0; //Disable do Timer 1
     
     introduzir_pin = 1; //Por default, tera que introduzir o PIN
     
@@ -231,7 +245,14 @@ void main(void)
     
     while (1)
     {   
-
+        
+        if (introduzir_pin == 0){ //Cada vez que e introduzido o pin, ele ira contar 1 minuto para depois ter que se introduzir outra vez
+        
+            T1CONbits.TMR1ON = 1; //Enable do Timer 1
+        
+        }
+        
+        
         if ((temp_ambiente >= temp_alarme && enter == 1) || (update_temp_alarme == 1 && temp_ambiente >= temp_alarme)){
         
             CCP1CONbits.CCP1M = 1100; //ativa o PWM - liga o sounder 
@@ -286,6 +307,8 @@ void main(void)
             rxData = EUSART1_Read(); //Atribui o que foi escrito no terminal e que está guardado no EUSART a variavel rxData
             
             if (rxData == 13 && EUSART_mudar_temp_alarme == 1){ //Se carregar enter passa para o Menu principal e apenas deixa aceitar o enter no menu secundario
+                
+                tecla_n = 0; //Isto porque enquanto eu estou a mudar a temperatura de alarme e carregar no * do keypad, ela fica guardada e depois quando carrego enter abre o menu do LCD
                 
                 printf("%c", 12); //Limpa o terminal
                 
@@ -670,6 +693,7 @@ void main(void)
         LATBbits.LATB6 = 0;
         /**/
         __delay_ms (40);
+        
         
     }
 }

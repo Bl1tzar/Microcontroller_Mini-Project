@@ -229,19 +229,15 @@
 #define tec_D_SetPullup()          do { WPUBbits.WPUB6 = 1; } while(0)
 #define tec_D_ResetPullup()        do { WPUBbits.WPUB6 = 0; } while(0)
 
-// get/set buz aliases
-#define buz_TRIS                 TRISCbits.TRISC2
-#define buz_LAT                  LATCbits.LATC2
-#define buz_PORT                 PORTCbits.RC2
-#define buz_ANS                  ANSELCbits.ANSC2
-#define buz_SetHigh()            do { LATCbits.LATC2 = 1; } while(0)
-#define buz_SetLow()             do { LATCbits.LATC2 = 0; } while(0)
-#define buz_Toggle()             do { LATCbits.LATC2 = ~LATCbits.LATC2; } while(0)
-#define buz_GetValue()           PORTCbits.RC2
-#define buz_SetDigitalInput()    do { TRISCbits.TRISC2 = 1; } while(0)
-#define buz_SetDigitalOutput()   do { TRISCbits.TRISC2 = 0; } while(0)
-#define buz_SetAnalogMode()      do { ANSELCbits.ANSC2 = 1; } while(0)
-#define buz_SetDigitalMode()     do { ANSELCbits.ANSC2 = 0; } while(0)
+// get/set RC2 procedures
+#define RC2_SetHigh()            do { LATCbits.LATC2 = 1; } while(0)
+#define RC2_SetLow()             do { LATCbits.LATC2 = 0; } while(0)
+#define RC2_Toggle()             do { LATCbits.LATC2 = ~LATCbits.LATC2; } while(0)
+#define RC2_GetValue()              PORTCbits.RC2
+#define RC2_SetDigitalInput()    do { TRISCbits.TRISC2 = 1; } while(0)
+#define RC2_SetDigitalOutput()   do { TRISCbits.TRISC2 = 0; } while(0)
+#define RC2_SetAnalogMode()         do { ANSELCbits.ANSC2 = 1; } while(0)
+#define RC2_SetDigitalMode()        do { ANSELCbits.ANSC2 = 0; } while(0)
 
 // get/set Tx aliases
 #define Tx_TRIS                 TRISCbits.TRISC6

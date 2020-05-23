@@ -9528,9 +9528,9 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 396 "./mcc_generated_files/pin_manager.h"
+# 392 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 408 "./mcc_generated_files/pin_manager.h"
+# 404 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -9660,12 +9660,81 @@ extern void cputs(const char *);
 void INTERRUPT_Initialize (void);
 # 55 "./mcc_generated_files/mcc.h" 2
 
+# 1 "./mcc_generated_files/tmr1.h" 1
+# 95 "./mcc_generated_files/tmr1.h"
+void TMR1_Initialize(void);
+# 126 "./mcc_generated_files/tmr1.h"
+void TMR1_StartTimer(void);
+# 156 "./mcc_generated_files/tmr1.h"
+void TMR1_StopTimer(void);
+# 190 "./mcc_generated_files/tmr1.h"
+uint16_t TMR1_ReadTimer(void);
+# 216 "./mcc_generated_files/tmr1.h"
+void TMR1_WriteTimer(uint16_t timerVal);
+# 248 "./mcc_generated_files/tmr1.h"
+void TMR1_Reload(void);
+# 289 "./mcc_generated_files/tmr1.h"
+void TMR1_StartSinglePulseAcquisition(void);
+# 330 "./mcc_generated_files/tmr1.h"
+uint8_t TMR1_CheckGateValueStatus(void);
+# 346 "./mcc_generated_files/tmr1.h"
+void TMR1_ISR(void);
+# 365 "./mcc_generated_files/tmr1.h"
+void TMR1_CallBack(void);
+# 383 "./mcc_generated_files/tmr1.h"
+ void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 401 "./mcc_generated_files/tmr1.h"
+extern void (*TMR1_InterruptHandler)(void);
+# 419 "./mcc_generated_files/tmr1.h"
+void TMR1_DefaultInterruptHandler(void);
+# 56 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr2.h" 1
+# 103 "./mcc_generated_files/tmr2.h"
+void TMR2_Initialize(void);
+# 132 "./mcc_generated_files/tmr2.h"
+void TMR2_StartTimer(void);
+# 164 "./mcc_generated_files/tmr2.h"
+void TMR2_StopTimer(void);
+# 199 "./mcc_generated_files/tmr2.h"
+uint8_t TMR2_ReadTimer(void);
+# 238 "./mcc_generated_files/tmr2.h"
+void TMR2_WriteTimer(uint8_t timerVal);
+# 290 "./mcc_generated_files/tmr2.h"
+void TMR2_LoadPeriodRegister(uint8_t periodVal);
+# 325 "./mcc_generated_files/tmr2.h"
+_Bool TMR2_HasOverflowOccured(void);
+# 57 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr0.h" 1
+# 100 "./mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "./mcc_generated_files/tmr0.h"
+void TMR0_StartTimer(void);
+# 161 "./mcc_generated_files/tmr0.h"
+void TMR0_StopTimer(void);
+# 197 "./mcc_generated_files/tmr0.h"
+uint16_t TMR0_ReadTimer(void);
+# 236 "./mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint16_t timerVal);
+# 272 "./mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 290 "./mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 309 "./mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 327 "./mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 345 "./mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
+# 58 "./mcc_generated_files/mcc.h" 2
+
 # 1 "./mcc_generated_files/epwm1.h" 1
 # 96 "./mcc_generated_files/epwm1.h"
 void EPWM1_Initialize(void);
 # 122 "./mcc_generated_files/epwm1.h"
 void EPWM1_LoadDutyValue(uint16_t dutyValue);
-# 56 "./mcc_generated_files/mcc.h" 2
+# 59 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/ext_int.h" 1
 # 562 "./mcc_generated_files/ext_int.h"
@@ -9700,47 +9769,7 @@ void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT2_InterruptHandler)(void);
 # 905 "./mcc_generated_files/ext_int.h"
 void INT2_DefaultInterruptHandler(void);
-# 57 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/tmr2.h" 1
-# 103 "./mcc_generated_files/tmr2.h"
-void TMR2_Initialize(void);
-# 132 "./mcc_generated_files/tmr2.h"
-void TMR2_StartTimer(void);
-# 164 "./mcc_generated_files/tmr2.h"
-void TMR2_StopTimer(void);
-# 199 "./mcc_generated_files/tmr2.h"
-uint8_t TMR2_ReadTimer(void);
-# 238 "./mcc_generated_files/tmr2.h"
-void TMR2_WriteTimer(uint8_t timerVal);
-# 290 "./mcc_generated_files/tmr2.h"
-void TMR2_LoadPeriodRegister(uint8_t periodVal);
-# 325 "./mcc_generated_files/tmr2.h"
-_Bool TMR2_HasOverflowOccured(void);
-# 58 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/tmr0.h" 1
-# 100 "./mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 129 "./mcc_generated_files/tmr0.h"
-void TMR0_StartTimer(void);
-# 161 "./mcc_generated_files/tmr0.h"
-void TMR0_StopTimer(void);
-# 197 "./mcc_generated_files/tmr0.h"
-uint16_t TMR0_ReadTimer(void);
-# 236 "./mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint16_t timerVal);
-# 272 "./mcc_generated_files/tmr0.h"
-void TMR0_Reload(void);
-# 290 "./mcc_generated_files/tmr0.h"
-void TMR0_ISR(void);
-# 309 "./mcc_generated_files/tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 327 "./mcc_generated_files/tmr0.h"
-extern void (*TMR0_InterruptHandler)(void);
-# 345 "./mcc_generated_files/tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
-# 59 "./mcc_generated_files/mcc.h" 2
+# 60 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/adc.h" 1
 # 58 "./mcc_generated_files/adc.h"
@@ -9786,7 +9815,7 @@ void ADC_ISR(void);
 extern void (*ADC_InterruptHandler)(void);
 # 388 "./mcc_generated_files/adc.h"
 void ADC_DefaultInterruptHandler(void);
-# 60 "./mcc_generated_files/mcc.h" 2
+# 61 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/eusart1.h" 1
 # 57 "./mcc_generated_files/eusart1.h"
@@ -9976,10 +10005,10 @@ void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 # 466 "./mcc_generated_files/eusart1.h"
 void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 61 "./mcc_generated_files/mcc.h" 2
-# 76 "./mcc_generated_files/mcc.h"
+# 62 "./mcc_generated_files/mcc.h" 2
+# 77 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 89 "./mcc_generated_files/mcc.h"
+# 90 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 1 "main.c" 2
 
@@ -10133,14 +10162,15 @@ int tecla_limpar;
 int contador_colunas_LCD = 192;
 char temp_alarme_LCD [40];
 char temp_ambiente_LCD [40];
-int digitos_introduzidos;
+int digitos_introduzidos_alarme;
 int menu_estado_LCD;
-
-
-
-char pin [4];
-int pin_intr;
+# 55 "main.c"
+int menu_pin;
+int introduzir_pin;
+int pin_introduzido;
+char pin_intr_string [5];
 int pin_real = 0000;
+int digitos_introduzidos_pin;
 
 
 
@@ -10151,7 +10181,8 @@ int temp_alarme;
 int temp_mudou;
 int temp_alarme_mudou;
 int update_temp_alarme;
-
+int EUSART_mudar_temp_alarme;
+int LCD_mudar_temp_alarme;
 
 
 
@@ -10185,6 +10216,16 @@ void Timer_0 (void) {
         do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0);
     }
     ADC_StartConversion();
+}
+
+void enable_pin(void){
+
+    if (introduzir_pin == 0 && menu_pin == 0 ){
+
+        introduzir_pin = 1;
+
+    }
+
 }
 
 void ADC_temperatura (void){
@@ -10222,9 +10263,9 @@ void main(void)
     SYSTEM_Initialize();
 
     uint8_t rxData;
-# 143 "main.c"
+# 162 "main.c"
     (INTCONbits.GIEH = 1);
-# 175 "main.c"
+# 194 "main.c"
     int contador_caracteres = 4;
 
     CCP1CONbits.CCP1M = 0000;
@@ -10240,6 +10281,7 @@ void main(void)
     INT1_SetInterruptHandler (teclado_coluna_2);
     INT2_SetInterruptHandler (teclado_coluna_3);
 
+    TMR1_SetInterruptHandler (enable_pin);
 
     ADC_SetInterruptHandler(ADC_temperatura);
 
@@ -10249,19 +10291,29 @@ void main(void)
 
     menu_estado = 1;
 
-    menu_estado_LCD = 1;
-
     menu_entrada = 0;
 
     enter = 1;
 
     menu_estado_LCD = 0;
 
-    digitos_introduzidos = 0;
+    digitos_introduzidos_alarme = 0;
+
+    digitos_introduzidos_pin = 0;
 
     update_temp_alarme = 0;
 
     temp_alarme_mudou = 0;
+
+    EUSART_mudar_temp_alarme = 0;
+
+    LCD_mudar_temp_alarme = 0;
+
+    introduzir_pin = 1;
+
+    menu_pin = 0;
+
+
 
     while (1)
     {
@@ -10283,6 +10335,9 @@ void main(void)
 
 
         if ((menu_estado == 1 && menu_entrada == 1 && update_temp_alarme == 1) || (menu_estado == 1 && temp_mudou == 1)){
+
+
+
             printf("%c" , 12);
             printf("\r\n---------------Menu principal---------------");
             printf("\r\n\nTemperatura atual = %dºC", temp_ambiente);
@@ -10302,11 +10357,10 @@ void main(void)
             update_temp_alarme = 0;
         }
 
-        if (menu_estado == 0 && menu_entrada == 1){
+        if (menu_estado == 0 && menu_entrada == 1 && EUSART_mudar_temp_alarme == 1 && LCD_mudar_temp_alarme == 0){
             printf("\r\n-----------------Sub-menu-------------------");
             printf("\r\n\nTemperatura de alarme: %dºC", temp_alarme);
             printf("\r\nIntroduza a nova temperatura de alarme: ");
-
             menu_entrada = 0;
         }
 
@@ -10317,13 +10371,15 @@ void main(void)
 
             rxData = EUSART1_Read();
 
-            if (rxData == 13 && menu_estado == 0){
+            if (rxData == 13 && EUSART_mudar_temp_alarme == 1){
 
                 printf("%c", 12);
 
                 if (temp_alarme_provisoria >=10 && temp_alarme_provisoria <=50){
 
                     temp_alarme = temp_alarme_provisoria;
+
+                    EUSART_mudar_temp_alarme = 0;
 
                     if (menu_estado == 0){
                         menu_estado = 1;
@@ -10335,6 +10391,8 @@ void main(void)
 
                     update_temp_alarme = 1;
 
+                    temp_alarme_mudou = 1;
+
                     memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
 
                 }
@@ -10345,7 +10403,9 @@ void main(void)
                     memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
                 }
             }
-            if (rxData == 'Y' || rxData == 'y'){
+            if ((rxData == 'Y' || rxData == 'y') && (LCD_mudar_temp_alarme == 0)){
+
+                EUSART_mudar_temp_alarme = 1;
 
                 if (menu_estado == 1){
                     printf("%c", 12);
@@ -10355,7 +10415,7 @@ void main(void)
                 limpar_terminal = 1;
             }
 
-            if ((rxData == '0' || rxData == '1' || rxData == '2' || rxData == '3' || rxData == '4' || rxData == '5' || rxData == '6' || rxData == '7' || rxData == '8' || rxData == '9') && menu_estado == 0){
+            if ((EUSART_mudar_temp_alarme == 1) && (menu_estado == 0) && (rxData == '0' || rxData == '1' || rxData == '2' || rxData == '3' || rxData == '4' || rxData == '5' || rxData == '6' || rxData == '7' || rxData == '8' || rxData == '9')){
 
                 temp_alarme_intro = rxData;
                  EUSART1_Write(rxData);
@@ -10371,16 +10431,18 @@ void main(void)
 
 
 
-        if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0){
+        if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && introduzir_pin == 0){
             menu_estado_LCD = 1;
             WriteCmdXLCD(0b00000001);
             while (BusyXLCD());
             tecla_n =0;
+            LCD_mudar_temp_alarme = 1;
         }
-        else if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 1){
 
-            strncat(temp_alarme_string, 00 , 1);
 
+        if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 1){
+
+            digitos_introduzidos_alarme = 0;
             menu_estado_LCD = 0;
             temp_alarme_mudou = 1;
             WriteCmdXLCD(0b00000001);
@@ -10390,12 +10452,14 @@ void main(void)
         }
 
 
-        if ((menu_estado_LCD == 0 && temp_mudou == 1) || (menu_estado_LCD == 0 && temp_alarme_mudou == 1)){
+        if (((menu_estado_LCD == 0 && temp_mudou == 1) || (menu_estado_LCD == 0 && temp_alarme_mudou == 1)) && menu_pin == 0){
 
             memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
 
 
             temp_alarme_mudou = 0;
+
+            LCD_mudar_temp_alarme = 0;
 
 
             sprintf(temp_ambiente_LCD, "Temp. atual = %.0d C            ", temp_ambiente);
@@ -10421,7 +10485,9 @@ void main(void)
             putsXLCD(temp_alarme_LCD);
             while (BusyXLCD());
         }
-        if (menu_estado_LCD == 1){
+
+        if (menu_estado_LCD == 1 && menu_pin == 0){
+
 
 
             sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C            ", temp_alarme);
@@ -10448,89 +10514,224 @@ void main(void)
         }
 
 
+        if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && introduzir_pin == 1 && menu_pin == 0){
 
-        if ((menu_estado_LCD == 1 && tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
-
-                strncat(temp_alarme_string, &tecla_premida, 1);
-                WriteCmdXLCD(203);
-                while (BusyXLCD());
-
-
-
-
-
-                putsXLCD(temp_alarme_string);
-                while (BusyXLCD());
-
-                digitos_introduzidos++;
+            LCD_mudar_temp_alarme = 1;
+            menu_pin = 1;
+            WriteCmdXLCD(0b00000001);
+            while (BusyXLCD());
+            tecla_n = 0;
+        }
 
 
 
-            if (digitos_introduzidos == 2){
 
-                WriteCmdXLCD(0b00000001);
-                while (BusyXLCD());
+        if (menu_pin == 1){
 
-
-                temp_alarme_provisoria = atoi (temp_alarme_string);
-
-                digitos_introduzidos = 0;
-
-                if (temp_alarme_provisoria >= 10 && temp_alarme_provisoria <= 50){
-
-                    temp_alarme = temp_alarme_provisoria;
-
-                    menu_estado_LCD = 0;
-
-                    temp_alarme_mudou = 1;
-
-                    menu_entrada = 1;
-
-                    update_temp_alarme = 1;
-                    memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
-
-                }
-                else {
-
-                    memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
+            memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
 
 
-                    WriteCmdXLCD(132);
+
+            sprintf(temp_alarme_LCD, "Introduza o PIN", temp_alarme);
+            WriteCmdXLCD(128);
+            while (BusyXLCD());
+
+
+
+
+
+            putsXLCD(temp_alarme_LCD);
+            while (BusyXLCD());
+
+            WriteCmdXLCD(192);
+            while (BusyXLCD());
+
+            putsXLCD("PIN:");
+            while (BusyXLCD());
+
+        }
+
+        if (tecla_n == 1 && tecla_premida == '*' && menu_pin == 1){
+
+            LCD_mudar_temp_alarme = 0;
+            menu_pin = 0;
+            WriteCmdXLCD(0b00000001);
+            while (BusyXLCD());
+            tecla_n = 0;
+            temp_alarme_mudou = 1;
+        }
+
+
+
+
+        if (menu_pin == 0){
+
+            if ((menu_estado_LCD == 1 && tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
+
+                    strncat(temp_alarme_string, &tecla_premida, 1);
+                    WriteCmdXLCD(203);
                     while (BusyXLCD());
 
 
 
 
 
-                    putsXLCD("TEMPERATURA");
+                    putsXLCD(temp_alarme_string);
                     while (BusyXLCD());
 
-                    WriteCmdXLCD(197);
-                    while (BusyXLCD());
+                    digitos_introduzidos_alarme++;
 
 
 
+                if (digitos_introduzidos_alarme == 2){
 
-
-                    putsXLCD("INVALIDA !");
-                    while (BusyXLCD());
-
-                    _delay((unsigned long)((2000)*(6000000/4000.0)));
+                    _delay((unsigned long)((500)*(6000000/4000.0)));
 
                     WriteCmdXLCD(0b00000001);
                     while (BusyXLCD());
-                }
 
+
+                    temp_alarme_provisoria = atoi (temp_alarme_string);
+
+                    digitos_introduzidos_alarme = 0;
+
+                    if (temp_alarme_provisoria >= 10 && temp_alarme_provisoria <= 50){
+
+                        temp_alarme = temp_alarme_provisoria;
+
+                        menu_estado_LCD = 0;
+
+                        temp_alarme_mudou = 1;
+
+                        menu_entrada = 1;
+
+                        update_temp_alarme = 1;
+                        memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
+
+                    }
+                    else {
+
+                        memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
+
+
+                        WriteCmdXLCD(132);
+                        while (BusyXLCD());
+
+
+
+
+
+                        putsXLCD("TEMPERATURA");
+                        while (BusyXLCD());
+
+                        WriteCmdXLCD(197);
+                        while (BusyXLCD());
+
+
+
+
+
+                        putsXLCD("INVALIDA !");
+                        while (BusyXLCD());
+
+                        _delay((unsigned long)((2000)*(6000000/4000.0)));
+
+                        WriteCmdXLCD(0b00000001);
+                        while (BusyXLCD());
+                    }
+
+                }
+                tecla_n = 0;
             }
-            tecla_n = 0;
         }
-# 518 "main.c"
+
+        else if (menu_pin == 1){
+
+            if (tecla_n == 1 && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
+
+
+                    strncat(pin_intr_string, &tecla_premida, 1);
+                    WriteCmdXLCD(196);
+                    while (BusyXLCD());
+
+
+
+
+
+                    putsXLCD(pin_intr_string);
+                    while (BusyXLCD());
+
+                    digitos_introduzidos_pin++;
+
+                    tecla_n = 0;
+
+                    if (digitos_introduzidos_pin == 4){
+
+                        pin_introduzido = atoi (pin_intr_string);
+
+                        if (pin_introduzido == pin_real) {
+
+                            strncat(pin_intr_string, &tecla_premida, 1);
+                            WriteCmdXLCD(201);
+                            while (BusyXLCD());
+
+
+
+
+
+                            putsXLCD("CORRETO");
+                            while (BusyXLCD());
+
+                            _delay((unsigned long)((1000)*(6000000/4000.0)));
+
+                            WriteCmdXLCD(0b00000001);
+                            while (BusyXLCD());
+
+                            memset(pin_intr_string, '\0', sizeof temp_alarme_string);
+                            digitos_introduzidos_pin = 0;
+                            menu_pin = 0;
+                            introduzir_pin = 0;
+                            menu_estado_LCD = 1;
+
+
+
+                        }
+                        else if (pin_introduzido > pin_real || pin_introduzido < pin_real){
+
+                            strncat(pin_intr_string, &tecla_premida, 1);
+                            WriteCmdXLCD(201);
+                            while (BusyXLCD());
+
+
+
+
+
+                            putsXLCD("INCORRETO");
+                            while (BusyXLCD());
+
+                            _delay((unsigned long)((1000)*(6000000/4000.0)));
+
+                            WriteCmdXLCD(0b00000001);
+                            while (BusyXLCD());
+
+                            memset(pin_intr_string, '\0', sizeof temp_alarme_string);
+                            digitos_introduzidos_pin = 0;
+                        }
+
+                    }
+            }
+        }
+
+
+
+
+
         LATBbits.LATB3 = 0;
         LATBbits.LATB4 = 1;
         LATBbits.LATB5 = 1;
         LATBbits.LATB6 = 1;
 
-        _delay((unsigned long)((40)*(6000000/4000.0)));
+        _delay((unsigned long)((50)*(6000000/4000.0)));
 
 
         LATBbits.LATB3 = 1;
@@ -10538,7 +10739,7 @@ void main(void)
         LATBbits.LATB5 = 1;
         LATBbits.LATB6 = 1;
 
-        _delay((unsigned long)((40)*(6000000/4000.0)));
+        _delay((unsigned long)((50)*(6000000/4000.0)));
 
 
         LATBbits.LATB3 = 1;
@@ -10546,7 +10747,7 @@ void main(void)
         LATBbits.LATB5 = 0;
         LATBbits.LATB6 = 1;
 
-        _delay((unsigned long)((40)*(6000000/4000.0)));
+        _delay((unsigned long)((50)*(6000000/4000.0)));
 
 
         LATBbits.LATB3 = 1;
