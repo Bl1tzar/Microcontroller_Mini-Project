@@ -63,8 +63,6 @@ void teclado_coluna_3 (void) {
             tecla_premida = '9';
         }
         else if (PORTBbits.RB6 == 0){
-            contador_colunas_LCD = 192;
-            tecla_n = 0;
-            tecla_limpar = 1;
+            tecla_premida = '#';
         }
 }

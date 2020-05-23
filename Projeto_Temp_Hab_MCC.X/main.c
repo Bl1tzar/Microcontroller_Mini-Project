@@ -58,6 +58,12 @@ int pin_introduzido; // Guarda o valor do PIN introduzido para ter acesso
 char pin_intr_string [5]; // Valor do PIN introduzido
 int pin_real = 0000; // Valor do PIN - o introduzido terá que ser igual a este
 int digitos_introduzidos_pin;
+int mudar_pin;
+int pin_mudado;
+int estado_pin_alterado; //Saber quando o pin foi alterado
+int menu_mudar_pin;
+char pin_mudado_string [5];
+
 /*
          Temperatura
  */
@@ -241,7 +247,11 @@ void main(void)
     
     menu_pin = 0; //So quando se carrega no '*' é que ativa o menu, logo por default está desativado
     
-    //mudar_temp_alarme = 1;
+    mudar_pin = 0; //Por default, nao se pretende mudar o PIN
+    
+    menu_mudar_pin = 1; //Por default para mudar de PIN, pede primeiro o atual
+    
+    estado_pin_alterado = 0; //Por default, o pin nao foi alterado
     
     while (1)
     {   
@@ -365,336 +375,465 @@ void main(void)
         }
         
         /*LCD*/
-        //MENUS
+        //MENUS e ACESSOS
         //Carregar na tecla '*' para mudar a temperatura de alarme e trocar entre menus
-      
-        if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && introduzir_pin == 0){
-            menu_estado_LCD = 1;
-            WriteCmdXLCD(LCD_clear);        
-            while (BusyXLCD());
-            tecla_n =0;
-            LCD_mudar_temp_alarme = 1;
-        }
-
-        
-        if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 1){
-           
-            digitos_introduzidos_alarme = 0;
-            menu_estado_LCD = 0;
-            temp_alarme_mudou = 1;
-            WriteCmdXLCD(LCD_clear);        
-            while (BusyXLCD());
-            tecla_n =0;
-            
-        }
         
         
-        if (((menu_estado_LCD == 0 && temp_mudou == 1) || (menu_estado_LCD == 0 && temp_alarme_mudou == 1)) && menu_pin == 0){ //Menu principal 
-            
-            memset(temp_alarme_string, '\0', sizeof temp_alarme_string); //Limpar a string temp_alarme_string para não 
-                                                                                 //haver sobreposicão de caracteres quando se quer introduzir mais do que 1 vez
-            
-            temp_alarme_mudou = 0;
-            
-            LCD_mudar_temp_alarme = 0;
-            
-            //Escrever no LCD a temperatura atual
-            sprintf(temp_ambiente_LCD, "Temp. atual = %.0d C            ", temp_ambiente);
-            WriteCmdXLCD(LCD_linha_1);
-            while (BusyXLCD()); 
-                /*
-                 * Escreve conteúdo da string 'temp_ambiente_LCD' para o LCD,
-                 * na posição anteriormente endereçada
-                 */
-                /*temp_ambiente_LCD*/
-            putsXLCD(temp_ambiente_LCD);
-            while (BusyXLCD());
-
-            //Escrever no LCD a temperatura de alarme
-            sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C            ", temp_alarme);
-            WriteCmdXLCD(LCD_linha_2);
-            while (BusyXLCD());
-                /*
-                 * Escreve conteúdo da string 'temp_ambiente_LCD' para o LCD,
-                 * na posição anteriormente endereçada
-                 */
-                /*temp_ambiente_LCD*/
-            putsXLCD(temp_alarme_LCD);
-            while (BusyXLCD());
-        }
+        if (tecla_n == 1 && tecla_premida == '#' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && mudar_pin == 0){
         
-        if (menu_estado_LCD == 1 && menu_pin == 0){
-            
-            
-            //Escrever no LCD a temperatura de alarme
-            sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C            ", temp_alarme);
-            WriteCmdXLCD(LCD_linha_1);
-            while (BusyXLCD());
-                /*
-                 * Escreve conteúdo da string 'temp_ambiente_LCD' para o LCD,
-                 * na posição anteriormente endereçada
-                 */
-                /*temp_ambiente_LCD*/
-            putsXLCD(temp_alarme_LCD);
-            while (BusyXLCD());
-            
-            WriteCmdXLCD(LCD_linha_2);
-            while (BusyXLCD());
-                /*
-                 * Escreve conteúdo da string 'temp_ambiente_LCD' para o LCD,
-                 * na posição anteriormente endereçada
-                 */
-                /*temp_ambiente_LCD*/
-            putsXLCD("Nova temp.:");
-            while (BusyXLCD());
-            
-        }
-        
-        //Pressionar no '*' e quando se esta fora do menu do PIN
-        if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && introduzir_pin == 1 && menu_pin == 0){
-            
-            LCD_mudar_temp_alarme = 1;
-            menu_pin = 1;
-            WriteCmdXLCD(LCD_clear);        
-            while (BusyXLCD());
+            mudar_pin = 1;
             tecla_n = 0;
+            WriteCmdXLCD(LCD_clear);        
+            while (BusyXLCD());
         }
         
+        //Permite quando esta a mudar o PIN
+        if (mudar_pin == 1){
+            
+            if (menu_mudar_pin == 1){ //Menu mudar pin - pin atual
+                //Escrever no LCD
+                WriteCmdXLCD(133);
+                while (BusyXLCD());
+                putsXLCD("PIN Atual");
+                while (BusyXLCD());
 
-        
-        
-        if (menu_pin == 1){
-            
-            memset(temp_alarme_string, '\0', sizeof temp_alarme_string); //Limpar a string temp_alarme_string para não 
-                                                                                     //haver sobreposicão de caracteres quando se quer introduzir mais do que 1 vez
-            
-            //Escrever no LCD a mensagem 
-            sprintf(temp_alarme_LCD, "Introduza o PIN", temp_alarme);
-            WriteCmdXLCD(LCD_linha_1);
-            while (BusyXLCD());
-                /*
-                 * Escreve conteúdo da string 'temp_ambiente_LCD' para o LCD,
-                 * na posição anteriormente endereçada
-                 */
-                /*temp_ambiente_LCD*/
-            putsXLCD(temp_alarme_LCD);
-            while (BusyXLCD());
-            
-            WriteCmdXLCD(LCD_linha_2);
-            while (BusyXLCD());
+                WriteCmdXLCD(LCD_linha_2);
+                while (BusyXLCD());
+                putsXLCD ("PIN:");
+                while (BusyXLCD());
                 
-            putsXLCD("PIN:");
-            while (BusyXLCD());
-        
-        }
-        //Pressionar no '*' e quando se esta dentro do menu do PIN
-        if (tecla_n == 1 && tecla_premida == '*' && menu_pin == 1){
-            
-            LCD_mudar_temp_alarme = 0;
-            menu_pin = 0;
-            WriteCmdXLCD(LCD_clear);        
-            while (BusyXLCD());
-            tecla_n = 0;
-            temp_alarme_mudou = 1; //Assim, consegue regressar ao menu
-        }
-        
-        
-        //CONDICOES
-        
-        if (menu_pin == 0){ 
-        
-            if ((menu_estado_LCD == 1 && tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){ //Mudar temperatura de alarme no LCD
-                    //Adicionar o caracter introduzido no teclado por tecla_premida à string temp_alarme_string com a funcao strncat
-                    strncat(temp_alarme_string, &tecla_premida, 1);
-                    WriteCmdXLCD(203);
-                    while (BusyXLCD());
-
-                    /*
-                     * Escreve conteúdo da string 'pin' para o LCD,
-                     * na posição anteriormente endereçada
-                     */
-                    putsXLCD(temp_alarme_string);
-                    while (BusyXLCD());
-
-                    digitos_introduzidos_alarme++;
-
-
-
-                if (digitos_introduzidos_alarme == 2){ //Quando se introduz dois digitos, é como se desse automaticamente "enter"
-
-                    __delay_ms (500); //Para o segundo caracter introduzido se ver
-
-                    WriteCmdXLCD(LCD_clear);        
-                    while (BusyXLCD());
-
-                    //transforma o a temp_alarme_string de string para temp_alarme int
-                    temp_alarme_provisoria = atoi (temp_alarme_string);
-
-                    digitos_introduzidos_alarme = 0;
-
-                    if (temp_alarme_provisoria >= 10 && temp_alarme_provisoria <= 50){
-
-                        temp_alarme = temp_alarme_provisoria;
-
-                        menu_estado_LCD = 0;
-
-                        temp_alarme_mudou = 1;
-
-                        menu_entrada = 1; //Autorizacao para entrar no if dos menus
-
-                        update_temp_alarme = 1;
-                        memset(temp_alarme_string, '\0', sizeof temp_alarme_string); //Limpar a string temp_alarme_string para não 
-                                                                                     //haver sobreposicão de caracteres quando se quer introduzir mais do que 1 vez
-                    }
-                    else {
-
-                        memset(temp_alarme_string, '\0', sizeof temp_alarme_string); //Limpar a string temp_alarme_string para não 
-                                                                                     //haver sobreposicão de caracteres quando se quer introduzir mais do que 1 vez
-
-                        WriteCmdXLCD(132);
-                        while (BusyXLCD());
-                            /*
-                             * Escreve conteúdo da string 'temp_ambiente_LCD' para o LCD,
-                             * na posição anteriormente endereçada
-                             */
-                            /*temp_ambiente_LCD*/
-                        putsXLCD("TEMPERATURA");
-                        while (BusyXLCD());
-
-                        WriteCmdXLCD(197);
-                        while (BusyXLCD());
-                            /*
-                             * Escreve conteúdo da string 'temp_ambiente_LCD' para o LCD,
-                             * na posição anteriormente endereçada
-                             */
-                            /*temp_ambiente_LCD*/
-                        putsXLCD("INVALIDA !");
-                        while (BusyXLCD());
-
-                        __delay_ms (2000);
-
-                        WriteCmdXLCD(LCD_clear);        
-                        while (BusyXLCD());
-                    }
-
-                }
-                tecla_n = 0;
-            }
-        }
-        
-        else if (menu_pin == 1){
-        
-            if (tecla_n == 1 && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){ //Introduzir PIN
-            
-                //Adicionar o caracter introduzido no teclado por tecla_premida à string temp_alarme_string com a funcao strncat
-                    strncat(pin_intr_string, &tecla_premida, 1);
+                if ((tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
+                    
+                    
+                    
+                    strncat(pin_mudado_string, &tecla_premida, 1);
+                    
                     WriteCmdXLCD(196);
                     while (BusyXLCD());
-
-                    /*
-                     * Escreve conteúdo da string 'pin' para o LCD,
-                     * na posição anteriormente endereçada
-                     */
-                    putsXLCD(pin_intr_string);
+                    putsXLCD(pin_mudado_string);
                     while (BusyXLCD());
-
-                    digitos_introduzidos_pin++;
                     
+                    digitos_introduzidos_pin++;
                     tecla_n = 0;
                     
                     if (digitos_introduzidos_pin == 4){
-                    
-                        pin_introduzido = atoi (pin_intr_string);
                         
-                        if (pin_introduzido == pin_real) {
-                            
-                            strncat(pin_intr_string, &tecla_premida, 1);
-                            WriteCmdXLCD(201);
-                            while (BusyXLCD());
-
-                            /*
-                             * Escreve conteúdo da string 'pin' para o LCD,
-                             * na posição anteriormente endereçada
-                             */
-                            putsXLCD("CORRETO");
-                            while (BusyXLCD());
-                            
-                            __delay_ms (1000);
+                        digitos_introduzidos_pin = 0;
+                        
+                        pin_mudado = atoi (pin_mudado_string); //Passa de string para numero inteiro 
+                        
+                        if (pin_mudado == pin_real){
+                            menu_mudar_pin = 0;
+                            memset(pin_mudado_string, '\0', sizeof pin_mudado_string); //Limpar a string
                             
                             WriteCmdXLCD(LCD_clear);        
                             while (BusyXLCD());
-                            
-                            memset(pin_intr_string, '\0', sizeof temp_alarme_string); //Limpar a string 
-                            digitos_introduzidos_pin = 0;  
-                            menu_pin = 0;
-                            introduzir_pin = 0;
-                            menu_estado_LCD = 1;
-                           
-                            
-                           
                         }
-                        else if (pin_introduzido > pin_real || pin_introduzido < pin_real){
-                        
-                            strncat(pin_intr_string, &tecla_premida, 1);
+                        else if (pin_mudado > pin_real || pin_mudado < pin_real){
                             WriteCmdXLCD(201);
                             while (BusyXLCD());
-
-                            /*
-                             * Escreve conteúdo da string 'pin' para o LCD,
-                             * na posição anteriormente endereçada
-                             */
                             putsXLCD("INCORRETO");
                             while (BusyXLCD());
-                            
                             __delay_ms (1000);
+                            
+                            memset(pin_mudado_string, '\0', sizeof pin_mudado_string); //Limpar a string
                             
                             WriteCmdXLCD(LCD_clear);        
                             while (BusyXLCD());
                             
-                            memset(pin_intr_string, '\0', sizeof temp_alarme_string); //Limpar a string 
-                            digitos_introduzidos_pin = 0;
+                            
                         }
                     
                     }
+                    
+                } 
+                
+              
             }
+            
+            if (menu_mudar_pin == 0){ //Menu mudar pin - pin novo
+                WriteCmdXLCD(131);
+                while (BusyXLCD());
+                putsXLCD("Atualizar PIN");
+                while (BusyXLCD());
+
+                WriteCmdXLCD(LCD_linha_2);
+                while (BusyXLCD());
+                putsXLCD ("PIN:");
+                while (BusyXLCD());
+                
+                
+                
+                if ((tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
+                    
+                    
+                    
+                    strncat(pin_mudado_string, &tecla_premida, 1);
+                    
+                    WriteCmdXLCD(196);
+                    while (BusyXLCD());
+                    putsXLCD(pin_mudado_string);
+                    while (BusyXLCD());
+                    
+                    digitos_introduzidos_pin++;
+                    tecla_n = 0;
+                    
+                    if (digitos_introduzidos_pin == 4){
+                        
+                        digitos_introduzidos_pin = 0;
+                        mudar_pin = 0;
+                        
+                        pin_real = atoi (pin_mudado_string); //Passa de string para numero inteiro 
+                        
+                        
+                        __delay_ms (500);
+                        
+                        WriteCmdXLCD(LCD_clear);        
+                        while (BusyXLCD());
+                        
+                         WriteCmdXLCD(130);
+                        while (BusyXLCD());
+                        putsXLCD("Atualizado com");
+                        while (BusyXLCD());
+
+                        WriteCmdXLCD(196);
+                        while (BusyXLCD());
+                        putsXLCD ("Sucesso");
+                        while (BusyXLCD());
+                        
+                        __delay_ms (500);
+                        
+                        WriteCmdXLCD(LCD_clear);        
+                        while (BusyXLCD());
+                        
+                        estado_pin_alterado = 1;
+                        
+                        //memset(pin_mudado_string, '\0', sizeof pin_mudado_string); //Limpar a string
+                    }
+                    
+                }
+            }   
         }
-//      
-        /*Loop para atribuir valores a todos os outputs para as linha do teclado*/
+    
+       
+        //Permite quando nao esta a mudar o PIN
+        if (mudar_pin == 0){
         
-        //LATB = 0b11110111;
-        /**/
-        LATBbits.LATB3 = 0;
-        LATBbits.LATB4 = 1;
-        LATBbits.LATB5 = 1;
-        LATBbits.LATB6 = 1;
-        /**/
-        __delay_ms (50); //Delay's porque se carregassemos numa tecla, ele escrevia um numero 3x seguidas
-        //LATB = 0b11101111;
-        /**/
-        LATBbits.LATB3 = 1;
-        LATBbits.LATB4 = 0;
-        LATBbits.LATB5 = 1;
-        LATBbits.LATB6 = 1;
-        /**/
-        __delay_ms (50);
-        //LATB = 0b11011111;
-        /**/
-        LATBbits.LATB3 = 1;
-        LATBbits.LATB4 = 1;
-        LATBbits.LATB5 = 0;
-        LATBbits.LATB6 = 1;
-        /**/
-        __delay_ms (50);
-        //LATB = 0b10111111;
-        /**/
-        LATBbits.LATB3 = 1;
-        LATBbits.LATB4 = 1;
-        LATBbits.LATB5 = 1;
-        LATBbits.LATB6 = 0;
-        /**/
-        __delay_ms (40);
-        
-        
+            
+            //Passar do menu principal para o submenu para mudar a temp
+            if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && introduzir_pin == 0){ 
+                menu_estado_LCD = 1;
+                WriteCmdXLCD(LCD_clear);        
+                while (BusyXLCD());
+                tecla_n =0;
+                LCD_mudar_temp_alarme = 1;
+            }
+
+            //Passar do submenu de mudar a temp para o menu principal
+            if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 1){ 
+                digitos_introduzidos_alarme = 0;  
+                menu_estado_LCD = 0; 
+                temp_alarme_mudou = 1; 
+                WriteCmdXLCD(LCD_clear);         
+                while (BusyXLCD()); 
+                tecla_n =0;  
+            }
+
+            //Menu principal 
+            if ((((menu_estado_LCD == 0 && temp_mudou == 1) || (menu_estado_LCD == 0 && temp_alarme_mudou == 1)) && menu_pin == 0) || estado_pin_alterado == 1){ 
+
+                memset(temp_alarme_string, '\0', sizeof temp_alarme_string); //Limpar a string temp_alarme_string para não 
+                                                                                     //haver sobreposicão de caracteres quando se quer introduzir mais do que 1 vez
+                
+                estado_pin_alterado = 0;
+                temp_alarme_mudou = 0;
+
+                LCD_mudar_temp_alarme = 0;
+
+                //Escrever no LCD a temperatura atual
+                sprintf(temp_ambiente_LCD, "Temp. atual = %.0d C            ", temp_ambiente);
+                WriteCmdXLCD(LCD_linha_1);
+                while (BusyXLCD()); 
+                    /*
+                     * Escreve conteúdo da string 'temp_ambiente_LCD' para o LCD,
+                     * na posição anteriormente endereçada
+                     */
+                    /*temp_ambiente_LCD*/
+                putsXLCD(temp_ambiente_LCD);
+                while (BusyXLCD());
+
+                //Escrever no LCD a temperatura de alarme
+                sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C            ", temp_alarme);
+                WriteCmdXLCD(LCD_linha_2);
+                while (BusyXLCD());
+                    /*
+                     * Escreve conteúdo da string 'temp_ambiente_LCD' para o LCD,
+                     * na posição anteriormente endereçada
+                     */
+                    /*temp_ambiente_LCD*/
+                putsXLCD(temp_alarme_LCD);
+                while (BusyXLCD());
+            }
+
+            //Submenu para mudar a temp
+            if (menu_estado_LCD == 1 && menu_pin == 0){ 
+
+
+                //Escrever no LCD a temperatura de alarme
+                sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C            ", temp_alarme);
+                WriteCmdXLCD(LCD_linha_1);
+                while (BusyXLCD());
+                    /*
+                     * Escreve conteúdo da string 'temp_ambiente_LCD' para o LCD,
+                     * na posição anteriormente endereçada
+                     */
+                    /*temp_ambiente_LCD*/
+                putsXLCD(temp_alarme_LCD);
+                while (BusyXLCD());
+
+                WriteCmdXLCD(LCD_linha_2);
+                while (BusyXLCD());
+                    /*
+                     * Escreve conteúdo da string 'temp_ambiente_LCD' para o LCD,
+                     * na posição anteriormente endereçada
+                     */
+                    /*temp_ambiente_LCD*/
+                putsXLCD("Nova temp.:");
+                while (BusyXLCD());
+
+            }
+
+            //Pressionar no '*' quando se esta no menu principal e se quer alterar a temp mas tem que se introduzir o PIN
+            if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && introduzir_pin == 1 && menu_pin == 0){
+
+                LCD_mudar_temp_alarme = 1;
+                menu_pin = 1;
+                WriteCmdXLCD(LCD_clear);        
+                while (BusyXLCD());
+                tecla_n = 0;
+            }
+
+
+
+            //Menu do PIN
+            if (menu_pin == 1){
+
+                memset(temp_alarme_string, '\0', sizeof temp_alarme_string); //Limpar a string temp_alarme_string para não 
+                                                                                         //haver sobreposicão de caracteres quando se quer introduzir mais do que 1 vez
+
+                //Escrever no LCD a mensagem 
+                sprintf(temp_alarme_LCD, "Introduza o PIN", temp_alarme);
+                WriteCmdXLCD(LCD_linha_1);
+                while (BusyXLCD());
+                    /*
+                     * Escreve conteúdo da string 'temp_ambiente_LCD' para o LCD,
+                     * na posição anteriormente endereçada
+                     */
+                    /*temp_ambiente_LCD*/
+                putsXLCD(temp_alarme_LCD);
+                while (BusyXLCD());
+
+                WriteCmdXLCD(LCD_linha_2);
+                while (BusyXLCD());
+
+                putsXLCD("PIN:");
+                while (BusyXLCD());
+
+            }
+            //Quando se esta dentro do menu do PIN e se quer sair para o menu principal 
+            if (tecla_n == 1 && tecla_premida == '*' && menu_pin == 1){
+
+                LCD_mudar_temp_alarme = 0;
+                menu_pin = 0;
+                WriteCmdXLCD(LCD_clear);        
+                while (BusyXLCD());
+                tecla_n = 0;
+                temp_alarme_mudou = 1; //Assim, consegue regressar ao menu
+            }
+
+
+            //CONDICOES
+
+            if (menu_pin == 0){ 
+
+                if ((menu_estado_LCD == 1 && tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){ //Mudar temperatura de alarme no LCD
+                        //Adicionar o caracter introduzido no teclado por tecla_premida à string temp_alarme_string com a funcao strncat
+                        strncat(temp_alarme_string, &tecla_premida, 1);
+                        WriteCmdXLCD(203);
+                        while (BusyXLCD());
+                        
+                        
+                        putsXLCD(temp_alarme_string);
+                        while (BusyXLCD());
+
+                        digitos_introduzidos_alarme++;
+
+
+
+                    if (digitos_introduzidos_alarme == 2){ //Quando se introduz dois digitos, é como se desse automaticamente "enter"
+
+                        __delay_ms (500); //Para o segundo caracter introduzido se ver
+
+                        WriteCmdXLCD(LCD_clear);        
+                        while (BusyXLCD());
+
+                        //transforma o a temp_alarme_string de string para temp_alarme int
+                        temp_alarme_provisoria = atoi (temp_alarme_string);
+
+                        digitos_introduzidos_alarme = 0;
+
+                        if (temp_alarme_provisoria >= 10 && temp_alarme_provisoria <= 50){
+
+                            temp_alarme = temp_alarme_provisoria;
+
+                            menu_estado_LCD = 0;
+
+                            temp_alarme_mudou = 1;
+
+                            menu_entrada = 1; //Autorizacao para entrar no if dos menus
+
+                            update_temp_alarme = 1;
+                            memset(temp_alarme_string, '\0', sizeof temp_alarme_string); //Limpar a string temp_alarme_string para não 
+                                                                                         //haver sobreposicão de caracteres quando se quer introduzir mais do que 1 vez
+                        }
+                        else {
+
+                            memset(temp_alarme_string, '\0', sizeof temp_alarme_string); //Limpar a string temp_alarme_string para não 
+                                                                                         //haver sobreposicão de caracteres quando se quer introduzir mais do que 1 vez
+
+                            WriteCmdXLCD(132);
+                            while (BusyXLCD());
+                                /*
+                                 * Escreve conteúdo da string 'temp_ambiente_LCD' para o LCD,
+                                 * na posição anteriormente endereçada
+                                 */
+                                /*temp_ambiente_LCD*/
+                            putsXLCD("TEMPERATURA");
+                            while (BusyXLCD());
+
+                            WriteCmdXLCD(197);
+                            while (BusyXLCD());
+                                /*
+                                 * Escreve conteúdo da string 'temp_ambiente_LCD' para o LCD,
+                                 * na posição anteriormente endereçada
+                                 */
+                                /*temp_ambiente_LCD*/
+                            putsXLCD("INVALIDA !");
+                            while (BusyXLCD());
+
+                            __delay_ms (2000);
+
+                            WriteCmdXLCD(LCD_clear);        
+                            while (BusyXLCD());
+                        }
+
+                    }
+                    tecla_n = 0;
+                }
+            }
+
+            else if (menu_pin == 1){
+
+                if (tecla_n == 1 && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){ //Introduzir PIN
+
+                    //Adicionar o caracter introduzido no teclado por tecla_premida à string temp_alarme_string com a funcao strncat
+                        strncat(pin_intr_string, &tecla_premida, 1);
+                        WriteCmdXLCD(196);
+                        while (BusyXLCD());
+
+                        /*
+                         * Escreve conteúdo da string 'pin' para o LCD,
+                         * na posição anteriormente endereçada
+                         */
+                        putsXLCD(pin_intr_string);
+                        while (BusyXLCD());
+
+                        digitos_introduzidos_pin++;
+
+                        tecla_n = 0;
+
+                        if (digitos_introduzidos_pin == 4){
+
+                            pin_introduzido = atoi (pin_intr_string);
+
+                            if (pin_introduzido == pin_real) {
+
+                                strncat(pin_intr_string, &tecla_premida, 1);
+                                WriteCmdXLCD(201);
+                                while (BusyXLCD());
+                                putsXLCD("CORRETO");
+                                while (BusyXLCD());
+
+                                __delay_ms (1000);
+
+                                WriteCmdXLCD(LCD_clear);        
+                                while (BusyXLCD());
+
+                                memset(pin_intr_string, '\0', sizeof temp_alarme_string); //Limpar a string 
+                                digitos_introduzidos_pin = 0;  
+                                menu_pin = 0;
+                                introduzir_pin = 0;
+                                menu_estado_LCD = 1;
+
+
+
+                            }
+                            else if (pin_introduzido > pin_real || pin_introduzido < pin_real){
+
+                                strncat(pin_intr_string, &tecla_premida, 1);
+                                WriteCmdXLCD(201);
+                                while (BusyXLCD());
+                                putsXLCD("INCORRETO");
+                                while (BusyXLCD());
+
+                                __delay_ms (1000);
+
+                                WriteCmdXLCD(LCD_clear);        
+                                while (BusyXLCD());
+
+                                memset(pin_intr_string, '\0', sizeof temp_alarme_string); //Limpar a string 
+                                digitos_introduzidos_pin = 0;
+                            }
+
+                        }
+                }
+            }     
+        }
+    
+            /*Loop para atribuir valores a todos os outputs para as linha do teclado*/
+
+            //LATB = 0b11110111;
+            /**/
+            LATBbits.LATB3 = 0;
+            LATBbits.LATB4 = 1;
+            LATBbits.LATB5 = 1;
+            LATBbits.LATB6 = 1;
+            /**/
+            __delay_ms (50); //Delay's porque se carregassemos numa tecla, ele escrevia um numero 3x seguidas
+            //LATB = 0b11101111;
+            /**/
+            LATBbits.LATB3 = 1;
+            LATBbits.LATB4 = 0;
+            LATBbits.LATB5 = 1;
+            LATBbits.LATB6 = 1;
+            /**/
+            __delay_ms (50);
+            //LATB = 0b11011111;
+            /**/
+            LATBbits.LATB3 = 1;
+            LATBbits.LATB4 = 1;
+            LATBbits.LATB5 = 0;
+            LATBbits.LATB6 = 1;
+            /**/
+            __delay_ms (50);
+            //LATB = 0b10111111;
+            /**/
+            LATBbits.LATB3 = 1;
+            LATBbits.LATB4 = 1;
+            LATBbits.LATB5 = 1;
+            LATBbits.LATB6 = 0;
+            /**/
+            __delay_ms (50);    
     }
 }
 /**

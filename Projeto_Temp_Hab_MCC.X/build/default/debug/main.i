@@ -10171,6 +10171,12 @@ int pin_introduzido;
 char pin_intr_string [5];
 int pin_real = 0000;
 int digitos_introduzidos_pin;
+int mudar_pin;
+int pin_mudado;
+int estado_pin_alterado;
+int menu_mudar_pin;
+char pin_mudado_string [5];
+
 
 
 
@@ -10263,9 +10269,9 @@ void main(void)
     SYSTEM_Initialize();
 
     uint8_t rxData;
-# 162 "main.c"
+# 168 "main.c"
     (INTCONbits.GIEH = 1);
-# 194 "main.c"
+# 200 "main.c"
     int contador_caracteres = 4;
 
     CCP1CONbits.CCP1M = 0000;
@@ -10316,7 +10322,11 @@ void main(void)
 
     menu_pin = 0;
 
+    mudar_pin = 0;
 
+    menu_mudar_pin = 1;
+
+    estado_pin_alterado = 0;
 
     while (1)
     {
@@ -10443,294 +10453,425 @@ void main(void)
 
 
 
-        if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && introduzir_pin == 0){
-            menu_estado_LCD = 1;
-            WriteCmdXLCD(0b00000001);
-            while (BusyXLCD());
-            tecla_n =0;
-            LCD_mudar_temp_alarme = 1;
-        }
 
+        if (tecla_n == 1 && tecla_premida == '#' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && mudar_pin == 0){
 
-        if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 1){
-
-            digitos_introduzidos_alarme = 0;
-            menu_estado_LCD = 0;
-            temp_alarme_mudou = 1;
-            WriteCmdXLCD(0b00000001);
-            while (BusyXLCD());
-            tecla_n =0;
-
-        }
-
-
-        if (((menu_estado_LCD == 0 && temp_mudou == 1) || (menu_estado_LCD == 0 && temp_alarme_mudou == 1)) && menu_pin == 0){
-
-            memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
-
-
-            temp_alarme_mudou = 0;
-
-            LCD_mudar_temp_alarme = 0;
-
-
-            sprintf(temp_ambiente_LCD, "Temp. atual = %.0d C            ", temp_ambiente);
-            WriteCmdXLCD(128);
-            while (BusyXLCD());
-
-
-
-
-
-            putsXLCD(temp_ambiente_LCD);
-            while (BusyXLCD());
-
-
-            sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C            ", temp_alarme);
-            WriteCmdXLCD(192);
-            while (BusyXLCD());
-
-
-
-
-
-            putsXLCD(temp_alarme_LCD);
-            while (BusyXLCD());
-        }
-
-        if (menu_estado_LCD == 1 && menu_pin == 0){
-
-
-
-            sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C            ", temp_alarme);
-            WriteCmdXLCD(128);
-            while (BusyXLCD());
-
-
-
-
-
-            putsXLCD(temp_alarme_LCD);
-            while (BusyXLCD());
-
-            WriteCmdXLCD(192);
-            while (BusyXLCD());
-
-
-
-
-
-            putsXLCD("Nova temp.:");
-            while (BusyXLCD());
-
-        }
-
-
-        if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && introduzir_pin == 1 && menu_pin == 0){
-
-            LCD_mudar_temp_alarme = 1;
-            menu_pin = 1;
-            WriteCmdXLCD(0b00000001);
-            while (BusyXLCD());
+            mudar_pin = 1;
             tecla_n = 0;
-        }
-
-
-
-
-        if (menu_pin == 1){
-
-            memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
-
-
-
-            sprintf(temp_alarme_LCD, "Introduza o PIN", temp_alarme);
-            WriteCmdXLCD(128);
-            while (BusyXLCD());
-
-
-
-
-
-            putsXLCD(temp_alarme_LCD);
-            while (BusyXLCD());
-
-            WriteCmdXLCD(192);
-            while (BusyXLCD());
-
-            putsXLCD("PIN:");
-            while (BusyXLCD());
-
-        }
-
-        if (tecla_n == 1 && tecla_premida == '*' && menu_pin == 1){
-
-            LCD_mudar_temp_alarme = 0;
-            menu_pin = 0;
             WriteCmdXLCD(0b00000001);
             while (BusyXLCD());
-            tecla_n = 0;
-            temp_alarme_mudou = 1;
         }
 
 
+        if (mudar_pin == 1){
 
+            if (menu_mudar_pin == 1){
 
-        if (menu_pin == 0){
+                WriteCmdXLCD(133);
+                while (BusyXLCD());
+                putsXLCD("PIN Atual");
+                while (BusyXLCD());
 
-            if ((menu_estado_LCD == 1 && tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
+                WriteCmdXLCD(192);
+                while (BusyXLCD());
+                putsXLCD ("PIN:");
+                while (BusyXLCD());
 
-                    strncat(temp_alarme_string, &tecla_premida, 1);
-                    WriteCmdXLCD(203);
-                    while (BusyXLCD());
-
-
-
-
-
-                    putsXLCD(temp_alarme_string);
-                    while (BusyXLCD());
-
-                    digitos_introduzidos_alarme++;
+                if ((tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
 
 
 
-                if (digitos_introduzidos_alarme == 2){
+                    strncat(pin_mudado_string, &tecla_premida, 1);
 
-                    _delay((unsigned long)((500)*(6000000/4000.0)));
-
-                    WriteCmdXLCD(0b00000001);
-                    while (BusyXLCD());
-
-
-                    temp_alarme_provisoria = atoi (temp_alarme_string);
-
-                    digitos_introduzidos_alarme = 0;
-
-                    if (temp_alarme_provisoria >= 10 && temp_alarme_provisoria <= 50){
-
-                        temp_alarme = temp_alarme_provisoria;
-
-                        menu_estado_LCD = 0;
-
-                        temp_alarme_mudou = 1;
-
-                        menu_entrada = 1;
-
-                        update_temp_alarme = 1;
-                        memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
-
-                    }
-                    else {
-
-                        memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
-
-
-                        WriteCmdXLCD(132);
-                        while (BusyXLCD());
-
-
-
-
-
-                        putsXLCD("TEMPERATURA");
-                        while (BusyXLCD());
-
-                        WriteCmdXLCD(197);
-                        while (BusyXLCD());
-
-
-
-
-
-                        putsXLCD("INVALIDA !");
-                        while (BusyXLCD());
-
-                        _delay((unsigned long)((2000)*(6000000/4000.0)));
-
-                        WriteCmdXLCD(0b00000001);
-                        while (BusyXLCD());
-                    }
-
-                }
-                tecla_n = 0;
-            }
-        }
-
-        else if (menu_pin == 1){
-
-            if (tecla_n == 1 && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
-
-
-                    strncat(pin_intr_string, &tecla_premida, 1);
                     WriteCmdXLCD(196);
                     while (BusyXLCD());
-
-
-
-
-
-                    putsXLCD(pin_intr_string);
+                    putsXLCD(pin_mudado_string);
                     while (BusyXLCD());
 
                     digitos_introduzidos_pin++;
-
                     tecla_n = 0;
 
                     if (digitos_introduzidos_pin == 4){
 
-                        pin_introduzido = atoi (pin_intr_string);
+                        digitos_introduzidos_pin = 0;
 
-                        if (pin_introduzido == pin_real) {
+                        pin_mudado = atoi (pin_mudado_string);
 
-                            strncat(pin_intr_string, &tecla_premida, 1);
-                            WriteCmdXLCD(201);
-                            while (BusyXLCD());
-
-
-
-
-
-                            putsXLCD("CORRETO");
-                            while (BusyXLCD());
-
-                            _delay((unsigned long)((1000)*(6000000/4000.0)));
+                        if (pin_mudado == pin_real){
+                            menu_mudar_pin = 0;
+                            memset(pin_mudado_string, '\0', sizeof pin_mudado_string);
 
                             WriteCmdXLCD(0b00000001);
                             while (BusyXLCD());
-
-                            memset(pin_intr_string, '\0', sizeof temp_alarme_string);
-                            digitos_introduzidos_pin = 0;
-                            menu_pin = 0;
-                            introduzir_pin = 0;
-                            menu_estado_LCD = 1;
-
-
-
                         }
-                        else if (pin_introduzido > pin_real || pin_introduzido < pin_real){
-
-                            strncat(pin_intr_string, &tecla_premida, 1);
+                        else if (pin_mudado > pin_real || pin_mudado < pin_real){
                             WriteCmdXLCD(201);
                             while (BusyXLCD());
-
-
-
-
-
                             putsXLCD("INCORRETO");
                             while (BusyXLCD());
-
                             _delay((unsigned long)((1000)*(6000000/4000.0)));
+
+                            memset(pin_mudado_string, '\0', sizeof pin_mudado_string);
 
                             WriteCmdXLCD(0b00000001);
                             while (BusyXLCD());
 
-                            memset(pin_intr_string, '\0', sizeof temp_alarme_string);
-                            digitos_introduzidos_pin = 0;
+
                         }
 
                     }
+
+                }
+
+
+            }
+
+            if (menu_mudar_pin == 0){
+                WriteCmdXLCD(131);
+                while (BusyXLCD());
+                putsXLCD("Atualizar PIN");
+                while (BusyXLCD());
+
+                WriteCmdXLCD(192);
+                while (BusyXLCD());
+                putsXLCD ("PIN:");
+                while (BusyXLCD());
+
+
+
+                if ((tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
+
+
+
+                    strncat(pin_mudado_string, &tecla_premida, 1);
+
+                    WriteCmdXLCD(196);
+                    while (BusyXLCD());
+                    putsXLCD(pin_mudado_string);
+                    while (BusyXLCD());
+
+                    digitos_introduzidos_pin++;
+                    tecla_n = 0;
+
+                    if (digitos_introduzidos_pin == 4){
+
+                        digitos_introduzidos_pin = 0;
+                        mudar_pin = 0;
+
+                        pin_real = atoi (pin_mudado_string);
+
+
+                        _delay((unsigned long)((500)*(6000000/4000.0)));
+
+                        WriteCmdXLCD(0b00000001);
+                        while (BusyXLCD());
+
+                         WriteCmdXLCD(130);
+                        while (BusyXLCD());
+                        putsXLCD("Atualizado com");
+                        while (BusyXLCD());
+
+                        WriteCmdXLCD(196);
+                        while (BusyXLCD());
+                        putsXLCD ("Sucesso");
+                        while (BusyXLCD());
+
+                        _delay((unsigned long)((500)*(6000000/4000.0)));
+
+                        WriteCmdXLCD(0b00000001);
+                        while (BusyXLCD());
+
+                        estado_pin_alterado = 1;
+
+
+                    }
+
+                }
+            }
+        }
+
+
+
+        if (mudar_pin == 0){
+
+
+
+            if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && introduzir_pin == 0){
+                menu_estado_LCD = 1;
+                WriteCmdXLCD(0b00000001);
+                while (BusyXLCD());
+                tecla_n =0;
+                LCD_mudar_temp_alarme = 1;
+            }
+
+
+            if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 1){
+                digitos_introduzidos_alarme = 0;
+                menu_estado_LCD = 0;
+                temp_alarme_mudou = 1;
+                WriteCmdXLCD(0b00000001);
+                while (BusyXLCD());
+                tecla_n =0;
+            }
+
+
+            if ((((menu_estado_LCD == 0 && temp_mudou == 1) || (menu_estado_LCD == 0 && temp_alarme_mudou == 1)) && menu_pin == 0) || estado_pin_alterado == 1){
+
+                memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
+
+
+                estado_pin_alterado = 0;
+                temp_alarme_mudou = 0;
+
+                LCD_mudar_temp_alarme = 0;
+
+
+                sprintf(temp_ambiente_LCD, "Temp. atual = %.0d C            ", temp_ambiente);
+                WriteCmdXLCD(128);
+                while (BusyXLCD());
+
+
+
+
+
+                putsXLCD(temp_ambiente_LCD);
+                while (BusyXLCD());
+
+
+                sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C            ", temp_alarme);
+                WriteCmdXLCD(192);
+                while (BusyXLCD());
+
+
+
+
+
+                putsXLCD(temp_alarme_LCD);
+                while (BusyXLCD());
+            }
+
+
+            if (menu_estado_LCD == 1 && menu_pin == 0){
+
+
+
+                sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C            ", temp_alarme);
+                WriteCmdXLCD(128);
+                while (BusyXLCD());
+
+
+
+
+
+                putsXLCD(temp_alarme_LCD);
+                while (BusyXLCD());
+
+                WriteCmdXLCD(192);
+                while (BusyXLCD());
+
+
+
+
+
+                putsXLCD("Nova temp.:");
+                while (BusyXLCD());
+
+            }
+
+
+            if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && introduzir_pin == 1 && menu_pin == 0){
+
+                LCD_mudar_temp_alarme = 1;
+                menu_pin = 1;
+                WriteCmdXLCD(0b00000001);
+                while (BusyXLCD());
+                tecla_n = 0;
+            }
+
+
+
+
+            if (menu_pin == 1){
+
+                memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
+
+
+
+                sprintf(temp_alarme_LCD, "Introduza o PIN", temp_alarme);
+                WriteCmdXLCD(128);
+                while (BusyXLCD());
+
+
+
+
+
+                putsXLCD(temp_alarme_LCD);
+                while (BusyXLCD());
+
+                WriteCmdXLCD(192);
+                while (BusyXLCD());
+
+                putsXLCD("PIN:");
+                while (BusyXLCD());
+
+            }
+
+            if (tecla_n == 1 && tecla_premida == '*' && menu_pin == 1){
+
+                LCD_mudar_temp_alarme = 0;
+                menu_pin = 0;
+                WriteCmdXLCD(0b00000001);
+                while (BusyXLCD());
+                tecla_n = 0;
+                temp_alarme_mudou = 1;
+            }
+
+
+
+
+            if (menu_pin == 0){
+
+                if ((menu_estado_LCD == 1 && tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
+
+                        strncat(temp_alarme_string, &tecla_premida, 1);
+                        WriteCmdXLCD(203);
+                        while (BusyXLCD());
+
+
+                        putsXLCD(temp_alarme_string);
+                        while (BusyXLCD());
+
+                        digitos_introduzidos_alarme++;
+
+
+
+                    if (digitos_introduzidos_alarme == 2){
+
+                        _delay((unsigned long)((500)*(6000000/4000.0)));
+
+                        WriteCmdXLCD(0b00000001);
+                        while (BusyXLCD());
+
+
+                        temp_alarme_provisoria = atoi (temp_alarme_string);
+
+                        digitos_introduzidos_alarme = 0;
+
+                        if (temp_alarme_provisoria >= 10 && temp_alarme_provisoria <= 50){
+
+                            temp_alarme = temp_alarme_provisoria;
+
+                            menu_estado_LCD = 0;
+
+                            temp_alarme_mudou = 1;
+
+                            menu_entrada = 1;
+
+                            update_temp_alarme = 1;
+                            memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
+
+                        }
+                        else {
+
+                            memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
+
+
+                            WriteCmdXLCD(132);
+                            while (BusyXLCD());
+
+
+
+
+
+                            putsXLCD("TEMPERATURA");
+                            while (BusyXLCD());
+
+                            WriteCmdXLCD(197);
+                            while (BusyXLCD());
+
+
+
+
+
+                            putsXLCD("INVALIDA !");
+                            while (BusyXLCD());
+
+                            _delay((unsigned long)((2000)*(6000000/4000.0)));
+
+                            WriteCmdXLCD(0b00000001);
+                            while (BusyXLCD());
+                        }
+
+                    }
+                    tecla_n = 0;
+                }
+            }
+
+            else if (menu_pin == 1){
+
+                if (tecla_n == 1 && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
+
+
+                        strncat(pin_intr_string, &tecla_premida, 1);
+                        WriteCmdXLCD(196);
+                        while (BusyXLCD());
+
+
+
+
+
+                        putsXLCD(pin_intr_string);
+                        while (BusyXLCD());
+
+                        digitos_introduzidos_pin++;
+
+                        tecla_n = 0;
+
+                        if (digitos_introduzidos_pin == 4){
+
+                            pin_introduzido = atoi (pin_intr_string);
+
+                            if (pin_introduzido == pin_real) {
+
+                                strncat(pin_intr_string, &tecla_premida, 1);
+                                WriteCmdXLCD(201);
+                                while (BusyXLCD());
+                                putsXLCD("CORRETO");
+                                while (BusyXLCD());
+
+                                _delay((unsigned long)((1000)*(6000000/4000.0)));
+
+                                WriteCmdXLCD(0b00000001);
+                                while (BusyXLCD());
+
+                                memset(pin_intr_string, '\0', sizeof temp_alarme_string);
+                                digitos_introduzidos_pin = 0;
+                                menu_pin = 0;
+                                introduzir_pin = 0;
+                                menu_estado_LCD = 1;
+
+
+
+                            }
+                            else if (pin_introduzido > pin_real || pin_introduzido < pin_real){
+
+                                strncat(pin_intr_string, &tecla_premida, 1);
+                                WriteCmdXLCD(201);
+                                while (BusyXLCD());
+                                putsXLCD("INCORRETO");
+                                while (BusyXLCD());
+
+                                _delay((unsigned long)((1000)*(6000000/4000.0)));
+
+                                WriteCmdXLCD(0b00000001);
+                                while (BusyXLCD());
+
+                                memset(pin_intr_string, '\0', sizeof temp_alarme_string);
+                                digitos_introduzidos_pin = 0;
+                            }
+
+                        }
+                }
             }
         }
 
@@ -10738,37 +10879,35 @@ void main(void)
 
 
 
-        LATBbits.LATB3 = 0;
-        LATBbits.LATB4 = 1;
-        LATBbits.LATB5 = 1;
-        LATBbits.LATB6 = 1;
+            LATBbits.LATB3 = 0;
+            LATBbits.LATB4 = 1;
+            LATBbits.LATB5 = 1;
+            LATBbits.LATB6 = 1;
 
-        _delay((unsigned long)((50)*(6000000/4000.0)));
-
-
-        LATBbits.LATB3 = 1;
-        LATBbits.LATB4 = 0;
-        LATBbits.LATB5 = 1;
-        LATBbits.LATB6 = 1;
-
-        _delay((unsigned long)((50)*(6000000/4000.0)));
+            _delay((unsigned long)((50)*(6000000/4000.0)));
 
 
-        LATBbits.LATB3 = 1;
-        LATBbits.LATB4 = 1;
-        LATBbits.LATB5 = 0;
-        LATBbits.LATB6 = 1;
+            LATBbits.LATB3 = 1;
+            LATBbits.LATB4 = 0;
+            LATBbits.LATB5 = 1;
+            LATBbits.LATB6 = 1;
 
-        _delay((unsigned long)((50)*(6000000/4000.0)));
-
-
-        LATBbits.LATB3 = 1;
-        LATBbits.LATB4 = 1;
-        LATBbits.LATB5 = 1;
-        LATBbits.LATB6 = 0;
-
-        _delay((unsigned long)((40)*(6000000/4000.0)));
+            _delay((unsigned long)((50)*(6000000/4000.0)));
 
 
+            LATBbits.LATB3 = 1;
+            LATBbits.LATB4 = 1;
+            LATBbits.LATB5 = 0;
+            LATBbits.LATB6 = 1;
+
+            _delay((unsigned long)((50)*(6000000/4000.0)));
+
+
+            LATBbits.LATB3 = 1;
+            LATBbits.LATB4 = 1;
+            LATBbits.LATB5 = 1;
+            LATBbits.LATB6 = 0;
+
+            _delay((unsigned long)((50)*(6000000/4000.0)));
     }
 }

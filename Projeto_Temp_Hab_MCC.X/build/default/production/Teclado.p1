@@ -985,22 +985,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> . . _PORTBbits 0 6 `i -> 0 `i 879  ]
 {
 "66
-[; ;Teclado.c: 66:             contador_colunas_LCD = 192;
-[e = _contador_colunas_LCD -> 192 `i ]
+[; ;Teclado.c: 66:             tecla_premida = '#';
+[e = _tecla_premida -> -> 35 `ui `uc ]
 "67
-[; ;Teclado.c: 67:             tecla_n = 0;
-[e = _tecla_n -> 0 `i ]
-"68
-[; ;Teclado.c: 68:             tecla_limpar = 1;
-[e = _tecla_limpar -> 1 `i ]
-"69
-[; ;Teclado.c: 69:         }
+[; ;Teclado.c: 67:         }
 }
 [e :U 879 ]
 [e :U 878 ]
 [e :U 876 ]
 [e :U 874 ]
-"70
-[; ;Teclado.c: 70: }
+"68
+[; ;Teclado.c: 68: }
 [e :UE 872 ]
 }
