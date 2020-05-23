@@ -63,7 +63,7 @@ char temp_alarme_string [4]; // Valor da temperatura de alarme
 int temp_alarme_provisoria;
 int temp_alarme;
 int temp_mudou;
-int temp_alarme_mudou;
+int temp_alarme_mudou; //quando a temperatura de alarme e atualizada no terminal, atualizar tambem no LCD
 int update_temp_alarme; //quando a temperatura de alarme e atualizada no LCD, atualizar tambem no terminal
 int EUSART_mudar_temp_alarme; //Para nao ser possivel mudar a temperatura ao mesmo tempo no terminal e no LCD
 int LCD_mudar_temp_alarme; //Para nao ser possivel mudar a temperatura ao mesmo tempo no terminal e no LCD
@@ -296,6 +296,8 @@ void main(void)
                     
                     update_temp_alarme = 1;
                     
+                    temp_alarme_mudou = 1; 
+                    
                     memset(temp_alarme_string, '\0', sizeof temp_alarme_string); //Limpar a string temp_alarme_string para não 
                                                                                  //haver sobreposicão de caracteres quando se quer introduzir mais do que 1 vez
                 }
@@ -318,7 +320,7 @@ void main(void)
                 limpar_terminal = 1; //Quando se muda de menu, dá scroll na pagina do terminal
             }
             
-            if ((EUSART_mudar_temp_alarme == 1) && (rxData == '0' || rxData == '1' || rxData == '2' || rxData == '3' || rxData == '4' || rxData == '5' || rxData == '6' || rxData == '7' || rxData == '8' || rxData == '9') && menu_estado == 0){
+            if ((EUSART_mudar_temp_alarme == 1) && (menu_estado == 0) && (rxData == '0' || rxData == '1' || rxData == '2' || rxData == '3' || rxData == '4' || rxData == '5' || rxData == '6' || rxData == '7' || rxData == '8' || rxData == '9')){
                 
                 temp_alarme_intro = rxData;
                  EUSART1_Write(rxData); //Devolve para o terminal o que foi introduzido pelo utilizador para ele ver o que esta a escrever
@@ -352,6 +354,7 @@ void main(void)
             while (BusyXLCD());
             tecla_n =0;
             
+            
         }
         
         
@@ -362,6 +365,7 @@ void main(void)
             
             temp_alarme_mudou = 0;
             
+            LCD_mudar_temp_alarme = 0;
             
             //Escrever no LCD a temperatura atual
             sprintf(temp_ambiente_LCD, "Temp. atual = %.0d C            ", temp_ambiente);
@@ -434,7 +438,9 @@ void main(void)
             
             
             if (digitos_introduzidos == 2){ //Quando se introduz dois digitos, é como se desse automaticamente "enter"
-                                 
+                
+                __delay_ms (500); //Para o segundo caracter introduzido se ver
+                
                 WriteCmdXLCD(LCD_clear);        
                 while (BusyXLCD());
                 
@@ -540,7 +546,7 @@ void main(void)
         LATBbits.LATB5 = 1;
         LATBbits.LATB6 = 1;
         /**/
-        __delay_ms (40); //Delay's porque se carregassemos numa tecla, ele escrevia um numero 3x seguidas
+        __delay_ms (25); //Delay's porque se carregassemos numa tecla, ele escrevia um numero 3x seguidas
         //LATB = 0b11101111;
         /**/
         LATBbits.LATB3 = 1;
@@ -548,7 +554,7 @@ void main(void)
         LATBbits.LATB5 = 1;
         LATBbits.LATB6 = 1;
         /**/
-        __delay_ms (40);
+        __delay_ms (25);
         //LATB = 0b11011111;
         /**/
         LATBbits.LATB3 = 1;
@@ -556,7 +562,7 @@ void main(void)
         LATBbits.LATB5 = 0;
         LATBbits.LATB6 = 1;
         /**/
-        __delay_ms (40);
+        __delay_ms (25);
         //LATB = 0b10111111;
         /**/
         LATBbits.LATB3 = 1;
@@ -564,7 +570,7 @@ void main(void)
         LATBbits.LATB5 = 1;
         LATBbits.LATB6 = 0;
         /**/
-        __delay_ms (40);
+        __delay_ms (25);
         
     }
 }

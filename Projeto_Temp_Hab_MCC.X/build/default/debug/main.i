@@ -10342,6 +10342,8 @@ void main(void)
 
                     update_temp_alarme = 1;
 
+                    temp_alarme_mudou = 1;
+
                     memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
 
                 }
@@ -10364,7 +10366,7 @@ void main(void)
                 limpar_terminal = 1;
             }
 
-            if ((EUSART_mudar_temp_alarme == 1) && (rxData == '0' || rxData == '1' || rxData == '2' || rxData == '3' || rxData == '4' || rxData == '5' || rxData == '6' || rxData == '7' || rxData == '8' || rxData == '9') && menu_estado == 0){
+            if ((EUSART_mudar_temp_alarme == 1) && (menu_estado == 0) && (rxData == '0' || rxData == '1' || rxData == '2' || rxData == '3' || rxData == '4' || rxData == '5' || rxData == '6' || rxData == '7' || rxData == '8' || rxData == '9')){
 
                 temp_alarme_intro = rxData;
                  EUSART1_Write(rxData);
@@ -10398,6 +10400,7 @@ void main(void)
             while (BusyXLCD());
             tecla_n =0;
 
+
         }
 
 
@@ -10408,6 +10411,7 @@ void main(void)
 
             temp_alarme_mudou = 0;
 
+            LCD_mudar_temp_alarme = 0;
 
 
             sprintf(temp_ambiente_LCD, "Temp. atual = %.0d C            ", temp_ambiente);
@@ -10481,6 +10485,8 @@ void main(void)
 
             if (digitos_introduzidos == 2){
 
+                _delay((unsigned long)((500)*(6000000/4000.0)));
+
                 WriteCmdXLCD(0b00000001);
                 while (BusyXLCD());
 
@@ -10537,13 +10543,13 @@ void main(void)
             }
             tecla_n = 0;
         }
-# 538 "main.c"
+# 544 "main.c"
         LATBbits.LATB3 = 0;
         LATBbits.LATB4 = 1;
         LATBbits.LATB5 = 1;
         LATBbits.LATB6 = 1;
 
-        _delay((unsigned long)((40)*(6000000/4000.0)));
+        _delay((unsigned long)((25)*(6000000/4000.0)));
 
 
         LATBbits.LATB3 = 1;
@@ -10551,7 +10557,7 @@ void main(void)
         LATBbits.LATB5 = 1;
         LATBbits.LATB6 = 1;
 
-        _delay((unsigned long)((40)*(6000000/4000.0)));
+        _delay((unsigned long)((25)*(6000000/4000.0)));
 
 
         LATBbits.LATB3 = 1;
@@ -10559,7 +10565,7 @@ void main(void)
         LATBbits.LATB5 = 0;
         LATBbits.LATB6 = 1;
 
-        _delay((unsigned long)((40)*(6000000/4000.0)));
+        _delay((unsigned long)((25)*(6000000/4000.0)));
 
 
         LATBbits.LATB3 = 1;
@@ -10567,7 +10573,7 @@ void main(void)
         LATBbits.LATB5 = 1;
         LATBbits.LATB6 = 0;
 
-        _delay((unsigned long)((40)*(6000000/4000.0)));
+        _delay((unsigned long)((25)*(6000000/4000.0)));
 
     }
 }
