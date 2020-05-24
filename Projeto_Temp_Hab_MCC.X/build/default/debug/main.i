@@ -10460,6 +10460,18 @@ void main(void)
             tecla_n = 0;
             WriteCmdXLCD(0b00000001);
             while (BusyXLCD());
+            menu_mudar_pin = 1;
+        }
+
+        if (tecla_n == 1 && tecla_premida == '#' && mudar_pin == 1){
+
+            mudar_pin = 0;
+            tecla_n = 0;
+            WriteCmdXLCD(0b00000001);
+            while (BusyXLCD());
+            digitos_introduzidos_pin = 0;
+            memset(pin_mudado_string, '\0', sizeof pin_mudado_string);
+            estado_pin_alterado = 1;
         }
 
 
@@ -10583,7 +10595,7 @@ void main(void)
 
                         estado_pin_alterado = 1;
 
-
+                        memset(pin_mudado_string, '\0', sizeof pin_mudado_string);
                     }
 
                 }
@@ -10884,7 +10896,7 @@ void main(void)
             LATBbits.LATB5 = 1;
             LATBbits.LATB6 = 1;
 
-            _delay((unsigned long)((50)*(6000000/4000.0)));
+            _delay((unsigned long)((60)*(6000000/4000.0)));
 
 
             LATBbits.LATB3 = 1;
@@ -10892,7 +10904,7 @@ void main(void)
             LATBbits.LATB5 = 1;
             LATBbits.LATB6 = 1;
 
-            _delay((unsigned long)((50)*(6000000/4000.0)));
+            _delay((unsigned long)((60)*(6000000/4000.0)));
 
 
             LATBbits.LATB3 = 1;
@@ -10900,7 +10912,7 @@ void main(void)
             LATBbits.LATB5 = 0;
             LATBbits.LATB6 = 1;
 
-            _delay((unsigned long)((50)*(6000000/4000.0)));
+            _delay((unsigned long)((60)*(6000000/4000.0)));
 
 
             LATBbits.LATB3 = 1;

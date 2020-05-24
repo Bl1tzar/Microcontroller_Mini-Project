@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<WORKSPACE>
+ <FRAME activewindow="0">
+  <PLACEMENT>2c0000000200000003000000ffffffffffffffffffffffffffffffff64030000510000008007000010040000</PLACEMENT>
+  <WINDOW type="default" module="ISIS"/>
+  <WINDOW type="default" module="ARES"/>
+ </FRAME>
+ <MODULE name="VSMDEBUG">
+  <PWI>
+   <POPUP w="800" x="217" flags="00000002" y="150" h="200" pid="0" iid="-1">
+    <PROPERTIES/>
+   </POPUP>
+   <POPUP w="350" x="237" flags="00000032" y="170" h="200" pid="1" iid="-1">
+    <PROPERTIES/>
+   </POPUP>
+   <POPUP w="450" x="257" flags="00008023" y="190" h="250" pid="0" iid="9">
+    <PROPERTIES/>
+   </POPUP>
+   <POPUP w="52" x="277" flags="00000008" y="210" h="12" pid="3" iid="1">
+    <PROPERTIES/>
+   </POPUP>
+   <POPUP w="16" x="297" flags="0000000a" y="230" h="32" pid="7" iid="1">
+    <PROPERTIES/>
+   </POPUP>
+   <POPUP w="8" x="317" flags="0000000a" y="250" h="32" pid="4" iid="1">
+    <PROPERTIES/>
+   </POPUP>
+   <POPUP w="8" x="337" flags="00000002" y="270" h="16" pid="12" iid="1">
+    <PROPERTIES/>
+   </POPUP>
+   <POPUP w="8" x="357" flags="0000000a" y="290" h="32" pid="6" iid="1">
+    <PROPERTIES/>
+   </POPUP>
+   <POPUP w="8" x="377" flags="0000000a" y="310" h="1" pid="8" iid="1">
+    <PROPERTIES/>
+   </POPUP>
+   <POPUP w="8" x="397" flags="0000000a" y="330" h="2" pid="9" iid="1">
+    <PROPERTIES/>
+   </POPUP>
+   <POPUP w="18" x="417" flags="00000008" y="350" h="32" pid="10" iid="1">
+    <PROPERTIES/>
+   </POPUP>
+   <POPUP w="8" x="437" flags="00000002" y="370" h="8" pid="13" iid="1">
+    <PROPERTIES/>
+   </POPUP>
+  </PWI>
+ </MODULE>
+</WORKSPACE>

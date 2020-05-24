@@ -385,6 +385,18 @@ void main(void)
             tecla_n = 0;
             WriteCmdXLCD(LCD_clear);        
             while (BusyXLCD());
+            menu_mudar_pin = 1;
+        }
+        
+        if (tecla_n == 1 && tecla_premida == '#' && mudar_pin == 1){ //Se quer sair enquanto esta a mudar o PIN
+        
+            mudar_pin = 0;
+            tecla_n = 0;
+            WriteCmdXLCD(LCD_clear);        
+            while (BusyXLCD());
+            digitos_introduzidos_pin = 0;
+            memset(pin_mudado_string, '\0', sizeof pin_mudado_string); //Limpar a string
+            estado_pin_alterado = 1;
         }
         
         //Permite quando esta a mudar o PIN
@@ -508,7 +520,7 @@ void main(void)
                         
                         estado_pin_alterado = 1;
                         
-                        //memset(pin_mudado_string, '\0', sizeof pin_mudado_string); //Limpar a string
+                        memset(pin_mudado_string, '\0', sizeof pin_mudado_string); //Limpar a string
                     }
                     
                 }
@@ -809,7 +821,7 @@ void main(void)
             LATBbits.LATB5 = 1;
             LATBbits.LATB6 = 1;
             /**/
-            __delay_ms (50); //Delay's porque se carregassemos numa tecla, ele escrevia um numero 3x seguidas
+            __delay_ms (60); //Delay's porque se carregassemos numa tecla, ele escrevia um numero 3x seguidas
             //LATB = 0b11101111;
             /**/
             LATBbits.LATB3 = 1;
@@ -817,7 +829,7 @@ void main(void)
             LATBbits.LATB5 = 1;
             LATBbits.LATB6 = 1;
             /**/
-            __delay_ms (50);
+            __delay_ms (60);
             //LATB = 0b11011111;
             /**/
             LATBbits.LATB3 = 1;
@@ -825,7 +837,7 @@ void main(void)
             LATBbits.LATB5 = 0;
             LATBbits.LATB6 = 1;
             /**/
-            __delay_ms (50);
+            __delay_ms (60);
             //LATB = 0b10111111;
             /**/
             LATBbits.LATB3 = 1;
