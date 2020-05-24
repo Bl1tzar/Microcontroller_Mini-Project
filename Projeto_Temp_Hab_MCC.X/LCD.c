@@ -68,14 +68,41 @@ void LCD_inicio_teste (void){
     putsXLCD ("MIGUEL RIBEIRO 2191578");
     
     /*
-	 * Endereçamento do display:
-	 * 1a linha, 16a coluna
-	*/
-	WriteCmdXLCD(0b11000000);
-	while (BusyXLCD());
-    
-    putsXLCD ("JOAO MEDEIROS 2172157");
-    
+     * Endereçamento do display:
+     * 1a linha, 16a coluna
+    */
+    WriteCmdXLCD(0b11000000);
+    while (BusyXLCD());
+   
+    putsXLCD ("JO O MEDEIROS 2172157");
+   
+            SetCGRamAddr(0b00000000);
+            while (BusyXLCD());
+   
+            WriteDataXLCD(0b00001110); // linha 0
+            while (BusyXLCD());
+            WriteDataXLCD(0b00000000); // linha 1
+            while (BusyXLCD());
+            WriteDataXLCD(0b00011111); // linha 2
+            while (BusyXLCD());
+            WriteDataXLCD(0b00010001); // linha 3
+            while (BusyXLCD());
+            WriteDataXLCD(0b00011111); // linha 4
+            while (BusyXLCD());
+            WriteDataXLCD(0b00010001); // linha 5
+            while (BusyXLCD());
+            WriteDataXLCD(0b00010001); // linha 6
+            while (BusyXLCD());
+            WriteDataXLCD(0b00010001); // linha 7
+            while (BusyXLCD());
+           
+            WriteCmdXLCD(0b11000010);
+            while (BusyXLCD());
+           
+            putcXLCD(0b00000000);
+            while (BusyXLCD());
+           
+   
     __delay_ms(1000);
     
     for (i = 0; i < 2 ; i++ ) { //Quantos espacos anda para o lado

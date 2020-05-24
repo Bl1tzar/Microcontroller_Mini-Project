@@ -15,6 +15,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
 [v __delay `JF5963 ~T0 @X0 0 e ]
 [p i __delay ]
+"84 ./xlcd.h
+[; ;./xlcd.h: 84: void SetCGRamAddr( unsigned char);
+[v _SetCGRamAddr `(v ~T0 @X0 0 ef1`uc ]
+"114
+[; ;./xlcd.h: 114: void WriteDataXLCD( char);
+[v _WriteDataXLCD `(v ~T0 @X0 0 ef1`uc ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -878,78 +884,188 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD.c: 68:     putsXLCD ("MIGUEL RIBEIRO 2191578");
 [e ( _putsXLCD (1 :s 3C ]
 "74
-[; ;LCD.c: 74:  WriteCmdXLCD(0b11000000);
+[; ;LCD.c: 74:     WriteCmdXLCD(0b11000000);
 [e ( _WriteCmdXLCD (1 -> -> 192 `i `uc ]
 "75
-[; ;LCD.c: 75:  while (BusyXLCD());
+[; ;LCD.c: 75:     while (BusyXLCD());
 [e $U 881  ]
 [e :U 882 ]
 [e :U 881 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 882  ]
 [e :U 883 ]
 "77
-[; ;LCD.c: 77:     putsXLCD ("JOAO MEDEIROS 2172157");
+[; ;LCD.c: 77:     putsXLCD ("JO O MEDEIROS 2172157");
 [e ( _putsXLCD (1 :s 4C ]
 "79
-[; ;LCD.c: 79:     _delay((unsigned long)((1000)*(6000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
-"81
-[; ;LCD.c: 81:     for (i = 0; i < 2 ; i++ ) {
-{
-[e = _i -> 0 `i ]
-[e $ < _i -> 2 `i 884  ]
-[e $U 885  ]
+[; ;LCD.c: 79:             SetCGRamAddr(0b00000000);
+[e ( _SetCGRamAddr (1 -> -> 0 `i `uc ]
+"80
+[; ;LCD.c: 80:             while (BusyXLCD());
+[e $U 884  ]
+[e :U 885 ]
 [e :U 884 ]
-{
-"87
-[; ;LCD.c: 87:     WriteCmdXLCD(0b00011011);
-[e ( _WriteCmdXLCD (1 -> -> 27 `i `uc ]
-"88
-[; ;LCD.c: 88:     while (BusyXLCD());
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 885  ]
+[e :U 886 ]
+"82
+[; ;LCD.c: 82:             WriteDataXLCD(0b00001110);
+[e ( _WriteDataXLCD (1 -> -> 14 `i `uc ]
+"83
+[; ;LCD.c: 83:             while (BusyXLCD());
 [e $U 887  ]
 [e :U 888 ]
 [e :U 887 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 888  ]
 [e :U 889 ]
-"89
-[; ;LCD.c: 89:     for (j = 0; j < 100 ; j++ )
-{
-[e = _j -> 0 `i ]
-[e $ < _j -> 100 `i 890  ]
-[e $U 891  ]
-[e :U 890 ]
-"90
-[; ;LCD.c: 90:             _delay((unsigned long)((3)*(6000000/4000.0)));
-[e ( __delay (1 -> * -> -> 3 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
-[e ++ _j -> 1 `i ]
-[e $ < _j -> 100 `i 890  ]
+"84
+[; ;LCD.c: 84:             WriteDataXLCD(0b00000000);
+[e ( _WriteDataXLCD (1 -> -> 0 `i `uc ]
+"85
+[; ;LCD.c: 85:             while (BusyXLCD());
+[e $U 890  ]
 [e :U 891 ]
-}
-"91
-[; ;LCD.c: 91:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 2 `i 884  ]
-[e :U 885 ]
-}
-"94
-[; ;LCD.c: 94:     _delay((unsigned long)((1000)*(6000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
-"96
-[; ;LCD.c: 96:     WriteCmdXLCD(0b00000001);
-[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
-"97
-[; ;LCD.c: 97:     while (BusyXLCD());
+[e :U 890 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 891  ]
+[e :U 892 ]
+"86
+[; ;LCD.c: 86:             WriteDataXLCD(0b00011111);
+[e ( _WriteDataXLCD (1 -> -> 31 `i `uc ]
+"87
+[; ;LCD.c: 87:             while (BusyXLCD());
 [e $U 893  ]
 [e :U 894 ]
 [e :U 893 ]
 [e $ != -> ( _BusyXLCD ..  `i -> 0 `i 894  ]
 [e :U 895 ]
-"98
-[; ;LCD.c: 98: }
+"88
+[; ;LCD.c: 88:             WriteDataXLCD(0b00010001);
+[e ( _WriteDataXLCD (1 -> -> 17 `i `uc ]
+"89
+[; ;LCD.c: 89:             while (BusyXLCD());
+[e $U 896  ]
+[e :U 897 ]
+[e :U 896 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 897  ]
+[e :U 898 ]
+"90
+[; ;LCD.c: 90:             WriteDataXLCD(0b00011111);
+[e ( _WriteDataXLCD (1 -> -> 31 `i `uc ]
+"91
+[; ;LCD.c: 91:             while (BusyXLCD());
+[e $U 899  ]
+[e :U 900 ]
+[e :U 899 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 900  ]
+[e :U 901 ]
+"92
+[; ;LCD.c: 92:             WriteDataXLCD(0b00010001);
+[e ( _WriteDataXLCD (1 -> -> 17 `i `uc ]
+"93
+[; ;LCD.c: 93:             while (BusyXLCD());
+[e $U 902  ]
+[e :U 903 ]
+[e :U 902 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 903  ]
+[e :U 904 ]
+"94
+[; ;LCD.c: 94:             WriteDataXLCD(0b00010001);
+[e ( _WriteDataXLCD (1 -> -> 17 `i `uc ]
+"95
+[; ;LCD.c: 95:             while (BusyXLCD());
+[e $U 905  ]
+[e :U 906 ]
+[e :U 905 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 906  ]
+[e :U 907 ]
+"96
+[; ;LCD.c: 96:             WriteDataXLCD(0b00010001);
+[e ( _WriteDataXLCD (1 -> -> 17 `i `uc ]
+"97
+[; ;LCD.c: 97:             while (BusyXLCD());
+[e $U 908  ]
+[e :U 909 ]
+[e :U 908 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 909  ]
+[e :U 910 ]
+"99
+[; ;LCD.c: 99:             WriteCmdXLCD(0b11000010);
+[e ( _WriteCmdXLCD (1 -> -> 194 `i `uc ]
+"100
+[; ;LCD.c: 100:             while (BusyXLCD());
+[e $U 911  ]
+[e :U 912 ]
+[e :U 911 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 912  ]
+[e :U 913 ]
+"102
+[; ;LCD.c: 102:             WriteDataXLCD(0b00000000);
+[e ( _WriteDataXLCD (1 -> -> 0 `i `uc ]
+"103
+[; ;LCD.c: 103:             while (BusyXLCD());
+[e $U 914  ]
+[e :U 915 ]
+[e :U 914 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 915  ]
+[e :U 916 ]
+"106
+[; ;LCD.c: 106:     _delay((unsigned long)((1000)*(6000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
+"108
+[; ;LCD.c: 108:     for (i = 0; i < 2 ; i++ ) {
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 2 `i 917  ]
+[e $U 918  ]
+[e :U 917 ]
+{
+"114
+[; ;LCD.c: 114:     WriteCmdXLCD(0b00011011);
+[e ( _WriteCmdXLCD (1 -> -> 27 `i `uc ]
+"115
+[; ;LCD.c: 115:     while (BusyXLCD());
+[e $U 920  ]
+[e :U 921 ]
+[e :U 920 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 921  ]
+[e :U 922 ]
+"116
+[; ;LCD.c: 116:     for (j = 0; j < 100 ; j++ )
+{
+[e = _j -> 0 `i ]
+[e $ < _j -> 100 `i 923  ]
+[e $U 924  ]
+[e :U 923 ]
+"117
+[; ;LCD.c: 117:             _delay((unsigned long)((3)*(6000000/4000.0)));
+[e ( __delay (1 -> * -> -> 3 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
+[e ++ _j -> 1 `i ]
+[e $ < _j -> 100 `i 923  ]
+[e :U 924 ]
+}
+"118
+[; ;LCD.c: 118:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 2 `i 917  ]
+[e :U 918 ]
+}
+"121
+[; ;LCD.c: 121:     _delay((unsigned long)((1000)*(6000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 6000000 `l `d .4000.0 `ul ]
+"123
+[; ;LCD.c: 123:     WriteCmdXLCD(0b00000001);
+[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
+"124
+[; ;LCD.c: 124:     while (BusyXLCD());
+[e $U 926  ]
+[e :U 927 ]
+[e :U 926 ]
+[e $ != -> ( _BusyXLCD ..  `i -> 0 `i 927  ]
+[e :U 928 ]
+"125
+[; ;LCD.c: 125: }
 [e :UE 856 ]
 }
 [a 1C 77 73 67 82 79 80 82 79 67 69 83 83 65 68 79 82 69 83 0 ]
 [a 2C 69 65 85 32 45 32 69 83 84 71 0 ]
 [a 3C 77 73 71 85 69 76 32 82 73 66 69 73 82 79 32 50 49 57 49 53 55 56 0 ]
-[a 4C 74 79 65 79 32 77 69 68 69 73 82 79 83 32 50 49 55 50 49 53 55 0 ]
+[a 4C 74 79 32 79 32 77 69 68 69 73 82 79 83 32 50 49 55 50 49 53 55 0 ]

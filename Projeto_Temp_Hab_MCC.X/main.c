@@ -33,72 +33,67 @@
 unsigned char tecla_premida; // Guarda a tecla que foi premida
 int tecla_n; //Indica se alguma tecla foi premida
 int tecla_limpar; // Indica que é para limpar o LCD
-
-
 /*
          LCD
  */
 // 192 = 2a linha 1a coluna (0b11000000) no LCD
 int contador_colunas_LCD = 192; //contador 
-char temp_alarme_LCD [40];
-char temp_ambiente_LCD [40];
+char temp_alarme_LCD [40]; //String para fazer print da temperatura de alarme no LCD
+char temp_ambiente_LCD [40]; ////String para fazer print da temperatura do sensor no LCD
 int digitos_introduzidos_alarme; //Conta os caracteres introduzidos no teclado
-int menu_estado_LCD; //Troca entre menus
-
+int menu_estado_LCD; //Variavel binaria -Troca entre menus
                 //Se menu_estado_LCD = 1, aparecera no LCD o menu para mudar a temperatura.
-                 //Se menu_estado_LCD = 0, aparecera no LCD o menu principal.
-
-
+                //Se menu_estado_LCD = 0, aparecera no LCD o menu principal.
 /*
          PIN
  */
-int menu_pin; //So quando carrego no '*' do teclado é que vai para o menu
-int introduzir_pin; //No inicio, terá que introduzir sempre o PIN quando pretende mudar a temperatura
+int menu_pin; //Variavel binaria -So quando carrego no '*' do teclado é que vai para o menu
+int introduzir_pin; //Variavel binaria -No inicio, terá que introduzir sempre o PIN quando pretende mudar a temperatura
 int pin_introduzido; // Guarda o valor do PIN introduzido para ter acesso
 char pin_intr_string [5]; // Valor do PIN introduzido
 int pin_real = 0000; // Valor do PIN - o introduzido terá que ser igual a este
-int digitos_introduzidos_pin;
-int mudar_pin;
-int pin_mudado;
-int estado_pin_alterado; //Saber quando o pin foi alterado
-int menu_mudar_pin;
-char pin_mudado_string [5];
-
+int digitos_introduzidos_pin; //Contador de digitos introduzidos para quando se esta a introduzir um pin - max 4 digitos
+int mudar_pin; //Variavel binaria -Se mudar_pin = 1, muda o PIN. Se = 0, permite o resto das funcionalidades do LCD
+int pin_mudado; //Variavel que compara com o pin_real quando se esta a mudar o PIN - confirmacao
+int estado_pin_alterado; //Variavel binaria -Saber quando o pin foi alterado
+int menu_mudar_pin; //Variavel binaria -Usada dentro da funcionalidade de mudar o PIN - Se = 1 pede para confirmar o atual; Se = 0 para alterar o atual
+char pin_mudado_string [5]; //String intermediaria para quando se esta a alterar o PIN
 /*
          Temperatura
  */
 unsigned char temp_alarme_intro; // Guarda o valor de temperatura de alarme introduzido para passar para inteiro
 char temp_alarme_string [4]; // Valor da temperatura de alarme 
-int temp_alarme_provisoria;
-int temp_alarme;
-int temp_mudou;
-int temp_alarme_mudou; //quando a temperatura de alarme e atualizada no terminal, atualizar tambem no LCD
-int update_temp_alarme; //quando a temperatura de alarme e atualizada no LCD, atualizar tambem no terminal
-int EUSART_mudar_temp_alarme; //Para nao ser possivel mudar a temperatura ao mesmo tempo no terminal e no LCD
-int LCD_mudar_temp_alarme; //Para nao ser possivel mudar a temperatura ao mesmo tempo no terminal e no LCD
+int temp_alarme_provisoria; //EUSART - Serve de intermediario para comparacao - desta maneira, o alarme nao e ativado enquanto se muda a temperatura 
+int temp_alarme; //Temperatura de alarme 
+int temp_mudou; //Variavel binaria -Indica quando a temperatura mudou na funcao do ADC - Para dar refresh no menu do LCD para mostrar a temperatura alterada 
+int temp_alarme_mudou; //Variavel binaria -quando a temperatura de alarme e atualizada no terminal, atualizar tambem no LCD
+int update_temp_alarme; //Variavel binaria -quando a temperatura de alarme e atualizada no LCD, atualizar tambem no terminal
+int EUSART_mudar_temp_alarme; //Variavel binaria -Para nao ser possivel mudar a temperatura ao mesmo tempo no terminal e no LCD
+int LCD_mudar_temp_alarme; //Variavel binaria -Para nao ser possivel mudar a temperatura ao mesmo tempo no terminal e no LCD
 /*
          ADC
  */
-float tensao;
+float tensao; //Calculo da tensao do sensor analogico 
 int codigo_digital; // 2 bits mais significativos do codigo digital de 10 bits
 //char low [8] = ADRESL; // 8 bits menos significativos do codigo digital de 10 bits
-int temp_ambiente;
+int temp_ambiente; //Temperatura do sensor
 int temp_ambiente_anterior; //Verificar se a temperatura varia - usada no ADC
-
 /*
         Alarme
  */
-int alarme_ativo;
-int buzzer_intermitencia; //Se = 1, ativa, se = 0, desliga com intermitência de 2 segundos
+int alarme_ativo; //Variavel binaria - Se o alarme esta ativc
+int buzzer_intermitencia; //Variavel binaria -Se = 1, ativa, se = 0, desliga com intermitência de 2 segundos
 /*
         Terminal
  */
-int menu_estado; //Se menu_estado = 1, aparecera no terminal o menu principal.
-                 //Se menu_estado = 0, aparecera no terminal o menu para mudar a temperatura.
+int menu_estado; //Variavel binaria -Se menu_estado = 1, aparecera no terminal o menu principal.
+                 //Variavel binaria -Se menu_estado = 0, aparecera no terminal o menu para mudar a temperatura.
 int menu_entrada;
 int limpar_terminal; //Dá scroll na página
-int enter; //Verifica quando o enter é pressionado 
-int temp_valida; //Verifica a temperatura de alarme introduzida
+int enter; //Variavel binaria -Verifica quando o enter é pressionado 
+int temp_valida; //Variavel binaria -Verifica a temperatura de alarme introduzida
+
+
 /*
                          Funcões Temporarias
  */
@@ -111,7 +106,7 @@ void Timer_0 (void) { //LED + ADC
     ADC_StartConversion();
 }
 
-void enable_pin(void){
+void enable_pin(void){ //A cada 60 segundos, mete a variavel introduzir_pin = 1 - desta forma, cada vez que introduz o PIN, nao ha filhos a gozar com o Pai
 
     if (introduzir_pin == 0 && menu_pin == 0 ){
     
@@ -148,7 +143,7 @@ void ADC_temperatura (void){
     tensao = (int) ((tensao * 100) + 0.5);
     tensao = (float) tensao/100;
     
-    temp_ambiente = (int) ((tensao - 0.400)/0.0195);
+    temp_ambiente = (int) ((tensao - 0.400)/0.0195); //Valor inteiro da temperatura ambiente 
     
     if (temp_ambiente != temp_ambiente_anterior){ //Verifica se a temperatura variou
     
@@ -169,54 +164,20 @@ void main(void)
 {
         // Initialize the device
     SYSTEM_Initialize();
-    
-    uint8_t rxData; 
- 
-
-    // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
-    // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global and Peripheral Interrupts
-    // Use the following macros to:
-
- 
 
     // Enable high priority global interrupts
     INTERRUPT_GlobalInterruptHighEnable();
-
  
-
-    // Enable low priority global interrupts.
-    //INTERRUPT_GlobalInterruptLowEnable();
-
- 
-
-    // Disable high priority global interrupts
-    //INTERRUPT_GlobalInterruptHighDisable();
-
- 
-
-    // Disable low priority global interrupts.
-    //INTERRUPT_GlobalInterruptLowDisable();
-
- 
-
-    // Enable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptEnable();
-
- 
-
-    // Disable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptDisable();
-
-    
     /*
                              Implementacão de código
      */
-    
+       
+    uint8_t rxData; 
     int contador_caracteres = 4;
     
     CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder no inicio
     
-    //Escrever o inicio do LCD - "Mars Rocks_Teste Teclado" - LCD_inicio.h
+    //Escrever o inicio do LCD - LCD.c
     LCD_inicio_teste();
     
     //Interrupcão do Timer para acender LED
@@ -229,15 +190,14 @@ void main(void)
     
     TMR1_SetInterruptHandler (enable_pin); //De 1 em 1 minuto, da enable para introduzir pin cada vez que se quer introduzir nova temp alarme
     
-    TMR3_SetInterruptHandler (intermitencia_buzzer);
+    TMR3_SetInterruptHandler (intermitencia_buzzer); //Intermitencia do buzzer 
     
     
     //Interrupcão do ADC - Quando ocorre, executa a funcao ADC_temperatura
     ADC_SetInterruptHandler(ADC_temperatura);
     
     
-    T1CONbits.TMR1ON = 0;
-    
+    T1CONbits.TMR1ON = 0; //Comeca com o Timer 0 desativado - e apenas ativado quando se introduz o PIN para alterar a temperatura
     
     
     temp_alarme = 25; //Por default a temperatura de alarme esta a 20 C 
@@ -284,10 +244,10 @@ void main(void)
         }
         
         
-        if ((temp_ambiente >= temp_alarme && enter == 1) || (update_temp_alarme == 1 && temp_ambiente >= temp_alarme)){
+        if ((temp_ambiente >= temp_alarme && enter == 1) || (update_temp_alarme == 1 && temp_ambiente >= temp_alarme)){ //Ativar o alarme 
             
             alarme_ativo = 1; 
-            
+            //Intermitencia do buzzer - Timer3
             if (buzzer_intermitencia == 1){
                 CCP1CONbits.CCP1M = 1100; //ativa o PWM - liga o sounder 
             }
@@ -295,17 +255,21 @@ void main(void)
                 CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder
             }
         }   
-        else if ((temp_ambiente < temp_alarme && enter == 1) || (update_temp_alarme == 1 && temp_ambiente < temp_alarme)){
+        else if ((temp_ambiente < temp_alarme && enter == 1) || (update_temp_alarme == 1 && temp_ambiente < temp_alarme)){ //Desativar o alarme
             
             CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder
             alarme_ativo = 0;
             LATAbits.LATA1 = 0; //desliga o LED quando o alarme é desativado
-            buzzer_intermitencia = 1;
+            buzzer_intermitencia = 1; //Ativa a variavel de maneira de na proxima vez que o alarme ser ativo comecar instantaneamente/no momento
         }
         
-                /*Terminal*/
-
-        if ((menu_estado == 1 && menu_entrada == 1 && update_temp_alarme == 1) || (menu_estado == 1 && temp_mudou == 1)){ //Menu principal 
+        /*
+                     Terminal
+         */
+        
+        
+        /*Menu Principal*/ 
+        if ((menu_estado == 1 && menu_entrada == 1 && update_temp_alarme == 1) || (menu_estado == 1 && temp_mudou == 1)){ 
             
             
             
@@ -400,11 +364,17 @@ void main(void)
             
         }
         
-        /*LCD*/
-        //MENUS e ACESSOS
-        //Carregar na tecla '*' para mudar a temperatura de alarme e trocar entre menus
+        /*
+                     LCD
+         */
         
+        /*
+             MENUS E ACESSOS
+         */
+
+        /*Leitura de teclas*/
         
+        //Carregar na tecla '#' para mudar o PIN
         if (tecla_n == 1 && tecla_premida == '#' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && mudar_pin == 0){
         
             mudar_pin = 1;
@@ -413,8 +383,8 @@ void main(void)
             while (BusyXLCD());
             menu_mudar_pin = 1;
         }
-        
-        if (tecla_n == 1 && tecla_premida == '#' && mudar_pin == 1){ //Se quer sair enquanto esta a mudar o PIN
+        //Se quer sair enquanto esta a mudar o PIN
+        if (tecla_n == 1 && tecla_premida == '#' && mudar_pin == 1){ 
         
             mudar_pin = 0;
             tecla_n = 0;
@@ -425,10 +395,13 @@ void main(void)
             estado_pin_alterado = 1;
         }
         
-        //Permite quando esta a mudar o PIN
+        /*
+         * Permite quando se esta a mudar o PIN
+         *
+         */
         if (mudar_pin == 1){
-            
-            if (menu_mudar_pin == 1){ //Menu mudar pin - pin atual
+             /*Menu mudar PIN - PIN atual*/ 
+            if (menu_mudar_pin == 1){ 
                 //Escrever no LCD
                 WriteCmdXLCD(133);
                 while (BusyXLCD());
@@ -455,9 +428,7 @@ void main(void)
                     tecla_n = 0;
                     
                     if (digitos_introduzidos_pin == 4){
-                        
                         digitos_introduzidos_pin = 0;
-                        
                         pin_mudado = atoi (pin_mudado_string); //Passa de string para numero inteiro 
                         
                         if (pin_mudado == pin_real){
@@ -488,8 +459,8 @@ void main(void)
                 
               
             }
-            
-            if (menu_mudar_pin == 0){ //Menu mudar pin - pin novo
+            /*Menu mudar PIN - PIN novo*/ 
+            if (menu_mudar_pin == 0){ 
                 WriteCmdXLCD(131);
                 while (BusyXLCD());
                 putsXLCD("Atualizar PIN");
@@ -554,10 +525,15 @@ void main(void)
         }
     
        
-        //Permite quando nao esta a mudar o PIN
+        /*
+         * Permite quando nao esta a mudar o PIN
+         *
+         */
         if (mudar_pin == 0){
-        
             
+            /*Leitura de teclas*/
+            
+            //Carregar na tecla '*' para mudar a temperatura de alarme e trocar entre menus
             //Passar do menu principal para o submenu para mudar a temp
             if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && introduzir_pin == 0){ 
                 menu_estado_LCD = 1;
@@ -577,7 +553,8 @@ void main(void)
                 tecla_n =0;  
             }
 
-            //Menu principal 
+            /*Menu principal*/ 
+            
             if ((((menu_estado_LCD == 0 && temp_mudou == 1) || (menu_estado_LCD == 0 && temp_alarme_mudou == 1)) && menu_pin == 0) || estado_pin_alterado == 1){ 
 
                 memset(temp_alarme_string, '\0', sizeof temp_alarme_string); //Limpar a string temp_alarme_string para não 
@@ -613,7 +590,7 @@ void main(void)
                 while (BusyXLCD());
             }
 
-            //Submenu para mudar a temp
+            /*Submenu para mudar a temperatura*/
             if (menu_estado_LCD == 1 && menu_pin == 0){ 
 
 
@@ -641,9 +618,8 @@ void main(void)
 
             }
 
-            //Pressionar no '*' quando se esta no menu principal e se quer alterar a temp mas tem que se introduzir o PIN
+            //Carregar no '*' quando se esta no menu principal e se quer alterar a temp mas tem que se introduzir o PIN
             if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && introduzir_pin == 1 && menu_pin == 0){
-
                 LCD_mudar_temp_alarme = 1;
                 menu_pin = 1;
                 WriteCmdXLCD(LCD_clear);        
@@ -653,7 +629,7 @@ void main(void)
 
 
 
-            //Menu do PIN
+            /*Menu do PIN*/
             if (menu_pin == 1){
 
                 memset(temp_alarme_string, '\0', sizeof temp_alarme_string); //Limpar a string temp_alarme_string para não 
@@ -786,7 +762,7 @@ void main(void)
                         putsXLCD(pin_intr_string);
                         while (BusyXLCD());
 
-                        digitos_introduzidos_pin++;
+                        digitos_introduzidos_pin++; //Contador de digitos introduzidos 
 
                         tecla_n = 0;
 
