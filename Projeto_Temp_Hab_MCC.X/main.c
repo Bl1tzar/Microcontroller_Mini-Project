@@ -89,7 +89,7 @@ int temp_ambiente_anterior; //Verificar se a temperatura varia - usada no ADC
         Alarme
  */
 int alarme_ativo;
-
+int buzzer_intermitencia; //Se = 1, ativa, se = 0, desliga com intermitência de 2 segundos
 /*
         Terminal
  */
@@ -120,6 +120,21 @@ void enable_pin(void){
     }
 
 }
+
+void intermitencia_buzzer(void){
+
+    if (alarme_ativo == 1){
+        if (buzzer_intermitencia == 1){
+            buzzer_intermitencia = 0;
+        }
+        else{
+            buzzer_intermitencia = 1;
+        }
+    }
+    
+}
+
+
 
 void ADC_temperatura (void){
     
@@ -213,6 +228,10 @@ void main(void)
     INT2_SetInterruptHandler (teclado_coluna_3);
     
     TMR1_SetInterruptHandler (enable_pin); //De 1 em 1 minuto, da enable para introduzir pin cada vez que se quer introduzir nova temp alarme
+    
+    TMR3_SetInterruptHandler (intermitencia_buzzer);
+    
+    
     //Interrupcão do ADC - Quando ocorre, executa a funcao ADC_temperatura
     ADC_SetInterruptHandler(ADC_temperatura);
     
@@ -253,6 +272,8 @@ void main(void)
     
     estado_pin_alterado = 0; //Por default, o pin nao foi alterado
     
+    buzzer_intermitencia = 1; //Por default, quando o alarme e ativado o buzzer comeca a apitar instantaneamente
+    
     while (1)
     {   
         
@@ -264,17 +285,22 @@ void main(void)
         
         
         if ((temp_ambiente >= temp_alarme && enter == 1) || (update_temp_alarme == 1 && temp_ambiente >= temp_alarme)){
-        
-            CCP1CONbits.CCP1M = 1100; //ativa o PWM - liga o sounder 
+            
             alarme_ativo = 1; 
             
-        }
+            if (buzzer_intermitencia == 1){
+                CCP1CONbits.CCP1M = 1100; //ativa o PWM - liga o sounder 
+            }
+            else if (buzzer_intermitencia == 0){
+                CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder
+            }
+        }   
         else if ((temp_ambiente < temp_alarme && enter == 1) || (update_temp_alarme == 1 && temp_ambiente < temp_alarme)){
             
             CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder
             alarme_ativo = 0;
             LATAbits.LATA1 = 0; //desliga o LED quando o alarme é desativado
-            
+            buzzer_intermitencia = 1;
         }
         
                 /*Terminal*/

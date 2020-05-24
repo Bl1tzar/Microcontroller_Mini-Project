@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "mcc_generated_files/tmr3.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,9 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 1 "./mcc_generated_files/mcc.h" 1
-# 49 "./mcc_generated_files/mcc.h"
+# 1 "mcc_generated_files/tmr3.c" 2
+# 51 "mcc_generated_files/tmr3.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -9522,17 +9521,12 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 49 "./mcc_generated_files/mcc.h" 2
+# 51 "mcc_generated_files/tmr3.c" 2
 
-# 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 392 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 404 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 51 "./mcc_generated_files/mcc.h" 2
+# 1 "mcc_generated_files/tmr3.h" 1
+# 54 "mcc_generated_files/tmr3.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
+# 54 "mcc_generated_files/tmr3.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
@@ -9617,1364 +9611,173 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-# 52 "./mcc_generated_files/mcc.h" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "./mcc_generated_files/mcc.h" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\conio.h" 1 3
-
-
-
-
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\errno.h" 1 3
-# 10 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\errno.h" 3
-extern int errno;
-# 8 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\conio.h" 2 3
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\__null.h" 1 3
-# 9 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\conio.h" 2 3
-
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-
-
-extern char * cgets(char *);
-extern void cputs(const char *);
-# 54 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/interrupt_manager.h" 1
-# 132 "./mcc_generated_files/interrupt_manager.h"
-void INTERRUPT_Initialize (void);
-# 55 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/tmr3.h" 1
-# 95 "./mcc_generated_files/tmr3.h"
+# 55 "mcc_generated_files/tmr3.h" 2
+# 95 "mcc_generated_files/tmr3.h"
 void TMR3_Initialize(void);
-# 126 "./mcc_generated_files/tmr3.h"
+# 126 "mcc_generated_files/tmr3.h"
 void TMR3_StartTimer(void);
-# 156 "./mcc_generated_files/tmr3.h"
+# 156 "mcc_generated_files/tmr3.h"
 void TMR3_StopTimer(void);
-# 190 "./mcc_generated_files/tmr3.h"
+# 190 "mcc_generated_files/tmr3.h"
 uint16_t TMR3_ReadTimer(void);
-# 216 "./mcc_generated_files/tmr3.h"
+# 216 "mcc_generated_files/tmr3.h"
 void TMR3_WriteTimer(uint16_t timerVal);
-# 248 "./mcc_generated_files/tmr3.h"
+# 248 "mcc_generated_files/tmr3.h"
 void TMR3_Reload(void);
-# 289 "./mcc_generated_files/tmr3.h"
+# 289 "mcc_generated_files/tmr3.h"
 void TMR3_StartSinglePulseAcquisition(void);
-# 330 "./mcc_generated_files/tmr3.h"
+# 330 "mcc_generated_files/tmr3.h"
 uint8_t TMR3_CheckGateValueStatus(void);
-# 346 "./mcc_generated_files/tmr3.h"
+# 346 "mcc_generated_files/tmr3.h"
 void TMR3_ISR(void);
-# 365 "./mcc_generated_files/tmr3.h"
+# 365 "mcc_generated_files/tmr3.h"
 void TMR3_CallBack(void);
-# 383 "./mcc_generated_files/tmr3.h"
+# 383 "mcc_generated_files/tmr3.h"
  void TMR3_SetInterruptHandler(void (* InterruptHandler)(void));
-# 401 "./mcc_generated_files/tmr3.h"
+# 401 "mcc_generated_files/tmr3.h"
 extern void (*TMR3_InterruptHandler)(void);
-# 419 "./mcc_generated_files/tmr3.h"
+# 419 "mcc_generated_files/tmr3.h"
 void TMR3_DefaultInterruptHandler(void);
-# 56 "./mcc_generated_files/mcc.h" 2
+# 52 "mcc_generated_files/tmr3.c" 2
 
-# 1 "./mcc_generated_files/tmr1.h" 1
-# 95 "./mcc_generated_files/tmr1.h"
-void TMR1_Initialize(void);
-# 126 "./mcc_generated_files/tmr1.h"
-void TMR1_StartTimer(void);
-# 156 "./mcc_generated_files/tmr1.h"
-void TMR1_StopTimer(void);
-# 190 "./mcc_generated_files/tmr1.h"
-uint16_t TMR1_ReadTimer(void);
-# 216 "./mcc_generated_files/tmr1.h"
-void TMR1_WriteTimer(uint16_t timerVal);
-# 248 "./mcc_generated_files/tmr1.h"
-void TMR1_Reload(void);
-# 289 "./mcc_generated_files/tmr1.h"
-void TMR1_StartSinglePulseAcquisition(void);
-# 330 "./mcc_generated_files/tmr1.h"
-uint8_t TMR1_CheckGateValueStatus(void);
-# 346 "./mcc_generated_files/tmr1.h"
-void TMR1_ISR(void);
-# 365 "./mcc_generated_files/tmr1.h"
-void TMR1_CallBack(void);
-# 383 "./mcc_generated_files/tmr1.h"
- void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 401 "./mcc_generated_files/tmr1.h"
-extern void (*TMR1_InterruptHandler)(void);
-# 419 "./mcc_generated_files/tmr1.h"
-void TMR1_DefaultInterruptHandler(void);
-# 57 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/tmr2.h" 1
-# 103 "./mcc_generated_files/tmr2.h"
-void TMR2_Initialize(void);
-# 132 "./mcc_generated_files/tmr2.h"
-void TMR2_StartTimer(void);
-# 164 "./mcc_generated_files/tmr2.h"
-void TMR2_StopTimer(void);
-# 199 "./mcc_generated_files/tmr2.h"
-uint8_t TMR2_ReadTimer(void);
-# 238 "./mcc_generated_files/tmr2.h"
-void TMR2_WriteTimer(uint8_t timerVal);
-# 290 "./mcc_generated_files/tmr2.h"
-void TMR2_LoadPeriodRegister(uint8_t periodVal);
-# 325 "./mcc_generated_files/tmr2.h"
-_Bool TMR2_HasOverflowOccured(void);
-# 58 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/tmr0.h" 1
-# 100 "./mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 129 "./mcc_generated_files/tmr0.h"
-void TMR0_StartTimer(void);
-# 161 "./mcc_generated_files/tmr0.h"
-void TMR0_StopTimer(void);
-# 197 "./mcc_generated_files/tmr0.h"
-uint16_t TMR0_ReadTimer(void);
-# 236 "./mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint16_t timerVal);
-# 272 "./mcc_generated_files/tmr0.h"
-void TMR0_Reload(void);
-# 290 "./mcc_generated_files/tmr0.h"
-void TMR0_ISR(void);
-# 309 "./mcc_generated_files/tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 327 "./mcc_generated_files/tmr0.h"
-extern void (*TMR0_InterruptHandler)(void);
-# 345 "./mcc_generated_files/tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
-# 59 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/epwm1.h" 1
-# 96 "./mcc_generated_files/epwm1.h"
-void EPWM1_Initialize(void);
-# 122 "./mcc_generated_files/epwm1.h"
-void EPWM1_LoadDutyValue(uint16_t dutyValue);
-# 60 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/ext_int.h" 1
-# 562 "./mcc_generated_files/ext_int.h"
-void EXT_INT_Initialize(void);
-# 584 "./mcc_generated_files/ext_int.h"
-void INT0_ISR(void);
-# 608 "./mcc_generated_files/ext_int.h"
-void INT0_CallBack(void);
-# 631 "./mcc_generated_files/ext_int.h"
-void INT0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 655 "./mcc_generated_files/ext_int.h"
-extern void (*INT0_InterruptHandler)(void);
-# 679 "./mcc_generated_files/ext_int.h"
-void INT0_DefaultInterruptHandler(void);
-# 697 "./mcc_generated_files/ext_int.h"
-void INT1_ISR(void);
-# 721 "./mcc_generated_files/ext_int.h"
-void INT1_CallBack(void);
-# 744 "./mcc_generated_files/ext_int.h"
-void INT1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 768 "./mcc_generated_files/ext_int.h"
-extern void (*INT1_InterruptHandler)(void);
-# 792 "./mcc_generated_files/ext_int.h"
-void INT1_DefaultInterruptHandler(void);
-# 810 "./mcc_generated_files/ext_int.h"
-void INT2_ISR(void);
-# 834 "./mcc_generated_files/ext_int.h"
-void INT2_CallBack(void);
-# 857 "./mcc_generated_files/ext_int.h"
-void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 881 "./mcc_generated_files/ext_int.h"
-extern void (*INT2_InterruptHandler)(void);
-# 905 "./mcc_generated_files/ext_int.h"
-void INT2_DefaultInterruptHandler(void);
-# 61 "./mcc_generated_files/mcc.h" 2
+volatile uint16_t timer3ReloadVal;
+void (*TMR3_InterruptHandler)(void);
 
-# 1 "./mcc_generated_files/adc.h" 1
-# 58 "./mcc_generated_files/adc.h"
-void ADC_SetInterruptHandler(void (* InterruptHandler)(void));
-# 74 "./mcc_generated_files/adc.h"
-typedef uint16_t adc_result_t;
 
 
 
 
-typedef struct
-{
-    adc_result_t adcResult1;
-    adc_result_t adcResult2;
-} adc_sync_double_result_t;
-# 97 "./mcc_generated_files/adc.h"
-typedef enum
-{
-    channel_AN0 = 0x0,
-    channel_CTMU = 0x1D,
-    channel_DAC = 0x1E,
-    channel_FVRBuf2 = 0x1F
-} adc_channel_t;
-# 138 "./mcc_generated_files/adc.h"
-void ADC_Initialize(void);
-# 168 "./mcc_generated_files/adc.h"
-void ADC_SelectChannel(adc_channel_t channel);
-# 195 "./mcc_generated_files/adc.h"
-void ADC_StartConversion();
-# 227 "./mcc_generated_files/adc.h"
-_Bool ADC_IsConversionDone();
-# 260 "./mcc_generated_files/adc.h"
-adc_result_t ADC_GetConversionResult(void);
-# 290 "./mcc_generated_files/adc.h"
-adc_result_t ADC_GetConversion(adc_channel_t channel);
-# 318 "./mcc_generated_files/adc.h"
-void ADC_TemperatureAcquisitionDelay(void);
-# 334 "./mcc_generated_files/adc.h"
-void ADC_ISR(void);
-# 352 "./mcc_generated_files/adc.h"
- void ADC_SetInterruptHandler(void (* InterruptHandler)(void));
-# 370 "./mcc_generated_files/adc.h"
-extern void (*ADC_InterruptHandler)(void);
-# 388 "./mcc_generated_files/adc.h"
-void ADC_DefaultInterruptHandler(void);
-# 62 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/eusart1.h" 1
-# 57 "./mcc_generated_files/eusart1.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
-
-
-
-
-
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 137 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 246 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 399 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
-
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 57 "./mcc_generated_files/eusart1.h" 2
-# 76 "./mcc_generated_files/eusart1.h"
-typedef union {
-    struct {
-        unsigned perr : 1;
-        unsigned ferr : 1;
-        unsigned oerr : 1;
-        unsigned reserved : 5;
-    };
-    uint8_t status;
-}eusart1_status_t;
-
-
-
-
-extern volatile uint8_t eusart1TxBufferRemaining;
-extern volatile uint8_t eusart1RxCount;
-
-
-
-
-extern void (*EUSART1_RxDefaultInterruptHandler)(void);
-# 117 "./mcc_generated_files/eusart1.h"
-void EUSART1_Initialize(void);
-# 165 "./mcc_generated_files/eusart1.h"
-_Bool EUSART1_is_tx_ready(void);
-# 213 "./mcc_generated_files/eusart1.h"
-_Bool EUSART1_is_rx_ready(void);
-# 260 "./mcc_generated_files/eusart1.h"
-_Bool EUSART1_is_tx_done(void);
-# 308 "./mcc_generated_files/eusart1.h"
-eusart1_status_t EUSART1_get_last_status(void);
-# 328 "./mcc_generated_files/eusart1.h"
-uint8_t EUSART1_Read(void);
-# 348 "./mcc_generated_files/eusart1.h"
-void EUSART1_Write(uint8_t txData);
-# 370 "./mcc_generated_files/eusart1.h"
-void EUSART1_Receive_ISR(void);
-# 391 "./mcc_generated_files/eusart1.h"
-void EUSART1_RxDataHandler(void);
-# 409 "./mcc_generated_files/eusart1.h"
-void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 427 "./mcc_generated_files/eusart1.h"
-void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 445 "./mcc_generated_files/eusart1.h"
-void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
-# 466 "./mcc_generated_files/eusart1.h"
-void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 63 "./mcc_generated_files/mcc.h" 2
-# 78 "./mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 91 "./mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 1 "main.c" 2
-
-# 1 "./xlcd.h" 1
-# 79 "./xlcd.h"
-void OpenXLCD( unsigned char);
-
-
-
-
-void SetCGRamAddr( unsigned char);
-
-
-
-
-void SetDDRamAddr( unsigned char);
-
-
-
-
-unsigned char BusyXLCD(void);
-
-
-
-
-unsigned char ReadAddrXLCD(void);
-
-
-
-
-char ReadDataXLCD(void);
-
-
-
-
-void WriteCmdXLCD( unsigned char);
-
-
-
-
-void WriteDataXLCD( char);
-# 124 "./xlcd.h"
-void putsXLCD( char *);
-
-
-
-
-void putrsXLCD( const char *);
-
-
-extern void DelayFor18TCY(void);
-extern void DelayPORXLCD(void);
-extern void DelayXLCD(void);
-# 2 "main.c" 2
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 1 3
-# 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 411 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct __locale_struct * locale_t;
-# 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 2 3
-
-
-void *memcpy (void *restrict, const void *restrict, size_t);
-void *memmove (void *, const void *, size_t);
-void *memset (void *, int, size_t);
-int memcmp (const void *, const void *, size_t);
-void *memchr (const void *, int, size_t);
-
-char *strcpy (char *restrict, const char *restrict);
-char *strncpy (char *restrict, const char *restrict, size_t);
-
-char *strcat (char *restrict, const char *restrict);
-char *strncat (char *restrict, const char *restrict, size_t);
-
-int strcmp (const char *, const char *);
-int strncmp (const char *, const char *, size_t);
-
-int strcoll (const char *, const char *);
-size_t strxfrm (char *restrict, const char *restrict, size_t);
-
-char *strchr (const char *, int);
-char *strrchr (const char *, int);
-
-size_t strcspn (const char *, const char *);
-size_t strspn (const char *, const char *);
-char *strpbrk (const char *, const char *);
-char *strstr (const char *, const char *);
-char *strtok (char *restrict, const char *restrict);
-
-size_t strlen (const char *);
-
-char *strerror (int);
-# 65 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 3
-char *strtok_r (char *restrict, const char *restrict, char **restrict);
-int strerror_r (int, char *, size_t);
-char *stpcpy(char *restrict, const char *restrict);
-char *stpncpy(char *restrict, const char *restrict, size_t);
-size_t strnlen (const char *, size_t);
-char *strdup (const char *);
-char *strndup (const char *, size_t);
-char *strsignal(int);
-char *strerror_l (int, locale_t);
-int strcoll_l (const char *, const char *, locale_t);
-size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
-
-
-
-
-void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 5 "main.c" 2
-# 15 "main.c"
-# 1 "./LCD.h" 1
-# 14 "./LCD.h"
-void LCD_inicio_teste(void);
-# 15 "main.c" 2
-
-
-
-
-
-
-
-
-# 1 "./Teclado.h" 1
-
-
-
-
-extern unsigned char tecla_premida;
-extern int tecla_n;
-extern int tecla_limpar;
-
-
-void teclado_coluna_1 (void);
-void teclado_coluna_2 (void);
-void teclado_coluna_3 (void);
-# 23 "main.c" 2
-# 33 "main.c"
-unsigned char tecla_premida;
-int tecla_n;
-int tecla_limpar;
-
-
-
-
-
-
-int contador_colunas_LCD = 192;
-char temp_alarme_LCD [40];
-char temp_ambiente_LCD [40];
-int digitos_introduzidos_alarme;
-int menu_estado_LCD;
-# 55 "main.c"
-int menu_pin;
-int introduzir_pin;
-int pin_introduzido;
-char pin_intr_string [5];
-int pin_real = 0000;
-int digitos_introduzidos_pin;
-int mudar_pin;
-int pin_mudado;
-int estado_pin_alterado;
-int menu_mudar_pin;
-char pin_mudado_string [5];
-
-
-
-
-unsigned char temp_alarme_intro;
-char temp_alarme_string [4];
-int temp_alarme_provisoria;
-int temp_alarme;
-int temp_mudou;
-int temp_alarme_mudou;
-int update_temp_alarme;
-int EUSART_mudar_temp_alarme;
-int LCD_mudar_temp_alarme;
-
-
-
-float tensao;
-int codigo_digital;
-
-int temp_ambiente;
-int temp_ambiente_anterior;
-
-
-
-
-int alarme_ativo;
-int buzzer_intermitencia;
-
-
-
-int menu_estado;
-
-int menu_entrada;
-int limpar_terminal;
-int enter;
-int temp_valida;
-
-
-
-
-
-void Timer_0 (void) {
-    if (alarme_ativo == 1){
-        do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0);
-    }
-    ADC_StartConversion();
-}
-
-void enable_pin(void){
-
-    if (introduzir_pin == 0 && menu_pin == 0 ){
-
-        introduzir_pin = 1;
-
-    }
-
-}
-
-void intermitencia_buzzer(void){
-
-    if (alarme_ativo == 1){
-        if (buzzer_intermitencia == 1){
-            buzzer_intermitencia = 0;
-        }
-        else{
-            buzzer_intermitencia = 1;
-        }
-    }
-
-}
-
-
-
-void ADC_temperatura (void){
-
-    codigo_digital = ADC_GetConversionResult();
-
-
-
-
-
-    tensao = ((3.4)*(float)(codigo_digital/1024.0)) - 0.3;
-    tensao = (int) ((tensao * 100) + 0.5);
-    tensao = (float) tensao/100;
-
-    temp_ambiente = (int) ((tensao - 0.400)/0.0195);
-
-    if (temp_ambiente != temp_ambiente_anterior){
-
-        temp_mudou = 1;
-        temp_ambiente_anterior = temp_ambiente;
-    }
-    else{
-        temp_mudou = 0;
-    }
-
-}
-
-
-
-
-
-void main(void)
+void TMR3_Initialize(void)
 {
 
-    SYSTEM_Initialize();
-
-    uint8_t rxData;
-# 183 "main.c"
-    (INTCONbits.GIEH = 1);
-# 215 "main.c"
-    int contador_caracteres = 4;
-
-    CCP1CONbits.CCP1M = 0000;
 
 
-    LCD_inicio_teste();
+    T3GCON = 0x00;
 
 
-    TMR0_SetInterruptHandler (Timer_0);
+    TMR3H = 0x6D;
 
 
-    INT0_SetInterruptHandler (teclado_coluna_1);
-    INT1_SetInterruptHandler (teclado_coluna_2);
-    INT2_SetInterruptHandler (teclado_coluna_3);
-
-    TMR1_SetInterruptHandler (enable_pin);
-
-    TMR3_SetInterruptHandler (intermitencia_buzzer);
+    TMR3L = 0x84;
 
 
-
-    ADC_SetInterruptHandler(ADC_temperatura);
-
-
-    T1CONbits.TMR1ON = 0;
+    timer3ReloadVal=TMR3;
 
 
+    PIR2bits.TMR3IF = 0;
 
-    temp_alarme = 25;
 
-    menu_estado = 1;
+    PIE2bits.TMR3IE = 1;
 
-    menu_entrada = 0;
 
-    enter = 1;
+    TMR3_SetInterruptHandler(TMR3_DefaultInterruptHandler);
 
-    menu_estado_LCD = 0;
 
-    digitos_introduzidos_alarme = 0;
+    T3CON = 0x31;
+}
 
-    digitos_introduzidos_pin = 0;
+void TMR3_StartTimer(void)
+{
 
-    update_temp_alarme = 0;
+    T3CONbits.TMR3ON = 1;
+}
 
-    temp_alarme_mudou = 0;
+void TMR3_StopTimer(void)
+{
 
-    EUSART_mudar_temp_alarme = 0;
+    T3CONbits.TMR3ON = 0;
+}
 
-    LCD_mudar_temp_alarme = 0;
+uint16_t TMR3_ReadTimer(void)
+{
+    uint16_t readVal;
+    uint8_t readValHigh;
+    uint8_t readValLow;
 
-    introduzir_pin = 1;
+    T3CONbits.T3RD16 = 1;
 
-    menu_pin = 0;
+    readValLow = TMR3L;
+    readValHigh = TMR3H;
 
-    mudar_pin = 0;
+    readVal = ((uint16_t)readValHigh << 8) | readValLow;
 
-    menu_mudar_pin = 1;
+    return readVal;
+}
 
-    estado_pin_alterado = 0;
-
-    buzzer_intermitencia = 1;
-
-    while (1)
+void TMR3_WriteTimer(uint16_t timerVal)
+{
+    if (T3CONbits.nT3SYNC == 1)
     {
 
-        if (introduzir_pin == 0){
+        T3CONbits.TMR3ON = 0;
 
-            T1CONbits.TMR1ON = 1;
 
-        }
+        TMR3H = (timerVal >> 8);
+        TMR3L = (uint8_t) timerVal;
 
 
-        if ((temp_ambiente >= temp_alarme && enter == 1) || (update_temp_alarme == 1 && temp_ambiente >= temp_alarme)){
-
-            alarme_ativo = 1;
-
-            if (buzzer_intermitencia == 1){
-                CCP1CONbits.CCP1M = 1100;
-            }
-            else if (buzzer_intermitencia == 0){
-                CCP1CONbits.CCP1M = 0000;
-            }
-        }
-        else if ((temp_ambiente < temp_alarme && enter == 1) || (update_temp_alarme == 1 && temp_ambiente < temp_alarme)){
-
-            CCP1CONbits.CCP1M = 0000;
-            alarme_ativo = 0;
-            LATAbits.LATA1 = 0;
-            buzzer_intermitencia = 1;
-        }
-
-
-
-        if ((menu_estado == 1 && menu_entrada == 1 && update_temp_alarme == 1) || (menu_estado == 1 && temp_mudou == 1)){
-
-
-
-            printf("%c" , 12);
-            printf("\r\n---------------Menu principal---------------");
-            printf("\r\n\nTemperatura atual = %dºC", temp_ambiente);
-            if (alarme_ativo == 1){
-                printf("\r\nEstado do alarme: Ativo");
-            }
-            if (alarme_ativo == 0){
-                printf("\r\nEstado do alarme: Desativo");
-            }
-
-            printf("\r\n\nTemperatura de alarme: %dºC", temp_alarme);
-
-            printf ("\r\nAlterar temperatura de alarme? [Y]: ");
-
-            menu_entrada = 0;
-
-            update_temp_alarme = 0;
-        }
-
-        if (menu_estado == 0 && menu_entrada == 1 && EUSART_mudar_temp_alarme == 1 && LCD_mudar_temp_alarme == 0){
-            printf("\r\n-----------------Sub-menu-------------------");
-            printf("\r\n\nTemperatura de alarme: %dºC", temp_alarme);
-            printf("\r\nIntroduza a nova temperatura de alarme: ");
-            menu_entrada = 0;
-        }
-
-
-        if (EUSART1_is_rx_ready()){
-
-            enter = 0;
-
-            rxData = EUSART1_Read();
-
-            if (rxData == 13 && EUSART_mudar_temp_alarme == 1){
-
-                tecla_n = 0;
-
-                printf("%c", 12);
-
-                if (temp_alarme_provisoria >=10 && temp_alarme_provisoria <=50){
-
-                    temp_alarme = temp_alarme_provisoria;
-
-                    EUSART_mudar_temp_alarme = 0;
-
-                    if (menu_estado == 0){
-                        menu_estado = 1;
-                        menu_entrada = 1;
-                    }
-                    limpar_terminal = 1;
-
-                    enter = 1;
-
-                    update_temp_alarme = 1;
-
-                    temp_alarme_mudou = 1;
-
-                    memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
-
-                }
-                else{
-                    printf("\r\n\n------------TEMPERATURA INVÁLIDA------------");
-                    printf("\r\n\nTemperatura de alarme inválida: %dºC", temp_alarme);
-                    printf("\r\nIntroduza a nova temperatura de alarme: ");
-                    memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
-                }
-            }
-            if ((rxData == 'Y' || rxData == 'y') && (LCD_mudar_temp_alarme == 0)){
-
-                EUSART_mudar_temp_alarme = 1;
-
-                if (menu_estado == 1){
-                    printf("%c", 12);
-                    menu_estado = 0;
-                    menu_entrada = 1;
-                }
-                limpar_terminal = 1;
-            }
-
-            if ((EUSART_mudar_temp_alarme == 1) && (menu_estado == 0) && (rxData == '0' || rxData == '1' || rxData == '2' || rxData == '3' || rxData == '4' || rxData == '5' || rxData == '6' || rxData == '7' || rxData == '8' || rxData == '9')){
-
-                temp_alarme_intro = rxData;
-                 EUSART1_Write(rxData);
-
-                 strncat(temp_alarme_string, &temp_alarme_intro, 1);
-
-                 temp_alarme_provisoria = atoi (temp_alarme_string);
-            }
-
-        }
-
-
-
-
-
-
-        if (tecla_n == 1 && tecla_premida == '#' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && mudar_pin == 0){
-
-            mudar_pin = 1;
-            tecla_n = 0;
-            WriteCmdXLCD(0b00000001);
-            while (BusyXLCD());
-            menu_mudar_pin = 1;
-        }
-
-        if (tecla_n == 1 && tecla_premida == '#' && mudar_pin == 1){
-
-            mudar_pin = 0;
-            tecla_n = 0;
-            WriteCmdXLCD(0b00000001);
-            while (BusyXLCD());
-            digitos_introduzidos_pin = 0;
-            memset(pin_mudado_string, '\0', sizeof pin_mudado_string);
-            estado_pin_alterado = 1;
-        }
-
-
-        if (mudar_pin == 1){
-
-            if (menu_mudar_pin == 1){
-
-                WriteCmdXLCD(133);
-                while (BusyXLCD());
-                putsXLCD("PIN Atual");
-                while (BusyXLCD());
-
-                WriteCmdXLCD(192);
-                while (BusyXLCD());
-                putsXLCD ("PIN:");
-                while (BusyXLCD());
-
-                if ((tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
-
-
-
-                    strncat(pin_mudado_string, &tecla_premida, 1);
-
-                    WriteCmdXLCD(196);
-                    while (BusyXLCD());
-                    putsXLCD(pin_mudado_string);
-                    while (BusyXLCD());
-
-                    digitos_introduzidos_pin++;
-                    tecla_n = 0;
-
-                    if (digitos_introduzidos_pin == 4){
-
-                        digitos_introduzidos_pin = 0;
-
-                        pin_mudado = atoi (pin_mudado_string);
-
-                        if (pin_mudado == pin_real){
-                            menu_mudar_pin = 0;
-                            memset(pin_mudado_string, '\0', sizeof pin_mudado_string);
-
-                            WriteCmdXLCD(0b00000001);
-                            while (BusyXLCD());
-                        }
-                        else if (pin_mudado > pin_real || pin_mudado < pin_real){
-                            WriteCmdXLCD(201);
-                            while (BusyXLCD());
-                            putsXLCD("INCORRETO");
-                            while (BusyXLCD());
-                            _delay((unsigned long)((1000)*(6000000/4000.0)));
-
-                            memset(pin_mudado_string, '\0', sizeof pin_mudado_string);
-
-                            WriteCmdXLCD(0b00000001);
-                            while (BusyXLCD());
-
-
-                        }
-
-                    }
-
-                }
-
-
-            }
-
-            if (menu_mudar_pin == 0){
-                WriteCmdXLCD(131);
-                while (BusyXLCD());
-                putsXLCD("Atualizar PIN");
-                while (BusyXLCD());
-
-                WriteCmdXLCD(192);
-                while (BusyXLCD());
-                putsXLCD ("PIN:");
-                while (BusyXLCD());
-
-
-
-                if ((tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
-
-
-
-                    strncat(pin_mudado_string, &tecla_premida, 1);
-
-                    WriteCmdXLCD(196);
-                    while (BusyXLCD());
-                    putsXLCD(pin_mudado_string);
-                    while (BusyXLCD());
-
-                    digitos_introduzidos_pin++;
-                    tecla_n = 0;
-
-                    if (digitos_introduzidos_pin == 4){
-
-                        digitos_introduzidos_pin = 0;
-                        mudar_pin = 0;
-
-                        pin_real = atoi (pin_mudado_string);
-
-
-                        _delay((unsigned long)((500)*(6000000/4000.0)));
-
-                        WriteCmdXLCD(0b00000001);
-                        while (BusyXLCD());
-
-                         WriteCmdXLCD(130);
-                        while (BusyXLCD());
-                        putsXLCD("Atualizado com");
-                        while (BusyXLCD());
-
-                        WriteCmdXLCD(196);
-                        while (BusyXLCD());
-                        putsXLCD ("Sucesso");
-                        while (BusyXLCD());
-
-                        _delay((unsigned long)((500)*(6000000/4000.0)));
-
-                        WriteCmdXLCD(0b00000001);
-                        while (BusyXLCD());
-
-                        estado_pin_alterado = 1;
-
-                        memset(pin_mudado_string, '\0', sizeof pin_mudado_string);
-                    }
-
-                }
-            }
-        }
-
-
-
-        if (mudar_pin == 0){
-
-
-
-            if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && introduzir_pin == 0){
-                menu_estado_LCD = 1;
-                WriteCmdXLCD(0b00000001);
-                while (BusyXLCD());
-                tecla_n =0;
-                LCD_mudar_temp_alarme = 1;
-            }
-
-
-            if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 1){
-                digitos_introduzidos_alarme = 0;
-                menu_estado_LCD = 0;
-                temp_alarme_mudou = 1;
-                WriteCmdXLCD(0b00000001);
-                while (BusyXLCD());
-                tecla_n =0;
-            }
-
-
-            if ((((menu_estado_LCD == 0 && temp_mudou == 1) || (menu_estado_LCD == 0 && temp_alarme_mudou == 1)) && menu_pin == 0) || estado_pin_alterado == 1){
-
-                memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
-
-
-                estado_pin_alterado = 0;
-                temp_alarme_mudou = 0;
-
-                LCD_mudar_temp_alarme = 0;
-
-
-                sprintf(temp_ambiente_LCD, "Temp. atual = %.0d C            ", temp_ambiente);
-                WriteCmdXLCD(128);
-                while (BusyXLCD());
-
-
-
-
-
-                putsXLCD(temp_ambiente_LCD);
-                while (BusyXLCD());
-
-
-                sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C            ", temp_alarme);
-                WriteCmdXLCD(192);
-                while (BusyXLCD());
-
-
-
-
-
-                putsXLCD(temp_alarme_LCD);
-                while (BusyXLCD());
-            }
-
-
-            if (menu_estado_LCD == 1 && menu_pin == 0){
-
-
-
-                sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C            ", temp_alarme);
-                WriteCmdXLCD(128);
-                while (BusyXLCD());
-
-
-
-
-
-                putsXLCD(temp_alarme_LCD);
-                while (BusyXLCD());
-
-                WriteCmdXLCD(192);
-                while (BusyXLCD());
-
-
-
-
-
-                putsXLCD("Nova temp.:");
-                while (BusyXLCD());
-
-            }
-
-
-            if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && introduzir_pin == 1 && menu_pin == 0){
-
-                LCD_mudar_temp_alarme = 1;
-                menu_pin = 1;
-                WriteCmdXLCD(0b00000001);
-                while (BusyXLCD());
-                tecla_n = 0;
-            }
-
-
-
-
-            if (menu_pin == 1){
-
-                memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
-
-
-
-                sprintf(temp_alarme_LCD, "Introduza o PIN", temp_alarme);
-                WriteCmdXLCD(128);
-                while (BusyXLCD());
-
-
-
-
-
-                putsXLCD(temp_alarme_LCD);
-                while (BusyXLCD());
-
-                WriteCmdXLCD(192);
-                while (BusyXLCD());
-
-                putsXLCD("PIN:");
-                while (BusyXLCD());
-
-            }
-
-            if (tecla_n == 1 && tecla_premida == '*' && menu_pin == 1){
-
-                LCD_mudar_temp_alarme = 0;
-                menu_pin = 0;
-                WriteCmdXLCD(0b00000001);
-                while (BusyXLCD());
-                tecla_n = 0;
-                temp_alarme_mudou = 1;
-            }
-
-
-
-
-            if (menu_pin == 0){
-
-                if ((menu_estado_LCD == 1 && tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
-
-                        strncat(temp_alarme_string, &tecla_premida, 1);
-                        WriteCmdXLCD(203);
-                        while (BusyXLCD());
-
-
-                        putsXLCD(temp_alarme_string);
-                        while (BusyXLCD());
-
-                        digitos_introduzidos_alarme++;
-
-
-
-                    if (digitos_introduzidos_alarme == 2){
-
-                        _delay((unsigned long)((500)*(6000000/4000.0)));
-
-                        WriteCmdXLCD(0b00000001);
-                        while (BusyXLCD());
-
-
-                        temp_alarme_provisoria = atoi (temp_alarme_string);
-
-                        digitos_introduzidos_alarme = 0;
-
-                        if (temp_alarme_provisoria >= 10 && temp_alarme_provisoria <= 50){
-
-                            temp_alarme = temp_alarme_provisoria;
-
-                            menu_estado_LCD = 0;
-
-                            temp_alarme_mudou = 1;
-
-                            menu_entrada = 1;
-
-                            update_temp_alarme = 1;
-                            memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
-
-                        }
-                        else {
-
-                            memset(temp_alarme_string, '\0', sizeof temp_alarme_string);
-
-
-                            WriteCmdXLCD(132);
-                            while (BusyXLCD());
-
-
-
-
-
-                            putsXLCD("TEMPERATURA");
-                            while (BusyXLCD());
-
-                            WriteCmdXLCD(197);
-                            while (BusyXLCD());
-
-
-
-
-
-                            putsXLCD("INVALIDA !");
-                            while (BusyXLCD());
-
-                            _delay((unsigned long)((2000)*(6000000/4000.0)));
-
-                            WriteCmdXLCD(0b00000001);
-                            while (BusyXLCD());
-                        }
-
-                    }
-                    tecla_n = 0;
-                }
-            }
-
-            else if (menu_pin == 1){
-
-                if (tecla_n == 1 && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
-
-
-                        strncat(pin_intr_string, &tecla_premida, 1);
-                        WriteCmdXLCD(196);
-                        while (BusyXLCD());
-
-
-
-
-
-                        putsXLCD(pin_intr_string);
-                        while (BusyXLCD());
-
-                        digitos_introduzidos_pin++;
-
-                        tecla_n = 0;
-
-                        if (digitos_introduzidos_pin == 4){
-
-                            pin_introduzido = atoi (pin_intr_string);
-
-                            if (pin_introduzido == pin_real) {
-
-                                strncat(pin_intr_string, &tecla_premida, 1);
-                                WriteCmdXLCD(201);
-                                while (BusyXLCD());
-                                putsXLCD("CORRETO");
-                                while (BusyXLCD());
-
-                                _delay((unsigned long)((1000)*(6000000/4000.0)));
-
-                                WriteCmdXLCD(0b00000001);
-                                while (BusyXLCD());
-
-                                memset(pin_intr_string, '\0', sizeof temp_alarme_string);
-                                digitos_introduzidos_pin = 0;
-                                menu_pin = 0;
-                                introduzir_pin = 0;
-                                menu_estado_LCD = 1;
-
-
-
-                            }
-                            else if (pin_introduzido > pin_real || pin_introduzido < pin_real){
-
-                                strncat(pin_intr_string, &tecla_premida, 1);
-                                WriteCmdXLCD(201);
-                                while (BusyXLCD());
-                                putsXLCD("INCORRETO");
-                                while (BusyXLCD());
-
-                                _delay((unsigned long)((1000)*(6000000/4000.0)));
-
-                                WriteCmdXLCD(0b00000001);
-                                while (BusyXLCD());
-
-                                memset(pin_intr_string, '\0', sizeof temp_alarme_string);
-                                digitos_introduzidos_pin = 0;
-                            }
-
-                        }
-                }
-            }
-        }
-
-
-
-
-
-            LATBbits.LATB3 = 0;
-            LATBbits.LATB4 = 1;
-            LATBbits.LATB5 = 1;
-            LATBbits.LATB6 = 1;
-
-            _delay((unsigned long)((60)*(6000000/4000.0)));
-
-
-            LATBbits.LATB3 = 1;
-            LATBbits.LATB4 = 0;
-            LATBbits.LATB5 = 1;
-            LATBbits.LATB6 = 1;
-
-            _delay((unsigned long)((60)*(6000000/4000.0)));
-
-
-            LATBbits.LATB3 = 1;
-            LATBbits.LATB4 = 1;
-            LATBbits.LATB5 = 0;
-            LATBbits.LATB6 = 1;
-
-            _delay((unsigned long)((60)*(6000000/4000.0)));
-
-
-            LATBbits.LATB3 = 1;
-            LATBbits.LATB4 = 1;
-            LATBbits.LATB5 = 1;
-            LATBbits.LATB6 = 0;
-
-            _delay((unsigned long)((50)*(6000000/4000.0)));
+        T3CONbits.TMR3ON =1;
     }
+    else
+    {
+
+        TMR3H = (timerVal >> 8);
+        TMR3L = (uint8_t) timerVal;
+    }
+}
+
+void TMR3_Reload(void)
+{
+    TMR3_WriteTimer(timer3ReloadVal);
+}
+
+void TMR3_StartSinglePulseAcquisition(void)
+{
+    T3GCONbits.T3GGO = 1;
+}
+
+uint8_t TMR3_CheckGateValueStatus(void)
+{
+    return T3GCONbits.T3GVAL;
+}
+
+void TMR3_ISR(void)
+{
+    static volatile unsigned int CountCallBack = 0;
+
+
+    PIR2bits.TMR3IF = 0;
+    TMR3_WriteTimer(timer3ReloadVal);
+
+
+    if (++CountCallBack >= 10)
+    {
+
+        TMR3_CallBack();
+
+
+        CountCallBack = 0;
+    }
+}
+
+void TMR3_CallBack(void)
+{
+
+    if(TMR3_InterruptHandler)
+    {
+        TMR3_InterruptHandler();
+    }
+}
+
+void TMR3_SetInterruptHandler(void (* InterruptHandler)(void)){
+    TMR3_InterruptHandler = InterruptHandler;
+}
+
+void TMR3_DefaultInterruptHandler(void){
+
+
 }

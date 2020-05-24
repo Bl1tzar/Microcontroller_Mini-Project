@@ -9662,6 +9662,35 @@ extern void cputs(const char *);
 # 54 "mcc_generated_files/mcc.h" 2
 
 
+# 1 "mcc_generated_files/tmr3.h" 1
+# 95 "mcc_generated_files/tmr3.h"
+void TMR3_Initialize(void);
+# 126 "mcc_generated_files/tmr3.h"
+void TMR3_StartTimer(void);
+# 156 "mcc_generated_files/tmr3.h"
+void TMR3_StopTimer(void);
+# 190 "mcc_generated_files/tmr3.h"
+uint16_t TMR3_ReadTimer(void);
+# 216 "mcc_generated_files/tmr3.h"
+void TMR3_WriteTimer(uint16_t timerVal);
+# 248 "mcc_generated_files/tmr3.h"
+void TMR3_Reload(void);
+# 289 "mcc_generated_files/tmr3.h"
+void TMR3_StartSinglePulseAcquisition(void);
+# 330 "mcc_generated_files/tmr3.h"
+uint8_t TMR3_CheckGateValueStatus(void);
+# 346 "mcc_generated_files/tmr3.h"
+void TMR3_ISR(void);
+# 365 "mcc_generated_files/tmr3.h"
+void TMR3_CallBack(void);
+# 383 "mcc_generated_files/tmr3.h"
+ void TMR3_SetInterruptHandler(void (* InterruptHandler)(void));
+# 401 "mcc_generated_files/tmr3.h"
+extern void (*TMR3_InterruptHandler)(void);
+# 419 "mcc_generated_files/tmr3.h"
+void TMR3_DefaultInterruptHandler(void);
+# 56 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/tmr1.h" 1
 # 95 "mcc_generated_files/tmr1.h"
 void TMR1_Initialize(void);
@@ -9689,7 +9718,7 @@ void TMR1_CallBack(void);
 extern void (*TMR1_InterruptHandler)(void);
 # 419 "mcc_generated_files/tmr1.h"
 void TMR1_DefaultInterruptHandler(void);
-# 56 "mcc_generated_files/mcc.h" 2
+# 57 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/tmr2.h" 1
 # 103 "mcc_generated_files/tmr2.h"
@@ -9706,7 +9735,7 @@ void TMR2_WriteTimer(uint8_t timerVal);
 void TMR2_LoadPeriodRegister(uint8_t periodVal);
 # 325 "mcc_generated_files/tmr2.h"
 _Bool TMR2_HasOverflowOccured(void);
-# 57 "mcc_generated_files/mcc.h" 2
+# 58 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/tmr0.h" 1
 # 100 "mcc_generated_files/tmr0.h"
@@ -9729,14 +9758,14 @@ void TMR0_ISR(void);
 extern void (*TMR0_InterruptHandler)(void);
 # 345 "mcc_generated_files/tmr0.h"
 void TMR0_DefaultInterruptHandler(void);
-# 58 "mcc_generated_files/mcc.h" 2
+# 59 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/epwm1.h" 1
 # 96 "mcc_generated_files/epwm1.h"
 void EPWM1_Initialize(void);
 # 122 "mcc_generated_files/epwm1.h"
 void EPWM1_LoadDutyValue(uint16_t dutyValue);
-# 59 "mcc_generated_files/mcc.h" 2
+# 60 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/ext_int.h" 1
 # 562 "mcc_generated_files/ext_int.h"
@@ -9771,7 +9800,7 @@ void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT2_InterruptHandler)(void);
 # 905 "mcc_generated_files/ext_int.h"
 void INT2_DefaultInterruptHandler(void);
-# 60 "mcc_generated_files/mcc.h" 2
+# 61 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/adc.h" 1
 # 58 "mcc_generated_files/adc.h"
@@ -9817,7 +9846,7 @@ void ADC_ISR(void);
 extern void (*ADC_InterruptHandler)(void);
 # 388 "mcc_generated_files/adc.h"
 void ADC_DefaultInterruptHandler(void);
-# 61 "mcc_generated_files/mcc.h" 2
+# 62 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/eusart1.h" 1
 # 57 "mcc_generated_files/eusart1.h"
@@ -10007,10 +10036,10 @@ void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 # 466 "mcc_generated_files/eusart1.h"
 void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 62 "mcc_generated_files/mcc.h" 2
-# 77 "mcc_generated_files/mcc.h"
+# 63 "mcc_generated_files/mcc.h" 2
+# 78 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 90 "mcc_generated_files/mcc.h"
+# 91 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 50 "mcc_generated_files/interrupt_manager.c" 2
 
@@ -10027,6 +10056,9 @@ void INTERRUPT_Initialize (void)
 
 
     IPR1bits.RC1IP = 1;
+
+
+    IPR2bits.TMR3IP = 1;
 
 
     IPR1bits.TMR1IP = 1;
@@ -10055,6 +10087,10 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManagerHigh (void)
     else if(PIE1bits.RC1IE == 1 && PIR1bits.RC1IF == 1)
     {
         EUSART1_RxDefaultInterruptHandler();
+    }
+    else if(PIE2bits.TMR3IE == 1 && PIR2bits.TMR3IF == 1)
+    {
+        TMR3_ISR();
     }
     else if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
     {
