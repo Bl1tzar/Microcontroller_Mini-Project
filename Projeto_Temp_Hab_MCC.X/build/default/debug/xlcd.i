@@ -9521,8 +9521,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 2 "xlcd.c" 2
-
+# 3 "xlcd.c" 2
 
 
 
@@ -9577,7 +9576,7 @@ void putrsXLCD( const char *);
 extern void DelayFor18TCY(void);
 extern void DelayPORXLCD(void);
 extern void DelayXLCD(void);
-# 7 "xlcd.c" 2
+# 8 "xlcd.c" 2
 # 18 "xlcd.c"
 void DelayFor18TCY(void) {
 

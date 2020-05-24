@@ -286,7 +286,7 @@ void main(void)
         }
         
         
-        if ((temp_ambiente >= temp_alarme && enter == 1) || (update_temp_alarme == 1 && temp_ambiente >= temp_alarme)){ //Ativar o alarme 
+        if (temp_ambiente >= temp_alarme){ //Ativar o alarme 
             
             alarme_ativo = 1; 
             //Intermitencia do buzzer - Timer3
@@ -309,7 +309,7 @@ void main(void)
                 while (BusyXLCD());
             }
         }   
-        else if ((temp_ambiente < temp_alarme && enter == 1) || (update_temp_alarme == 1 && temp_ambiente < temp_alarme)){ //Desativar o alarme
+        else if (temp_ambiente < temp_alarme){ //Desativar o alarme
             
             CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder
             alarme_ativo = 0;
@@ -493,25 +493,19 @@ void main(void)
                             while (BusyXLCD());
                         }
                         else if (pin_mudado > pin_real || pin_mudado < pin_real){
+                           
+                            WriteCmdXLCD(LCD_clear);        
+                            while (BusyXLCD());
+                            
                             WriteCmdXLCD(201);
                             while (BusyXLCD());
                             putsXLCD("INCORRETO");
                             while (BusyXLCD());
-                            __delay_ms (1000);
-                            
+                            //__delay_ms (1000);
                             memset(pin_mudado_string, '\0', sizeof pin_mudado_string); //Limpar a string
-                            
-                            WriteCmdXLCD(LCD_clear);        
-                            while (BusyXLCD());
-                            
-                            
                         }
-                    
                     }
-                    
                 } 
-                
-              
             }
             /*Menu mudar PIN - PIN novo*/ 
             if (menu_mudar_pin == 0){ 
@@ -524,8 +518,6 @@ void main(void)
                 while (BusyXLCD());
                 putsXLCD ("PIN:");
                 while (BusyXLCD());
-                
-                
                 
                 if ((tecla_n == 1) && (tecla_premida == '1' || tecla_premida == '2' || tecla_premida == '3' || tecla_premida == '4' || tecla_premida == '5' || tecla_premida == '6' || tecla_premida == '7' || tecla_premida == '8' || tecla_premida == '9' || tecla_premida == '0')){
                     
@@ -827,12 +819,6 @@ void main(void)
                             if (pin_introduzido == pin_real) {
 
                                 strncat(pin_intr_string, &tecla_premida, 1);
-                                WriteCmdXLCD(201);
-                                while (BusyXLCD());
-                                putsXLCD("CORRETO");
-                                while (BusyXLCD());
-
-                                __delay_ms (1000);
 
                                 WriteCmdXLCD(LCD_clear);        
                                 while (BusyXLCD());
@@ -847,17 +833,19 @@ void main(void)
 
                             }
                             else if (pin_introduzido > pin_real || pin_introduzido < pin_real){
-
+                                
+                                
+                                WriteCmdXLCD(LCD_clear);        
+                                while (BusyXLCD());
+                                
                                 strncat(pin_intr_string, &tecla_premida, 1);
                                 WriteCmdXLCD(201);
                                 while (BusyXLCD());
                                 putsXLCD("INCORRETO");
                                 while (BusyXLCD());
 
-                                __delay_ms (1000);
+                                //__delay_ms (1000);
 
-                                WriteCmdXLCD(LCD_clear);        
-                                while (BusyXLCD());
 
                                 memset(pin_intr_string, '\0', sizeof temp_alarme_string); //Limpar a string 
                                 digitos_introduzidos_pin = 0;
