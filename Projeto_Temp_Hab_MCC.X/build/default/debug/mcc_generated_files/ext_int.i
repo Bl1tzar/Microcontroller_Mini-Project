@@ -9521,7 +9521,8 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 28 "mcc_generated_files/ext_int.c" 2
+# 27 "mcc_generated_files/ext_int.c" 2
+
 # 1 "mcc_generated_files/ext_int.h" 1
 # 562 "mcc_generated_files/ext_int.h"
 void EXT_INT_Initialize(void);
@@ -9555,7 +9556,8 @@ void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT2_InterruptHandler)(void);
 # 905 "mcc_generated_files/ext_int.h"
 void INT2_DefaultInterruptHandler(void);
-# 29 "mcc_generated_files/ext_int.c" 2
+# 28 "mcc_generated_files/ext_int.c" 2
+
 
 void (*INT0_InterruptHandler)(void);
 void (*INT1_InterruptHandler)(void);

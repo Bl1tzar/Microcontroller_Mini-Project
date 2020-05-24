@@ -234,6 +234,48 @@ void main(void)
     
     buzzer_intermitencia = 1; //Por default, quando o alarme e ativado o buzzer comeca a apitar instantaneamente
     
+    SetCGRamAddr(0b00001000); //Endereço da memória CGRAM do caracter avisador do alarme
+    while (BusyXLCD());
+   
+    WriteDataXLCD(0b00000000); // linha 0
+    while (BusyXLCD());
+    WriteDataXLCD(0b00001110); // linha 1
+    while (BusyXLCD());
+    WriteDataXLCD(0b00011111); // linha 2
+    while (BusyXLCD());
+    WriteDataXLCD(0b00011111); // linha 3
+    while (BusyXLCD());
+    WriteDataXLCD(0b00011111); // linha 4
+    while (BusyXLCD());
+    WriteDataXLCD(0b00001110); // linha 5
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 6
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 7
+    while (BusyXLCD());
+    
+    SetCGRamAddr(0b00010000); //Endereço da memória CGRAM do caracter para apagar o avisador do alarme
+    while (BusyXLCD());
+   
+    WriteDataXLCD(0b00000000); // linha 0
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 1
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 2
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 3
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 4
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 5
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 6
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 7
+    while (BusyXLCD());
+    
+    
+    
     while (1)
     {   
         
@@ -250,9 +292,21 @@ void main(void)
             //Intermitencia do buzzer - Timer3
             if (buzzer_intermitencia == 1){
                 CCP1CONbits.CCP1M = 1100; //ativa o PWM - liga o sounder 
+                
+                WriteCmdXLCD(0b10010011); //Endereço do display, 2ºlinha 20ºcoluna
+                while (BusyXLCD());
+           
+                putcXLCD(0b00000001); //Escrever o caracter personalizado na posição anteriormente endereçada
+                while (BusyXLCD());
             }
             else if (buzzer_intermitencia == 0){
                 CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder
+                
+                WriteCmdXLCD(0b10010011); //Endereço do display, 2ºlinha 20ºcoluna
+                while (BusyXLCD());
+           
+                putcXLCD(0b00000010); //Escrever o caracter personalizado na posição anteriormente endereçada
+                while (BusyXLCD());
             }
         }   
         else if ((temp_ambiente < temp_alarme && enter == 1) || (update_temp_alarme == 1 && temp_ambiente < temp_alarme)){ //Desativar o alarme

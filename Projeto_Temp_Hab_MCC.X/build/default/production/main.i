@@ -10186,14 +10186,16 @@ int tecla_limpar;
 
 
 
-
-
 int contador_colunas_LCD = 192;
 char temp_alarme_LCD [40];
 char temp_ambiente_LCD [40];
 int digitos_introduzidos_alarme;
 int menu_estado_LCD;
-# 55 "main.c"
+
+
+
+
+
 int menu_pin;
 int introduzir_pin;
 int pin_introduzido;
@@ -10205,7 +10207,6 @@ int pin_mudado;
 int estado_pin_alterado;
 int menu_mudar_pin;
 char pin_mudado_string [5];
-
 
 
 
@@ -10229,7 +10230,6 @@ int temp_ambiente_anterior;
 
 
 
-
 int alarme_ativo;
 int buzzer_intermitencia;
 
@@ -10241,6 +10241,8 @@ int menu_entrada;
 int limpar_terminal;
 int enter;
 int temp_valida;
+
+
 
 
 
@@ -10312,10 +10314,14 @@ void main(void)
 
     SYSTEM_Initialize();
 
-    uint8_t rxData;
-# 183 "main.c"
+
     (INTCONbits.GIEH = 1);
-# 215 "main.c"
+
+
+
+
+
+    uint8_t rxData;
     int contador_caracteres = 4;
 
     CCP1CONbits.CCP1M = 0000;
@@ -10341,7 +10347,6 @@ void main(void)
 
 
     T1CONbits.TMR1ON = 0;
-
 
 
     temp_alarme = 25;
@@ -10378,6 +10383,27 @@ void main(void)
 
     buzzer_intermitencia = 1;
 
+    SetCGRamAddr(0b00001000);
+    while (BusyXLCD());
+
+    WriteDataXLCD(0b00001110);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00011111);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00010001);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00011111);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00010001);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00010001);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00010001);
+    while (BusyXLCD());
+
+
     while (1)
     {
 
@@ -10394,6 +10420,12 @@ void main(void)
 
             if (buzzer_intermitencia == 1){
                 CCP1CONbits.CCP1M = 1100;
+
+                WriteCmdXLCD(0b11000010);
+                while (BusyXLCD());
+
+                WriteDataXLCD(0b00000000);
+                while (BusyXLCD());
             }
             else if (buzzer_intermitencia == 0){
                 CCP1CONbits.CCP1M = 0000;
@@ -10406,6 +10438,10 @@ void main(void)
             LATAbits.LATA1 = 0;
             buzzer_intermitencia = 1;
         }
+
+
+
+
 
 
 
@@ -10503,12 +10539,7 @@ void main(void)
             }
 
         }
-
-
-
-
-
-
+# 405 "main.c"
         if (tecla_n == 1 && tecla_premida == '#' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && mudar_pin == 0){
 
             mudar_pin = 1;
@@ -10528,6 +10559,9 @@ void main(void)
             memset(pin_mudado_string, '\0', sizeof pin_mudado_string);
             estado_pin_alterado = 1;
         }
+
+
+
 
 
         if (mudar_pin == 1){
@@ -10559,9 +10593,7 @@ void main(void)
                     tecla_n = 0;
 
                     if (digitos_introduzidos_pin == 4){
-
                         digitos_introduzidos_pin = 0;
-
                         pin_mudado = atoi (pin_mudado_string);
 
                         if (pin_mudado == pin_real){
@@ -10659,7 +10691,12 @@ void main(void)
 
 
 
+
+
+
         if (mudar_pin == 0){
+
+
 
 
 
@@ -10680,6 +10717,7 @@ void main(void)
                 while (BusyXLCD());
                 tecla_n =0;
             }
+
 
 
             if ((((menu_estado_LCD == 0 && temp_mudou == 1) || (menu_estado_LCD == 0 && temp_alarme_mudou == 1)) && menu_pin == 0) || estado_pin_alterado == 1){
@@ -10747,7 +10785,6 @@ void main(void)
 
 
             if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && introduzir_pin == 1 && menu_pin == 0){
-
                 LCD_mudar_temp_alarme = 1;
                 menu_pin = 1;
                 WriteCmdXLCD(0b00000001);

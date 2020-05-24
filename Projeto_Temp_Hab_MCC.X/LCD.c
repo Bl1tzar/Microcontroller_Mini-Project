@@ -76,31 +76,31 @@ void LCD_inicio_teste (void){
    
     putsXLCD ("JO O MEDEIROS 2172157");
    
-            SetCGRamAddr(0b00000000);
-            while (BusyXLCD());
+    SetCGRamAddr(0b00000000); //Endereço da memória CGRAM
+    while (BusyXLCD());
    
-            WriteDataXLCD(0b00001110); // linha 0
-            while (BusyXLCD());
-            WriteDataXLCD(0b00000000); // linha 1
-            while (BusyXLCD());
-            WriteDataXLCD(0b00011111); // linha 2
-            while (BusyXLCD());
-            WriteDataXLCD(0b00010001); // linha 3
-            while (BusyXLCD());
-            WriteDataXLCD(0b00011111); // linha 4
-            while (BusyXLCD());
-            WriteDataXLCD(0b00010001); // linha 5
-            while (BusyXLCD());
-            WriteDataXLCD(0b00010001); // linha 6
-            while (BusyXLCD());
-            WriteDataXLCD(0b00010001); // linha 7
-            while (BusyXLCD());
+    WriteDataXLCD(0b00001110); // linha 0
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 1
+    while (BusyXLCD());
+    WriteDataXLCD(0b00011111); // linha 2
+    while (BusyXLCD());
+    WriteDataXLCD(0b00010001); // linha 3
+    while (BusyXLCD());
+    WriteDataXLCD(0b00011111); // linha 4
+    while (BusyXLCD());
+    WriteDataXLCD(0b00010001); // linha 5
+    while (BusyXLCD());
+    WriteDataXLCD(0b00010001); // linha 6
+    while (BusyXLCD());
+    WriteDataXLCD(0b00010001); // linha 7
+    while (BusyXLCD());
            
-            WriteCmdXLCD(0b11000010);
-            while (BusyXLCD());
+    WriteCmdXLCD(0b11000010); //Endereço do display, 2ºlinha 3ºcoluna
+    while (BusyXLCD());
            
-            putcXLCD(0b00000000);
-            while (BusyXLCD());
+    putcXLCD(0b00000000); //Escrever o caracter personalizado na posição anteriormente endereçada
+    while (BusyXLCD());
            
    
     __delay_ms(1000);

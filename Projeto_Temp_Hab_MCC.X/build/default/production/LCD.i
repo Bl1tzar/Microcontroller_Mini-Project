@@ -10154,10 +10154,37 @@ void LCD_inicio_teste (void){
 
 
 
- WriteCmdXLCD(0b11000000);
- while (BusyXLCD());
+    WriteCmdXLCD(0b11000000);
+    while (BusyXLCD());
 
-    putsXLCD ("JOAO MEDEIROS 2172157");
+    putsXLCD ("JO O MEDEIROS 2172157");
+
+    SetCGRamAddr(0b00000000);
+    while (BusyXLCD());
+
+    WriteDataXLCD(0b00001110);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00011111);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00010001);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00011111);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00010001);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00010001);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00010001);
+    while (BusyXLCD());
+
+    WriteCmdXLCD(0b11000010);
+    while (BusyXLCD());
+
+    WriteDataXLCD(0b00000000);
+    while (BusyXLCD());
+
 
     _delay((unsigned long)((1000)*(6000000/4000.0)));
 
