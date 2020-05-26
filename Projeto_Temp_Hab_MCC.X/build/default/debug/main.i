@@ -10227,6 +10227,7 @@ int menu_entrada;
 int limpar_terminal;
 int enter;
 int temp_valida;
+uint8_t rxData;
 
 
 
@@ -10307,11 +10308,10 @@ void main(void)
 
 
 
-    uint8_t rxData;
-    int contador_caracteres = 4;
+
 
     CCP1CONbits.CCP1M = 0000;
-
+    T1CONbits.TMR1ON = 0;
 
     LCD_inicio_teste();
 
@@ -10330,10 +10330,6 @@ void main(void)
 
 
     ADC_SetInterruptHandler(ADC_temperatura);
-
-
-    T1CONbits.TMR1ON = 0;
-
 
     temp_alarme = 25;
 
@@ -10368,48 +10364,6 @@ void main(void)
     estado_pin_alterado = 0;
 
     buzzer_intermitencia = 1;
-
-    SetCGRamAddr(0b00001000);
-    while (BusyXLCD());
-
-    WriteDataXLCD(0b00000000);
-    while (BusyXLCD());
-    WriteDataXLCD(0b00001110);
-    while (BusyXLCD());
-    WriteDataXLCD(0b00011111);
-    while (BusyXLCD());
-    WriteDataXLCD(0b00011111);
-    while (BusyXLCD());
-    WriteDataXLCD(0b00011111);
-    while (BusyXLCD());
-    WriteDataXLCD(0b00001110);
-    while (BusyXLCD());
-    WriteDataXLCD(0b00000000);
-    while (BusyXLCD());
-    WriteDataXLCD(0b00000000);
-    while (BusyXLCD());
-
-    SetCGRamAddr(0b00010000);
-    while (BusyXLCD());
-
-    WriteDataXLCD(0b00000000);
-    while (BusyXLCD());
-    WriteDataXLCD(0b00000000);
-    while (BusyXLCD());
-    WriteDataXLCD(0b00000000);
-    while (BusyXLCD());
-    WriteDataXLCD(0b00000000);
-    while (BusyXLCD());
-    WriteDataXLCD(0b00000000);
-    while (BusyXLCD());
-    WriteDataXLCD(0b00000000);
-    while (BusyXLCD());
-    WriteDataXLCD(0b00000000);
-    while (BusyXLCD());
-    WriteDataXLCD(0b00000000);
-    while (BusyXLCD());
-
-
 
     while (1)
     {
@@ -10552,7 +10506,7 @@ void main(void)
             }
 
         }
-# 432 "main.c"
+# 386 "main.c"
         if (tecla_n == 1 && tecla_premida == '#' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && mudar_pin == 0){
 
             mudar_pin = 1;

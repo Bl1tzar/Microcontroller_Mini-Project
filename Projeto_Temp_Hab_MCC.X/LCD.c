@@ -122,6 +122,47 @@ void LCD_inicio_teste (void){
     
     WriteCmdXLCD(LCD_clear);        
     while (BusyXLCD());
+    
+        
+    SetCGRamAddr(0b00001000); //Endereço da memória CGRAM do caracter avisador do alarme
+    while (BusyXLCD());
+   
+    WriteDataXLCD(0b00000000); // linha 0
+    while (BusyXLCD());
+    WriteDataXLCD(0b00001110); // linha 1
+    while (BusyXLCD());
+    WriteDataXLCD(0b00011111); // linha 2
+    while (BusyXLCD());
+    WriteDataXLCD(0b00011111); // linha 3
+    while (BusyXLCD());
+    WriteDataXLCD(0b00011111); // linha 4
+    while (BusyXLCD());
+    WriteDataXLCD(0b00001110); // linha 5
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 6
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 7
+    while (BusyXLCD());
+    
+    SetCGRamAddr(0b00010000); //Endereço da memória CGRAM do caracter para apagar o avisador do alarme
+    while (BusyXLCD());
+   
+    WriteDataXLCD(0b00000000); // linha 0
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 1
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 2
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 3
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 4
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 5
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 6
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000); // linha 7
+    while (BusyXLCD());
 }    
 
 //void escrever_texto_LCD (int linha_LCD, char texto[21]){

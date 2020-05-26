@@ -92,10 +92,11 @@ int menu_entrada;
 int limpar_terminal; //Dá scroll na página
 int enter; //Variavel binaria -Verifica quando o enter é pressionado 
 int temp_valida; //Variavel binaria -Verifica a temperatura de alarme introduzida
+uint8_t rxData; 
 
 
 /*
-                         Funcões Temporarias
+                         Funcões 
  */
 
 //Testar LED com interrupcão do Timer 0 & interrupcões do telcado 
@@ -172,11 +173,10 @@ void main(void)
                              Implementacão de código
      */
        
-    uint8_t rxData; 
-    int contador_caracteres = 4;
+
     
     CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder no inicio
-    
+    T1CONbits.TMR1ON = 0; //Comeca com o Timer 0 desativado - e apenas ativado quando se introduz o PIN para alterar a temperatura
     //Escrever o inicio do LCD - LCD.c
     LCD_inicio_teste();
     
@@ -195,10 +195,6 @@ void main(void)
     
     //Interrupcão do ADC - Quando ocorre, executa a funcao ADC_temperatura
     ADC_SetInterruptHandler(ADC_temperatura);
-    
-    
-    T1CONbits.TMR1ON = 0; //Comeca com o Timer 0 desativado - e apenas ativado quando se introduz o PIN para alterar a temperatura
-    
     
     temp_alarme = 25; //Por default a temperatura de alarme esta a 20 C 
     
@@ -233,49 +229,7 @@ void main(void)
     estado_pin_alterado = 0; //Por default, o pin nao foi alterado
     
     buzzer_intermitencia = 1; //Por default, quando o alarme e ativado o buzzer comeca a apitar instantaneamente
-    
-    SetCGRamAddr(0b00001000); //Endereço da memória CGRAM do caracter avisador do alarme
-    while (BusyXLCD());
-   
-    WriteDataXLCD(0b00000000); // linha 0
-    while (BusyXLCD());
-    WriteDataXLCD(0b00001110); // linha 1
-    while (BusyXLCD());
-    WriteDataXLCD(0b00011111); // linha 2
-    while (BusyXLCD());
-    WriteDataXLCD(0b00011111); // linha 3
-    while (BusyXLCD());
-    WriteDataXLCD(0b00011111); // linha 4
-    while (BusyXLCD());
-    WriteDataXLCD(0b00001110); // linha 5
-    while (BusyXLCD());
-    WriteDataXLCD(0b00000000); // linha 6
-    while (BusyXLCD());
-    WriteDataXLCD(0b00000000); // linha 7
-    while (BusyXLCD());
-    
-    SetCGRamAddr(0b00010000); //Endereço da memória CGRAM do caracter para apagar o avisador do alarme
-    while (BusyXLCD());
-   
-    WriteDataXLCD(0b00000000); // linha 0
-    while (BusyXLCD());
-    WriteDataXLCD(0b00000000); // linha 1
-    while (BusyXLCD());
-    WriteDataXLCD(0b00000000); // linha 2
-    while (BusyXLCD());
-    WriteDataXLCD(0b00000000); // linha 3
-    while (BusyXLCD());
-    WriteDataXLCD(0b00000000); // linha 4
-    while (BusyXLCD());
-    WriteDataXLCD(0b00000000); // linha 5
-    while (BusyXLCD());
-    WriteDataXLCD(0b00000000); // linha 6
-    while (BusyXLCD());
-    WriteDataXLCD(0b00000000); // linha 7
-    while (BusyXLCD());
-    
-    
-    
+
     while (1)
     {   
         

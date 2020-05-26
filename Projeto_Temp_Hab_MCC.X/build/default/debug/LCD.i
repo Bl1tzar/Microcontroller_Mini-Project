@@ -10191,4 +10191,45 @@ void LCD_inicio_teste (void){
 
     WriteCmdXLCD(0b00000001);
     while (BusyXLCD());
+
+
+    SetCGRamAddr(0b00001000);
+    while (BusyXLCD());
+
+    WriteDataXLCD(0b00000000);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00001110);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00011111);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00011111);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00011111);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00001110);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000);
+    while (BusyXLCD());
+
+    SetCGRamAddr(0b00010000);
+    while (BusyXLCD());
+
+    WriteDataXLCD(0b00000000);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000);
+    while (BusyXLCD());
+    WriteDataXLCD(0b00000000);
+    while (BusyXLCD());
 }
