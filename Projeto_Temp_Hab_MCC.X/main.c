@@ -51,7 +51,7 @@ int menu_pin; //Variavel binaria -So quando carrego no '*' do teclado é que vai 
 int introduzir_pin; //Variavel binaria -No inicio, terá que introduzir sempre o PIN quando pretende mudar a temperatura
 int pin_introduzido; // Guarda o valor do PIN introduzido para ter acesso
 char pin_intr_string [5]; // Valor do PIN introduzido
-int pin_real = 0000; // Valor do PIN - o introduzido terá que ser igual a este
+int pin_real; // Valor do PIN - o introduzido terá que ser igual a este
 int digitos_introduzidos_pin; //Contador de digitos introduzidos para quando se esta a introduzir um pin - max 4 digitos
 int mudar_pin; //Variavel binaria -Se mudar_pin = 1, muda o PIN. Se = 0, permite o resto das funcionalidades do LCD
 int pin_mudado; //Variavel que compara com o pin_real quando se esta a mudar o PIN - confirmacao
@@ -229,7 +229,9 @@ void main(void)
     estado_pin_alterado = 0; //Por default, o pin nao foi alterado
     
     buzzer_intermitencia = 1; //Por default, quando o alarme e ativado o buzzer comeca a apitar instantaneamente
-
+    
+    pin_real = 1234;
+    
     while (1)
     {   
         
@@ -283,6 +285,7 @@ void main(void)
             
             printf("%c" , 12); //Limpa o terminal
             printf("\r\n---------------Menu principal---------------");
+            printf("\r\nPIN = %d", pin_real);
             printf("\r\n\nTemperatura atual = %dºC", temp_ambiente);
             if (alarme_ativo == 1){
                 printf("\r\nEstado do alarme: Ativo");
@@ -400,7 +403,7 @@ void main(void)
             while (BusyXLCD());
             digitos_introduzidos_pin = 0;
             memset(pin_mudado_string, '\0', sizeof pin_mudado_string); //Limpar a string
-            estado_pin_alterado = 1;
+            //estado_pin_alterado = 1;
         }
         
         /*

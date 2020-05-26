@@ -10086,10 +10086,15 @@ void OSCILLATOR_Initialize(void);
 
 # 1 "./LCD.h" 1
 # 14 "./LCD.h"
-void LCD_inicio_teste(void);
+void LCD_inicio(void);
 # 8 "LCD.c" 2
-# 23 "LCD.c"
-void LCD_inicio_teste (void){
+
+
+
+
+
+
+void LCD_inicio (void){
 
     int i =0;
     int j = 0;

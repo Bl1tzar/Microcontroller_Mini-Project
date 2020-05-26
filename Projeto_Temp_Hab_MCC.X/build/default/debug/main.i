@@ -10140,7 +10140,7 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 15 "main.c"
 # 1 "./LCD.h" 1
 # 14 "./LCD.h"
-void LCD_inicio_teste(void);
+void LCD_inicio(void);
 # 15 "main.c" 2
 
 
@@ -10186,7 +10186,7 @@ int menu_pin;
 int introduzir_pin;
 int pin_introduzido;
 char pin_intr_string [5];
-int pin_real = 0000;
+int pin_real;
 int digitos_introduzidos_pin;
 int mudar_pin;
 int pin_mudado;
@@ -10313,7 +10313,7 @@ void main(void)
     CCP1CONbits.CCP1M = 0000;
     T1CONbits.TMR1ON = 0;
 
-    LCD_inicio_teste();
+    LCD_inicio();
 
 
     TMR0_SetInterruptHandler (Timer_0);
@@ -10364,6 +10364,8 @@ void main(void)
     estado_pin_alterado = 0;
 
     buzzer_intermitencia = 1;
+
+    pin_real = 1234;
 
     while (1)
     {
@@ -10418,6 +10420,7 @@ void main(void)
 
             printf("%c" , 12);
             printf("\r\n---------------Menu principal---------------");
+            printf("\r\nPIN = %d", pin_real);
             printf("\r\n\nTemperatura atual = %dºC", temp_ambiente);
             if (alarme_ativo == 1){
                 printf("\r\nEstado do alarme: Ativo");
@@ -10506,7 +10509,7 @@ void main(void)
             }
 
         }
-# 386 "main.c"
+# 389 "main.c"
         if (tecla_n == 1 && tecla_premida == '#' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && mudar_pin == 0){
 
             mudar_pin = 1;
@@ -10524,7 +10527,7 @@ void main(void)
             while (BusyXLCD());
             digitos_introduzidos_pin = 0;
             memset(pin_mudado_string, '\0', sizeof pin_mudado_string);
-            estado_pin_alterado = 1;
+
         }
 
 

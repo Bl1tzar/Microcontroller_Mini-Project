@@ -156,20 +156,5 @@ void LCD_inicio (void){
     while (BusyXLCD());
 }    
 
-//void escrever_texto_LCD (int linha_LCD, char texto[21]){
-//
-//    WriteCmdXLCD(linha_LCD);
-//    while (BusyXLCD());
-//    /*
-//    * Escreve conteúdo da string 'texto' para o LCD,
-//    * na posição anteriormente endereçada
-//    */
-//    putsXLCD(texto);
-//     while (BusyXLCD());
-//    
-//}
 
-//void escrever_variaveis_LCD (coluna,variavel){
-
-//}
 
