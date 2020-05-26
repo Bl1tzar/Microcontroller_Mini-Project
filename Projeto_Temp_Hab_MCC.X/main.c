@@ -247,7 +247,7 @@ void main(void)
             if (buzzer_intermitencia == 1){
                 CCP1CONbits.CCP1M = 1100; //ativa o PWM - liga o sounder 
                 
-                WriteCmdXLCD(0b10010011); //Endereço do display, 2ºlinha 20ºcoluna
+                WriteCmdXLCD(0b11010011); //Endereço do display, 2ºlinha 20ºcoluna
                 while (BusyXLCD());
            
                 putcXLCD(0b00000001); //Escrever o caracter personalizado na posição anteriormente endereçada
@@ -256,7 +256,7 @@ void main(void)
             else if (buzzer_intermitencia == 0){
                 CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder
                 
-                WriteCmdXLCD(0b10010011); //Endereço do display, 2ºlinha 20ºcoluna
+                WriteCmdXLCD(0b11010011); //Endereço do display, 2ºlinha 20ºcoluna
                 while (BusyXLCD());
            
                 putcXLCD(0b00000010); //Escrever o caracter personalizado na posição anteriormente endereçada
@@ -299,8 +299,8 @@ void main(void)
             
             update_temp_alarme = 0;
         }
-        
-        if (menu_estado == 0 && menu_entrada == 1 && EUSART_mudar_temp_alarme == 1 && LCD_mudar_temp_alarme == 0){ //Sub-menu
+        /*Submenu*/ 
+        if (menu_estado == 0 && menu_entrada == 1 && EUSART_mudar_temp_alarme == 1 && LCD_mudar_temp_alarme == 0){ 
             printf("\r\n-----------------Sub-menu-------------------");
             printf("\r\n\nTemperatura de alarme: %dºC", temp_alarme);
             printf("\r\nIntroduza a nova temperatura de alarme: ");
@@ -377,7 +377,7 @@ void main(void)
          */
         
         /*
-             MENUS E ACESSOS
+             MENUS e ACESSOS
          */
 
         /*Leitura de teclas*/
@@ -542,7 +542,16 @@ void main(void)
                 tecla_n =0;
                 LCD_mudar_temp_alarme = 1;
             }
-
+            
+            //Carregar no '*' quando se esta no menu principal e se quer alterar a temp mas tem que se introduzir o PIN
+            if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && introduzir_pin == 1 && menu_pin == 0){
+                LCD_mudar_temp_alarme = 1;
+                menu_pin = 1;
+                WriteCmdXLCD(LCD_clear);        
+                while (BusyXLCD());
+                tecla_n = 0;
+            }
+            
             //Passar do submenu de mudar a temp para o menu principal
             if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 1){ 
                 digitos_introduzidos_alarme = 0;  
@@ -578,7 +587,7 @@ void main(void)
                 while (BusyXLCD());
 
                 //Escrever no LCD a temperatura de alarme
-                sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C            ", temp_alarme);
+                sprintf(temp_alarme_LCD, "Temp. alarme = %.0d C", temp_alarme);
                 WriteCmdXLCD(LCD_linha_2);
                 while (BusyXLCD());
                     /*
@@ -618,14 +627,7 @@ void main(void)
 
             }
 
-            //Carregar no '*' quando se esta no menu principal e se quer alterar a temp mas tem que se introduzir o PIN
-            if (tecla_n == 1 && tecla_premida == '*' && menu_estado_LCD == 0 && EUSART_mudar_temp_alarme == 0 && introduzir_pin == 1 && menu_pin == 0){
-                LCD_mudar_temp_alarme = 1;
-                menu_pin = 1;
-                WriteCmdXLCD(LCD_clear);        
-                while (BusyXLCD());
-                tecla_n = 0;
-            }
+            
 
 
 

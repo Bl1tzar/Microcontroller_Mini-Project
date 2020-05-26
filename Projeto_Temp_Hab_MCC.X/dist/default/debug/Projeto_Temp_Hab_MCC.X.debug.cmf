@@ -122,8 +122,8 @@ intcode CODE 0 8 8 16E 1
 idataBANK1 CODE 0 4DF4 4DF4 2 1
 dataBANK1 BANK1 1 1D9 1D9 2 1
 bssCOMRAM COMRAM 1 5B 5B 4 1
-mediumconst MEDIUMCONST 0 7D82 7D82 27E 1
-$C:\Users\Miguel\AppData\Local\Temp\sm2g.o
+mediumconst MEDIUMCONST 0 7D6C 7D6C 294 1
+$C:\Users\Miguel\AppData\Local\Temp\sc8o.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 176 176 4 1
 reset_vec CODE 0 0 0 4 1
@@ -144,15 +144,15 @@ BANK3 300-3FF 1
 BANK4 400-4FF 1
 BANK5 500-5FF 1
 CONST 4-7 1
-CONST 4E06-7D81 1
+CONST 4E06-7D6B 1
 STACK 1DB-5FF 1
-SMALLCONST 4E06-7D81 1
+SMALLCONST 4E06-7D6B 1
 CODE 4-7 1
-CODE 4E06-7D81 1
+CODE 4E06-7D6B 1
 BIGRAM F8-FF 1
 BIGRAM 1DB-5FF 1
 EEDATA F00000-F000FF 1
-MEDIUMCONST 4E06-7D81 1
+MEDIUMCONST 4E06-7D6B 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -167,7 +167,7 @@ MEDIUMCONST 4E06-7D81 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
-8 intcode CODE >24056:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
+8 intcode CODE >24079:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
 8 intcode CODE >85:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\mcc_generated_files/interrupt_manager.c
 22 intcode CODE >88:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\mcc_generated_files/interrupt_manager.c
 3E intcode CODE >90:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\mcc_generated_files/interrupt_manager.c
@@ -1575,185 +1575,185 @@ FD2 text0 CODE >541:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadore
 FE6 text0 CODE >542:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 FF0 text0 CODE >543:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 FFA text0 CODE >547:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1032 text0 CODE >548:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-103C text0 CODE >549:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1046 text0 CODE >550:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1050 text0 CODE >551:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1056 text0 CODE >552:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-106A text0 CODE >553:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1074 text0 CODE >558:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-10EA text0 CODE >560:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1108 text0 CODE >563:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1112 text0 CODE >564:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-111A text0 CODE >566:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1122 text0 CODE >569:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1140 text0 CODE >570:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1146 text0 CODE >571:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-115A text0 CODE >577:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1168 text0 CODE >578:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-117C text0 CODE >581:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-119A text0 CODE >582:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-11A0 text0 CODE >583:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-11B4 text0 CODE >589:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-11C2 text0 CODE >590:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-11D6 text0 CODE >594:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-11FC text0 CODE >598:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1218 text0 CODE >599:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-121E text0 CODE >600:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1232 text0 CODE >606:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1240 text0 CODE >607:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1254 text0 CODE >609:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-125A text0 CODE >610:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-126E text0 CODE >616:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-127C text0 CODE >617:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1290 text0 CODE >622:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-12FE text0 CODE >623:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1308 text0 CODE >624:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1068 text0 CODE >548:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1072 text0 CODE >549:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+107C text0 CODE >550:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1082 text0 CODE >551:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1096 text0 CODE >552:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+10A0 text0 CODE >556:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+10D6 text0 CODE >557:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+10E0 text0 CODE >558:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+10EA text0 CODE >559:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+10F4 text0 CODE >560:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+10FA text0 CODE >561:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+110E text0 CODE >562:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1118 text0 CODE >567:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+118E text0 CODE >569:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+11AC text0 CODE >572:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+11B6 text0 CODE >573:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+11BE text0 CODE >575:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+11C6 text0 CODE >578:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+11E4 text0 CODE >579:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+11EA text0 CODE >580:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+11FE text0 CODE >586:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+120C text0 CODE >587:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1220 text0 CODE >590:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+123E text0 CODE >591:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1244 text0 CODE >592:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1258 text0 CODE >598:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1266 text0 CODE >599:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+127A text0 CODE >603:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+12A0 text0 CODE >607:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+12BC text0 CODE >608:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+12C2 text0 CODE >609:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+12D6 text0 CODE >615:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+12E4 text0 CODE >616:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+12F8 text0 CODE >618:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+12FE text0 CODE >619:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
 1312 text0 CODE >625:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1318 text0 CODE >626:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-132C text0 CODE >627:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1336 text0 CODE >633:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1348 text0 CODE >635:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1364 text0 CODE >639:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1382 text0 CODE >640:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1388 text0 CODE >641:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-139C text0 CODE >647:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-13AA text0 CODE >648:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-13BE text0 CODE >650:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-13C4 text0 CODE >651:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-13D8 text0 CODE >653:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-13E6 text0 CODE >654:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-13FA text0 CODE >658:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1432 text0 CODE >660:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-143C text0 CODE >661:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1446 text0 CODE >662:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-144C text0 CODE >663:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1460 text0 CODE >664:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-146A text0 CODE >665:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1474 text0 CODE >671:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1488 text0 CODE >673:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1560 text0 CODE >675:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-157C text0 CODE >676:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1582 text0 CODE >677:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1596 text0 CODE >680:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-15A4 text0 CODE >681:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-15B8 text0 CODE >683:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-15BE text0 CODE >687:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-15D2 text0 CODE >689:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-15EC text0 CODE >691:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-15F2 text0 CODE >692:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1606 text0 CODE >695:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-161C text0 CODE >697:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1626 text0 CODE >699:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1660 text0 CODE >701:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1668 text0 CODE >703:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1670 text0 CODE >705:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-167A text0 CODE >707:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1682 text0 CODE >709:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-168A text0 CODE >710:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-16A8 text0 CODE >712:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-16AC text0 CODE >715:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-16C8 text0 CODE >718:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-16CE text0 CODE >719:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-16E2 text0 CODE >725:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-16F0 text0 CODE >726:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1704 text0 CODE >728:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-170A text0 CODE >729:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-171E text0 CODE >735:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-172C text0 CODE >736:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1740 text0 CODE >738:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-175A text0 CODE >740:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1760 text0 CODE >741:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1774 text0 CODE >745:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1782 text0 CODE >746:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1782 text0 CODE >747:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1786 text0 CODE >749:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1798 text0 CODE >751:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-185E text0 CODE >754:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-187A text0 CODE >755:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1880 text0 CODE >756:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1894 text0 CODE >762:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-18A2 text0 CODE >763:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-18B6 text0 CODE >765:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-18BC text0 CODE >767:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-18C4 text0 CODE >769:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-18D8 text0 CODE >771:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-18EC text0 CODE >773:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1906 text0 CODE >775:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1922 text0 CODE >777:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1928 text0 CODE >778:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-193C text0 CODE >780:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-195A text0 CODE >781:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1964 text0 CODE >782:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-196C text0 CODE >783:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1974 text0 CODE >784:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-197C text0 CODE >788:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1980 text0 CODE >789:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-19BC text0 CODE >792:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-19C2 text0 CODE >793:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-19D6 text0 CODE >795:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-19F4 text0 CODE >796:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-19FA text0 CODE >797:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A0E text0 CODE >798:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A1C text0 CODE >799:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A30 text0 CODE >804:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A4E text0 CODE >805:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A58 text0 CODE >817:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A5A text0 CODE >818:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A5C text0 CODE >819:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A5E text0 CODE >820:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A60 text0 CODE >822:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A70 text0 CODE >825:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A72 text0 CODE >826:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A74 text0 CODE >827:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A76 text0 CODE >828:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A78 text0 CODE >830:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A88 text0 CODE >833:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A8A text0 CODE >834:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A8C text0 CODE >835:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A8E text0 CODE >836:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1A90 text0 CODE >838:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1AA0 text0 CODE >841:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1AA2 text0 CODE >842:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1AA4 text0 CODE >843:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1AA6 text0 CODE >844:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-1AA8 text0 CODE >846:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
-45FA cinit CODE >8861:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-45FA cinit CODE >8863:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-45FA cinit CODE >8866:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-45FA cinit CODE >9042:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-45FC cinit CODE >9043:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-45FE cinit CODE >9044:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4600 cinit CODE >9045:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4602 cinit CODE >9046:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4604 cinit CODE >9047:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4606 cinit CODE >9048:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4608 cinit CODE >9049:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-460C cinit CODE >9050:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-460E cinit CODE >9051:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4612 cinit CODE >9055:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4616 cinit CODE >9056:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4618 cinit CODE >9057:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4618 cinit CODE >9058:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-461A cinit CODE >9059:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-461C cinit CODE >9060:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-461E cinit CODE >9063:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4622 cinit CODE >9064:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4624 cinit CODE >9065:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4624 cinit CODE >9066:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4626 cinit CODE >9067:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4628 cinit CODE >9068:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-462A cinit CODE >9071:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-462C cinit CODE >9072:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-462E cinit CODE >9073:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4630 cinit CODE >9074:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4632 cinit CODE >9080:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4632 cinit CODE >9082:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4634 cinit CODE >9083:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4636 cinit CODE >9085:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-4638 cinit CODE >9086:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-463A cinit CODE >9087:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
-463C cinit CODE >9088:C:\Users\Miguel\AppData\Local\Temp\sm2g.s
+1320 text0 CODE >626:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1334 text0 CODE >635:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1348 text0 CODE >637:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1364 text0 CODE >641:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1382 text0 CODE >642:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1388 text0 CODE >643:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+139C text0 CODE >649:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+13AA text0 CODE >650:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+13BE text0 CODE >652:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+13C4 text0 CODE >653:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+13D8 text0 CODE >655:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+13E6 text0 CODE >656:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+13FA text0 CODE >660:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1432 text0 CODE >662:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+143C text0 CODE >663:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1446 text0 CODE >664:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+144C text0 CODE >665:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1460 text0 CODE >666:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+146A text0 CODE >667:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1474 text0 CODE >673:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1488 text0 CODE >675:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1560 text0 CODE >677:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+157C text0 CODE >678:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1582 text0 CODE >679:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1596 text0 CODE >682:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+15A4 text0 CODE >683:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+15B8 text0 CODE >685:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+15BE text0 CODE >689:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+15D2 text0 CODE >691:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+15EC text0 CODE >693:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+15F2 text0 CODE >694:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1606 text0 CODE >697:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+161C text0 CODE >699:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1626 text0 CODE >701:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1660 text0 CODE >703:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1668 text0 CODE >705:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1670 text0 CODE >707:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+167A text0 CODE >709:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1682 text0 CODE >711:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+168A text0 CODE >712:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+16A8 text0 CODE >714:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+16AC text0 CODE >717:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+16C8 text0 CODE >720:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+16CE text0 CODE >721:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+16E2 text0 CODE >727:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+16F0 text0 CODE >728:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1704 text0 CODE >730:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+170A text0 CODE >731:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+171E text0 CODE >737:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+172C text0 CODE >738:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1740 text0 CODE >740:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+175A text0 CODE >742:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1760 text0 CODE >743:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1774 text0 CODE >747:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1782 text0 CODE >748:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1782 text0 CODE >749:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1786 text0 CODE >751:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1798 text0 CODE >753:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+185E text0 CODE >756:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+187A text0 CODE >757:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1880 text0 CODE >758:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1894 text0 CODE >764:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+18A2 text0 CODE >765:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+18B6 text0 CODE >767:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+18BC text0 CODE >769:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+18C4 text0 CODE >771:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+18D8 text0 CODE >773:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+18EC text0 CODE >775:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1906 text0 CODE >777:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1922 text0 CODE >779:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1928 text0 CODE >780:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+193C text0 CODE >782:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+195A text0 CODE >783:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1964 text0 CODE >784:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+196C text0 CODE >785:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1974 text0 CODE >786:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+197C text0 CODE >790:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1980 text0 CODE >791:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+19BC text0 CODE >794:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+19C2 text0 CODE >795:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+19D6 text0 CODE >797:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+19F4 text0 CODE >798:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+19FA text0 CODE >799:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A0E text0 CODE >800:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A1C text0 CODE >801:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A30 text0 CODE >806:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A4E text0 CODE >807:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A58 text0 CODE >819:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A5A text0 CODE >820:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A5C text0 CODE >821:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A5E text0 CODE >822:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A60 text0 CODE >824:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A70 text0 CODE >827:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A72 text0 CODE >828:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A74 text0 CODE >829:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A76 text0 CODE >830:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A78 text0 CODE >832:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A88 text0 CODE >835:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A8A text0 CODE >836:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A8C text0 CODE >837:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A8E text0 CODE >838:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1A90 text0 CODE >840:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1AA0 text0 CODE >843:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1AA2 text0 CODE >844:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1AA4 text0 CODE >845:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1AA6 text0 CODE >846:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+1AA8 text0 CODE >848:J:\Users\Miguel\Desktop\Uni\19.20\2 Sem\1. Microprocessadores\4. Projeto\Projeto - com_MCC\Microcontroller_Mini-Project\Projeto_Temp_Hab_MCC.X\main.c
+45FA cinit CODE >8884:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+45FA cinit CODE >8886:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+45FA cinit CODE >8889:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+45FA cinit CODE >9065:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+45FC cinit CODE >9066:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+45FE cinit CODE >9067:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4600 cinit CODE >9068:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4602 cinit CODE >9069:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4604 cinit CODE >9070:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4606 cinit CODE >9071:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4608 cinit CODE >9072:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+460C cinit CODE >9073:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+460E cinit CODE >9074:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4612 cinit CODE >9078:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4616 cinit CODE >9079:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4618 cinit CODE >9080:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4618 cinit CODE >9081:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+461A cinit CODE >9082:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+461C cinit CODE >9083:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+461E cinit CODE >9086:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4622 cinit CODE >9087:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4624 cinit CODE >9088:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4624 cinit CODE >9089:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4626 cinit CODE >9090:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4628 cinit CODE >9091:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+462A cinit CODE >9094:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+462C cinit CODE >9095:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+462E cinit CODE >9096:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4630 cinit CODE >9097:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4632 cinit CODE >9103:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4632 cinit CODE >9105:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4634 cinit CODE >9106:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4636 cinit CODE >9108:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+4638 cinit CODE >9109:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+463A cinit CODE >9110:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
+463C cinit CODE >9111:C:\Users\Miguel\AppData\Local\Temp\sc8o.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1771,7 +1771,7 @@ WriteCmdXLCD@cmd 66 0 BANK0 1 cstackBANK0 dist/default/debug\Projeto_Temp_Hab_MC
 __LdataBANK1 0 0 ABS 0 dataBANK1 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _temp_ambiente_LCD 135 0 BANK1 1 bssBANK1 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _temp_ambiente_anterior 11E 0 BANK1 1 bssBANK1 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
-__Lmediumconst 7D82 0 MEDIUMCONST 0 mediumconst dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
+__Lmediumconst 7D6C 0 MEDIUMCONST 0 mediumconst dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __Hspace_0 30000E 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __Hspace_1 1DB 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __Hspace_2 0 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
@@ -1787,7 +1787,7 @@ _PWM1CON FB7 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _pin_introduzido E6 0 BANK0 1 bssBANK0 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 EUSART1_SetErrorHandler@interruptHandler 66 0 BANK0 1 cstackBANK0 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
-__mediumconst 7D82 0 MEDIUMCONST 0 mediumconst C:\Users\Miguel\AppData\Local\Temp\sm2g.o
+__mediumconst 7D6C 0 MEDIUMCONST 0 mediumconst C:\Users\Miguel\AppData\Local\Temp\sc8o.o
 _INT0_DefaultInterruptHandler 4E00 0 CODE 0 text82 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _EUSART1_Initialize 4326 0 CODE 0 text37 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
@@ -1815,7 +1815,7 @@ _TMR1 FCE 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _TMR2 FBC 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _TMR3 FB2 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _WPUB F61 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
-___sp 0 0 STACK 2 stack C:\Users\Miguel\AppData\Local\Temp\sm2g.o
+___sp 0 0 STACK 2 stack C:\Users\Miguel\AppData\Local\Temp\sc8o.o
 _atoi 327C 0 CODE 0 text17 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _ctoa 4450 0 CODE 0 text10 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _dbuf 185 0 BANK1 1 bssBANK1 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
@@ -1829,7 +1829,7 @@ pad@i 7F 0 BANK0 1 cstackBANK0 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 pad@p 7C 0 BANK0 1 cstackBANK0 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 pad@w 81 0 BANK0 1 cstackBANK0 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _pin_mudado DE 0 BANK0 1 bssBANK0 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
-start 176 0 CODE 0 init C:\Users\Miguel\AppData\Local\Temp\sm2g.o
+start 176 0 CODE 0 init C:\Users\Miguel\AppData\Local\Temp\sc8o.o
 ___aomod@counter 76 0 BANK0 1 cstackBANK0 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 ___flmul@aexp 39 0 COMRAM 1 cstackCOMRAM dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 ___flmul@bexp 3A 0 COMRAM 1 cstackCOMRAM dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
@@ -1878,11 +1878,11 @@ __size_of_vfpfcnvrt 0 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.
 TMR0_SetInterruptHandler@InterruptHandler 66 0 BANK0 1 cstackBANK0 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _buzzer_intermitencia D4 0 BANK0 1 bssBANK0 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __size_of_ADC_SetInterruptHandler 0 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
-__accesstop 60 0 ABS 0 - C:\Users\Miguel\AppData\Local\Temp\sm2g.o
-intlevel0 0 0 CODE 0 text C:\Users\Miguel\AppData\Local\Temp\sm2g.o
-intlevel1 0 0 CODE 0 text C:\Users\Miguel\AppData\Local\Temp\sm2g.o
-intlevel2 0 0 CODE 0 text C:\Users\Miguel\AppData\Local\Temp\sm2g.o
-intlevel3 0 0 CODE 0 text C:\Users\Miguel\AppData\Local\Temp\sm2g.o
+__accesstop 60 0 ABS 0 - C:\Users\Miguel\AppData\Local\Temp\sc8o.o
+intlevel0 0 0 CODE 0 text C:\Users\Miguel\AppData\Local\Temp\sc8o.o
+intlevel1 0 0 CODE 0 text C:\Users\Miguel\AppData\Local\Temp\sc8o.o
+intlevel2 0 0 CODE 0 text C:\Users\Miguel\AppData\Local\Temp\sc8o.o
+intlevel3 0 0 CODE 0 text C:\Users\Miguel\AppData\Local\Temp\sc8o.o
 __size_of_EUSART1_SetErrorHandler 0 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _pin_real E4 0 BANK0 1 bssBANK0 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
@@ -1929,9 +1929,9 @@ _ANSELD F3B 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _ANSELE F3C 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __end_of_DelayXLCD 4CFC 0 CODE 0 text51 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _TMR0_DefaultInterruptHandler 4DFA 0 CODE 0 text69 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\Miguel\AppData\Local\Temp\sm2g.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\Miguel\AppData\Local\Temp\sc8o.o
 _codigo_digital 1B3 0 BANK1 1 bssBANK1 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\Miguel\AppData\Local\Temp\sm2g.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\Miguel\AppData\Local\Temp\sc8o.o
 __size_of_DelayXLCD 0 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _CCPR1H FBF 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _CCPR1L FBE 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
@@ -2077,7 +2077,7 @@ SetCGRamAddr@CGaddr 69 0 BANK0 1 cstackBANK0 dist/default/debug\Projeto_Temp_Hab
 __size_of___xxtofl 0 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __Hbigram 0 0 ABS 0 bigram dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\Miguel\AppData\Local\Temp\sm2g.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\Miguel\AppData\Local\Temp\sc8o.o
 _BAUDCON1 FB8 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 ___xxtofl@arg B 0 COMRAM 1 cstackCOMRAM dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 ___xxtofl@exp A 0 COMRAM 1 cstackCOMRAM dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
@@ -2474,8 +2474,8 @@ _tensao 110 0 BANK1 1 bssBANK1 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __size_of_INT2_DefaultInterruptHandler 0 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __size_of_vfprintf 0 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __end_of_EUSART1_SetFramingErrorHandler 4DB8 0 CODE 0 text40 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
-stackhi 5FF 0 ABS 0 - C:\Users\Miguel\AppData\Local\Temp\sm2g.o
-stacklo 1DB 0 ABS 0 - C:\Users\Miguel\AppData\Local\Temp\sm2g.o
+stackhi 5FF 0 ABS 0 - C:\Users\Miguel\AppData\Local\Temp\sc8o.o
+stacklo 1DB 0 ABS 0 - C:\Users\Miguel\AppData\Local\Temp\sc8o.o
 __end_of_EUSART1_SetOverrunErrorHandler 4DAE 0 CODE 0 text39 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __end_of_EUSART1_Write 4CD0 0 CODE 0 text16 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _EXT_INT_Initialize 4796 0 CODE 0 text33 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
@@ -2669,7 +2669,7 @@ __Ltext95 0 0 ABS 0 text95 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __Ltext96 0 0 ABS 0 text96 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __Ltext97 0 0 ABS 0 text97 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __Ltext98 0 0 ABS 0 text98 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
-__ramtop 600 0 RAM 0 ramtop C:\Users\Miguel\AppData\Local\Temp\sm2g.o
+__ramtop 600 0 RAM 0 ramtop C:\Users\Miguel\AppData\Local\Temp\sc8o.o
 _sprintf 44AE 0 CODE 0 text2 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __size_of_ADC_ISR 0 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _vfprintf 41EC 0 CODE 0 text4 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
@@ -2739,7 +2739,7 @@ _T3CONbits FB1 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __size_of_teclado_coluna_1 0 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __size_of_teclado_coluna_2 0 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __size_of_teclado_coluna_3 0 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
-__pmediumconst 7D82 0 MEDIUMCONST 0 mediumconst dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
+__pmediumconst 7D6C 0 MEDIUMCONST 0 mediumconst dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 _timer3ReloadVal 1B7 0 BANK1 1 nvBANK1 dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __size_of_TMR0_SetInterruptHandler 0 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
 __CFG_BOREN$SBORDIS 0 0 ABS 0 - dist/default/debug\Projeto_Temp_Hab_MCC.X.debug.o
@@ -2885,7 +2885,7 @@ cstackBANK0 1 60 60 98 1
 reset_vec 0 0 0 4 1
 bssBANK1 1 100 100 DB 1
 intcode 0 8 8 4DFE 1
-mediumconst 0 7D82 7D82 27E 1
+mediumconst 0 7D6C 7D6C 294 1
 config 0 300000 300000 E 1
 # OTES Section
 # This section contains data of all the note-psects.  The beginning of the section
