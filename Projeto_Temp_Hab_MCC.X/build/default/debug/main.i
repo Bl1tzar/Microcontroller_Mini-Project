@@ -10527,7 +10527,7 @@ void main(void)
             while (BusyXLCD());
             digitos_introduzidos_pin = 0;
             memset(pin_mudado_string, '\0', sizeof pin_mudado_string);
-
+            estado_pin_alterado = 1;
         }
 
 

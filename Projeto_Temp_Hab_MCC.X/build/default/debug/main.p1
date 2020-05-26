@@ -1677,6 +1677,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "405
 [; ;main.c: 405:             memset(pin_mudado_string, '\0', sizeof pin_mudado_string);
 [e ( _memset (3 , , -> &U _pin_mudado_string `*v -> -> 0 `ui `i -> # _pin_mudado_string `ui ]
+"406
+[; ;main.c: 406:             estado_pin_alterado = 1;
+[e = _estado_pin_alterado -> 1 `i ]
 "407
 [; ;main.c: 407:         }
 }
@@ -2694,8 +2697,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 853: }
 [e :UE 871 ]
 }
-[p f _printf 8913024 ]
 [p f _sprintf 8454272 ]
+[p f _printf 8913024 ]
 [a 6C 13 10 69 115 116 97 100 111 32 100 111 32 97 108 97 114 109 101 58 32 68 101 115 97 116 105 118 111 0 ]
 [a 5C 13 10 69 115 116 97 100 111 32 100 111 32 97 108 97 114 109 101 58 32 65 116 105 118 111 0 ]
 [a 23C 83 117 99 101 115 115 111 0 ]
