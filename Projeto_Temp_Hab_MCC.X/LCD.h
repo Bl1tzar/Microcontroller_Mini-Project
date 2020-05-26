@@ -11,7 +11,7 @@
 #define LCD_clear 0b00000001 //define que corresponde a um clear numa funcao do xlcd
 
 //Funcões
-void LCD_inicio_teste(void);
+void LCD_inicio(void);
 
 
 #endif	/* LCD_H */

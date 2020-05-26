@@ -178,7 +178,7 @@ void main(void)
     CCP1CONbits.CCP1M = 0000; //desativa o PWM - desliga o sounder no inicio
     T1CONbits.TMR1ON = 0; //Comeca com o Timer 0 desativado - e apenas ativado quando se introduz o PIN para alterar a temperatura
     //Escrever o inicio do LCD - LCD.c
-    LCD_inicio_teste();
+    LCD_inicio();
     
     //Interrupcão do Timer para acender LED
     TMR0_SetInterruptHandler (Timer_0);
