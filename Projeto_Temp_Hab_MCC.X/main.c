@@ -279,9 +279,9 @@ void main(void)
         
         
         /*Menu Principal*/ 
-        if ((menu_estado == 1 && menu_entrada == 1 && update_temp_alarme == 1) || (menu_estado == 1 && temp_mudou == 1)){ 
+        if ((menu_estado == 1 && menu_entrada == 1 && update_temp_alarme == 1) || (menu_estado == 1 && (temp_mudou == 1 || estado_pin_alterado == 1))){ 
             
-            
+            estado_pin_alterado = 0;
             
             printf("%c" , 12); //Limpa o terminal
             printf("\r\n---------------Menu principal---------------");
@@ -572,7 +572,7 @@ void main(void)
                 memset(temp_alarme_string, '\0', sizeof temp_alarme_string); //Limpar a string temp_alarme_string para não 
                                                                                      //haver sobreposicão de caracteres quando se quer introduzir mais do que 1 vez
                 
-                estado_pin_alterado = 0;
+                
                 temp_alarme_mudou = 0;
 
                 LCD_mudar_temp_alarme = 0;
